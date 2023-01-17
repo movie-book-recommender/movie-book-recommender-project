@@ -1,7 +1,8 @@
 from flask import Flask, render_template
+import time
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/time")
 def index():
-    return render_template("layout.html")
+    return {'time': time.time()}
