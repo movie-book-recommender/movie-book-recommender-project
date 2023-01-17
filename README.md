@@ -1,6 +1,6 @@
 [![CI](https://github.com/movie-book-recommender/movie-book-recommender-project/actions/workflows/main.yml/badge.svg)](https://github.com/movie-book-recommender/movie-book-recommender-project/actions/workflows/main.yml)
 
-Movie-book recommender project for software engineering project 2023
+# Movie-book recommender project for software engineering project 2023
 
 ## User interface draft
 
