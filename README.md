@@ -6,7 +6,7 @@
 
 ## Instructions
 
-TOD0
+clone repository
 
 ## Documentation 
 
