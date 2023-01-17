@@ -10,12 +10,12 @@
 
 5. 'git pull origin main' to fetch latest changes from main. Solve possible merge conflicts. After solving, pull again so that there are not any merge conflicts anymore.
 
-6. 'git checkout main' to change to main branch.
+6. 'git push --set-upstream origin {branch name}' to push changes to github.
 
-7. 'git merge {branch name}' to merge the feature branch to main branch.
+7. From Github, create a pull request to the branch you want to merge to the main one.
 
-8. 'git push' to push changes to github.
+8. One member of the team will review the code and accept/decline the pull request.
 
-9. 'git branch -d {branch name}' to delete the feature branch.
+9. Delete the old branch from github after the merge
 
-Remember to add and commit changes in the feature branch, if you forget, the changes will "follow you"!
+10. 'git branch -d {branch name}' to delete the local version of the branch.
