@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install Flask
+        run: pip install flask
+      - name: Install dependencies
+        run: pip install -r requirements.txt   
+      - name: Install Lint
+        run: pip install pylint
+      - name: Run Lint
+        run: pylint src
+      - name: Install coverage
+        run: pip install coverage
+      - name: Create coverage report
+        run: coverage run --branch -m pytest src
+      - name: Install Robot
+        run: pip install robotframework && pip install robotframework-seleniumlibrary
+      - name: Run robot tests
+        run: robot src/tests
