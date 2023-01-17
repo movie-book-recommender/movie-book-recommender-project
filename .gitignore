@@ -1,0 +1,9 @@
+.env
+__pycache__
+venv
+app.pyc
+db.pyc
+log.html
+output.xml
+report.html
+selenium-screenshot*
