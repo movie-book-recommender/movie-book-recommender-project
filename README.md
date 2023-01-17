@@ -6,7 +6,7 @@
 
 ## Instructions
 
-clone repository
+clone repository to your computer
 
 ## Documentation 
 
