@@ -1,4 +1,4 @@
-# movie-book-recommender-project
+[![CI](https://github.com/movie-book-recommender/movie-book-recommender-project/actions/workflows/main.yml/badge.svg)](https://github.com/movie-book-recommender/movie-book-recommender-project/actions/workflows/main.yml)
 
 Movie-book recommender project for software engineering project 2023
 
