@@ -19,10 +19,12 @@
 
 If 'npm start' doesn't start the server and gives this error message 
 > Invalid options object. Dev Server has been initialized using an options object that does not match the API schema. - options.allowedHosts[0] should be a non-empty string. 
+
 Turn off your internet and try to run the server while offline.
 
 
 If both frontend and backend are running but the time on the itempage is 0 after refreshing it and the react terminal gives following error message
 > Proxy error: Could not proxy request /time from localhost to localhost (ECONNREFUSED)
+
 Flask might be running at the wrong address; instead of localhost:5000 most likely at local ip-address:5000. A quick temporary fix is to change the '"proxy": "http://localhost:5000"' line in package.json to have the ip-address instead of localhost.
 **Change back to localhost if pushing to avoid confusion**
