@@ -8,7 +8,7 @@
 |Tiistai 17.1.| 4 | Luolassa tekemässä, mm. projectsit ja pohjaa koko ohjelmistolle. Kotona aloitin tutkimaan reactia|
 |Keskiviikko 18.1.| 4 | Mukana käyttöliittymäpajassa, tutkin stagingia (en saanut toimimaan) |
 |Torstai 19.1.| 2.5 | Tutkin CSC:tä ja opettelin reactia|
-|Perjantai 20.1.| 2 | Reactia ja päivitin tämän tiedoston |
+|Perjantai 20.1.| 2 | Reactia ja kehitin työaikakirjanpidon |
 |Viikonloppu 21.-22.1.| 0 | |
 |Yhteensä| 16.5| |
 
