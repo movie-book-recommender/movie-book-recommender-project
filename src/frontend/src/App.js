@@ -48,15 +48,15 @@ const App = () => {
   }
 
   return (
-    <div>
-      <div>
-        <a href="" onClick={toPage('ItemPage')} style={padding}>
+    <div class="page-container">
+      <div class="navbar">
+        <a href="/" onClick={toPage('ItemPage')} style={padding}>
           ItemPage
         </a>
-        <a href="" onClick={toPage('Ratings')} style={padding}>
+        <a href="/" onClick={toPage('Ratings')} style={padding}>
           Ratings
         </a>
-        <a href="" onClick={toPage('WishList')} style={padding}>
+        <a href="/" onClick={toPage('WishList')} style={padding}>
           WishList
         </a>
       </div>

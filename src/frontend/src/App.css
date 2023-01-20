@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar a{
+  border-style: solid;
+  border-width: 2px;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 20px;
+  padding: 5px;
+  color: black;
+}
+
+.navbar a:hover{
+  font-weight: bold;
+}
+
+.page-container {
+  padding: 20px 0px;
+}
