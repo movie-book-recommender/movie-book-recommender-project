@@ -25,13 +25,13 @@
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 16.1.| 7 | |
-|Tiistai 17.1.| 6 | |
-|Keskiviikko 18.1.| 4 | |
-|Torstai 19.1.| 0.5 | |
-|Perjantai 20.1.| | |
-|Viikonloppu 21.-22.1.| | |
-|Yhteensä| | |
+| Maanantai 16.1.| 7 |Aloitustapahtuma, yhteinen suunnittelu, lisäksi: taustamateriaalit käyty läpi, dataan tutustuttu |
+|Tiistai 17.1.| 6 |Yhteinen sprinttisuunnittelu, tietokannan muodostamisen ja siirron kokeilu, v1. |
+|Keskiviikko 18.1.| 4 |Käyttöliittymätyöpaja, cPoutaan tutustuminen |
+|Torstai 19.1.| 0.5 |Daily, cPoutan projektin aloitus |
+|Perjantai 20.1.| 7|Virtuaalikoneen käynnistys, päivitys ja asetusten muokaaminen, tietokannan luonti, osan datan siirto |
+|Viikonloppu 21.-22.1.|8 |Datan siirron jatko, backend APIn koodaus ja käynnistäminen, dokumentointi |
+|Yhteensä|32.5 | |
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
