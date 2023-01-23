@@ -36,13 +36,13 @@
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 16.1.| 4 | |
-|Tiistai 17.1.| 2 | |
-|Keskiviikko 18.1.| | |
+| Maanantai 16.1.| 4 |Aloitustapahtuma, yhteistäsuunnittelua|
+|Tiistai 17.1.| 2 |Yhteistäsuunnittelua, frontendin suunnittelua|
+|Keskiviikko 18.1.| 4 |Käyttöliittymäpaja, Reactiin tutustumista|
 |Torstai 19.1.| | |
-|Perjantai 20.1.| | |
+|Perjantai 20.1.| 2 |Reactiin tutustumista, etusivulla kokeiluja|
 |Viikonloppu 21.-22.1.| | |
-|Yhteensä| | |
+|Yhteensä| 12 | |
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
