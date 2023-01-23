@@ -1,4 +1,4 @@
-# Viikko 1
+# Sprint 0
 
 ## Työaikakirjanpito
 ### Emilia
@@ -10,6 +10,12 @@
 |Torstai 19.1.| 2.5 | Tutkin CSC:tä ja opettelin reactia|
 |Perjantai 20.1.| 2 | Reactia ja kehitin työaikakirjanpidon |
 |Viikonloppu 21.-22.1.| 0 | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| 16.5| |
 
 ### Eero
@@ -21,6 +27,12 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
 |Viikonloppu 21.-22.1.| | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| 12 | |
 
 ### Katri
@@ -32,6 +44,12 @@
 |Torstai 19.1.| 0.5 |Daily, cPoutan projektin aloitus |
 |Perjantai 20.1.| 7|Virtuaalikoneen käynnistys, päivitys ja asetusten muokaaminen, tietokannan luonti, osan datan siirto |
 |Viikonloppu 21.-22.1.|8 |Datan siirron jatko, backend APIn koodaus ja käynnistäminen, dokumentointi |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä|32.5 | |
 
 ### Nana
@@ -43,6 +61,12 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| 2 |Reactiin tutustumista, etusivulla kokeiluja|
 |Viikonloppu 21.-22.1.| | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| 12 | |
 
 ### Polina
@@ -54,6 +78,12 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
 |Viikonloppu 21.-22.1.| | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| | |
 
 ### Aleksi
@@ -65,6 +95,12 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
 |Viikonloppu 21.-22.1.| | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| | |
 
 ### Sebastian
@@ -76,6 +112,12 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
 |Viikonloppu 21.-22.1.| | |
+|Maanantai 23.1.|||
+|Tiistai 24.1.||
+|Keskiviikko 25.1.|||
+|Torstai 26.1.|||
+|Perjantai 27.1.|||
+|Viikonloppu 28.-29.1.|||
 |Yhteensä| | |
 
 ## Mitä tällä viikolla saatiin aikaiseksi

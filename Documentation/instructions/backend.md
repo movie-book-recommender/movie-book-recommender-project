@@ -170,6 +170,11 @@ To connect to the virtual machine, instructions from [CSC](https://docs.csc.fi/c
     ```
     flask run --host=0.0.0.0 --port=3000 > log.txt 2>&1 &
     ```
+* You can also run the program using
+    ```
+    flask run
+    ```
+    if you are running wit react locally
 
 * Please note that this method of running an API is incorrect and is done only for development and testing purposes.
 
