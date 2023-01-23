@@ -23,7 +23,7 @@ jobs:
       - name: Install Lint
         run: pip install pylint
       - name: Run Lint
-        run: pylint --fail-under 5.0 src/services src/repository src/test
+        run: pylint --fail-under 5.0 src/services src/repository src/tests
       - name: Install coverage
         run: pip install coverage
       - name: Create coverage report
