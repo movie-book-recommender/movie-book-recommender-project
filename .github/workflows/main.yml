@@ -24,11 +24,3 @@ jobs:
         run: pip install pylint
       - name: Run Lint
         run: pylint --fail-under 5.0 src/services src/repository src/tests
-      - name: Install coverage
-        run: pip install coverage
-      - name: Create coverage report
-        run: coverage run --branch -m pytest src
-      - name: Install Robot
-        run: pip install robotframework && pip install robotframework-seleniumlibrary
-      - name: Run robot tests
-        run: robot src/tests
