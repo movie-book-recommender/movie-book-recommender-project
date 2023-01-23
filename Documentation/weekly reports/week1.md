@@ -15,12 +15,13 @@
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 16.1.| 4 | |
-|Tiistai 17.1.| 4 | |
-|Keskiviikko 18.1.| 4 | |
+| Maanantai 16.1.| 4 | Aloitustapahtumassa ja sen jälkeen jäätiin yhdessä suunnittelemaan. |
+|Tiistai 17.1.| 4 | Sprinttisuunnittelu, arkkitehtuurisuunnittelua ja ohjelmistorakenne porukalla kuntoon. Reactiin tutustumista tapaamisen jälkeen. |
+|Keskiviikko 18.1.| 4 | Käyttöliittymätyöpajassa 3h ja 1h Reactin opiskelua sekä CSC:n ohjeisiin perehtymistä. |
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
 |Viikonloppu 21.-22.1.| | |
+|Yhteensä| 12 | |
 
 ### Katri
 | päivä | aika | tehdyt asiat  |
