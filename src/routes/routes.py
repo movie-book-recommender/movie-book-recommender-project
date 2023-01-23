@@ -18,7 +18,6 @@ def gettablevalues():
     allvalues_dict = tag_repository.dict_helper(allvalues)
     return jsonify(allvalues_dict)
 
-
 @app.route('/dbgetonemoviedata', methods = ['GET'])
 def get_one_movie_data():
     allvalues = movie_repository.query.first()

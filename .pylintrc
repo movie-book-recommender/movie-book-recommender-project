@@ -23,4 +23,6 @@ disable=raw-checker-failed,
         consider-using-from-import,
         inconsistent-return-statements,
         no-self-use,
+        missing-module-docstring,
+        trailing-whitespace
    
