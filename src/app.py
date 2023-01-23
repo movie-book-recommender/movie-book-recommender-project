@@ -1,8 +1,8 @@
-from flask import Flask, render_template
-import time
+import os
+from flask import Flask, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-@app.route("/time")
-def index():
-    return {'time': time.time()}
+
+import routes
