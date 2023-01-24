@@ -2,22 +2,22 @@
 
 1. Navigate to the folder with App.js file (at the time of writing: \movie-book-recommender-project\src\frontend\src)
 
-2. 'npm -v' to verify npm
+2. ```npm -v``` to verify npm
 
 * If npm has not been installed it can be installed with [Node version manager(nvm)](https://github.com/nvm-sh/nvm#installing-and-updating) 
-* After installing nvm 'nvm install node' will install node and npm
+* After installing nvm ```nvm install node``` will install node and npm
 
-3. 'npm install' in the folder with App.js file to install dependencies 
+3. ```npm install``` and ```npm install axios``` in the folder with App.js file to install dependencies 
 
 4. Run the flask-backend on a separate terminal window
 
-5. 'npm start' to run the react-frontend from the folder with App.js
+5. ```npm start``` to run the react-frontend from the folder with App.js
 
 6. Ctrl+C to shut down the local frontend
 
 ### Possible problems you might run into
 
-If 'npm start' doesn't start the server and gives this error message 
+If ```npm start``` doesn't start the server and gives this error message 
 > Invalid options object. Dev Server has been initialized using an options object that does not match the API schema. - options.allowedHosts[0] should be a non-empty string. 
 
 Turn off your internet and try to run the server while offline.
