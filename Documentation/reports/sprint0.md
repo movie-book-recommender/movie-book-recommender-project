@@ -89,19 +89,19 @@
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 16.1.| 3 | |
-|Tiistai 17.1.| | |
-|Keskiviikko 18.1.| | |
-|Torstai 19.1.| | |
-|Perjantai 20.1.| | |
-|Viikonloppu 21.-22.1.| | |
+| Maanantai 16.1.| 3 |Aloitustapaaminen ja yhteinen suunnittelu|
+|Tiistai 17.1.| 4 |Sprintin suunnitelu luolassa|
+|Keskiviikko 18.1.| 1 |Frontendin ja backendin lokaalisti ajamisen testaaminen kotikoneella|
+|Torstai 19.1.| 3 |Frontendin lokaalisti ajamisen ohjeiden kirjoittaminen|
+|Perjantai 20.1.| 2 |Daily, flask ja noden päivttämiset ja lokaalisti ajamisen testausta|
+|Viikonloppu 21.-22.1.| 0 | |
 |Maanantai 23.1.|||
 |Tiistai 24.1.||
 |Keskiviikko 25.1.|||
 |Torstai 26.1.|||
 |Perjantai 27.1.|||
 |Viikonloppu 28.-29.1.|||
-|Yhteensä| | |
+|Yhteensä| 13 | |
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
