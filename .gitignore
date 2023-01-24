@@ -12,7 +12,7 @@ selenium-screenshot*
 
 # dependencies
 /node_modules
-/src/frontend/node_modules/*
+/src/frontend/node_modules
 /.pnp
 .pnp.js
 
