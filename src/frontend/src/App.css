@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -36,13 +36,15 @@
     transform: rotate(360deg);
   }
 }
-
+*/
 .navbar a{
+  display: inline-block;
   border-style: solid;
   border-width: 2px;
   text-decoration: none;
+  text-align: center;
   font-size: 20px;
-  margin: 20px;
+  margin-right: 10px;
   padding: 5px;
   color: black;
 }
@@ -51,6 +53,19 @@
   font-weight: bold;
 }
 
+.navbar a::before {
+  display: block;
+  content: attr(data-link);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.page {
+  padding: 20px;
+}
+
 .page-container {
-  padding: 20px 0px;
+  padding: 10px;
 }
