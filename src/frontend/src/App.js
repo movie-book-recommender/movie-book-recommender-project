@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios'
 
-const Home = () => {
+const top10Url = 'http://128.214.253.51:3000/dbgettop10moviesbyyear'
+
+const Home = (id) => {
   const [movies, setMovies] = useState([])  
   useEffect(() => {    axios
     .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2006')
@@ -12,7 +14,7 @@ const Home = () => {
 }, []);
   return (
     <div class="page-container">
-      <h2>The current time is {movies.map(
+      <h2> {movies.map(
         movie => <div>{movie.title}</div>
       )}</h2>
       <div>
