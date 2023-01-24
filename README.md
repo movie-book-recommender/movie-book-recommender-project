@@ -13,6 +13,8 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [Instructions for backend](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/instructions/backend.md)
 
+- [Connecting to the virtual machine on CSC](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/instructions/cpouta.md)
+
 ## Documentation 
 
 - [Definition of Done](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/definition_of_done/definition_of_done.md)
