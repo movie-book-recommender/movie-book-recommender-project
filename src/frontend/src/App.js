@@ -7,7 +7,7 @@ const top10Url = 'http://128.214.253.51:3000/dbgettop10moviesbyyear'
 const Home = (id) => {
   const [movies, setMovies] = useState([])  
   useEffect(() => {    axios
-    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2006')
+    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2020')
     .then(response => {
       setMovies(response.data)
     })
