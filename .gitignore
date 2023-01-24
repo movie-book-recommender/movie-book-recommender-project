@@ -11,7 +11,7 @@ report.html
 selenium-screenshot*
 
 # dependencies
-/node_modules
+**/node_modules
 /src/frontend/node_modules/*
 /.pnp
 .pnp.js
