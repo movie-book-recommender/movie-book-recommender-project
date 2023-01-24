@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios'
 
 const Home = () => {
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
-    });
-  }, []);
+  const [movies, setMovies] = useState([])  
+  useEffect(() => {    axios
+    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2006')
+    .then(response => {
+      setMovies(response.data)
+    })
+}, []);
   return (
     <div class="page-container">
-      <h2>The current time is {currentTime}</h2>
+      <h2>The current time is {movies.map(
+        movie => <div>{movie.title}</div>
+      )}</h2>
       <div>
         <p>
           You are currently lookin Movie Page.
