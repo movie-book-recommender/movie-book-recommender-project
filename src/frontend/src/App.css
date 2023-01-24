@@ -69,3 +69,19 @@
 .page-container {
   padding: 10px;
 }
+
+.movie-list{
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-template-rows: 1fr;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.movie-pic{
+  grid-row: 1;
+  grid-column: auto;
+  padding: 50px;
+  background-color: white;
+ }
