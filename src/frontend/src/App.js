@@ -20,6 +20,7 @@ const Home = () => {
           Switch to Books?
         </p>
         <Search />
+        <Movies />
       </div>
     </div>
   )
@@ -38,11 +39,21 @@ const Wishlist = () => (
 )
 
 const Search = () => (
-    <form action="/search" method="GET">
-        <label for="search">Search movies </label>
-				<input type="search" id ="search" name="query" placeholder="Search movies"/>
-				<button type="submit" value="submit">Search</button>
-		</form>
+  <form action="/search" method="GET">
+      <label for="search">Search movies </label>
+      <input type="search" id ="search" name="query" placeholder="Search movies"/>
+      <button type="submit" value="submit">Search</button>
+  </form>
+)
+
+const Movies = () => (
+  <div class="movie-list">
+      <div class="movie-pic">Movie pic</div>
+      <div class="movie-pic">Movie pic</div>
+      <div class="movie-pic">Movie pic</div>
+      <div class="movie-pic">Movie pic</div>
+      <div class="movie-pic">Movie pic</div>
+  </div>
 )
 
 
