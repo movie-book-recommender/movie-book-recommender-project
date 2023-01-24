@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const Home = () => {
@@ -11,17 +10,39 @@ const Home = () => {
     });
   }, []);
   return (
-    <div> <h2>The current time is {currentTime}</h2> </div>
+    <div class="page-container">
+      <h2>The current time is {currentTime}</h2>
+      <div>
+        <p>
+          You are currently lookin Movie Page.
+        </p>
+        <p>
+          Switch to Books?
+        </p>
+        <Search />
+      </div>
+    </div>
   )
 }
 
 const Ratings = () => (
-  <div> <h2>MyRatings</h2> </div>
+  <div class="page-container">
+    <h2>MyRatings</h2>
+  </div>
 )
 
 const Wishlist = () => (
+  <div class="page-container">
+    <h2>WishList</h2>
+  </div>
+)
 
-  <div> <h2>WishList</h2> </div>
+const Search = () => (
+    <form action="/search" method="GET">
+        <label for="search">Search movies </label>
+				<input type="search" id ="search" name="query" placeholder="Search movies"/>
+				<button type="submit" value="submit">Search</button>
+		</form>
 )
 
 
@@ -43,20 +64,16 @@ const App = () => {
     }
   }
 
-  const padding = {
-    padding: 5
-  }
-
   return (
-    <div class="page-container">
+    <div class="page">
       <div class="navbar">
-        <a href="/" onClick={toPage('ItemPage')} style={padding}>
+        <a href="/" onClick={toPage('ItemPage')} data-link="ItemPage">
           ItemPage
         </a>
-        <a href="/" onClick={toPage('Ratings')} style={padding}>
+        <a href="/ratings" onClick={toPage('Ratings')} data-link="Ratings">
           Ratings
         </a>
-        <a href="/" onClick={toPage('WishList')} style={padding}>
+        <a href="/wishlist" onClick={toPage('WishList')} data-link="WishList">
           WishList
         </a>
       </div>
