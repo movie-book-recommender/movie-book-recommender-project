@@ -10,9 +10,9 @@
 |Torstai 19.1.| 2.5 | Tutkin CSC:tä ja opettelin reactia|
 |Perjantai 20.1.| 2 | Reactia ja kehitin työaikakirjanpidon |
 |Viikonloppu 21.-22.1.| 0 | |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
-|Keskiviikko 25.1.|||
+|Maanantai 23.1.|5|Reactin ja backendin ydistömistä yhdessä, refaktorointia ja backlogin muokkausta, dokumentaatiota|
+|Tiistai 24.1.|3|kokoustamista asiakastapaamisesta, frontendin jatkamista|
+|Keskiviikko 25.1.|2|Fullstackia ja yritin saada dockerin toimimaan tuloksetta|
 |Torstai 26.1.|||
 |Perjantai 27.1.|||
 |Viikonloppu 28.-29.1.|||
