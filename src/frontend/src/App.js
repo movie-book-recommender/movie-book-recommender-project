@@ -1,50 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import { useState, useEffect } from 'react'
+import './css/App.css';
+import {
+  Routes, Route, Link, useMatch
+} from "react-router-dom"
+
 import axios from 'axios'
 
-const top10Url = 'http://128.214.253.51:3000/dbgettop10moviesbyyear'
+import Movie from './Movie'
+import Ratings from './Ratings';
+import Wishlist from './WishList';
 
-const Home = (id) => {
-  const [movies, setMovies] = useState([])  
-  useEffect(() => {    axios
-    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2020')
-    .then(response => {
-      setMovies(response.data)
-    })
-}, []);
+const Menu = () => {
+  const padding = {
+    paddingRight: 5
+  }
   return (
-    <div class="page-container">
-      {movies.map(
-        movie => <div>
-          <h2>{movie.title}</h2>
-          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} width={120} height={"auto"} img/>
-          </div>
-      )}
+    <div>
       <div>
-        <p>
-          You are currently looking at Movie Page.
-        </p>
-        <p>
-          Switch to Books?
-        </p>
-        <Search />
-        <Movies />
+        <Link style={padding} to="/">home</Link>
+        <Link style={padding} to="/wishlist">wishlist</Link>
+        <Link style={padding} to="/ratings">ratings</Link>
       </div>
     </div>
   )
 }
 
-const Ratings = () => (
+const Movies = ({ movies }) => (
   <div class="page-container">
-    <h2>MyRatings</h2>
+  <h2>movies</h2>
+    <div class='movie-list'>
+      {movies.map(movie => 
+        <div  class='movie-pic' key={movie.id} >
+          <Link to={`/movie/${movie.movieid}`}>
+          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} width={120} height={"auto"} img/>
+          </Link>
+        </div>)}
+      
+    </div>
+    <Search />
   </div>
 )
 
-const Wishlist = () => (
-  <div class="page-container">
-    <h2>WishList</h2>
-  </div>
-)
 
 const Search = () => (
   <form action="/search" method="GET">
@@ -54,52 +50,32 @@ const Search = () => (
   </form>
 )
 
-const Movies = () => (
-  <div class="movie-list">
-      <div class="movie-pic">Movie pic</div>
-      <div class="movie-pic">Movie pic</div>
-      <div class="movie-pic">Movie pic</div>
-      <div class="movie-pic">Movie pic</div>
-      <div class="movie-pic">Movie pic</div>
-  </div>
-)
-
-
 const App = () => {
-  const [page, setPage] = useState('home')
+  const [movies, setMovies] = useState([])  
+  useEffect(() => {    axios
+    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2020')
+    .then(response => {
+      setMovies(response.data)
+    })
+}, []);
 
- const  toPage = (page) => (event) => {
-    event.preventDefault()
-    setPage(page)
-  }
-
-  const content = () => {
-    if (page === 'ItemPage') {
-      return <Home />
-    } else if (page === 'Ratings') {
-      return <Ratings />
-    } else if (page === 'WishList') {
-      return <Wishlist />
-    }
-  }
+const match = useMatch('/movie/:id')
+const movie = match 
+  ? movies.find(movie => movie.movieid === Number(match.params.id))
+  : null
 
   return (
-    <div class="page">
-      <div class="navbar">
-        <a href="/" onClick={toPage('ItemPage')} data-link="ItemPage">
-          ItemPage
-        </a>
-        <a href="/ratings" onClick={toPage('Ratings')} data-link="Ratings">
-          Ratings
-        </a>
-        <a href="/wishlist" onClick={toPage('WishList')} data-link="WishList">
-          WishList
-        </a>
-      </div>
+    <div>
+      <Menu />
+      <Routes>
+        <Route path="/" element={<Movies movies={movies} />} />
+        <Route path="/ratings" element={<Ratings />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/movie/:id" element={<Movie movie={movie} />} />
+      </Routes>
 
-      {content()}
     </div>
   )
 }
 
-export default App;
+export default App

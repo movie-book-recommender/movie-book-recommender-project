@@ -1,9 +1,9 @@
-import type { ParserServices, TSESTreeOptions } from './parser-options';
-import type { TSESTree } from './ts-estree';
+import { TSESTreeOptions, ParserServices } from './parser-options';
+import { TSESTree } from './ts-estree';
 declare function clearProgramCache(): void;
 interface EmptyObject {
 }
-type AST<T extends TSESTreeOptions> = TSESTree.Program & (T['tokens'] extends true ? {
+declare type AST<T extends TSESTreeOptions> = TSESTree.Program & (T['tokens'] extends true ? {
     tokens: TSESTree.Token[];
 } : EmptyObject) & (T['comment'] extends true ? {
     comments: TSESTree.Comment[];
