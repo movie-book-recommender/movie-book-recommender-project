@@ -31,21 +31,4 @@ import ReactDOM = require('.');
 
 export {};
 
-declare module '.' {
-    type PreloadAs = 'font' | 'script' | 'style';
-    interface PreloadOptions {
-        as: PreloadAs;
-        crossOrigin?: string | undefined;
-        integrity?: string | undefined;
-    }
-    function preload(href: string, options?: PreloadOptions): void;
-
-    type PreinitAs = 'script' | 'style';
-    interface PreinitOptions {
-        as: PreinitAs;
-        crossOrigin?: string | undefined;
-        precedence?: string | undefined;
-        integrity?: string | undefined;
-    }
-    function preinit(href: string, options?: PreinitOptions): void;
-}
+declare module '.' {}
