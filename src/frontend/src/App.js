@@ -14,12 +14,15 @@ const Home = (id) => {
 }, []);
   return (
     <div class="page-container">
-      <h2> {movies.map(
-        movie => <div>{movie.title}</div>
-      )}</h2>
+      {movies.map(
+        movie => <div>
+          <h2>{movie.title}</h2>
+          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} width={120} height={"auto"} img/>
+          </div>
+      )}
       <div>
         <p>
-          You are currently lookin Movie Page.
+          You are currently looking at Movie Page.
         </p>
         <p>
           Switch to Books?
