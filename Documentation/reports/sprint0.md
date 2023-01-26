@@ -26,14 +26,14 @@
 |Keskiviikko 18.1.| 4 | Käyttöliittymätyöpajassa 3h ja 1h Reactin opiskelua sekä CSC:n ohjeisiin perehtymistä. |
 |Torstai 19.1.| | |
 |Perjantai 20.1.| | |
-|Viikonloppu 21.-22.1.| | |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
+|Viikonloppu 21.-22.1.| 1 | Viikon dailyt |
+|Maanantai 23.1.|3|Yhdessä reactin ja backendin yhdistämistä, refaktorointia ja backlogin muokkausta sekä dokumentaatiota|
+|Tiistai 24.1.|4|Yhdessä kokoustaminen, valmistautuminen asiakastapaamiseen, ssh yhteyden hakeminen cPoutaan|
 |Keskiviikko 25.1.|||
 |Torstai 26.1.|||
 |Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä| 12 | |
+|Viikonloppu 28.-29.1.|1|Viikon dailyt|
+|Yhteensä| | |
 
 ### Katri
 | päivä | aika | tehdyt asiat  |
@@ -121,3 +121,15 @@
 |Yhteensä| | |
 
 ## Mitä tällä viikolla saatiin aikaiseksi
+
+Sovellus toimii lokaalisti ja hakee dataa API:n kautta cPoudassa pyörivästä tietokannasta.
+
+Tällä viikolla:
+- Sovellusrakenne
+- Github organisaatio & repositorio
+- Scrum-aiheiset dokumentit
+- Flask ja React setup
+- cPouta setup virtuaalikoneelle
+- cPouta setup tietokannalle
+- Tietokantojen populointia
+- API tietokantojen käyttämiseen
