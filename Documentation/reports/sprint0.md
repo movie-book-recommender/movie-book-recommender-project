@@ -44,13 +44,13 @@
 |Torstai 19.1.| 0.5 |Daily, cPoutan projektin aloitus |
 |Perjantai 20.1.| 7|Virtuaalikoneen käynnistys, päivitys ja asetusten muokaaminen, tietokannan luonti, osan datan siirto |
 |Viikonloppu 21.-22.1.|8 |Datan siirron jatko, backend APIn koodaus ja käynnistäminen, dokumentointi |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
-|Keskiviikko 25.1.|||
-|Torstai 26.1.|||
-|Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä|32.5 | |
+|Maanantai 23.1.|0.25|Daily, tietokantaan liittyvän bugin korjaus|
+|Tiistai 24.1.|3.5|Daily, virtuaalikoneen yhteyden muodostamisen harjoittelua (kaikille tiimin jäsenille)|
+|Keskiviikko 25.1.|0.25|Daily|
+|Torstai 26.1.|0|n/a|
+|Perjantai 27.1.|0.25|Daily|
+|Viikonloppu 28.-29.1.|0|n/a|
+|Yhteensä|36.75 | |
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
@@ -129,7 +129,7 @@ Tällä viikolla:
 - Github organisaatio & repositorio
 - Scrum-aiheiset dokumentit
 - Flask ja React setup
-- cPouta setup virtuaalikoneelle
-- cPouta setup tietokannalle
-- Tietokantojen populointia
-- API tietokantojen käyttämiseen
+- cPouta setup virtuaalikoneelle; virtuaalikone käynnistetty
+- cPouta setup tietokannalle; Postgres-tietokanta ja tietokantatauluja luotu
+- Tietokantojen populointia (elokuvien ja kirjojen tiedot valtaosin siirretty tietokantaan)
+- APeja tietokantojen käyttämiseen (muutama esimerkki tehty)
