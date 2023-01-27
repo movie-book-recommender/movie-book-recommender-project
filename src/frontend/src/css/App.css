@@ -64,10 +64,14 @@
 
 .page {
   padding: 20px;
+  display: block;
+  overflow-y: auto;
+
 }
 
 .page-container {
   padding: 10px;
+  display: block;
 }
 
 .movie-list{
@@ -82,6 +86,19 @@
 .movie-pic{
   grid-row: 1;
   grid-column: auto;
-  padding: 50px;
+  padding: 20px;
   background-color: white;
+ }
+
+ .movie-pic a img{
+  transition: 1s;
+ }
+
+ .movie-pic a:hover img{
+  opacity: .5;
+ }
+
+ img {
+  width: auto;
+  max-height: 200px;
  }

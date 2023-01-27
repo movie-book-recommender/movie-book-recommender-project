@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './css/App.css';
+import './css/App.css'
 import {
   Routes, Route, Link, useMatch
 } from "react-router-dom"
@@ -7,20 +7,15 @@ import {
 import axios from 'axios'
 
 import Movie from './Movie'
-import Ratings from './Ratings';
-import Wishlist from './WishList';
+import Ratings from './Ratings'
+import Wishlist from './WishList'
 
 const Menu = () => {
-  const padding = {
-    paddingRight: 5
-  }
   return (
-    <div>
-      <div>
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/wishlist">wishlist</Link>
-        <Link style={padding} to="/ratings">ratings</Link>
-      </div>
+    <div class="navbar">
+      <Link to="/" data-link="ItemLens">ItemLens</Link>
+      <Link to="/wishlist" data-link="Wishlist">Wishlist</Link>
+      <Link to="/ratings" data-link="Ratings">Ratings</Link>
     </div>
   )
 }
@@ -32,7 +27,7 @@ const Movies = ({ movies }) => (
       {movies.map(movie => 
         <div  class='movie-pic' key={movie.id} >
           <Link to={`/movie/${movie.movieid}`}>
-          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} width={120} height={"auto"} img/>
+          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} img/>
           </Link>
         </div>)}
       
@@ -65,7 +60,7 @@ const movie = match
   : null
 
   return (
-    <div>
+    <div class="page">
       <Menu />
       <Routes>
         <Route path="/" element={<Movies movies={movies} />} />
