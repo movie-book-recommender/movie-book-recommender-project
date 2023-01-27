@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request
 from repository.movie_repository import movie_repository, tag_repository
 from db import db
 
+from app import app
+
 @app.route('/')
 def index():
     return 'Index page'
