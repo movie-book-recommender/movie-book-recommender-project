@@ -30,7 +30,7 @@
 |Maanantai 23.1.|3|Yhdessä reactin ja backendin yhdistämistä, refaktorointia ja backlogin muokkausta sekä dokumentaatiota|
 |Tiistai 24.1.|4|Yhdessä kokoustaminen, valmistautuminen asiakastapaamiseen, ssh yhteyden hakeminen cPoutaan|
 |Keskiviikko 25.1.|||
-|Torstai 26.1.|||
+|Torstai 26.1.|2|Elokuvien kansien visualisointi ja reactia|
 |Perjantai 27.1.|||
 |Viikonloppu 28.-29.1.|1|Viikon dailyt|
 |Yhteensä| | |
