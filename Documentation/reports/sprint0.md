@@ -61,13 +61,13 @@
 |Torstai 19.1.| | |
 |Perjantai 20.1.| 2 |Reactiin tutustumista, etusivulla kokeiluja|
 |Viikonloppu 21.-22.1.| | |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
+|Maanantai 23.1.| 6 |Reactiin tutustumista, etusivulla kokeiluja|
+|Tiistai 24.1.| 3 |Yhdessä suunnittelua, frontin tekoa, asiakastapaamisen suunnittelua|
 |Keskiviikko 25.1.|||
 |Torstai 26.1.|||
-|Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä| 12 | |
+|Perjantai 27.1.| 2 |Daily, node modulien poisto reposta, css uuden etusivupohjan mukaisiksi|
+|Viikonloppu 28.-29.1.| 1 |Pientä hienosäätöä etusivun vierityselementtiin|
+|Yhteensä| 24 | |
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
