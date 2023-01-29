@@ -95,13 +95,13 @@
 |Torstai 19.1.| 3 |Frontendin lokaalisti ajamisen ohjeiden kirjoittaminen|
 |Perjantai 20.1.| 2 |Daily, flask ja noden päivttämiset ja lokaalisti ajamisen testausta|
 |Viikonloppu 21.-22.1.| 0 | |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
-|Keskiviikko 25.1.|||
-|Torstai 26.1.|||
-|Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä| 13 | |
+|Maanantai 23.1.| 4 | Frontendin ja backendin koodausta porukalla luolassa |
+|Tiistai 24.1.| 3 | Luolassa porukalla suunnittelu, ja frontendin testaamista |
+|Keskiviikko 25.1.| 2 | Gitin korjaus ja daily|
+|Torstai 26.1.| 4 | Frontendissä yhden elokuvan näyttävän sivun tekemistä |
+|Perjantai 27.1.| 0,25 | Daily|
+|Viikonloppu 28.-29.1.| 0 ||
+|Yhteensä| 26,25 | |
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
