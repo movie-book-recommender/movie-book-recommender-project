@@ -31,9 +31,9 @@
 |Tiistai 24.1.|4|Yhdessä kokoustaminen, valmistautuminen asiakastapaamiseen, ssh yhteyden hakeminen cPoutaan|
 |Keskiviikko 25.1.|||
 |Torstai 26.1.|2|Elokuvien kansien visualisointi ja reactia|
-|Perjantai 27.1.|||
+|Perjantai 27.1.|1|Reactia|
 |Viikonloppu 28.-29.1.|1|Viikon dailyt|
-|Yhteensä| | |
+|Yhteensä|24 | |
 
 ### Katri
 | päivä | aika | tehdyt asiat  |
