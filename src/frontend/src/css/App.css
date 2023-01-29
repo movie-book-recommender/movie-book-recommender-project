@@ -80,18 +80,34 @@
   grid-template-rows: 1fr;
   width: 100%;
   overflow-x: scroll;
-  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.movie-pic{
+.movie-slot{
   grid-row: 1;
   grid-column: auto;
   padding: 20px;
   background-color: white;
  }
 
+ .movie-info{
+  font-size: 12px;
+  font-weight: bold;
+ }
+
+ .movie-info a{
+  text-decoration: none;
+  color: black;
+  padding-top: 5px;
+ }
+
+ .movie-info a:hover{
+  text-decoration: underline;
+ }
+
  .movie-pic a img{
-  transition: 1s;
+  transition: .3s;
  }
 
  .movie-pic a:hover img{
@@ -100,5 +116,5 @@
 
  img {
   width: auto;
-  max-height: 200px;
+  max-height: 250px;
  }
