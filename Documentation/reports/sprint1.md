@@ -64,7 +64,7 @@
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
+| Maanantai 30.1.|5.5|Asiakastapaaminen, sprint planning ja sen valmistelu, retro. Oikeudet virtuaalikoneeseen ja Postgresiin lisätty kaikille. Backend repo luotu|
 |Tiistai 31.1.|||
 |Keskiviikko 1.2.|||
 |Torstai 2.2.|||
