@@ -13,10 +13,10 @@
 |Maanantai 23.1.|5|Reactin ja backendin ydistömistä yhdessä, refaktorointia ja backlogin muokkausta, dokumentaatiota|
 |Tiistai 24.1.|3|kokoustamista asiakastapaamisesta, frontendin jatkamista|
 |Keskiviikko 25.1.|2|Fullstackia ja yritin saada dockerin toimimaan tuloksetta|
-|Torstai 26.1.|||
+|Torstai 26.1.|4|fullstackia ja tutkin reactappien testaamista, dockeria jota en saanut toimimaan|
 |Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä| 16.5| |
+|Viikonloppu 28.-29.1.|1|viikon dailyt|
+|Yhteensä| 31.5| |
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
@@ -120,12 +120,13 @@
 |Viikonloppu 28.-29.1.|||
 |Yhteensä| | |
 
-## Mitä tällä viikolla saatiin aikaiseksi
+## Mitä tässä sprintissä saatiin aikaiseksi
 
 Sovellus toimii lokaalisti ja hakee dataa API:n kautta cPoudassa pyörivästä tietokannasta.
 
-Tällä viikolla:
+Tässä sprintissä:
 - Sovellusrakenne
+![Image2](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/images/IMG_20230117_135104810.jpg)
 - Github organisaatio & repositorio
 - Scrum-aiheiset dokumentit
 - Flask ja React setup
@@ -133,3 +134,5 @@ Tällä viikolla:
 - cPouta setup tietokannalle; Postgres-tietokanta ja tietokantatauluja luotu
 - Tietokantojen populointia (elokuvien ja kirjojen tiedot valtaosin siirretty tietokantaan)
 - APeja tietokantojen käyttämiseen (muutama esimerkki tehty)
+- Kävimme käyttöliittymäpajassa harjoittelemassa!
+![image1](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/images/IMG_20230118_113742275.jpg)
