@@ -54,7 +54,7 @@
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
+| Maanantai 30.1.| 4 |Asiakastapaaminen, sprint planning, retro. Reactin ui-kirjastoihin tutustumista ja testailuja.|
 |Tiistai 31.1.|||
 |Keskiviikko 1.2.|||
 |Torstai 2.2.|||
