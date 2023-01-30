@@ -22,13 +22,18 @@ const Menu = () => {
 
 const Movies = ({ movies }) => (
   <div class="page-container">
-  <h2>movies</h2>
+  <h2>Top 10 movies in 2020</h2>
     <div class='movie-list'>
-      {movies.map(movie => 
-        <div  class='movie-pic' key={movie.id} >
-          <Link to={`/movie/${movie.movieid}`}>
-          <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} img/>
-          </Link>
+      {movies.map(movie =>
+        <div class="movie-slot">
+          <div  class='movie-pic' key={movie.id} >
+            <Link to={`/movie/${movie.movieid}`}>
+            <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} img/>
+            </Link>
+          </div>
+          <div class="movie-info">
+            <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+          </div>
         </div>)}
       
     </div>
