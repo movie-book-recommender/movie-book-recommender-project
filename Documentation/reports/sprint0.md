@@ -72,19 +72,19 @@
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 16.1.| 3 | |
-|Tiistai 17.1.| 4 | |
-|Keskiviikko 18.1.| | |
-|Torstai 19.1.| | |
-|Perjantai 20.1.| | |
-|Viikonloppu 21.-22.1.| | |
-|Maanantai 23.1.|||
-|Tiistai 24.1.||
-|Keskiviikko 25.1.|||
-|Torstai 26.1.|||
-|Perjantai 27.1.|||
+| Maanantai 16.1.| 3 |aloitustapaaminen |
+|Tiistai 17.1.| 4 |Sprintin suunnittelu |
+|Keskiviikko 18.1.|6 |4h käyttöliittymäpaja, frontend pohja sovellukselle  |
+|Torstai 19.1.|0.20 |Daily |
+|Perjantai 20.1.|0.20 |Daily |
+|Viikonloppu 21.-22.1.|0 | |
+|Maanantai 23.1.|3| Yhdessä reactin ja backendin yhdistämistä |
+|Tiistai 24.1.|3|Yhteissuunnittelua, valmistautuminen asiakastapaamiseen |
+|Keskiviikko 25.1.|0.20|Daily|
+|Torstai 26.1.|4|Frontendin päivittäminen Full Stack- kurssin suositusten mukaan|
+|Perjantai 27.1.|2|Sovelluksen testtaamiseen perehtyminen|
 |Viikonloppu 28.-29.1.|||
-|Yhteensä| | |
+|Yhteensä|25.6 | |
 
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
