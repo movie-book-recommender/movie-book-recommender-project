@@ -13,10 +13,10 @@
 |Maanantai 23.1.|5|Reactin ja backendin ydistömistä yhdessä, refaktorointia ja backlogin muokkausta, dokumentaatiota|
 |Tiistai 24.1.|3|kokoustamista asiakastapaamisesta, frontendin jatkamista|
 |Keskiviikko 25.1.|2|Fullstackia ja yritin saada dockerin toimimaan tuloksetta|
-|Torstai 26.1.|||
+|Torstai 26.1.|4|fullstackia ja tutkin reactappien testaamista, dockeria jota en saanut toimimaan|
 |Perjantai 27.1.|||
-|Viikonloppu 28.-29.1.|||
-|Yhteensä| 16.5| |
+|Viikonloppu 28.-29.1.|1|viikon dailyt|
+|Yhteensä| 31.5| |
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
