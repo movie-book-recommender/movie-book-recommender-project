@@ -42,8 +42,7 @@ const Movies = ({ movies }) => (
       minimumTouchDrag={80}
       pauseOnHover
       renderArrowsWhenDisabled={false}
-      renderButtonGroupOutside={false}
-      renderDotsOutside={true}
+      renderButtonGroupOutside={true}
       responsive={{
         desktop: {
           breakpoint: {
@@ -57,7 +56,7 @@ const Movies = ({ movies }) => (
             max: 464,
             min: 0
           },
-          items: 1
+          items: 3
         },
         tablet: {
           breakpoint: {
@@ -71,7 +70,7 @@ const Movies = ({ movies }) => (
       rewindWithAnimation={false}
       rtl={false}
       shouldResetAutoplay
-      showDots
+      showDots={false}
       sliderClass=""
       slidesToSlide={4}
       swipeable
