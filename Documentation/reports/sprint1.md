@@ -4,8 +4,8 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
-|Tiistai 31.1.|||
+| Maanantai 30.1.|4|Asiakastapaaminen, sprint planning, retro, raporttien päivittelyä|
+|Tiistai 31.1.|4|cypressiin perehtymistä, ensimmäisten testien luomista ja ohjeiden kirjoittamista|
 |Keskiviikko 1.2.|||
 |Torstai 2.2.|||
 |Perjantai 3.2.|||

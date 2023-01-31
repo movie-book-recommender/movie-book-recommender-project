@@ -18,6 +18,8 @@ selenium-screenshot*
 
 # testing
 /coverage
+/src/frontend/cypress/videos
+/src/frontend/.nyc_output
 
 # production
 /build

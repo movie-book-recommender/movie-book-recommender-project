@@ -15,13 +15,15 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [Connecting to the virtual machine on CSC](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/instructions/cpouta.md)
 
+- [Instructions for tests](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/instructions/testing.md)
+
 ## Documentation 
 
 - [Definition of Done](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/definition_of_done/definition_of_done.md)
 
 - [Record of worked hours](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/reports)
 
-- [Wofkflow tips for developers](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/workflow)
+- [Workflow tips for developers](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/workflow)
 
 - [Problems and Solutions](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/problems%20and%20solutions)
 
