@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import ReactStars from "react-rating-stars-component"
 
 
 const GetMovieByID = (id) => {
@@ -14,6 +15,16 @@ const GetMovieByID = (id) => {
   return (movie)
 }
 
+const ratingStars = {
+  size: 40,
+  count: 5,
+  isHalf: false,
+  value: 0,
+  onChange: newValue => {
+    console.log(`Example 3: new value is ${newValue}`);
+  }
+};
+
 const Movie = ({ movie }) => {
   
   return (
@@ -22,6 +33,8 @@ const Movie = ({ movie }) => {
       <div>
         <img src={`https://image.tmdb.org/t/p/original${movie.posterpath}`} width={150} height={"auto"}/>
       </div>
+      <h3>Your rating:</h3>
+      <ReactStars {...ratingStars} />
       <h3>Directors:</h3>
       <p>{movie.directors}</p>
       <h3>Actors:</h3>
