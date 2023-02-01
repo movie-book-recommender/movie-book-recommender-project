@@ -15,18 +15,43 @@ const GetMovieByID = (id) => {
   return (movie)
 }
 
+function setCookie(movieid, rating, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = movieid + "=" + rating + ";" + expires + ";path=/";
+}
+
+function getCookie(movieid) {
+  let name = movieid + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+let movId = 0
+
 const ratingStars = {
   size: 40,
   count: 5,
   isHalf: false,
   value: 0,
   onChange: newValue => {
+    setCookie(movId, newValue, 5)
     console.log(`Example 3: new value is ${newValue}`);
   }
 };
 
 const Movie = ({ movie }) => {
-  
+  movId = movie.movieid
   return (
     <div class="page-container">
       <h1>{movie.title}</h1>
