@@ -121,7 +121,7 @@ const movie = match
         <Route path="/" element={<Movies movies={movies} />} />
         <Route path="/ratings" element={<Ratings />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/movie/:id" element={<Movie movie={movie} />} />
+        <Route path="/movie/:id" element={<Movie />} />
       </Routes>
 
     </div>

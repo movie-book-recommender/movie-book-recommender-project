@@ -14,11 +14,11 @@ const GetMovieByID = (id) => {
   return (movie)
 }
 
-
+//Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
+//and value/rating in pair[1]
 var getCookies = function(){
   var pairs = document.cookie.split(";")
   var cookies = []
-  console.log('hei')
   for(var i=0; i<pairs.length; i++){
     var pair = pairs[i].split("=")
     cookies[i] = pair;
@@ -31,7 +31,6 @@ var cookies = getCookies()
 
 const DisplayMovie = ({id, rating}) => {
   const movie = GetMovieByID(id)
-  console.log(cookies)
   if(cookies[0][0]=== ''){
     return(<h3>You have not rated any movies yet!</h3>)
   }
