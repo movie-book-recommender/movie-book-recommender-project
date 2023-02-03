@@ -14,13 +14,13 @@
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
+| Maanantai 30.1.|4|Asiakastapaaminen, sprint planning ja sprint retro ja Dockeria|
 |Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
-|Perjantai 3.2.|||
-|Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+|Keskiviikko 1.2.|2|Dockerin opettelua|
+|Torstai 2.2.|4|Dockerin opettelua ja imagen luomista|
+|Perjantai 3.2.|3|Docker imagen deployaamista cPoutaan|
+|Viikonloppu 4.-5.2.|1|Viikon dailyt|
+|Yhteensä|14||
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
