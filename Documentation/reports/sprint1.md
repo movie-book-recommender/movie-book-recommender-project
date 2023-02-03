@@ -65,10 +65,10 @@
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 30.1.|5.5|Asiakastapaaminen, sprint planning ja sen valmistelu, retro. Oikeudet virtuaalikoneeseen ja Postgresiin lisätty kaikille. Backend repo luotu|
-|Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
-|Perjantai 3.2.|||
+|Tiistai 31.1.|0.2|Daily|
+|Keskiviikko 1.2.|0.2|Daily|
+|Torstai 2.2.|0|n/a|
+|Perjantai 3.2.|6.5|Kolme uutta apia luotu, neljäs työn alla. Testattu tietokantataulun luomista ja uutta APIa tiedon lisäämiseksi sovelluksesta tietokantaan|
 |Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+|Yhteensä|12|Huom. Sprintissä 0 tehty sovitusti sprintin 1 työtä etukäteen n. 6 tuntia|
 ## Mitä teimme
