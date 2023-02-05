@@ -44,13 +44,13 @@
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
+| Maanantai 30.1.|2|Retro ja reactin opettelua|
 |Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
+|Keskiviikko 1.2.|4|Cookies ja reactin opettelua|
 |Torstai 2.2.|||
-|Perjantai 3.2.|||
-|Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+|Perjantai 3.2.|1|Backendin tutkimista|
+|Viikonloppu 4.-5.2.|2|Dockerin tutkimista|
+|Yhteensä|9||
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
