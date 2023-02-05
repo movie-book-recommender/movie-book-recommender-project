@@ -69,6 +69,6 @@
 |Keskiviikko 1.2.|0.2|Daily|
 |Torstai 2.2.|0|n/a|
 |Perjantai 3.2.|6.5|Kolme uutta apia luotu, neljäs työn alla. Testattu tietokantataulun luomista ja uutta APIa tiedon lisäämiseksi sovelluksesta tietokantaan|
-|Viikonloppu 4.-5.2.|||
-|Yhteensä|12|Huom. Sprintissä 0 tehty sovitusti sprintin 1 työtä etukäteen n. 6 tuntia|
+|Viikonloppu 4.-5.2.|6|Neljäs api viimeistelty. Debuggausta Dockerin saamiseksi cPoutaan, kontti saatu toimintaan. Prosessin dokumentointi.|
+|Yhteensä|18|Huom. Sprintissä 0 tehty sovitusti sprintin 1 työtä etukäteen n. 6 tuntia|
 ## Mitä teimme
