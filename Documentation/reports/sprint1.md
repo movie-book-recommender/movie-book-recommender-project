@@ -4,13 +4,13 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
-|Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
-|Perjantai 3.2.|||
-|Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+| Maanantai 30.1.|4|asiakastapaaminen, sprint planning, retro, dockeria|
+|Tiistai 31.1.|5|cypress testien opettelua, tekemistä ja dokumentointia|
+|Keskiviikko 1.2.|1|dockerin opettelua|
+|Torstai 2.2.|3|koitin saada coverage raportin ulos cypress testeistä tuloksetta|
+|Perjantai 3.2.|1|teik hetken fullstackia|
+|Viikonloppu 4.-5.2.|1|viikon dailyt|
+|Yhteensä|15||
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
