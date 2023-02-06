@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 
+
+
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([])
 
@@ -21,6 +23,10 @@ var getCookies = function(){
   var cookies = []
   for(var i=0; i<pairs.length; i++){
     var pair = pairs[i].split("=")
+    if(pair[0].substring(0, 1) === ' '){
+      pair[0] = pair[0].substring(1)
+    }
+    pair[0] = pair[0].substring(1)
     cookies[i] = pair;
   }
   return cookies;
@@ -53,7 +59,7 @@ const DisplayMovie = ({id, rating}) => {
 }
 
 const Ratings = () => {
-  console.log(cookies.length)
+  
   return(
   <div class="page-container">
     <h2>MyRatings</h2>

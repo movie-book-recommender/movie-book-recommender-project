@@ -1,19 +1,17 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
-
+import  image from "./NoImage.jpg";
 
 const GetMovieByID = (id) => {
-  
+
   const [movie, setMovie] = useState([])
-  
   useEffect(() => {   axios
     .get(`http://128.214.253.51:3000/dbgetgivenmoviedata?movieid=${id}`)
     .then(response => {
       setMovie(response.data)
     })
   }, []);
-  
   return (movie)
 }
 
@@ -23,7 +21,8 @@ function setCookie(movieid, rating, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  document.cookie = movieid + "=" + rating + ";" + expires + ";path=/";
+  document.cookie = "m" + movieid + "=" + rating + ";" + expires + ";path=/";
+  window.location.reload()
 }
 
 //Searchers saved cookies for a cookie with the name movieid
@@ -35,8 +34,7 @@ function getCookie(movieid) {
     if(pair[0].substring(0, 1) === ' '){
       pair[0] = pair[0].substring(1)
     }
-    if(pair[0] === movieid){
-      console.log(pair)
+    if(pair[0].substring(1) === movieid){
       return pair[1];
     }
   }
@@ -63,19 +61,23 @@ const Movie = () => {
       setCookie(movId, newValue, 5)
     }
   };
-  if(movie === []){
+
+  if(movie.length === 0){
     return(
       <div class="page-container">
         <h1>No movie found for movieID</h1>
       </div>
     )
   }
-
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+    imageSource = image
+  }
   return (
     <div class="page-container">
       <h1>{movie.title}</h1>
       <div>
-        <img src={`https://image.tmdb.org/t/p/original${movie.posterpath}`} width={150} height={"auto"}/>
+        <img src={imageSource} width={150} height={"auto"}/>
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
