@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
+import image from './NoImage.jpg'
 
 
 
@@ -47,10 +48,14 @@ const DisplayMovie = ({id, rating}) => {
     value: rating,
     edit: false
   };
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+    imageSource = image
+  }
   return(
     <div>
        <div>
-        <img src={`https://image.tmdb.org/t/p/original${movie.posterpath}`} width={150} height={"auto"}/>
+        <img src={imageSource} width={150} height={"auto"}/>
       </div>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
