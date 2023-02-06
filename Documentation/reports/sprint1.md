@@ -55,12 +55,12 @@
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 30.1.| 4 |Asiakastapaaminen, sprint planning, retro. Reactin ui-kirjastoihin tutustumista ja testailuja.|
-|Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
+|Tiistai 31.1.| 2 |Tähti-komponentti leffojen arvostelulle|
+|Keskiviikko 1.2.| 4 |Leffojen arvostelu toimimaa + cookiet|
+|Torstai 2.2.| 2,5 |Leffojen hakutoiminnon suunnittelua (SQLAlchemyn syntaksi, Reactin lomake) |
 |Perjantai 3.2.|||
 |Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+|Yhteensä| 12,5 ||
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
