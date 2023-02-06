@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 import image from './NoImage.jpg'
@@ -54,9 +55,9 @@ const DisplayMovie = ({id, rating}) => {
   }
   return(
     <div>
-       <div>
+      <Link to={`/movie/${movie.movieid}`}>
         <img src={imageSource} width={150} height={"auto"}/>
-      </div>
+      </Link>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
     </div>
