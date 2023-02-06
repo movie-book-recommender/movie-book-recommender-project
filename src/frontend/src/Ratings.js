@@ -2,40 +2,12 @@ import axios from 'axios'
 import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
+
 import image from './NoImage.jpg'
-
-
-
-const GetMovieByID = (id) => {
-  const [movie, setMovie] = useState([])
-
-  useEffect(() => {   axios
-    .get(`http://128.214.253.51:3000/dbgetgivenmoviedata?movieid=${id}`)
-    .then(response => {
-      setMovie(response.data)
-    })
-  }, []);
-  return (movie)
-}
-
-//Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
-//and value/rating in pair[1]
-var getCookies = function(){
-  var pairs = document.cookie.split(";")
-  var cookies = []
-  for(var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=")
-    if(pair[0].substring(0, 1) === ' '){
-      pair[0] = pair[0].substring(1)
-    }
-    pair[0] = pair[0].substring(1)
-    cookies[i] = pair;
-  }
-  return cookies;
-}
+import { getCookies } from './Cookies.js'
+import { GetMovieByID } from './Movie'
 
 var cookies = getCookies()
-
 
 const DisplayMovie = ({id, rating}) => {
   const movie = GetMovieByID(id)
