@@ -32,7 +32,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
+          file: src/frontend/Dockerfile
           context: ./src/frontend
-          dockerfile: ./src/frontend/Dockerfile
           push: true
           tags: evahteri/movie-book-container:container2
+
