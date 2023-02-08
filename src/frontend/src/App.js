@@ -12,6 +12,8 @@ import 'react-multi-carousel/lib/styles.css';
 import Movie from './Movie'
 import Ratings from './Ratings'
 import Wishlist from './WishList'
+import Search from './Search'
+
 
 const Menu = () => {
   return (
@@ -89,15 +91,6 @@ const Movies = ({ movies }) => (
     </Carousel>
     <Search />
   </div>
-)
-
-
-const Search = () => (
-  <form action="/search" method="GET">
-      <label for="search">Search movies </label>
-      <input type="search" id ="search" name="query" placeholder="Search movies"/>
-      <button type="submit" value="submit">Search</button>
-  </form>
 )
 
 const App = () => {
