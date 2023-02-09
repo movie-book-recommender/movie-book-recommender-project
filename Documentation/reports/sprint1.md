@@ -35,10 +35,10 @@ Viikko 2
 | Maanantai 6.2.|4|Dockerin kanssa säätämistä ja riippuvuuksien setvimistä|
 |Tiistai 7.2.|5|Docker imagen automatisointi ja dokumentointi|
 |Keskiviikko 8.2.|||
-|Torstai 9.2.|||
+|Torstai 9.2.|5|Watchtowerin debugaamista|
 |Perjantai 10.2.|||
 |Viikonloppu 11.-12.2.|1|Viikon dailyt|
-|Yhteensä|9||
+|Yhteensä|14||
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
