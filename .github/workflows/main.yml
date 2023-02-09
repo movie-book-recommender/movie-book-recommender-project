@@ -35,5 +35,5 @@ jobs:
           file: src/frontend/Dockerfile
           context: ./src/frontend
           push: true
-          tags: evahteri/movie-book-container:container2
+          tags: evahteri/movie-book-recommender:container2
 
