@@ -2,10 +2,10 @@ version: "3.8"
 
 services:
   movie-book:
-    image: evahteri/movie-book-recommender:container2
+    image: evahteri/movie-book-recommender:latest
     ports:
       - 5000:5000
-    container_name: container2
+    container_name: movie-book
   watchtower:
     image: containrrr/watchtower
     environment:
