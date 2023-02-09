@@ -1,33 +1,33 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
+import './css/App.css'
 
+import Items
+ from './MovieCarusel'
 const Search = () => {
-    const [searchResult, setSearchResult] = useState([])
+    const [searchResult, setSearchResult] = useState()
 
-    const [newSearch, setNewSearch] = useState('')
+    const [newSearch, setNewSearch] = useState()
+    useEffect(() => { 
+      console.log(newSearch)
+      axios
+      .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
+      .then(response => {
+        setSearchResult(response.data)
+      })
+  }, [newSearch]);
 
-    const handleSearchChange = (event) => {
-        setNewSearch(event.target.value)
-    }
-
-    const handleSearch = (event) => {
-        event.preventDefault()
-        const search = axios
-        .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
-        .then(response => {
-            setSearchResult(response.data)
-        })
-        setSearchResult(search)
-        setNewSearch('')
-        console.log(searchResult)
-    }
 
     return(
-        <form onSubmit={handleSearch}>
+      <div>
+        <form >
             <label for="search">Search movies </label>
-            <input value={newSearch} onChange={handleSearchChange} placeholder="Search movies"/>
-            <button type="submit" value="submit">Search</button>
+            <input value={newSearch} onChange={({ target }) => setNewSearch(target.value)} placeholder="Search movies"/>
         </form>
+        {newSearch && searchResult && <Items items={searchResult}/>  }
+
+      </div>
+
     )
 }
 
