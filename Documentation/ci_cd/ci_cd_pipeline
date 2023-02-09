@@ -16,7 +16,7 @@
 
 2. Pull new image from dockerhub by running:
     ```
-        sudo docker pull evahteri/movie-book-recommender:container2
+        sudo docker pull evahteri/movie-book-recommender:latest
     ```
 3. Kill the earlier container from running:
 
@@ -39,7 +39,7 @@
     ```
 - Start the new image with:
     ```
-        sudo docker run -d -p 5000:5000 {IMAGE ID}
+        sudo docker run -d -p 5000:5000 evahteri/movie-book-recommender
     ```
 
 5. (optional) Remove the old image with:
