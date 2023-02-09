@@ -7,11 +7,12 @@ import {
 import axios from 'axios'
 import 'react-multi-carousel/lib/styles.css';
 
-import Movie from './Movie'
+import { Movie } from './Movie'
 import Ratings from './Ratings'
 import Wishlist from './WishList'
 import Search from './Search'
 import Items from './MovieCarusel'
+
 
 const Menu = () => {
   return (
@@ -23,7 +24,8 @@ const Menu = () => {
   )
 }
 
-export const Movies = ({ movies }) => (
+const Movies = ({ movies }) => (
+  
   <div class="page-container">
     <h2>Top 10 movies in 2020</h2>
     <Items items={movies} />

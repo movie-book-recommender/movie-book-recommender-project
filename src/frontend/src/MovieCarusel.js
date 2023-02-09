@@ -6,7 +6,27 @@ import {
 
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
+import image from './NoImage.jpg'
 
+const DisplayMovie = ({movie}) => {
+  
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+    imageSource = image
+  }
+  return(
+    <div class="movie-slot">
+      <div  class='movie-pic' key={movie.id} >
+        <Link to={`/movie/${movie.movieid}`}>
+          <a href="/"></a><img src={imageSource} img/>
+        </Link>
+      </div>
+      <div class="movie-info">
+        <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+      </div>
+    </div>
+  )
+}
 
 const Items = ({ items }) => (
   <div class="page-container">
@@ -59,17 +79,7 @@ const Items = ({ items }) => (
       slidesToSlide={4}
       swipeable
     >
-      {items.map(item =>
-          <div class="movie-slot">
-            <div  class='movie-pic' key={item.id} >
-              <Link to={`/movie/${item.movieid}`}>
-              <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+item.posterpath} img/>
-              </Link>
-            </div>
-            <div class="movie-info">
-              <Link to={`/movie/${item.movieid}`}>{item.title}</Link>
-            </div>
-          </div>)}
+      {items.map(item => <DisplayMovie movie={item}/>)}
     </Carousel>
   </div>
 )
