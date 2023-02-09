@@ -35,5 +35,5 @@ jobs:
           file: src/frontend/Dockerfile
           context: ./src/frontend
           push: true
-          tags: evahteri/movie-book-recommender:container2
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/movie-book-recommender:latest
 
