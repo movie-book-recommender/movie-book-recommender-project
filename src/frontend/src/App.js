@@ -9,9 +9,11 @@ import axios from 'axios'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 
-import Movie from './Movie'
+import { Movie } from './Movie'
 import Ratings from './Ratings'
 import Wishlist from './WishList'
+
+import image from './NoImage.jpg'
 
 const Menu = () => {
   return (
@@ -23,7 +25,28 @@ const Menu = () => {
   )
 }
 
+const DisplayMovie = ({movie}) => {
+  
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+    imageSource = image
+  }
+  return(
+    <div class="movie-slot">
+      <div  class='movie-pic' key={movie.id} >
+        <Link to={`/movie/${movie.movieid}`}>
+          <a href="/"></a><img src={imageSource} img/>
+        </Link>
+      </div>
+      <div class="movie-info">
+        <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+      </div>
+    </div>
+  )
+}
+
 const Movies = ({ movies }) => (
+  
   <div class="page-container">
     <h2>Top 10 movies in 2020</h2>
     <Carousel
@@ -75,17 +98,7 @@ const Movies = ({ movies }) => (
       slidesToSlide={4}
       swipeable
     >
-      {movies.map(movie =>
-          <div class="movie-slot">
-            <div  class='movie-pic' key={movie.id} >
-              <Link to={`/movie/${movie.movieid}`}>
-              <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} img/>
-              </Link>
-            </div>
-            <div class="movie-info">
-              <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
-            </div>
-          </div>)}
+      {movies.map(movie => <DisplayMovie movie={movie}/>)}
     </Carousel>
     <Search />
   </div>

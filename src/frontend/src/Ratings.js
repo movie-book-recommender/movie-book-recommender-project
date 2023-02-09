@@ -1,33 +1,13 @@
 import axios from 'axios'
+import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 
-const GetMovieByID = (id) => {
-  const [movie, setMovie] = useState([])
-
-  useEffect(() => {   axios
-    .get(`http://128.214.253.51:3000/dbgetgivenmoviedata?movieid=${id}`)
-    .then(response => {
-      setMovie(response.data)
-    })
-  }, []);
-  return (movie)
-}
-
-//Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
-//and value/rating in pair[1]
-var getCookies = function(){
-  var pairs = document.cookie.split(";")
-  var cookies = []
-  for(var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=")
-    cookies[i] = pair;
-  }
-  return cookies;
-}
+import image from './NoImage.jpg'
+import { getCookies } from './Cookies.js'
+import { GetMovieByID } from './Movie'
 
 var cookies = getCookies()
-
 
 const DisplayMovie = ({id, rating}) => {
   const movie = GetMovieByID(id)
@@ -41,11 +21,15 @@ const DisplayMovie = ({id, rating}) => {
     value: rating,
     edit: false
   };
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+    imageSource = image
+  }
   return(
     <div>
-       <div>
-        <img src={`https://image.tmdb.org/t/p/original${movie.posterpath}`} width={150} height={"auto"}/>
-      </div>
+      <Link to={`/movie/${movie.movieid}`}>
+        <img src={imageSource} width={150} height={"auto"}/>
+      </Link>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
     </div>
@@ -53,7 +37,7 @@ const DisplayMovie = ({id, rating}) => {
 }
 
 const Ratings = () => {
-  console.log(cookies.length)
+  
   return(
   <div class="page-container">
     <h2>MyRatings</h2>
