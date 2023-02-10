@@ -89,11 +89,11 @@ Viikko 2
 |Yhteensä|9||
 Viikko 2
 |||
-| Maanantai 6.2.|||
+| Maanantai 6.2.|3|cookies/ratings juttuja|
 |Tiistai 7.2.|||
-|Keskiviikko 8.2.|||
-|Torstai 9.2.|||
-|Perjantai 10.2.|||
+|Keskiviikko 8.2.|1|wishlistin miettimistä|
+|Torstai 9.2.|2|wishlistin kehittelyä|
+|Perjantai 10.2.|2|wishlistin kehittelyä|
 |Viikonloppu 11.-12.2.|||
 |Yhteensä|||
 ### Nana
