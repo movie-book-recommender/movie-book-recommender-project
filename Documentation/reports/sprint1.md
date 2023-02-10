@@ -135,3 +135,6 @@ Viikko 2
 |Viikonloppu 11.-12.2.|||
 |Yhteensä|||
 ## Mitä teimme
+
+- Useita APEja luotu (erilaisia hakutoimintoja) elokuva-tietojen saamiseen tietokannasta
+- Kirjojen datat lisätty tietokantaan
