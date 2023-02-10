@@ -127,10 +127,10 @@ Viikko 2
 |Yhteensä|18|Huom. Sprintissä 0 tehty sovitusti sprintin 1 työtä etukäteen n. 6 tuntia|
 Viikko 2
 |||
-| Maanantai 6.2.|||
-|Tiistai 7.2.|||
-|Keskiviikko 8.2.|||
-|Torstai 9.2.|||
+| Maanantai 6.2.|4.5|Bugi yhdessä APIssa korjattu. Testitaulu ja testiapi kehitetty tiedon lisäämiseksi sovelluksesta tietokantaan tehty.|
+|Tiistai 7.2.|0.2|Daily|
+|Keskiviikko 8.2.|0.2|Daily|
+|Torstai 9.2.|0.3|Portti avattu Watchtoweria varten cPoutaan|
 |Perjantai 10.2.|||
 |Viikonloppu 11.-12.2.|||
 |Yhteensä|||
