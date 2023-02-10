@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 import  image from "./NoImage.jpg";
-import { getCookie, setCookie } from './Cookies.js'
+import { getCookie, setCookie, onWishlist } from './Cookies.js'
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([])
@@ -22,8 +22,11 @@ const Movie = () => {
   var id = parseHelper[1]
 
   const movie = GetMovieByID(id)
-  var movId = id
+  var movId = id 
   var stars = getCookie(movId)
+
+  var wishlist = 0
+  if (onWishlist(movId)) { wishlist = 1}
 
   const ratingStars = {
     size: 40,
@@ -31,9 +34,13 @@ const Movie = () => {
     isHalf: false,
     value: stars,
     onChange: newValue => {
-      setCookie(movId, newValue, 5)
+      setCookie(movId, newValue, wishlist, 5)
     }
   };
+
+  const addWishlist = () => {
+    setCookie(movId, ratingStars.value, 1, 5)
+  }
 
   if(movie.length === 0){
     return(
@@ -54,6 +61,7 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <button onClick={addWishlist}>WISHLIST</button>
       <h3>Directors:</h3>
       <p>{movie.directors}</p>
       <h3>Actors:</h3>
