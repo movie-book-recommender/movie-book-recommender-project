@@ -21,7 +21,7 @@ const Search = () => {
     return(
       <div>
         <form >
-            <label for="search">Search movies </label>
+            <label>Search movies </label>
             <input value={newSearch} onChange={({ target }) => setNewSearch(target.value)} placeholder="Search movies"/>
         </form>
         {newSearch && searchResult && <Items items={searchResult}/>  }
