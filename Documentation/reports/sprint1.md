@@ -131,7 +131,7 @@ Viikko 2
 |Tiistai 7.2.|0.2|Daily|
 |Keskiviikko 8.2.|0.2|Daily|
 |Torstai 9.2.|0.3|Portti avattu Watchtoweria varten cPoutaan|
-|Perjantai 10.2.|||
+|Perjantai 10.2.|6|Book datat lisätty tietokantaan, kolme book apia lisätty ja dokumentoitu. Tiimipalaveri.|
 |Viikonloppu 11.-12.2.|||
 |Yhteensä|||
 ## Mitä teimme
