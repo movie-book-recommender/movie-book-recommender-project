@@ -5,13 +5,14 @@ import {
 } from "react-router-dom"
 
 import axios from 'axios'
-
-import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 
-import Movie from './Movie'
+import { Movie } from './Movie'
 import Ratings from './Ratings'
 import Wishlist from './WishList'
+import Search from './Search'
+import Items from './MovieCarusel'
+
 
 const Menu = () => {
   return (
@@ -24,80 +25,12 @@ const Menu = () => {
 }
 
 const Movies = ({ movies }) => (
+  
   <div class="page-container">
     <h2>Top 10 movies in 2020</h2>
-    <Carousel
-      additionalTransfrom={0}
-      arrows
-      autoPlaySpeed={3000}
-      centerMode={false}
-      className=""
-      containerClass="container"
-      dotListClass=""
-      draggable
-      focusOnSelect={false}
-      infinite={false}
-      itemClass=""
-      keyBoardControl
-      minimumTouchDrag={80}
-      pauseOnHover
-      renderArrowsWhenDisabled={false}
-      renderButtonGroupOutside={true}
-      responsive={{
-        desktop: {
-          breakpoint: {
-            max: 3000,
-            min: 1024
-          },
-          items: 6
-        },
-        mobile: {
-          breakpoint: {
-            max: 464,
-            min: 0
-          },
-          items: 3
-        },
-        tablet: {
-          breakpoint: {
-            max: 1024,
-            min: 464
-          },
-          items: 1
-        }
-      }}
-      rewind={false}
-      rewindWithAnimation={false}
-      rtl={false}
-      shouldResetAutoplay
-      showDots={false}
-      sliderClass=""
-      slidesToSlide={4}
-      swipeable
-    >
-      {movies.map(movie =>
-          <div class="movie-slot">
-            <div  class='movie-pic' key={movie.id} >
-              <Link to={`/movie/${movie.movieid}`}>
-              <a href="/"></a><img src={"https://image.tmdb.org/t/p/original"+movie.posterpath} img/>
-              </Link>
-            </div>
-            <div class="movie-info">
-              <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
-            </div>
-          </div>)}
-    </Carousel>
+    <Items items={movies} />
     <Search />
   </div>
-)
-
-
-const Search = () => (
-  <form action="/search" method="GET">
-      <label for="search">Search movies </label>
-      <input type="search" id ="search" name="query" placeholder="Search movies"/>
-      <button type="submit" value="submit">Search</button>
-  </form>
 )
 
 const App = () => {
