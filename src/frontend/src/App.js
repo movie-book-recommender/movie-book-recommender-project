@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import './css/App.css'
-import {
-  Routes, Route, Link, useMatch
-} from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom"
 
 import axios from 'axios'
 import 'react-multi-carousel/lib/styles.css';
@@ -41,11 +39,6 @@ const App = () => {
       setMovies(response.data)
     })
 }, []);
-
-const match = useMatch('/movie/:id')
-const movie = match 
-  ? movies.find(movie => movie.movieid === Number(match.params.id))
-  : null
 
   return (
     <div class="page">
