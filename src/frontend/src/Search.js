@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useState, useEffect} from 'react'
 import './css/App.css'
 
-import Items
- from './MovieCarusel'
+import Items from './MovieCarusel'
+
 const Search = () => {
     const [searchResult, setSearchResult] = useState()
 
