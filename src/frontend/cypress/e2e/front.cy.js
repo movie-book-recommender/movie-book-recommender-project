@@ -24,4 +24,18 @@ describe('Itemlens ', function() {
     cy.get('#search').type('pirates')
     cy.contains('Search').click()
   })
+
+  // test if movie can be clicked and it opens the page
+  it('test movie clicking', function(){
+    cy.get('.movie-pic').eq(0).click()
+    cy.contains('Your rating')
+  })
+
+  // test if my ratings page can be opened
+  it('test movie rating', function(){
+    cy.contains('Ratings').click()
+    cy.contains('MyRatings')
+  })
+  
 })
+
