@@ -11,9 +11,6 @@ var cookies = getCookies()
 
 const DisplayMovie = ({id, rating}) => {
   const movie = GetMovieByID(id)
-  if(cookies[0][0]=== ''){
-    return(<h3>You have not rated any movies yet!</h3>)
-  }
   var ratingStars = {
     size: 40,
     count: 5,
@@ -37,12 +34,15 @@ const DisplayMovie = ({id, rating}) => {
 }
 
 const Ratings = () => {
-  
+  if(cookies.length === 0){
+    return(<h3>You have not rated any movies yet!</h3>)
+  }
   return(
   <div class="page-container">
     <h2>MyRatings</h2>
+    <h3>You have rated {cookies.length} movies.</h3>
     <div>
-      {cookies.map(cookie => <ul key={cookie[0]}><DisplayMovie id={cookie[0]} rating={cookie[1]}/></ul>)}
+      {cookies.map(cookie => <DisplayMovie id={cookie[0]} rating={cookie[1]}/>)}
     </div>  
     
   </div>
