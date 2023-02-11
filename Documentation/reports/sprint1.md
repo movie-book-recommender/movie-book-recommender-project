@@ -124,7 +124,7 @@ Viikko 2
 |Torstai 2.2.|0|n/a|
 |Perjantai 3.2.|6.5|Kolme uutta apia luotu, neljäs työn alla. Testattu tietokantataulun luomista ja uutta APIa tiedon lisäämiseksi sovelluksesta tietokantaan|
 |Viikonloppu 4.-5.2.|6|Neljäs api viimeistelty. Debuggausta Dockerin saamiseksi cPoutaan, kontti saatu toimintaan. Prosessin dokumentointi.|
-|Yhteensä|18|Huom. Sprintissä 0 tehty sovitusti sprintin 1 työtä etukäteen n. 6 tuntia|
+|Yhteensä|18||
 Viikko 2
 |||
 | Maanantai 6.2.|4.5|Bugi yhdessä APIssa korjattu. Testitaulu ja testiapi kehitetty tiedon lisäämiseksi sovelluksesta tietokantaan tehty.|
@@ -132,9 +132,12 @@ Viikko 2
 |Keskiviikko 8.2.|0.2|Daily|
 |Torstai 9.2.|0.3|Portti avattu Watchtoweria varten cPoutaan|
 |Perjantai 10.2.|6|Book datat lisätty tietokantaan, kolme book apia lisätty ja dokumentoitu. Tiimipalaveri.|
-|Viikonloppu 11.-12.2.|||
-|Yhteensä|||
+|Viikonloppu 11.-12.2.|8.5|Backend tiedostot refaktoroitu, pylint ja alustavat testit luotu backendille, GitHub repositorio päivitetty. CI/CD putki tehty GitHUbiin ja siitä siitä automaattinen automaattinen tuotantoonvienti cPoutaan GitHub Actioneilla|
+|Yhteensä|20|Sprintissä 1 tehty sovitusti työtä sprinttiä 2 varten. Kumulatiiviset tunnit 15h edellä (sprint 0: n. 6 tuntia, sprint 1: n. 9 tuntia yli 30h/sprintti)|
 ## Mitä teimme
 
-- Useita APEja luotu (erilaisia hakutoimintoja) elokuva-tietojen saamiseen tietokannasta
-- Kirjojen datat lisätty tietokantaan
+- Useita backend APEja luotu (erilaisia hakutoimintoja) elokuva-tietojen saamiseen tietokannasta
+- Kirjojen datat lisätty tietokantaan, lisätty ensimmäiset APIt books-tietojen saamiseksi tietokannasta
+- Backend koodia refaktoroitu, testit aloitettu, pylint lisätty ja GitHub repositorio päivitetty
+- Automaattinen CI/CD putki tehty backendille GitHubiin ja siitä cPoutaan
+- Automaattinen CI/CD
