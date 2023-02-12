@@ -18,7 +18,7 @@ const DisplayMovie = ({movie}) => {
     <div class="movie-slot">
       <div  class='movie-pic' key={movie.id} >
         <Link to={`/movie/${movie.movieid}`}>
-          <a href="/"></a><img src={imageSource} img/>
+          <img src={imageSource} alt="movie poster" />
         </Link>
       </div>
       <div class="movie-info">
