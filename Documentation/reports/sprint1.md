@@ -61,22 +61,22 @@ Viikko 2
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
-|Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
-|Perjantai 3.2.|||
-|Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+| Maanantai 30.1.| 5 | Asiakastapaaminen, spritn planning, retro, evästeiden opettelua.|
+|Tiistai 31.1.| 2 | Evästeiden suunnittelua. |
+|Keskiviikko 1.2.| 3 | Evästeiden koodausta. |
+|Torstai 2.2.| 3 | Evästeiden koodausta. |
+|Perjantai 3.2.| 1 | Daily ja evästeiden rajojen lukemista |
+|Viikonloppu 4.-5.2.| 0 ||
+|Yhteensä| 14 ||
 Viikko 2
 |||
-| Maanantai 6.2.|||
-|Tiistai 7.2.|||
-|Keskiviikko 8.2.|||
-|Torstai 9.2.|||
-|Perjantai 10.2.|||
-|Viikonloppu 11.-12.2.|||
-|Yhteensä|||
+| Maanantai 6.2.| 4 | Evästeiden koodausta eri muotoon. |
+|Tiistai 7.2.| 3 | Evästeiden koodausta. |
+|Keskiviikko 8.2.| 2 | Arvostelut tallentuvat yhteen evästeeseen. |
+|Torstai 9.2.| 3 | Evästeiden korjausta |
+|Perjantai 10.2.| 1 | Asiakastapaamisen suunnittelu|
+|Viikonloppu 11.-12.2.| 0 ||
+|Yhteensä| 13 ||
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
