@@ -142,3 +142,5 @@ Viikko 2
 - Automaattinen CI/CD putki tehty backendille GitHubiin ja siitä cPoutaan
 - Automaattinen CI/CD
 - Frontend pyörii Dockerin kautta cPoudassa ja tuotantoonvienti lähes automatisoitu
+- Toiminto leffojen arvostelulle
+- Leffojen pikahakutoiminto
