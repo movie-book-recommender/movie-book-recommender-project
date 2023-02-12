@@ -36,9 +36,9 @@ Viikko 2
 |Tiistai 7.2.|5|Docker imagen automatisointi ja dokumentointi|
 |Keskiviikko 8.2.|||
 |Torstai 9.2.|5|Watchtowerin debugaamista|
-|Perjantai 10.2.|||
+|Perjantai 10.2.|2|Tiimipalaveri ja perehtymistä algoritmiin|
 |Viikonloppu 11.-12.2.|1|Viikon dailyt|
-|Yhteensä|14||
+|Yhteensä|16||
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
@@ -141,3 +141,4 @@ Viikko 2
 - Backend koodia refaktoroitu, testit aloitettu, pylint lisätty ja GitHub repositorio päivitetty
 - Automaattinen CI/CD putki tehty backendille GitHubiin ja siitä cPoutaan
 - Automaattinen CI/CD
+- Frontend pyörii Dockerin kautta cPoudassa ja tuotantoonvienti lähes automatisoitu
