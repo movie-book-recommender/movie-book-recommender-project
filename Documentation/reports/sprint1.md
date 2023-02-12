@@ -108,13 +108,13 @@ Viikko 2
 |Yhteensä| 12,5 ||
 Viikko 2
 |||
-| Maanantai 6.2.|||
-|Tiistai 7.2.|||
-|Keskiviikko 8.2.|||
+| Maanantai 6.2.| 3 |Reactin opettelua|
+|Tiistai 7.2.| 2 |Reactin opettelua|
+|Keskiviikko 8.2.| 3 |Reactin opettelua, pohja leffojen hakutoiminnolle|
 |Torstai 9.2.|||
-|Perjantai 10.2.|||
-|Viikonloppu 11.-12.2.|||
-|Yhteensä|||
+|Perjantai 10.2.| 2 |Tiimipalaveri, konsoli- ja eslint-virheiden korjailua, erillisen hakusivun suunnittelua|
+|Viikonloppu 11.-12.2.| 5 |Hakusivun tekoa + viikon dailyt|
+|Yhteensä| 15 ||
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
