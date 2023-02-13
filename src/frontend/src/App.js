@@ -124,10 +124,11 @@ const movie = match
     <div class="page">
       <Menu />
       <Routes>
-        <Route path="/" element={<Movies movies={movies} />} />
+        <Route exact path="/" element={<Movies movies={movies} />} />
         <Route path="/ratings" element={<Ratings />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/*" element={<Movies movies={movies} />}/>
       </Routes>
 
     </div>
