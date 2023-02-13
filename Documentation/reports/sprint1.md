@@ -13,13 +13,13 @@
 |Yhteensä|15||
 Viikko 2
 |||
-| Maanantai 6.2.|||
-|Tiistai 7.2.|||
-|Keskiviikko 8.2.|||
-|Torstai 9.2.|||
-|Perjantai 10.2.|||
-|Viikonloppu 11.-12.2.|||
-|Yhteensä|||
+| Maanantai 6.2.|4|Testausta, asensin kaikki riippuvuudet kun kone päivitettiin ja koitin saada projektin rullaamaan taas omalla koneella|
+|Tiistai 7.2.|3|Testejä, asiakkaan kanssa kommunikointia|
+|Keskiviikko 8.2.|3|koitin saada visual vypressin toimimaan jotta voidaan testat myös ratingsejä jne |
+|Torstai 9.2.|1|fullstackin lukemista|
+|Perjantai 10.2.|4|asiakastapaamisen suunnittelua, viikon dailyt, tutkin algoritmeja ja korjasin muutamat testit toimimaan uudella versiolla|
+|Viikonloppu 11.-12.2.|2|leikin algoritmilla|
+|Yhteensä|17||
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
