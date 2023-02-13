@@ -10,6 +10,8 @@ import Ratings from './Ratings'
 import Wishlist from './WishList'
 import Search from './Search'
 import Items from './MovieCarusel'
+import SearchPage from './SearchPage'
+
 
 
 const Menu = () => {
@@ -18,6 +20,7 @@ const Menu = () => {
       <Link to="/" data-link="ItemLens">ItemLens</Link>
       <Link to="/wishlist" data-link="Wishlist">Wishlist</Link>
       <Link to="/ratings" data-link="Ratings">Ratings</Link>
+      <Link to="/search" data-link="Search">Search</Link>
     </div>
   )
 }
@@ -47,6 +50,7 @@ const App = () => {
         <Route path="/" element={<Movies movies={movies} />} />
         <Route path="/ratings" element={<Ratings />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<Movie />} />
       </Routes>
 
