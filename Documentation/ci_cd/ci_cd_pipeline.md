@@ -8,7 +8,21 @@
 
 - Push the new image to Dockerhub
 
+In cPouta:
+
+- [Watchtower](https://containrrr.dev/watchtower/) will check every minute if a new image is pushed to Dockerhub
+
+- Watchtower will pull new image, start it with the same settings as the last one and remove the old image
+
+Watchtower runs in cPouta with this command:
+```
+sudo docker run -d --name watchtower6 -e WATCHTOWER_POLL_INTERVAL=60 -e WATCHTOWER_DEBUG=TRUE -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
+```
 ## To deploy new image to production
+
+Just merge a new feature to main branch and actions will take care of rest.
+
+If CD pipeline somehow brakes, you can do this manually with these instructions:
 
 !DISCLAIMER! Following these steps WILL stop the production version of the app to close down for a moment. If a new image is somehow corrupted, run the old image to keep the app functioning.
 
@@ -91,7 +105,3 @@ Kill the running container first with step 3 of earlier instruction.
     ```
         sudo docker run -d -p 5000:5000 {IMAGE ID}
     ```
-
-## Future CD pipeline implementation
-
-Using a watchtower container to automatically check and update and start new version of the image.

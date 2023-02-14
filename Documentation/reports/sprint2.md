@@ -24,7 +24,7 @@ Viikko 2
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
+| Maanantai 13.2|3|Yhdessä tekemistä luolassa, asiakastapaaminen, retro ja sprint planning|
 |Tiistai 14.1.|||
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
