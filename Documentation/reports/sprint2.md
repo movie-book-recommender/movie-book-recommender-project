@@ -124,8 +124,8 @@ Viikko 2
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
-|Tiistai 14.1.|||
+| Maanantai 13.2|3.5|Asiakastapaaminen ja sen valmistelu, retro|
+|Tiistai 14.1.|3|Backendin koodin parannusta ja dokumentaatiota|
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
