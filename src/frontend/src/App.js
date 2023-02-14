@@ -21,6 +21,7 @@ const Menu = () => {
       <Link to="/wishlist" data-link="Wishlist">Wishlist</Link>
       <Link to="/ratings" data-link="Ratings">Ratings</Link>
       <Link to="/search" data-link="Search">Search</Link>
+      <Link to="/" data-link="Books">Books</Link>
     </div>
   )
 }
