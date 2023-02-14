@@ -4,16 +4,19 @@ import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 
 import image from './NoImage.jpg'
-import { getCookies, getWishlist } from './Cookies.js'
+import { getCookies, getCookie, getStringOfWishlist } from './Cookies.js'
 import { GetMovieByID } from './Movie'
 
-var cookies = getWishlist()
+var cookies = getStringOfWishlist().split('&')
+cookies.pop()
 
-const DisplayMovie = ({id, rating}) => {
+const DisplayMovie = ({id}) => {
   const movie = GetMovieByID(id)
   if(cookies.length < 1){
     return(<h3>You have not rated any movies yet!</h3>)
   }
+
+  var rating = getCookie(id)
   var ratingStars = {
     size: 40,
     count: 5,
@@ -42,7 +45,7 @@ const WishList = () => {
   <div class="page-container">
     <h2>MyRatings</h2>
     <div>
-      {cookies.map(cookie => <ul key={cookie[0]}><DisplayMovie id={cookie[0]} rating={cookie[1]}/></ul>)}
+      {cookies.map(cookie => <ul key={cookie}><DisplayMovie id={cookie} /></ul>)}
     </div>  
     
   </div>

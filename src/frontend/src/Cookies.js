@@ -28,21 +28,51 @@ function setCookie(movieid, rating, exdays) {
     window.location.reload()
   }  
 }
+function addToWishlist(movieid, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  var prevWishlist = getStringOfWishlist()
+  var list = prevWishlist.split('&')
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === movieid) {
+      console.log("ALREADY ON LIST")
+      return
+    }
+  }
+  var changedList = prevWishlist + movieid + "&"
+  console.log(changedList)
+  document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+
+  window.location.reload()
+}
 
 const getStringOfRatings = () =>{
   var cookies = document.cookie.split(';')
-  if(cookies[0] === ''){
+  if(cookies[0] === '' || cookies[0] === undefined){
     return ""
   }
   var cookie =""
-  if(cookies[0].substring(0, 8) === "Ratings:"){
-    cookie = cookies[0].substring(8)
-  }else{
-    cookie = cookies[1].substring(9)
+  for(var i = 0; i < cookies.length; i++) {
+    if(cookies[i].substring(0, 8) === "Ratings:"){
+      cookie = cookies[i].substring(8)
+    }
   }
   return cookie
 }
-
+const getStringOfWishlist = () =>{
+  var cookies = document.cookie.split(';')
+  if(cookies[0] === '' || cookies[0] === undefined){
+    return ""
+  }
+  var cookie =""
+  for(var i = 0; i < cookies.length; i++) {
+    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){      
+      cookie = cookies[i].substring(10)
+    }
+  }
+  return cookie
+}
 //Searchers saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
 function getCookie(movieid) {
@@ -79,4 +109,4 @@ var getCookies = function(){
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies };
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist };
