@@ -105,7 +105,3 @@ Kill the running container first with step 3 of earlier instruction.
     ```
         sudo docker run -d -p 5000:5000 {IMAGE ID}
     ```
-
-## Future CD pipeline implementation
-
-Using a watchtower container to automatically check and update and start new version of the image.
