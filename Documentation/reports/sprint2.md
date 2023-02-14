@@ -104,8 +104,8 @@ Viikko 2
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
-|Tiistai 14.1.|||
+| Maanantai 13.2|3|Retro, sprint planning, wishlist|
+|Tiistai 14.1.|3|Wishlist|
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
