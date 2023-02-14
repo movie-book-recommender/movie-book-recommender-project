@@ -4,6 +4,8 @@
 
 - Fully commented code.
 
-- Test coverage at > 70%.
+- Python test coverage at > 70%.
+
+- React parts are tested individually and all tests pass.
 
 - Pushed to main branch and main branch is not broken.

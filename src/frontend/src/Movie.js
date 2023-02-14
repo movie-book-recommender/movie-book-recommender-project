@@ -15,8 +15,21 @@ const GetMovieByID = (id) => {
   return (movie)
 }
 
+/*const GetIP = () => {
+  const [ip, setIp] = useState([])
+  useEffect(() => {   axios
+    .get(`https://geolocation-db.com/json/`)
+    .then(response => {
+      setIp(response.data.IPv4)
+    })
+  }, []);
+  return (ip)
+} */
+
 const Movie = () => {
   //Gets the movieid from the url
+  /*var ip = GetIP()
+  console.log(ip)*/
   var urlString = window.location.href
   var parseHelper = urlString.split('/movie/')   
   var id = parseHelper[1]

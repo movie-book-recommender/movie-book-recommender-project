@@ -25,6 +25,8 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [Problems and Solutions](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/problems%20and%20solutions)
 
+- [CI/CD](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/ci_cd/ci_cd_pipeline.md)
+
 ## Backlogs
 
 - [Product backlog](https://github.com/orgs/movie-book-recommender/projects/7/views/1)
