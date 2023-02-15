@@ -25,12 +25,12 @@ Viikko 2
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 13.2|3|Yhdessä tekemistä luolassa, asiakastapaaminen, retro ja sprint planning|
-|Tiistai 14.1.|||
-|Keskiviikko 15.2.|||
+|Tiistai 14.1.|6|Frontend CI:n viimeistely, Backendin testaamisen aloittaminen|
+|Keskiviikko 15.2.|3|Backend CD fixailua|
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+|Viikonloppu 18.-19.2.|1|Viikon dailyt|
+|Yhteensä|13||
 Viikko 2
 |||
 | Maanantai 20.2.|||
