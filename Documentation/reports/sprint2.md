@@ -4,12 +4,12 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
+| Maanantai 13.2|4|luolassa kaikkien kanssa, asiakastapaaminen, retro ja sprint planning|
 |Tiistai 14.1.|||
-|Keskiviikko 15.2.|||
+|Keskiviikko 15.2.|6|algoritmin kanssa säätämisyä, koitin saada dataa verkosta apien kautta pythoniin|
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
+|Viikonloppu 18.-19.2.|1|viikon dailyt|
 |Yhteensä|||
 Viikko 2
 |||
