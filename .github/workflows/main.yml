@@ -23,6 +23,8 @@ jobs:
       - name: Run Lint
         run: pylint --fail-under 5.0 src/services src/repository src/tests
 
+name: Docker
+
 on:
   push:
     branches: [main]
