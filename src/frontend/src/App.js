@@ -1,63 +1,46 @@
-import { useState, useEffect } from 'react'
-import './css/App.css'
-import { Routes, Route, Link } from "react-router-dom"
+import { useEffect, useState } from "react";
+import "./css/App.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-import axios from 'axios'
-import 'react-multi-carousel/lib/styles.css';
+import "react-multi-carousel/lib/styles.css";
 
-import { Movie } from './Movie'
-import Ratings from './Ratings'
-import Wishlist from './WishList'
-import Search from './Search'
-import Items from './MovieCarusel'
-import SearchPage from './SearchPage'
+import { Movie } from "./Movie";
+import Ratings from "./Ratings";
+import Wishlist from "./WishList";
 
+import SearchPage from "./SearchPage";
 
-
-const Menu = () => {
-  return (
-    <div class="navbar">
-      <Link to="/" data-link="ItemLens">ItemLens</Link>
-      <Link to="/wishlist" data-link="Wishlist">Wishlist</Link>
-      <Link to="/ratings" data-link="Ratings">Ratings</Link>
-      <Link to="/search" data-link="Search">Search</Link>
-      <Link to="/" data-link="Books">Books</Link>
-    </div>
-  )
-}
-
-const Movies = ({ movies }) => (
-  
-  <div class="page-container">
-    <h2>Top 10 movies in 2020</h2>
-    <Items items={movies} />
-    <Search />
-  </div>
-)
+import MainPage from "./MainPage";
 
 const App = () => {
-  const [movies, setMovies] = useState([])  
-  useEffect(() => {    axios
-    .get('http://128.214.253.51:3000/dbgettop10moviesbyyear?year=2020')
-    .then(response => {
-      setMovies(response.data)
-    })
-}, []);
+  const [page, setPage] = useState("movies");
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate(`${page}`);
+  }, [page, navigate]);
+
+  const handleChange = () => {
+    if (page === "movies") setPage("books");
+    else setPage("movies");
+  };
 
   return (
     <div class="page">
-      <Menu />
+      <button onClick={handleChange}>
+        You are on page {page} switch to {page === "books" ? "movies" : "books"}
+      </button>
       <Routes>
-        <Route exact path="/" element={<Movies movies={movies} />} />
-        <Route path="/ratings" element={<Ratings />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/:page" element={<MainPage page={page} />} />
+        <Route path="/:page/ratings" element={<Ratings />} />
+        <Route path="/:page/wishlist" element={<Wishlist />} />
+        <Route path="/:page/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<Movie />} />
-        <Route path="/*" element={<Movies movies={movies} />}/>
+        <Route path="/book/:id" element={<Movie />} />
+        <Route path="/*" element={<MainPage page={page} />} />
       </Routes>
-
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
