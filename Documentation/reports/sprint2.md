@@ -26,11 +26,11 @@ Viikko 2
 | :----:|:-----| :-----|
 | Maanantai 13.2|3|Yhdessä tekemistä luolassa, asiakastapaaminen, retro ja sprint planning|
 |Tiistai 14.1.|6|Frontend CI:n viimeistely, Backendin testaamisen aloittaminen|
-|Keskiviikko 15.2.|3|Backend CD fixailua|
+|Keskiviikko 15.2.|5|Backend CD fixailua, backendin testaamista ja Frontend CD muutokset|
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
 |Viikonloppu 18.-19.2.|1|Viikon dailyt|
-|Yhteensä|13||
+|Yhteensä|15||
 Viikko 2
 |||
 | Maanantai 20.2.|||
