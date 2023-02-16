@@ -18,7 +18,7 @@ const App = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate(`${page}`);
-  }, [page, navigate]);
+  }, [page]);
 
   const handleChange = () => {
     if (page === "movies") setPage("books");

@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import image from "./NoImage.jpg";
 
-const DisplayMovie = ({ movie }) => {
+const DisplayMovie = ({ movie, page }) => {
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
   if (movie.posterpath === null) {
     imageSource = image;
@@ -24,7 +24,7 @@ const DisplayMovie = ({ movie }) => {
   );
 };
 
-const DisplayBook = ({ book }) => {
+const DisplayBook = ({ book, page }) => {
   var imageSource = book.img;
   if (book.img === null) {
     imageSource = image;
@@ -32,12 +32,12 @@ const DisplayBook = ({ book }) => {
   return (
     <div class="movie-slot">
       <div class="movie-pic" key={book.item_id}>
-        <Link to={`/movie/${book.item_id}`}>
+        <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} alt="book poster" />
         </Link>
       </div>
       <div class="movie-info">
-        <Link to={`/movie/${book.item_id}`}>{book.title}</Link>
+        <Link to={`/book/${book.item_id}`}>{book.title}</Link>
       </div>
     </div>
   );
@@ -95,8 +95,8 @@ const Items = ({ items, page }) => (
       swipeable
     >
       {page === "movies"
-        ? items.map((item) => <DisplayMovie movie={item} />)
-        : items.map((item) => <DisplayBook book={item} />)}
+        ? items.map((item) => <DisplayMovie movie={item} page={page} />)
+        : items.map((item) => <DisplayBook book={item} page={page} />)}
     </Carousel>
   </div>
 );
