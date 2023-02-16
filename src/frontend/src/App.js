@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import "react-multi-carousel/lib/styles.css";
 
 import { Movie } from "./Movie";
+import { Book } from "./Book";
 import Ratings from "./Ratings";
 import Wishlist from "./WishList";
 
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/:page/wishlist" element={<Wishlist />} />
         <Route path="/:page/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<Movie />} />
-        <Route path="/book/:id" element={<Movie />} />
+        <Route path="/book/:id" element={<Book />} />
         <Route path="/*" element={<MainPage page={page} />} />
       </Routes>
     </div>
