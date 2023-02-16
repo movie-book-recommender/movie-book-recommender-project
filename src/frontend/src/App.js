@@ -28,11 +28,11 @@ const App = () => {
 
   return (
     <div class="page">
-      <button onClick={handleChange}>
-        You are on page {page} switch to {page === "books" ? "movies" : "books"}
-      </button>
       <Routes>
-        <Route path="/:page" element={<MainPage page={page} />} />
+        <Route
+          path="/:page"
+          element={<MainPage page={page} handleChange={handleChange} />}
+        />
         <Route path="/:page/ratings" element={<Ratings />} />
         <Route path="/:page/wishlist" element={<Wishlist />} />
         <Route path="/:page/search" element={<SearchPage />} />

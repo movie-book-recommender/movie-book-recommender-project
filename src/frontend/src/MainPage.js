@@ -11,26 +11,31 @@ import "./css/App.css";
 
 import "react-multi-carousel/lib/styles.css";
 
-const Menu = ({ page }) => {
+const Menu = ({ page, handleChange }) => {
   return (
     <div class="navbar">
-      <Link to={`/${page}`} data-link="ItemLens">
-        ItemLens
-      </Link>
-      <Link to={`/${page}/wishlist`} data-link="Wishlist">
-        Wishlist
-      </Link>
-      <Link to={`/${page}/ratings`} data-link="Ratings">
-        Ratings
-      </Link>
-      <Link to={`/${page}/search`} data-link="Search">
-        Search
-      </Link>
+      <button onClick={handleChange}>
+        You are on page {page} switch to {page === "books" ? "movies" : "books"}
+      </button>
+      <div class="navbar">
+        <Link to={`/${page}`} data-link="ItemLens">
+          ItemLens
+        </Link>
+        <Link to={`/${page}/wishlist`} data-link="Wishlist">
+          Wishlist
+        </Link>
+        <Link to={`/${page}/ratings`} data-link="Ratings">
+          Ratings
+        </Link>
+        <Link to={`/${page}/search`} data-link="Search">
+          Search
+        </Link>
+      </div>
     </div>
   );
 };
 
-const MainPage = ({ page }) => {
+const MainPage = ({ page, handleChange }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -44,7 +49,8 @@ const MainPage = ({ page }) => {
 
   return (
     <div class="page-container">
-      <Menu page={page} />
+      <Menu page={page} handleChange={handleChange} />
+
       <h2>Top 10 newest {page}</h2>
       <Items items={items} page={page} />
       <Search page={page} />
