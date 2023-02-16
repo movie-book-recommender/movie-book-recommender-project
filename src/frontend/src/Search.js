@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./css/App.css";
 
-import Items from "./MovieCarusel";
+import Items from "./Carusel";
 
 const Search = ({ page }) => {
   const [searchResult, setSearchResult] = useState();

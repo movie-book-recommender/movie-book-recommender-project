@@ -6,7 +6,7 @@ import axios from "axios";
 import "react-multi-carousel/lib/styles.css";
 
 import Search from "./Search";
-import Items from "./MovieCarusel";
+import Items from "./Carusel";
 import "./css/App.css";
 
 import "react-multi-carousel/lib/styles.css";
@@ -46,7 +46,7 @@ const MainPage = ({ page }) => {
     <div class="page-container">
       <Menu page={page} />
       <h2>Top 10 newest {page}</h2>
-      <Items items={items} />
+      <Items items={items} page={page} />
       <Search page={page} />
     </div>
   );
