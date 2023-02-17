@@ -50,7 +50,7 @@ const Book = () => {
     <div class="page-container">
       <h1>{book.title}</h1>
       <div>
-        <img src={imageSource} width={150} height={"auto"} />
+        <img src={imageSource} width={150} height={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
@@ -62,7 +62,7 @@ const Book = () => {
       <h3>Description:</h3>
       <p>{book.description}</p>
 
-      <a href={`${book.url}`} target="_blank">
+      <a href={`${book.url}`} target="_blank" rel="noreferrer">
         <p>Book</p>
       </a>
     </div>
