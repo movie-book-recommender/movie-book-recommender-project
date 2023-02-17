@@ -4,14 +4,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 import "react-multi-carousel/lib/styles.css";
 
-import { Movie } from "./Movie";
-import { Book } from "./Book";
-import Ratings from "./Ratings";
-import Wishlist from "./WishList";
+import { Movie } from "./components/Movie";
+import { Book } from "./components/Book";
+import Ratings from "./pages/Ratings";
+import Wishlist from "./pages/WishList";
 
-import SearchPage from "./SearchPage";
+import SearchPage from "./pages/SearchPage";
 
-import MainPage from "./MainPage";
+import MainPage from "./pages/MainPage";
 
 const App = () => {
   const [page, setPage] = useState("movies");

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Items from "./Carusel";
+import Items from "../Carusel";
 
 const SearchPage = ({ page }) => {
   const [searchResult, setSearchResult] = useState([]);

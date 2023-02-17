@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import "./css/App.css";
+import "../css/App.css";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
 import "react-multi-carousel/lib/styles.css";
 
-import Search from "./Search";
-import Items from "./Carusel";
-import "./css/App.css";
+import Search from "../Search";
+import Items from "../Carusel";
+import "../css/App.css";
 
 import "react-multi-carousel/lib/styles.css";
 

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
-import image from "./NoImage.jpg";
-import { getCookie, setCookie } from "./Cookies.js";
+import image from "../NoImage.jpg";
+import { getCookie, setCookie } from "../Cookies.js";
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
