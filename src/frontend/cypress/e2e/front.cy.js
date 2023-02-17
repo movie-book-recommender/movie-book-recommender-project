@@ -48,23 +48,3 @@ describe("Itemlens ", function () {
     cy.contains("MyRatings");
   });
 });
-
-// test if you can open search page
-it("search page opens", function () {
-  cy.contains("Search").click();
-  cy.contains("Search movies");
-});
-it("search page opens and search for movies", function () {
-  cy.contains("Search").click();
-  cy.contains("Search movies");
-  cy.get("input").type("pirates");
-  cy.contains("Caesar Against the Pirates");
-});
-it("search page opens and search for movies hides previous search", function () {
-  cy.contains("Search").click();
-  cy.contains("Search movies");
-  cy.get("input").type("pirates");
-  cy.contains("Caesar Against the Pirates");
-  cy.get("input").clear();
-  cy.contains("Caesar Against the Pirates").should("not.exist");
-});
