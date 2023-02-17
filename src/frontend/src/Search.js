@@ -2,20 +2,21 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./css/App.css";
 
-import Items from "./MovieCarusel";
+import Items from "./Carusel";
 
 const Search = ({ page }) => {
   const [searchResult, setSearchResult] = useState();
 
   const [newSearch, setNewSearch] = useState();
   useEffect(() => {
-    console.log(newSearch);
     axios
-      .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
+      .get(
+        `http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`
+      )
       .then((response) => {
         setSearchResult(response.data);
       });
-  }, [newSearch]);
+  }, [newSearch, page]);
 
   return (
     <div>
@@ -27,7 +28,7 @@ const Search = ({ page }) => {
           placeholder={`Search ${page}`}
         />
       </form>
-      {newSearch && searchResult && <Items items={searchResult} />}
+      {newSearch && searchResult && <Items items={searchResult} page={page} />}
     </div>
   );
 };

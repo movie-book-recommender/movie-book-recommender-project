@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import "react-multi-carousel/lib/styles.css";
 
 import { Movie } from "./Movie";
+import { Book } from "./Book";
 import Ratings from "./Ratings";
 import Wishlist from "./WishList";
 
@@ -18,7 +19,7 @@ const App = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate(`${page}`);
-  }, [page, navigate]);
+  }, [page]);
 
   const handleChange = () => {
     if (page === "movies") setPage("books");
@@ -27,16 +28,16 @@ const App = () => {
 
   return (
     <div class="page">
-      <button onClick={handleChange}>
-        You are on page {page} switch to {page === "books" ? "movies" : "books"}
-      </button>
       <Routes>
-        <Route path="/:page" element={<MainPage page={page} />} />
+        <Route
+          path="/:page"
+          element={<MainPage page={page} handleChange={handleChange} />}
+        />
         <Route path="/:page/ratings" element={<Ratings />} />
         <Route path="/:page/wishlist" element={<Wishlist />} />
         <Route path="/:page/search" element={<SearchPage />} />
         <Route path="/movie/:id" element={<Movie />} />
-        <Route path="/book/:id" element={<Movie />} />
+        <Route path="/book/:id" element={<Book />} />
         <Route path="/*" element={<MainPage page={page} />} />
       </Routes>
     </div>
