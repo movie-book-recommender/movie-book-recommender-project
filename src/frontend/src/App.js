@@ -35,7 +35,7 @@ const App = () => {
         />
         <Route path="/:page/ratings" element={<Ratings />} />
         <Route path="/:page/wishlist" element={<Wishlist />} />
-        <Route path="/:page/search" element={<SearchPage />} />
+        <Route path="/:page/search" element={<SearchPage page={page} />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/book/:id" element={<Book />} />
         <Route path="/*" element={<MainPage page={page} />} />

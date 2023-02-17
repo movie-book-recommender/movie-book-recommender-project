@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import image from "./NoImage.jpg";
 
-const DisplayMovie = ({ movie, page }) => {
+const DisplayMovie = ({ movie }) => {
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
   if (movie.posterpath === null) {
     imageSource = image;
@@ -24,7 +24,7 @@ const DisplayMovie = ({ movie, page }) => {
   );
 };
 
-const DisplayBook = ({ book, page }) => {
+const DisplayBook = ({ book }) => {
   var imageSource = book.img;
   if (book.img === null) {
     imageSource = image;

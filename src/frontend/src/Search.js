@@ -18,6 +18,10 @@ const Search = ({ page }) => {
       });
   }, [newSearch, page]);
 
+  useEffect(() => {
+    setNewSearch();
+  }, [page]);
+
   return (
     <div>
       <form>
