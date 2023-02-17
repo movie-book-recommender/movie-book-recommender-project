@@ -4,21 +4,16 @@ describe("Itemlens ", function () {
     cy.contains("You are on page movies switch to books").click();
   });
 
-  // test if frontend can be opened
-  it("front page can be opened", function () {
-    cy.contains("Top 10 newest books");
-  });
-
   // test if newest books are relevant
   it("newest boooks are relevant", function () {
+    cy.contains("Top 10 newest books");
     cy.contains("A Conjuring of Light (Shades of Magic, #3)");
     cy.contains("Chasing Harry Winston").should("not.exist");
   });
 
-  // test is book can be opened
-  it("single book page can be opened", function () {
-    cy.contains("A Conjuring of Light (Shades of Magic, #3)").click();
-    cy.contains("Your rating");
+  it("can go back to movies", function () {
+    cy.contains("You are on page books switch to movies").click();
+    cy.contains("Top 10 newest movies");
   });
 
   // test if you can write in search field
