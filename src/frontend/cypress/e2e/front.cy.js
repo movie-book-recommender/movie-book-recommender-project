@@ -8,6 +8,12 @@ describe("Itemlens ", function () {
     cy.contains("Top 10 newest movies");
   });
 
+  // test if movies are relevant
+  it("movies are relevant", function () {
+    cy.contains("What About Love");
+    cy.contains("Kaguya-sama: Love Is War").should("not.exist");
+  });
+
   // test if wishlist button can be clicked
   it("wishlist can be opened", function () {
     cy.contains("Wishlist").click();

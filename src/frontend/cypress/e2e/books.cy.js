@@ -12,6 +12,13 @@ describe("Itemlens ", function () {
   // test if newest books are relevant
   it("newest boooks are relevant", function () {
     cy.contains("A Conjuring of Light (Shades of Magic, #3)");
+    cy.contains("Chasing Harry Winston").should("not.exist");
+  });
+
+  // test is book can be opened
+  it("single book page can be opened", function () {
+    cy.contains("A Conjuring of Light (Shades of Magic, #3)").click();
+    cy.contains("Your rating");
   });
 
   // test if you can write in search field
@@ -32,6 +39,7 @@ describe("Itemlens ", function () {
     cy.contains("Search").click();
     cy.contains("Search books");
   });
+
   it("search page opens and search for books", function () {
     cy.contains("Search").click();
     cy.contains("Search books");
