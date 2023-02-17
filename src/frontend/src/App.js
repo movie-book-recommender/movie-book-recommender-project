@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <div class="page">
+    <div className="page">
       <Routes>
         <Route
           path="/:page"

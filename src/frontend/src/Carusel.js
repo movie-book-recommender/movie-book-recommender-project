@@ -11,13 +11,13 @@ const DisplayMovie = ({ movie }) => {
     imageSource = image;
   }
   return (
-    <div class="movie-slot">
-      <div class="movie-pic" key={movie.id}>
+    <div className="movie-slot">
+      <div className="movie-pic" key={movie.id}>
         <Link to={`/movie/${movie.movieid}`}>
           <img src={imageSource} alt="movie poster" />
         </Link>
       </div>
-      <div class="movie-info">
+      <div className="movie-info">
         <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
       </div>
     </div>
@@ -30,13 +30,13 @@ const DisplayBook = ({ book }) => {
     imageSource = image;
   }
   return (
-    <div class="movie-slot">
-      <div class="movie-pic" key={book.item_id}>
+    <div className="movie-slot">
+      <div className="movie-pic" key={book.item_id}>
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} alt="book poster" />
         </Link>
       </div>
-      <div class="movie-info">
+      <div className="movie-info">
         <Link to={`/book/${book.item_id}`}>{book.title}</Link>
       </div>
     </div>
@@ -44,7 +44,7 @@ const DisplayBook = ({ book }) => {
 };
 
 const Items = ({ items, page }) => (
-  <div class="page-container">
+  <div className="page-container">
     <Carousel
       additionalTransfrom={0}
       arrows
@@ -95,8 +95,12 @@ const Items = ({ items, page }) => (
       swipeable
     >
       {page === "movies"
-        ? items.map((item) => <DisplayMovie movie={item} page={page} />)
-        : items.map((item) => <DisplayBook book={item} page={page} />)}
+        ? items.map((item) => (
+            <DisplayMovie movie={item} page={page} key={item.movieid} />
+          ))
+        : items.map((item) => (
+            <DisplayBook book={item} page={page} key={item.item_id} />
+          ))}
     </Carousel>
   </div>
 );

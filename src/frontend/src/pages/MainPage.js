@@ -13,11 +13,11 @@ import "react-multi-carousel/lib/styles.css";
 
 const Menu = ({ page, handleChange }) => {
   return (
-    <div class="navbar">
+    <div className="navbar">
       <button onClick={handleChange}>
         You are on page {page} switch to {page === "books" ? "movies" : "books"}
       </button>
-      <div class="navbar">
+      <div className="navbar">
         <Link to={`/${page}`} data-link="ItemLens">
           ItemLens
         </Link>
@@ -48,7 +48,7 @@ const MainPage = ({ page, handleChange }) => {
   }, [page]);
 
   return (
-    <div class="page-container">
+    <div className="page-container">
       <Menu page={page} handleChange={handleChange} />
 
       <h2>Top 10 newest {page}</h2>

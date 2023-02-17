@@ -5,7 +5,7 @@ import Items from "../Carusel";
 const SearchPage = ({ page }) => {
   const [searchResult, setSearchResult] = useState([]);
 
-  const [newSearch, setNewSearch] = useState();
+  const [newSearch, setNewSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -42,7 +42,7 @@ const SearchPage = ({ page }) => {
   };
 
   return (
-    <div class="page-container">
+    <div className="page-container">
       <h2>Search {page}</h2>
       <div>
         <form>

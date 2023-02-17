@@ -16,21 +16,8 @@ const GetMovieByID = (id) => {
   return movie;
 };
 
-/*const GetIP = () => {
-  const [ip, setIp] = useState([])
-  useEffect(() => {   axios
-    .get(`https://geolocation-db.com/json/`)
-    .then(response => {
-      setIp(response.data.IPv4)
-    })
-  }, []);
-  return (ip)
-} */
-
 const Movie = () => {
   //Gets the movieid from the url
-  /*var ip = GetIP()
-  console.log(ip)*/
   var urlString = window.location.href;
   var parseHelper = urlString.split("/movie/");
   var id = parseHelper[1];
@@ -51,7 +38,7 @@ const Movie = () => {
 
   if (movie.length === 0) {
     return (
-      <div class="page-container">
+      <div className="page-container">
         <h1>No movie found for movieID</h1>
       </div>
     );
@@ -61,10 +48,10 @@ const Movie = () => {
     imageSource = image;
   }
   return (
-    <div class="page-container">
+    <div className="page-container">
       <h1>{movie.title}</h1>
       <div>
-        <img src={imageSource} width={150} height={"auto"} />
+        <img src={imageSource} width={150} height={"auto"} alt="movie-poster" />
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
@@ -80,6 +67,7 @@ const Movie = () => {
       <a
         href={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
         target="_blank"
+        rel="noreferrer"
       >
         <p>Trailer</p>
       </a>
