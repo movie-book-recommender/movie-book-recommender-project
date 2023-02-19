@@ -16,7 +16,7 @@ const SearchPage = ({ page }) => {
   const handleSearch = (event) => {
     event.preventDefault()
     axios
-    .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
+    .get(`http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`)
     .then(response => {
         console.log(newSearch)
         setSearchResult(response.data)

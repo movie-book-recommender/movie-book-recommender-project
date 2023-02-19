@@ -34,6 +34,7 @@ const DisplayMovie = ({ id, rating }) => {
 
 const Ratings = ({ page }) => {
   if (cookies.length === 0) {
+    <h2>MyRatings</h2>
     return <h3>You have not rated any movies yet!</h3>;
   }
   return (
