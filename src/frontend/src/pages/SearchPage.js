@@ -1,13 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from '@mui/icons-material/Search';
 
-import Navibar from "../Navibar";
 import image from '../NoImage.jpg'
 
 const SearchPage = ({ page }) => {
   const [searchResult, setSearchResult] = useState([]);
-
+  const [searchKey, setSearchKey] = useState("")
   const [newSearch, setNewSearch] = useState("");
 
   const handleSearch = (event) => {
@@ -17,6 +20,8 @@ const SearchPage = ({ page }) => {
     .then(response => {
         console.log(newSearch)
         setSearchResult(response.data)
+        setSearchKey(newSearch)
+        console.log(searchKey)
         console.log(searchResult.length)
         setNewSearch('')
     })
@@ -50,13 +55,8 @@ const SearchPage = ({ page }) => {
 
   return(
     <div class="page-container">
-      <h2>Search movies</h2>
-      <div>
-          <form onSubmit={handleSearch}>
-              <label>Search movies </label>
-              <input value={newSearch} onChange={handleSearchChange} placeholder="Search movies"/>
-          </form>
-      </div>
+      <h2>Search {page}</h2>
+      <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
       <div>
           <p>
               Sort by: 
@@ -66,9 +66,7 @@ const SearchPage = ({ page }) => {
               <button onClick={handleSortByTitleDesc}>title Z-A</button>
           </p>
       </div>
-      <div>
-          {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie}></DisplayMovie>)}
-      </div>
+      <SearchResult searchResult={searchResult} searchKey={searchKey}/>
     </div>
   )
 };
@@ -82,6 +80,45 @@ function compareRelease(a, b) {
     return 1;
   }
   return 0;
+}
+
+const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
+  return (
+    <div>
+      <form onSubmit={handleSearch}>
+        <Paper
+          sx={{display: 'flex', alignItems: 'center', width: 300 }}
+        >
+        <InputBase
+          sx={{flex: 1, ml: 1}}
+          size="small"
+          placeholder="Search by title"
+          inputProps={{ 'aria-label': 'search' }}
+          onChange={handleSearchChange}
+          value={newSearch}
+        />
+        <IconButton
+          type="submit"
+          sx={{ p: '5px' }}
+          aria-label="search"
+        >
+          <SearchIcon />
+        </IconButton>
+        </Paper>
+      </form>
+    </div>
+  )
+}
+
+const SearchResult = ({searchResult, searchKey}) => {
+  if (searchResult.length !== 0 && searchKey !== ""){
+    return(
+      <div>
+        Search result for '{searchKey}'
+        {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+      </div>
+    )
+  }
 }
 
 const DisplayMovie = ({movie}) => {

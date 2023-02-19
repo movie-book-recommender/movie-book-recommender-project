@@ -94,5 +94,5 @@
 
 .switch-text button:hover{
   background-color: #07c;
-  transform: translateY(-1px);
+  transform: translateY(1px);
 }
