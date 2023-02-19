@@ -4,14 +4,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 import "react-multi-carousel/lib/styles.css";
 
-import { Movie } from "./Movie";
-import { Book } from "./Book";
-import Ratings from "./Ratings";
-import Wishlist from "./WishList";
+import { Movie } from "./components/Movie";
+import { Book } from "./components/Book";
+import Ratings from "./pages/Ratings";
+import Wishlist from "./pages/WishList";
 
-import SearchPage from "./SearchPage";
+import SearchPage from "./pages/SearchPage";
 
-import MainPage from "./MainPage";
+import MainPage from "./pages/MainPage";
 
 const App = () => {
   const [page, setPage] = useState("movies");
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <div class="page">
+    <div className="page">
       <Routes>
         <Route
           path="/:page"
@@ -35,7 +35,7 @@ const App = () => {
         />
         <Route path="/:page/ratings" element={<Ratings />} />
         <Route path="/:page/wishlist" element={<Wishlist />} />
-        <Route path="/:page/search" element={<SearchPage />} />
+        <Route path="/:page/search" element={<SearchPage page={page} />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/book/:id" element={<Book />} />
         <Route path="/*" element={<MainPage page={page} />} />
