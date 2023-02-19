@@ -1,21 +1,28 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import Items from "../Carusel";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import Navibar from "../Navibar";
+import image from '../NoImage.jpg'
 
 const SearchPage = ({ page }) => {
   const [searchResult, setSearchResult] = useState([]);
 
   const [newSearch, setNewSearch] = useState("");
 
-  useEffect(() => {
+  const handleSearch = (event) => {
+    event.preventDefault()
     axios
-      .get(
-        `http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`
-      )
-      .then((response) => {
-        setSearchResult(response.data);
-      });
-  }, [newSearch]);
+    .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
+    .then(response => {
+        console.log(newSearch)
+        setSearchResult(response.data)
+        console.log(searchResult.length)
+        setNewSearch('')
+    })
+  }
+
+  const handleSearchChange = (event) => (setNewSearch(event.target.value))
 
   const handleSortByReleaseOld = () => {
     const sortedByReleaseNew = [...searchResult].sort(compareRelease);
@@ -41,31 +48,29 @@ const SearchPage = ({ page }) => {
     setSearchResult(sortedByTitleDesc);
   };
 
-  return (
-    <div className="page-container">
-      <h2>Search {page}</h2>
+  return(
+    <div class="page-container">
+      <h2>Search movies</h2>
       <div>
-        <form>
-          <label>Search {page} </label>
-          <input
-            value={newSearch}
-            onChange={({ target }) => setNewSearch(target.value)}
-            placeholder={`Search ${page}`}
-          />
-        </form>
+          <form onSubmit={handleSearch}>
+              <label>Search movies </label>
+              <input value={newSearch} onChange={handleSearchChange} placeholder="Search movies"/>
+          </form>
       </div>
       <div>
-        <p>
-          Sort by:
-          <button onClick={handleSortByReleaseNew}>release newest first</button>
-          <button onClick={handleSortByReleaseOld}>release oldest first</button>
-          <button onClick={handleSortByTitleAsc}>title A-Z</button>
-          <button onClick={handleSortByTitleDesc}>title Z-A</button>
-        </p>
+          <p>
+              Sort by: 
+              <button onClick={handleSortByReleaseNew}>release newest first</button>
+              <button onClick={handleSortByReleaseOld}>release oldest first</button>
+              <button onClick={handleSortByTitleAsc}>title A-Z</button>
+              <button onClick={handleSortByTitleDesc}>title Z-A</button>
+          </p>
       </div>
-      <div>{newSearch && <Items items={searchResult} page={page} />}</div>
+      <div>
+          {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie}></DisplayMovie>)}
+      </div>
     </div>
-  );
+  )
 };
 
 export default SearchPage;
@@ -77,4 +82,24 @@ function compareRelease(a, b) {
     return 1;
   }
   return 0;
+}
+
+const DisplayMovie = ({movie}) => {
+
+  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  if(movie.posterpath === null){
+      imageSource = image
+  }
+  return(
+      <div class="movie-slot">
+      <div  class='movie-pic'>
+          <Link to={`/movie/${movie.movieid}`}>
+              <img src={imageSource} />
+          </Link>
+      </div>
+      <div class="movie-info">
+          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+      </div>
+      </div>
+  )
 }

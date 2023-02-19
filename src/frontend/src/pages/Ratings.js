@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 import image from "../NoImage.jpg";
+import Navibar from "../Navibar";
 import { getCookies } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 
@@ -31,7 +32,7 @@ const DisplayMovie = ({ id, rating }) => {
   );
 };
 
-const Ratings = () => {
+const Ratings = ({ page }) => {
   if (cookies.length === 0) {
     return <h3>You have not rated any movies yet!</h3>;
   }
