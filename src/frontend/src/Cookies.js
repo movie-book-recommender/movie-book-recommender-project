@@ -22,10 +22,8 @@ function setCookie(movieid, rating, exdays) {
     }
     console.log(changedRatings)
     document.cookie = "Ratings:" + changedRatings + ";" + expires + ";path=/"
-    window.location.reload()
   }else{
     document.cookie = "Ratings:" + prevRatings + "&" + "m" + movieid + "=" + rating + ";" + expires + ";path=/";
-    window.location.reload()
   }  
 }
 
