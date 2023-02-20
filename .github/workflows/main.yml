@@ -30,6 +30,5 @@ jobs:
         with:
           working-directory: ./src/frontend
           install: false
-          build: npm run build
           start: npm start
           command: npm run test:e2e
