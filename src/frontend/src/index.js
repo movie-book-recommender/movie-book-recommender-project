@@ -6,14 +6,16 @@ import './css/index.css';
 import axios from 'axios'
 
 axios.interceptors.response.use(
-  (response => {
-    if(response.status === 404){
-      console.log('beep')
-      window.location.href = 'http://128.214.253.51:5000/'
+  response =>{
+    console.log(response.status) 
+    return response
+  }, 
+  error => {
+    console.log('error' + error)
+    if(error.response.status === 404){
+      window.location.href('http://128.214.253.51:5000/')
     }
-    console.log(response)
-    return response 
-  })
+  }
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
