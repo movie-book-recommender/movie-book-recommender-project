@@ -32,7 +32,7 @@ const Movie = () => {
     isHalf: false,
     value: stars,
     onChange: (newValue) => {
-      setCookie(movId, newValue, 5);
+      setCookie("m", movId, newValue, 5);
     },
   };
 
