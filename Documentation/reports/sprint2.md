@@ -33,13 +33,13 @@ Viikko 2
 |Yhteensä|15||
 Viikko 2
 |||
-| Maanantai 20.2.|||
+| Maanantai 20.2.|3|Backend branch protection, workflow file adjustment, cypress test automation for frontend|
 |Tiistai 21.2.|||
 |Keskiviikko 22.2.|||
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+|Viikonloppu 25.-26.2.|1|Viikon dailyt|
+|Yhteensä|4||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
