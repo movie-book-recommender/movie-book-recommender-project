@@ -1,39 +1,11 @@
-import { useState, useEffect } from "react";
-import "../css/App.css";
-import { Link } from "react-router-dom";
-
 import axios from "axios";
+import { useState, useEffect } from "react";
+
+import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
 import Search from "../Search";
 import Items from "../Carusel";
-import "../css/App.css";
-
-import "react-multi-carousel/lib/styles.css";
-
-const Menu = ({ page, handleChange }) => {
-  return (
-    <div className="navbar">
-      <button onClick={handleChange}>
-        You are on page {page} switch to {page === "books" ? "movies" : "books"}
-      </button>
-      <div className="navbar">
-        <Link to={`/${page}`} data-link="ItemLens">
-          ItemLens
-        </Link>
-        <Link to={`/${page}/wishlist`} data-link="Wishlist">
-          Wishlist
-        </Link>
-        <Link to={`/${page}/ratings`} data-link="Ratings">
-          Ratings
-        </Link>
-        <Link to={`/${page}/search`} data-link="Search">
-          Search
-        </Link>
-      </div>
-    </div>
-  );
-};
 
 const MainPage = ({ page, handleChange }) => {
   const [items, setItems] = useState([]);
@@ -49,8 +21,10 @@ const MainPage = ({ page, handleChange }) => {
 
   return (
     <div className="page-container">
-      <Menu page={page} handleChange={handleChange} />
-
+      <div className="switch-text">
+        Your are currently on {page} page. <button onClick={handleChange}>Switch to {page === "books" ? "movies" : "books"}
+        </button>
+      </div>
       <h2>Top 10 newest {page}</h2>
       <Items items={items} page={page} />
       <Search page={page} />
