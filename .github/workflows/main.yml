@@ -22,3 +22,13 @@ jobs:
         run: pip install pylint
       - name: Run Lint
         run: pylint --fail-under 5.0 src/services src/repository src/tests
+      - name: Cypress install
+        working-directory: ./src/frontend
+        run: npm install --legacy-peer-deps
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: ./src/frontend
+          install: false
+          start: npm start
+          command: npm run test:e2e
