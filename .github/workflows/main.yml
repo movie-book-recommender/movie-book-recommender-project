@@ -23,8 +23,9 @@ jobs:
       - name: Run Lint
         run: pylint --fail-under 5.0 src/services src/repository src/tests
       - name: Cypress
-        context: ./src/frontend
+        working-directory: ./src/frontend
         uses: cypress-io/github-action@v5
         with:
           build: npm run build
           start: npm start
+          command: npm run test:e2e
