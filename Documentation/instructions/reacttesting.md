@@ -1,11 +1,9 @@
 # Instructions for running tests
 
 ### 1.  install cypress:
-```npm install --save-dev cypress```
-### 2. navigate to frontend folder
-```cd /src/frontend/```
+```npm install```
 ### 3. Open a new terminal and run the program
-``` cd /src/frontend/src/```
+``` cd /frontend/src/```
 ``` npm start```
 DO NOT CLOSE THE PROGRAM WHILE TESTS RUN!
 ### 4. running test online
