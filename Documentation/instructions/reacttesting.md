@@ -3,7 +3,7 @@
 ### 1.  install cypress:
 ```npm install```
 ### 3. Open a new terminal and run the program
-``` cd /frontend/src/```
+``` cd /src/frontend/```
 ``` npm start```
 DO NOT CLOSE THE PROGRAM WHILE TESTS RUN!
 ### 4. running test online
