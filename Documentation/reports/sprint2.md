@@ -129,12 +129,12 @@ Viikko 2
 |Keskiviikko 15.2.|0.5|Daily ja backendin debuggausta|
 |Torstai 16.2.|0|n/a|
 |Perjantai 17.2.|4.5|Backendin dokumentaatio viimeistely, koodin laatua parannettu. Test coverage lisätty repoon ja CI/CD-putkeen. Books routes testit lisätty.|
-|Viikonloppu 18.-19.2.|||
+|Viikonloppu 18.-19.2.|0||
 |Yhteensä|11.5||
 Viikko 2
 |||
-| Maanantai 20.2.|||
-|Tiistai 21.2.|||
+| Maanantai 20.2.|0.3|Daily|
+|Tiistai 21.2.|3|Parannuksia koodin laatuun (erit. error handling), codecov-raportointi lisätty CI/CD-putkeen, pylint lisätty CI/CD-putkeen. Daily.|
 |Keskiviikko 22.2.|||
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
