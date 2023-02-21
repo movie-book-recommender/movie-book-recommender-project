@@ -5,7 +5,7 @@ import "./css/App.css";
 import Items from "./Carusel";
 
 const Search = ({ page }) => {
-  const [searchResult, setSearchResult] = useState();
+  const [searchResult, setSearchResult] = useState([]);
 
   const [newSearch, setNewSearch] = useState("");
   useEffect(() => {
