@@ -33,13 +33,13 @@ Viikko 2
 |Yhteensä|15||
 Viikko 2
 |||
-| Maanantai 20.2.|||
+| Maanantai 20.2.|3|Backend branch protection, workflow file adjustment, cypress test automation for frontend|
 |Tiistai 21.2.|||
 |Keskiviikko 22.2.|||
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+|Viikonloppu 25.-26.2.|1|Viikon dailyt|
+|Yhteensä|4||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -84,13 +84,13 @@ Viikko 2
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
+| Maanantai 13.2|3|Asiakastapaaminen, suunnittelua, retro|
 |Tiistai 14.1.|||
 |Keskiviikko 15.2.|||
-|Torstai 16.2.|||
-|Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+|Torstai 16.2.|2|Reactin opettelua|
+|Perjantai 17.2.|3|Reactin opettelua|
+|Viikonloppu 18.-19.2.|8|Pientä fixaamista, mm. navigointipalkki takaisin näkyviin kaikille sivuille, hakusivun toiminnallisuuden palautus ja pientä säätämistä, Cypressiin tutustumista, rikkoutuneiden testien korjaaminen ja muutaman uuden testin teko|
+|Yhteensä|16||
 Viikko 2
 |||
 | Maanantai 20.2.|||

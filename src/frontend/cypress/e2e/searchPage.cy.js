@@ -28,6 +28,12 @@ describe("Search Page ", function () {
       cy.get("input").type("harry potter");
       cy.get("[data-testid='SearchIcon']").click()
     })
+    //These tests fail for some reason
+    //it("sorting by oldest first", function (){
+      //cy.contains("release oldest first").click()
+      //cy.contains("release oldest first").click()
+      //cy.get(".movie-slot").first().contains("Harry Potter and the Philosopher's Stone")
+    //})
 
     it("sorting by oldest first", {"retries": 2}, function (){
       cy.contains("release oldest first").click()
