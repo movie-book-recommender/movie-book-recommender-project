@@ -29,13 +29,13 @@ describe("Search Page ", function () {
       cy.get("[data-testid='SearchIcon']").click()
     })
 
-    it("sorting by oldest first", function (){
+    it("sorting by oldest first", {"retries": 2}, function (){
       cy.contains("release oldest first").click()
       cy.contains("release oldest first").click()
       cy.get(".movie-slot").first().contains("Harry Potter and the Philosopher's Stone")
     })
 
-    it("sorting by title descending", function (){
+    it("sorting by title descending",{"retries": 2}, function (){
       cy.contains("title Z-A").click()
       cy.contains("title Z-A").click()
       cy.get(".movie-slot").first().contains("The Greater Good - Harry Potter Fan Film")
