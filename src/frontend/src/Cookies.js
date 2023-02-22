@@ -34,7 +34,10 @@ function addToWishlist(movieid, exdays) {
   var list = prevWishlist.split('&')
   for (var i = 0; i < list.length; i++) {
     if (list[i] === movieid) {
-      console.log("ALREADY ON LIST")
+      list.splice(i, 1)
+      changedList = list.join('&')
+      document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+      window.location.reload()
       return
     }
   }
@@ -43,6 +46,17 @@ function addToWishlist(movieid, exdays) {
   document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
 
   window.location.reload()
+}
+
+function onWishlist(id) {
+  var prevWishlist = getStringOfWishlist()
+  var list = prevWishlist.split('&')
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === id) {
+      return true
+    }
+  }
+  return false
 }
 
 const getStringOfRatings = () =>{
@@ -66,14 +80,14 @@ const getStringOfWishlist = () =>{
   var cookie =""
   for(var i = 0; i < cookies.length; i++) {
     if(cookies[i].trim().substring(0, 9) === "Wishlist:"){      
-      cookie = cookies[i].substring(10)
+      cookie = cookies[i].substring(9)
     }
   }
   return cookie
 }
-//Searchers saved cookies for a cookie with the name movieid
+//Searchers saved cookies for a cookie with the name id
 //Returns rating associated with that cookie or 0 if no cookie is found
-function getCookie(movieid) {
+function getCookie(id) {
   var prevRatings = getStringOfRatings()
   let pairs = prevRatings.split('&');
   for(let i = 1; i < pairs.length; i++) {
@@ -81,7 +95,7 @@ function getCookie(movieid) {
     if(pair[0].substring(0, 1) === ' '){
       pair[0] = pair[0].substring(1)
     }
-    if(pair[0].substring(1) === movieid){
+    if(pair[0].substring(1) === id){
       return pair[1];
     }
   }
@@ -107,4 +121,4 @@ var getCookies = function(){
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist };
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist };

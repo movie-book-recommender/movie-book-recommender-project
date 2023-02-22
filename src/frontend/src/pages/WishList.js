@@ -3,9 +3,10 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 
-import image from './NoImage.jpg'
-import { getCookies, getCookie, getStringOfWishlist } from './Cookies.js'
-import { GetMovieByID } from './Movie'
+import image from '../NoImage.jpg'
+import { getCookies, getCookie, getStringOfWishlist } from '../Cookies.js'
+import { GetMovieByID } from '../components/Movie'
+import { GetBookByID } from '../components/Book'
 
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()

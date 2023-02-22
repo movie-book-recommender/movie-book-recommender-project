@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import image from "../NoImage.jpg";
-import { getCookie, setCookie } from "../Cookies.js";
+import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
+import Heart from "react-heart";
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -34,6 +35,17 @@ const Book = () => {
       setCookie(bookId, newValue, 5);
     },
   };
+  
+  var isWishlisted = onWishlist(bookId);
+
+  const heartElement = {
+    isActive: isWishlisted,
+    onClick: () => {
+      //ADDING BOOKS TO WISHLIST
+      //addToWishlist(bookId)
+      //isWishlisted = onWishlist(bookId)
+    },
+  };
 
   if (book.length === 0) {
     return (
@@ -54,6 +66,9 @@ const Book = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <div style={{ width: "2rem"}}>
+        <Heart {...heartElement}/>
+      </div>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>
