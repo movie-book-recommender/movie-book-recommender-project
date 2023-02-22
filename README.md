@@ -35,6 +35,8 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [sprint 1 backlog](https://github.com/orgs/movie-book-recommender/projects/8)
 
+- [Sprint 2 backlog](https://github.com/orgs/movie-book-recommender/projects/9/)
+
 ## Running the program locally
 First execute these
 

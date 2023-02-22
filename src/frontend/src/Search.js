@@ -1,34 +1,40 @@
-import axios from 'axios'
-import { useState } from 'react'
+import axios from "axios";
+import { useState, useEffect } from "react";
+import "./css/App.css";
 
-const Search = () => {
-    const [searchResult, setSearchResult] = useState([])
+import Items from "./Carusel";
 
-    const [newSearch, setNewSearch] = useState('')
+const Search = ({ page }) => {
+  const [searchResult, setSearchResult] = useState();
 
-    const handleSearchChange = (event) => {
-        setNewSearch(event.target.value)
-    }
+  const [newSearch, setNewSearch] = useState("");
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`
+      )
+      .then((response) => {
+        setSearchResult(response.data);
+      });
+  }, [newSearch, page]);
 
-    const handleSearch = (event) => {
-        event.preventDefault()
-        const search = axios
-        .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
-        .then(response => {
-            setSearchResult(response.data)
-        })
-        setSearchResult(search)
-        setNewSearch('')
-        console.log(searchResult)
-    }
+  useEffect(() => {
+    setNewSearch("");
+  }, [page]);
 
-    return(
-        <form onSubmit={handleSearch}>
-            <label for="search">Search movies </label>
-            <input value={newSearch} onChange={handleSearchChange} placeholder="Search movies"/>
-            <button type="submit" value="submit">Search</button>
-        </form>
-    )
-}
+  return (
+    <div>
+      <form>
+        <label>Search {page} </label>
+        <input
+          value={newSearch}
+          onChange={({ target }) => setNewSearch(target.value)}
+          placeholder={`Search ${page}`}
+        />
+      </form>
+      {newSearch && searchResult && <Items items={searchResult} page={page} />}
+    </div>
+  );
+};
 
-export default Search
+export default Search;
