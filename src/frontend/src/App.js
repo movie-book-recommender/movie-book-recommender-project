@@ -11,10 +11,22 @@ import Wishlist from "./pages/WishList";
 import SearchPage from "./pages/SearchPage";
 import MainPage from "./pages/MainPage";
 import Navibar from "./Navibar";
+import axios from 'axios'
 
 const App = () => {
   const [page, setPage] = useState("movies");
 
+  axios.interceptors.response.use(
+    response =>{
+      return response
+    }, 
+    error => {
+      console.log('error: ' + error)
+      if(error.response.status === 404){
+        navigate("/")
+      }
+    }
+  )
   const navigate = useNavigate();
   useEffect(() => {
     navigate(`${page}`);
