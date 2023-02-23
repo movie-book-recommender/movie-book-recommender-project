@@ -40,6 +40,7 @@ describe("Search Page ", function () {
       cy.contains("title Z-A").click()
       cy.contains("title Z-A").click()
       cy.reload()
+      cy.reload()
       cy.get(".movie-slot").first().contains("The Greater Good - Harry Potter Fan Film")
     })
   })
