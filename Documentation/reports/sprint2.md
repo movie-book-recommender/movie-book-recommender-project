@@ -109,13 +109,13 @@ Viikko 2
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+|Viikonloppu 18.-19.2.|2|wishlistin jatkamista|
+|Yhteensä|8||
 Viikko 2
 |||
 | Maanantai 20.2.|||
 |Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
+|Keskiviikko 22.2.|4|wishlist toimimaan elokuville|
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
 |Viikonloppu 25.-26.2.|||
