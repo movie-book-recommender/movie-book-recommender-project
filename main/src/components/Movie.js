@@ -24,7 +24,7 @@ const Movie = () => {
 
   const movie = GetMovieByID(id);
   var movId = id;
-  var stars = getCookie(movId);
+  var stars = getCookie("M", movId);
 
   const ratingStars = {
     size: 40,
@@ -32,7 +32,7 @@ const Movie = () => {
     isHalf: false,
     value: stars,
     onChange: (newValue) => {
-      setCookie(movId, newValue, 5);
+      setCookie("M", movId, newValue, 5);
     },
   };
 

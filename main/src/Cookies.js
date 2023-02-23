@@ -2,18 +2,18 @@
 
 //Creates a new cookie with the movieid as the name of the cookie, 
 //rating as the value of the cookie. Exdays is the amount of days until the cookie expires
-function setCookie(movieid, rating, exdays) {
+function setCookie(borm, movieid, rating, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  var prevRatings = getStringOfRatings()
-  if(getCookie(movieid) !== 0){
+  var prevRatings = getStringOfRatings(borm)
+  if(getCookie(borm, movieid) !== 0){
     console.log(prevRatings)
     var ratings = prevRatings.split('&')
     var changedRatings = ""
     for(var i = 0; i < ratings.length; i++){
       var pair = ratings[i].split("=")
-      if(pair[0] === "m" + movieid){
+      if(pair[0] === movieid){
         pair[1] = rating
       }
       if(pair[0] !== ''){
@@ -21,37 +21,43 @@ function setCookie(movieid, rating, exdays) {
       }
     }
     console.log(changedRatings)
-    document.cookie = "Ratings:" + changedRatings + ";" + expires + ";path=/"
+    document.cookie = borm + "Ratings:" + changedRatings + ";" + expires + ";path=/"
   }else{
-    document.cookie = "Ratings:" + prevRatings + "&" + "m" + movieid + "=" + rating + ";" + expires + ";path=/";
+    document.cookie = borm + "Ratings:" + prevRatings + "&" + movieid + "=" + rating + ";" + expires + ";path=/";
   }  
 }
 
-const getStringOfRatings = () =>{
+const getStringOfRatings = (borm) =>{
   var cookies = document.cookie.split(';')
-  if(cookies[0] === ''){
+  if(cookies[0] === '' || cookies.length === 0){
     return ""
   }
-  var cookie =""
-  if(cookies[0].substring(0, 8) === "Ratings:"){
-    cookie = cookies[0].substring(8)
-  }else{
-    cookie = cookies[1].substring(9)
+  var cookie = ""
+  if(cookies[0].substring(0, 9) === borm + "Ratings:"){
+    cookie = cookies[0].substring(9)
   }
+  for(var i = 1; i < cookies.length; i++){
+    cookies[i] = cookies[i].substring(1)
+    console.log(cookies[i].substring(0, 9))
+    console.log(borm + "Ratings:")
+    if(cookies[i].substring(0, 9) === borm + "Ratings:"){
+      cookie = cookies[i].substring(9)
+    }  
+  }   
   return cookie
 }
 
 //Searchers saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
-function getCookie(movieid) {
-  var prevRatings = getStringOfRatings()
+function getCookie(borm, id) {
+  var prevRatings = getStringOfRatings(borm)
   let pairs = prevRatings.split('&');
   for(let i = 1; i < pairs.length; i++) {
     let pair = pairs[i].split('=');
     if(pair[0].substring(0, 1) === ' '){
       pair[0] = pair[0].substring(1)
     }
-    if(pair[0].substring(1) === movieid){
+    if(pair[0] === id){
       return pair[1];
     }
   }
@@ -60,17 +66,13 @@ function getCookie(movieid) {
 
 //Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
 //and value/rating in pair[1]
-var getCookies = function(){
-  var prevRatings = getStringOfRatings()
+function getCookies(borm){
+  var prevRatings = getStringOfRatings(borm)
   var pairs = prevRatings.split("&")
   console.log(pairs)
   var cookies = []
   for(var i=0; i<pairs.length; i++){
     var pair = pairs[i].split("=")
-    if(pair[0].substring(0, 1) === ' '){
-      pair[0] = pair[0].substring(1)
-    }
-    pair[0] = pair[0].substring(1)
     cookies[i] = pair;
   }
   cookies.shift()

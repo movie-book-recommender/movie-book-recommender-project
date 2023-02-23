@@ -31,7 +31,7 @@ const Book = () => {
     isHalf: false,
     value: stars,
     onChange: (newValue) => {
-      setCookie(bookId, newValue, 5);
+      setCookie("B", bookId, newValue, 5);
     },
   };
 
