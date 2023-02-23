@@ -26,5 +26,6 @@ jobs:
         with:
           working-directory: ./main/src
           install: false
+          browser: chrome
           start: npm start
           command: npm run test:e2e
