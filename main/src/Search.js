@@ -7,7 +7,7 @@ import Items from "./Carusel";
 const Search = ({ page }) => {
   const [searchResult, setSearchResult] = useState();
 
-  const [newSearch, setNewSearch] = useState("");
+  const [newSearch, setNewSearch] = useState();
   useEffect(() => {
     axios
       .get(
@@ -16,7 +16,8 @@ const Search = ({ page }) => {
       .then((response) => {
         setSearchResult(response.data);
       });
-  }, [newSearch, page]);
+    console.log(searchResult);
+  }, [newSearch]);
 
   useEffect(() => {
     setNewSearch("");
