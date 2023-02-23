@@ -33,13 +33,13 @@ Viikko 2
 |Yhteensä|15||
 Viikko 2
 |||
-| Maanantai 20.2.|||
+| Maanantai 20.2.|3|Backend branch protection, workflow file adjustment, cypress test automation for frontend|
 |Tiistai 21.2.|||
 |Keskiviikko 22.2.|||
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+|Viikonloppu 25.-26.2.|1|Viikon dailyt|
+|Yhteensä|4||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -109,13 +109,13 @@ Viikko 2
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+|Viikonloppu 18.-19.2.|2|wishlistin jatkamista|
+|Yhteensä|8||
 Viikko 2
 |||
 | Maanantai 20.2.|||
 |Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
+|Keskiviikko 22.2.|4|wishlist toimimaan elokuville|
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
 |Viikonloppu 25.-26.2.|||
@@ -129,12 +129,12 @@ Viikko 2
 |Keskiviikko 15.2.|0.5|Daily ja backendin debuggausta|
 |Torstai 16.2.|0|n/a|
 |Perjantai 17.2.|4.5|Backendin dokumentaatio viimeistely, koodin laatua parannettu. Test coverage lisätty repoon ja CI/CD-putkeen. Books routes testit lisätty.|
-|Viikonloppu 18.-19.2.|||
+|Viikonloppu 18.-19.2.|0||
 |Yhteensä|11.5||
 Viikko 2
 |||
-| Maanantai 20.2.|||
-|Tiistai 21.2.|||
+| Maanantai 20.2.|0.3|Daily|
+|Tiistai 21.2.|3|Parannuksia koodin laatuun (erit. error handling), codecov-raportointi lisätty CI/CD-putkeen, pylint lisätty CI/CD-putkeen. Daily.|
 |Keskiviikko 22.2.|||
 |Torstai 23.2.|||
 |Perjantai 24.2.|||

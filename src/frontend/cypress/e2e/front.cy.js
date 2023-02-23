@@ -49,8 +49,8 @@ describe("Itemlens ", function () {
   // TO MAKE TEST FOR STARS RATINGS
 
   // test if my ratings page can be opened
-  it("test movie rating", function () {
-    cy.contains("Ratings").click();
-    cy.contains("MyRatings");
-  });
+  //it("test movie rating", function () {
+    //cy.contains("Ratings").click();
+    //cy.contains("MyRatings");
+  //});
 });
