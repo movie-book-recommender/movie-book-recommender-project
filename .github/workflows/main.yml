@@ -30,5 +30,6 @@ jobs:
         with:
           working-directory: ./src/frontend
           install: false
+          browser: chorme
           start: npm start
           command: npm run test:e2e
