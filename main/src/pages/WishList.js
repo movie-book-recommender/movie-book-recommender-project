@@ -1,3 +1,9 @@
+const Wishlist = () => (
+  <div class="page-container">
+    <h2>WishList</h2>
+  </div>
+)
+export default Wishlist
 import axios from 'axios'
 import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'

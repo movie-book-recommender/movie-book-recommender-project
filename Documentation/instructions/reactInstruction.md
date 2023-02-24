@@ -7,7 +7,7 @@
 * If npm has not been installed it can be installed with [Node version manager(nvm)](https://github.com/nvm-sh/nvm#installing-and-updating) 
 * After installing nvm ```nvm install node``` will install node and npm
 
-3. ```npm install``` and ```npm install axios```  ```npm install react-router-dom``` in the folder with App.js file to install dependencies 
+3. ```npm install``` in the folder with App.js file to install dependencies 
 
 4. Run the flask-backend on a separate terminal window
 

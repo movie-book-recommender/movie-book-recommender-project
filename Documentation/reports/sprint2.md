@@ -34,12 +34,12 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 20.2.|3|Backend branch protection, workflow file adjustment, cypress test automation for frontend|
-|Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
-|Torstai 23.2.|||
+|Tiistai 21.2.|4|Algoritmiin perehtymistä ja tietokannan pohtimista, yhdessä tekemistä|
+|Keskiviikko 22.2.|1|SQLAlchemyn ORM dokumentaation lukemista|
+|Torstai 23.2.|5|Backend funktio suosituimmille kirjoille ja troubleshoottausta yhdessä|
 |Perjantai 24.2.|||
 |Viikonloppu 25.-26.2.|1|Viikon dailyt|
-|Yhteensä|4||
+|Yhteensä|14||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -109,13 +109,13 @@ Viikko 2
 |Keskiviikko 15.2.|||
 |Torstai 16.2.|||
 |Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+|Viikonloppu 18.-19.2.|2|wishlistin jatkamista|
+|Yhteensä|8||
 Viikko 2
 |||
 | Maanantai 20.2.|||
 |Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
+|Keskiviikko 22.2.|4|wishlist toimimaan elokuville|
 |Torstai 23.2.|||
 |Perjantai 24.2.|||
 |Viikonloppu 25.-26.2.|||

@@ -14,21 +14,18 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Install Flask
-        run: pip install flask
-      - name: Install dependencies
-        run: pip install -r requirements.txt   
       - name: Install Lint
         run: pip install pylint
       - name: Run Lint
-        run: pylint --fail-under 5.0 src/services src/repository src/tests
+        run: pylint --fail-under 5.0 main/services
       - name: Cypress install
-        working-directory: ./src/frontend
+        working-directory: ./main
         run: npm install --legacy-peer-deps
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          working-directory: ./src/frontend
+          working-directory: ./main/src
           install: false
+          browser: chrome
           start: npm start
           command: npm run test:e2e
