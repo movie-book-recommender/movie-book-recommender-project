@@ -116,8 +116,8 @@ Viikko 2
 | Maanantai 20.2.|||
 |Tiistai 21.2.|||
 |Keskiviikko 22.2.|4|wishlist toimimaan elokuville|
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
+|Torstai 23.2.|1|wishlist|
+|Perjantai 24.2.|4|wishlist + uusi tiedostorakenne|
 |Viikonloppu 25.-26.2.|||
 |Yhteensä|||
 
