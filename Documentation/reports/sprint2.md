@@ -133,10 +133,15 @@ Viikko 2
 |Yhteensä|11.5||
 Viikko 2
 |||
-| Maanantai 20.2.|0.3|Daily|
+| Maanantai 20.2.|0.25|Daily|
 |Tiistai 21.2.|3|Parannuksia koodin laatuun (erit. error handling), codecov-raportointi lisätty CI/CD-putkeen, pylint lisätty CI/CD-putkeen. Daily.|
-|Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä||Huom. Aiemmissa sprinteissä tehty sovitusti 15h ylimääräistä työtä|
+|Keskiviikko 22.2.|0.25|Daily|
+|Torstai 23.2.|0||
+|Perjantai 24.2.|1|Daily, demon preppaus, viikkoraportti|
+|Viikonloppu 25.-26.2.|0||
+|Yhteensä|5|Huom. Aiemmissa sprinteissä tehty sovitusti 15h ylimääräistä työtä|
+
+## Mitä tässä sprintissä saatiin aikaiseksi
+
+* CI/CD-putki viimeistelty backendille (koodi refaktoroitu, testikattavuus nostettu n. 85%:iin, koodin laatua parannettu (Lint n. 8), backend deployataan automaattisesti cPoutaan, lisenssointi tarkennettu)
+* Kaikki books-datat lisätty tietokantaan and APeja tehty tiedonhakua varten (esim. uusimmat ja vanhimmat kirjat, kirjojen hakua tietokannasta, yksittäisen kirjan tiedot)
