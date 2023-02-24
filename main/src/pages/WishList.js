@@ -1,9 +1,3 @@
-const Wishlist = () => (
-  <div class="page-container">
-    <h2>WishList</h2>
-  </div>
-)
-export default Wishlist
 import axios from 'axios'
 import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
@@ -18,6 +12,7 @@ import Heart from 'react-heart'
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
 const DisplayMovie = ({id}) => {
+  console.log(cookies)
   const movie = GetMovieByID(id)
   if(cookies.length < 1){
     return(<h3>You have not rated any movies yet!</h3>)
