@@ -17,7 +17,7 @@ const DisplayMovie = ({id}) => {
     return(<h3>You have not rated any movies yet!</h3>)
   }
 
-  var rating = getCookie(id)
+  var rating = getCookie("M", id)
   var ratingStars = {
     size: 40,
     count: 5,

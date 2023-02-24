@@ -2,28 +2,27 @@
 
 //Creates a new cookie with the movieid as the name of the cookie, 
 //rating as the value of the cookie. Exdays is the amount of days until the cookie expires
-function setCookie(movieid, rating, exdays) {
+function setCookie(borm, movieid, rating, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  var prevRatings = getStringOfRatings()
-  if(getCookie(movieid) !== 0){
+  let expires = "expires="+d.toUTCString();
+  var prevRatings = getStringOfRatings(borm)
+  if(getCookie(borm, movieid) !== 0){
     console.log(prevRatings)
     var ratings = prevRatings.split('&')
     var changedRatings = ""
     for(var i = 0; i < ratings.length; i++){
       var pair = ratings[i].split("=")
-      if(pair[0] === "m" + movieid){
+      if(pair[0] === movieid){
         pair[1] = rating
       }
       if(pair[0] !== ''){
         changedRatings = changedRatings + "&" + pair[0] + "=" + pair[1]
       }
     }
-    console.log(changedRatings)
-    document.cookie = "Ratings:" + changedRatings + ";" + expires + ";path=/"
+    document.cookie = borm + "Ratings:" + changedRatings + ";" + expires + ";path=/"
   }else{
-    document.cookie = "Ratings:" + prevRatings + "&" + "m" + movieid + "=" + rating + ";" + expires + ";path=/";
+    document.cookie = borm + "Ratings:" + prevRatings + "&" + movieid + "=" + rating + ";" + expires + ";path=/";
   }  
 }
 function addToWishlist(movieid, exdays) {
@@ -70,8 +69,6 @@ const getStringOfRatings = (borm) =>{
   }
   for(var i = 1; i < cookies.length; i++){
     cookies[i] = cookies[i].substring(1)
-    console.log(cookies[i].substring(0, 9))
-    console.log(borm + "Ratings:")
     if(cookies[i].substring(0, 9) === borm + "Ratings:"){
       cookie = cookies[i].substring(9)
     }  
