@@ -40,6 +40,7 @@ const Movie = () => {
   var isWishlisted = onWishlist(movId);
 
   const heartElement = {
+    animationTrigger: "hover",
     isActive: isWishlisted,
     onClick: () => {
       addToWishlist(movId)

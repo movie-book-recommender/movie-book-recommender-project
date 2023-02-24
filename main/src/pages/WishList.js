@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
 
 import image from '../NoImage.jpg'
-import { getCookies, getCookie, getStringOfWishlist } from '../Cookies.js'
+import { getCookies, getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
 import { GetMovieByID } from '../components/Movie'
 import { GetBookByID } from '../components/Book'
+import Heart from 'react-heart'
 
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
-
 const DisplayMovie = ({id}) => {
   const movie = GetMovieByID(id)
   if(cookies.length < 1){
@@ -25,6 +25,17 @@ const DisplayMovie = ({id}) => {
     value: rating,
     edit: false
   };
+
+  var isWishlisted = onWishlist(id)
+  const heartElement = {
+    animationTrigger: "hover",
+    isActive: isWishlisted,
+    onClick: () => {
+      addToWishlist(id)
+      isWishlisted = onWishlist(id)
+    },
+  };
+
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
   if(movie.posterpath === null){
     imageSource = image
@@ -36,6 +47,9 @@ const DisplayMovie = ({id}) => {
       </Link>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
+      <div style={{ width: "2rem"}}>
+        <Heart {...heartElement}/>
+      </div>
     </div>
   )
 }

@@ -59,17 +59,23 @@ function onWishlist(id) {
   return false
 }
 
-const getStringOfRatings = () =>{
+const getStringOfRatings = (borm) =>{
   var cookies = document.cookie.split(';')
-  if(cookies[0] === '' || cookies[0] === undefined){
+  if(cookies[0] === '' || cookies.length === 0){
     return ""
   }
-  var cookie =""
-  for(var i = 0; i < cookies.length; i++) {
-    if(cookies[i].substring(0, 8) === "Ratings:"){
-      cookie = cookies[i].substring(8)
-    }
+  var cookie = ""
+  if(cookies[0].substring(0, 9) === borm + "Ratings:"){
+    cookie = cookies[0].substring(9)
   }
+  for(var i = 1; i < cookies.length; i++){
+    cookies[i] = cookies[i].substring(1)
+    console.log(cookies[i].substring(0, 9))
+    console.log(borm + "Ratings:")
+    if(cookies[i].substring(0, 9) === borm + "Ratings:"){
+      cookie = cookies[i].substring(9)
+    }  
+  }   
   return cookie
 }
 const getStringOfWishlist = () =>{
@@ -85,36 +91,32 @@ const getStringOfWishlist = () =>{
   }
   return cookie
 }
-//Searchers saved cookies for a cookie with the name id
+//Searchers saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
-function getCookie(id) {
-  var prevRatings = getStringOfRatings()
+function getCookie(borm, id) {
+  var prevRatings = getStringOfRatings(borm)
   let pairs = prevRatings.split('&');
   for(let i = 1; i < pairs.length; i++) {
     let pair = pairs[i].split('=');
     if(pair[0].substring(0, 1) === ' '){
       pair[0] = pair[0].substring(1)
     }
-    if(pair[0].substring(1) === id){
+    if(pair[0] === id){
       return pair[1];
     }
-  }
+  }
   return 0;
 }
 
 //Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
 //and value/rating in pair[1]
-var getCookies = function(){
-  var prevRatings = getStringOfRatings()
+function getCookies(borm){
+  var prevRatings = getStringOfRatings(borm)
   var pairs = prevRatings.split("&")
   console.log(pairs)
   var cookies = []
   for(var i=0; i<pairs.length; i++){
     var pair = pairs[i].split("=")
-    if(pair[0].substring(0, 1) === ' '){
-      pair[0] = pair[0].substring(1)
-    }
-    pair[0] = pair[0].substring(1)
     cookies[i] = pair;
   }
   cookies.shift()
