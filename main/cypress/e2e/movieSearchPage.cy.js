@@ -38,28 +38,46 @@ describe("Movies Search Page ", function () {
   })
 
   //These tests fail for some reason
-  /*describe("shows movies in correct order after", function(){
+  describe("shows movies in correct order after", function(){
     beforeEach(function () {
       cy.get("input").type("harry potter");
       cy.get("[data-testid='SearchIcon']").click()
-    })*/
+    })
 
     it("sorting by oldest first", function (){
-        cy.get("input").type("harry potter");
-        cy.get("[data-testid='SearchIcon']").click()
         cy.wait(1000)
         cy.contains("Harry Potter and the Philosopher's Stone")
         cy.contains("release oldest first").click()
         cy.wait(1000)
-        cy.get(".table-item").first().contains("Harry Potter and the Philosopher's Stone")
+        cy.get(".table-item").eq(0).contains("Harry Potter and the Philosopher's Stone")
+        cy.get(".table-item").eq(1).contains("Harry Potter and the Chamber of Secrets")
     })
 
+    it("sorting by newest first", function (){
+      cy.wait(1000)
+      cy.contains("Harry Potter and the Philosopher's Stone")
+      cy.contains("release newest first").click()
+      cy.wait(1000)
+      cy.get(".table-item").eq(0).contains("Harry Potter 20th Anniversary: Return to Hogwarts ")
+      cy.get(".table-item").eq(1).contains("Harry Potter: A History Of Magic")
+  })
+
     it("sorting by title descending", function (){
-      cy.get("input").type("harry potter");
-      cy.get("[data-testid='SearchIcon']").click()
+      cy.wait(1000)
+      cy.contains("The Greater Good - Harry Potter Fan Film")
       cy.contains("title Z-A").click()
-      cy.contains("title Z-A").click()
-      cy.get(".table-item").first().contains("The Greater Good - Harry Potter Fan Film")
+      cy.wait(1000)
+      cy.get(".table-item").eq(0).contains("The Greater Good - Harry Potter Fan Film")
+      cy.get(".table-item").eq(1).contains("Harry Potter: A History Of Magic")
     })
-  //})
+
+    it("sorting by title ascending", function (){
+      cy.wait(1000)
+      cy.contains("Harry Potter and the Chamber of Secrets")
+      cy.contains("title A-Z").click()
+      cy.wait(1000)
+      cy.get(".table-item").eq(0).contains("Harry Potter 20th Anniversary: Return to Hogwarts")
+      cy.get(".table-item").eq(1).contains("Harry Potter and the Chamber of Secrets")
+    })
+  })
 });
