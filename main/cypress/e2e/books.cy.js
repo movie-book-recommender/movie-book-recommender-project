@@ -1,6 +1,6 @@
-describe("Itemlens books' page ", function () {
+describe("Itemlens book mainpage ", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/movies");
     cy.contains("Switch to books").click();
   });
 
@@ -12,7 +12,7 @@ describe("Itemlens books' page ", function () {
 
   it("enables switching to movies page", function () {
     cy.contains("Switch to movies").click();
-    cy.contains("Top 10 newest movies");
+    cy.contains("Your are currently on movies page.");
   });
 
   it("shows correct results when typing in search bar", function () {
@@ -27,28 +27,8 @@ describe("Itemlens books' page ", function () {
     cy.contains("Eric (Discworld, #9; Rincewind #4)").should("not.exist");
   });
 
-  it("opens the search page", function () {
-    cy.contains("Search").click();
+  it("link to Search works", function () {
+    cy.get(".navbar").contains("Search").click();
     cy.contains("Search books");
-  });
-
-  it("on search page shows correct result for search", function () {
-    cy.contains("Search").click();
-    cy.contains("Search books");
-    cy.get("input").type("rincewind");
-    cy.get("[data-testid='SearchIcon']").click()
-    cy.contains("Eric (Discworld, #9; Rincewind #4)");
-  });
-
-  it("on search previous search is overwritten after new search is done", function () {
-    cy.contains("Search").click();
-    cy.contains("Search books");
-    cy.get("input").type("rincewind");
-    cy.get("[data-testid='SearchIcon']").click()
-    cy.contains("Eric (Discworld, #9; Rincewind #4)");
-    cy.get("input").clear();
-    cy.get("input").type("harry potter");
-    cy.get("[data-testid='SearchIcon']").click()
-    cy.contains("Eric (Discworld, #9; Rincewind #4)").should("not.exist");
   });
 });

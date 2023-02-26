@@ -7,6 +7,7 @@ describe("Movies Search Page ", function () {
   it("can be opened", function () {
     cy.contains("Search movies");
   });
+
   it("shows search result matching the keyword", function () {
     cy.get("input").type("pirates");
     cy.get("[data-testid='SearchIcon']").click()
@@ -37,7 +38,6 @@ describe("Movies Search Page ", function () {
     cy.contains("Your rating:")
   })
 
-  //These tests fail for some reason
   describe("shows movies in correct order after", function(){
     beforeEach(function () {
       cy.get("input").type("harry potter");
