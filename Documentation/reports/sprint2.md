@@ -64,22 +64,22 @@ Viikko 2
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
-|Tiistai 14.1.|||
-|Keskiviikko 15.2.|||
-|Torstai 16.2.|||
-|Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+| Maanantai 13.2| 4 | Asiakastapaaminen, sprint planning, retro|
+|Tiistai 14.1.| 2 | Axios interceptoreiden testaamista|
+|Keskiviikko 15.2.| 2 | Interceptoreiden testaamista 404-virheen korjaamiseksi |
+|Torstai 16.2.| 3 | Cookieiden metodien muuttaminen niin että kirjat ja elokuvat voivat käyttää samoja metodeja |
+|Perjantai 17.2.| 3 | Lisää cookieiden korjausta|
+|Viikonloppu 18.-19.2.| 1 | Dailyt|
+|Yhteensä| 15 ||
 Viikko 2
 |||
-| Maanantai 20.2.|||
-|Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+| Maanantai 20.2.| 3 | 404 korjaamista|
+|Tiistai 21.2.| 2 | 404 korjausta, arvostelu-cookieiden erottelu elokuviin ja kirjoihin |
+|Keskiviikko 22.2.| 3 | Erotellut cookiet toimivat |
+|Torstai 23.2.| 3 | Ratings sivun koodausta näyttämään kirjat ja elokuvat erikseen |
+|Perjantai 24.2.| 2 | 404 korjausta, ratings-sivulta voi vaihtaa ratingia |
+|Viikonloppu 25.-26.2.| 4 | Rating päivittyy ilman että sivua täytyy päivittää|
+|Yhteensä| 17 ||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
