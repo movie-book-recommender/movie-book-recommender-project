@@ -46,7 +46,12 @@ describe("Movies Search Page ", function () {
     it("sorting by oldest first", function (){
       cy.contains("release oldest first").click()
       cy.contains("release oldest first").click()
-      cy.get(".table-item").first().contains("Harry Potter and the Philosopher's Stone")
+      cy.get(".table")
+      cy.get(".table-item").eq(0)
+        .within(() => {
+          cy.get(".table-item-title").contains("Harry Potter and the Philosopher's Stone")
+        })
+      //cy.get(".table-item").first().contains("Harry Potter and the Philosopher's Stone")
     })
 
     it("sorting by title descending", function (){
