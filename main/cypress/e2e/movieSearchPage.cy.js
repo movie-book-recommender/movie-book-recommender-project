@@ -1,6 +1,6 @@
 describe("Movies Search Page ", function () {
   beforeEach(function () {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/movies");
     cy.contains("Search").click();
   });
 
@@ -37,27 +37,31 @@ describe("Movies Search Page ", function () {
     cy.contains("Your rating:")
   })
 
-  describe("shows movies in correct order after", function(){
+  /*describe("shows movies in correct order after", function(){
     beforeEach(function () {
       cy.get("input").type("harry potter");
       cy.get("[data-testid='SearchIcon']").click()
-    })
+    })*/
     //These tests fail for some reason
     it("sorting by oldest first", function (){
+      cy.get("input").type("harry potter");
+      cy.get("[data-testid='SearchIcon']").click()
+      cy.wait(200)
       cy.contains("release oldest first").click()
-      cy.contains("release oldest first").click()
+      cy.wait(200)
       cy.get(".table")
       cy.get(".table-item").eq(0)
         .within(() => {
           cy.get(".table-item-title").contains("Harry Potter and the Philosopher's Stone")
         })
-      //cy.get(".table-item").first().contains("Harry Potter and the Philosopher's Stone")
     })
 
     it("sorting by title descending", function (){
+      cy.get("input").type("harry potter");
+      cy.get("[data-testid='SearchIcon']").click()
       cy.contains("title Z-A").click()
       cy.contains("title Z-A").click()
       cy.get(".table-item").first().contains("The Greater Good - Harry Potter Fan Film")
     })
-  })
+  //})
 });
