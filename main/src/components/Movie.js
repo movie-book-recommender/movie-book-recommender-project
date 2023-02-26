@@ -67,7 +67,7 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
-      <div style={{ width: "2rem"}}>
+      <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
       </div>
       <h3>Directors:</h3>
