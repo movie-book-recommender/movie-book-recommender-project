@@ -23,7 +23,7 @@ function setCookie(borm, movieid, rating, exdays) {
     console.log(changedRatings)
     document.cookie = borm + "Ratings:" + changedRatings + ";" + expires + ";path=/"
   }else{
-    document.cookie = borm + "Ratings:" + prevRatings + "&" + movieid + "=" + rating + ";" + expires + ";path=/";
+  document.cookie = borm + "Ratings:" + prevRatings + "&" + movieid + "=" + rating + ";" + expires + ";path=/";
   }  
 }
 
@@ -47,6 +47,53 @@ const getStringOfRatings = (borm) =>{
   return cookie
 }
 
+
+function addToWishlist(movieid, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  var prevWishlist = getStringOfWishlist()
+  var list = prevWishlist.split('&')
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === movieid) {
+      list.splice(i, 1)
+      changedList = list.join('&')
+      document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+      window.location.reload()
+      return
+    }
+  }
+  var changedList = prevWishlist + movieid + "&"
+  console.log(changedList)
+  document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+
+  window.location.reload()
+}
+
+function onWishlist(id) {
+  var prevWishlist = getStringOfWishlist()
+  var list = prevWishlist.split('&')
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === id) {
+      return true
+    }
+  }
+  return false
+}
+
+const getStringOfWishlist = () =>{
+  var cookies = document.cookie.split(';')
+  if(cookies[0] === '' || cookies[0] === undefined){
+    return ""
+  }
+  var cookie =""
+  for(var i = 0; i < cookies.length; i++) {
+    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){      
+      cookie = cookies[i].substring(10)
+    }
+  }
+  return cookie
+}
 //Searchers saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
 function getCookie(borm, id) {
@@ -60,7 +107,7 @@ function getCookie(borm, id) {
     if(pair[0] === id){
       return pair[1];
     }
-  }
+  }
   return 0;
 }
 
@@ -79,4 +126,4 @@ function getCookies(borm){
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies };
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist };
