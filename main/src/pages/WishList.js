@@ -10,13 +10,10 @@ import { GetMovieByID } from '../components/Movie'
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
 
-<<<<<<< HEAD
 const updateWishlist = () => {
   cookies = getStringOfWishlist().split('&')
   cookies.pop()
 }
-=======
->>>>>>> a2a053611c0e48ba0c7646889dfe3dc82231beb0
 const DisplayMovie = ({id}) => {
   console.log(cookies)
   const movie = GetMovieByID(id)
@@ -66,11 +63,7 @@ const Wishlist = () => {
   
   return(
   <div class="page-container">
-<<<<<<< HEAD
     <h2>My wishlist</h2>
-=======
-    <h2>Wishlist</h2>
->>>>>>> a2a053611c0e48ba0c7646889dfe3dc82231beb0
     <div>
       {cookies.map(cookie => <DisplayMovie id={cookie} />)}
     </div>  
