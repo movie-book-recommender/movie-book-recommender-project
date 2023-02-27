@@ -37,9 +37,9 @@ Viikko 2
 |Tiistai 21.2.|4|Algoritmiin perehtymistä ja tietokannan pohtimista, yhdessä tekemistä|
 |Keskiviikko 22.2.|1|SQLAlchemyn ORM dokumentaation lukemista|
 |Torstai 23.2.|5|Backend funktio suosituimmille kirjoille ja troubleshoottausta yhdessä|
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|1|Viikon dailyt|
-|Yhteensä|14||
+|Perjantai 24.2.|0.5|Demon suunnittelu|
+|Viikonloppu 25.-26.2.|2|Viikon dailyt ja algroitmin tutkimista|
+|Yhteensä|15.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
