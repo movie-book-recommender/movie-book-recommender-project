@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
+import Heart from "react-heart";
 import image from "../NoImage.jpg";
-import { getCookie, setCookie } from "../Cookies.js";
+import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -35,6 +36,17 @@ const Movie = () => {
       setCookie("M", movId, newValue, 5);
     },
   };
+  
+  var isWishlisted = onWishlist(movId);
+
+  const heartElement = {
+    animationTrigger: "hover",
+    isActive: isWishlisted,
+    onClick: () => {
+      addToWishlist(movId)
+      isWishlisted = onWishlist(movId)
+    },
+  };
 
   if (movie.length === 0) {
     return (
@@ -55,6 +67,9 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <div class="heart" style={{ width: "2rem"}}>
+        <Heart {...heartElement}/>
+      </div>
       <h3>Directors:</h3>
       <p>{movie.directors}</p>
       <h3>Actors:</h3>
