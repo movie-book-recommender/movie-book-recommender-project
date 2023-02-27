@@ -1,21 +1,20 @@
-import axios from 'axios'
 import { Link } from "react-router-dom"
-import { useState, useEffect } from 'react'
 import ReactStars from "react-rating-stars-component"
+import Heart from "react-heart"
 
 import image from '../NoImage.jpg'
-import { getCookies, getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
+import { getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
 import { GetMovieByID } from '../components/Movie'
-import { GetBookByID } from '../components/Book'
-import Heart from 'react-heart'
+
 
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
+
 const DisplayMovie = ({id}) => {
   console.log(cookies)
   const movie = GetMovieByID(id)
   if(cookies.length < 1){
-    return(<h3>You have not rated any movies yet!</h3>)
+    return(<h3>No movies on Wishlist!</h3>)
   }
 
   var rating = getCookie("M", id)
@@ -30,7 +29,7 @@ const DisplayMovie = ({id}) => {
   var isWishlisted = onWishlist(id)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: isWishlisted,
+    isActive: onWishlist(id),
     onClick: () => {
       addToWishlist(id)
       isWishlisted = onWishlist(id)
@@ -48,7 +47,7 @@ const DisplayMovie = ({id}) => {
       </Link>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
-      <div style={{ width: "2rem"}}>
+      <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
       </div>
     </div>
@@ -59,9 +58,9 @@ const WishList = () => {
   
   return(
   <div class="page-container">
-    <h2>MyRatings</h2>
+    <h2>Wishlist</h2>
     <div>
-      {cookies.map(cookie => <ul key={cookie}><DisplayMovie id={cookie} /></ul>)}
+      {cookies.map(cookie => <DisplayMovie id={cookie} />)}
     </div>  
     
   </div>
