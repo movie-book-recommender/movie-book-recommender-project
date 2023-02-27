@@ -23,6 +23,7 @@ const DisplayMovie = ({ id, rating }) => {
     value: rating,
     onChange: (newValue) => {
       setCookie("M", id, newValue, 5);
+      updateCookies()
     }
   };
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
@@ -49,6 +50,7 @@ const DisplayBook = ({ id, rating }) =>{
     value: parseInt(rating),
     onChange: (newValue) => {
       setCookie("B", id, newValue, 5);
+      updateCookies()
     }  
   };
   var imageSource = book.img
