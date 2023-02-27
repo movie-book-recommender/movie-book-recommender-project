@@ -39,9 +39,7 @@ const App = () => {
 
   return (
     <div className="page">
-      <div className="page-container">
-        <Navibar page={page} />
-      </div>
+      <Navibar page={page} />
       <Routes>
         <Route
           path="/:page"

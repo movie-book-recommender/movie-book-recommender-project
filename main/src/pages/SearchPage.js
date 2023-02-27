@@ -30,11 +30,13 @@ const SearchPage = ({ page }) => {
   const handleSearchChange = (event) => (setNewSearch(event.target.value))
 
   const handleSortByReleaseOld = () => {
+    // ei toimi kirjoille oikein!
     const sortedByReleaseNew = [...searchResult].sort(compareRelease);
     setSearchResult(sortedByReleaseNew);
   };
 
   const handleSortByReleaseNew = () => {
+    // ei toimi kirjoille oikein!!
     const sortedByReleaseOld = [...searchResult].sort(compareRelease).reverse();
     setSearchResult(sortedByReleaseOld);
   };
@@ -57,7 +59,7 @@ const SearchPage = ({ page }) => {
     <div class="page-container">
       <h2>Search {page}</h2>
       <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
-      <div>
+      <div class="sort-container">
           <p>
               Sort by: 
               <button onClick={handleSortByReleaseNew}>release newest first</button>
@@ -66,7 +68,7 @@ const SearchPage = ({ page }) => {
               <button onClick={handleSortByTitleDesc}>title Z-A</button>
           </p>
       </div>
-      <SearchResult searchResult={searchResult} searchKey={searchKey}/>
+      <SearchResult searchResult={searchResult} searchKey={searchKey} page={page}/>
     </div>
   )
 };
@@ -84,7 +86,7 @@ function compareRelease(a, b) {
 
 const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
   return (
-    <div>
+    <div class="search-bar">
       <form onSubmit={handleSearch}>
         <Paper
           sx={{display: 'flex', alignItems: 'center', width: 300 }}
@@ -110,33 +112,91 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
   )
 }
 
-const SearchResult = ({searchResult, searchKey}) => {
+const SearchResult = ({searchResult, searchKey, page}) => {
   if (searchResult.length !== 0 && searchKey !== ""){
+    if (page === "movies"){
+      return(
+        <div class="search-result">
+          <h2>Search result for '{searchKey}'</h2>
+          <div class="table">
+            {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <div class="search-result">
+          <h2>Search result for '{searchKey}'</h2>
+          <div class="table">
+            {searchResult.map(book => <DisplayBook key={book.id} book={book} />)}
+          </div>
+        </div>
+      )
+    }
+  } else if (searchKey !== ""){
     return(
-      <div>
-        Search result for '{searchKey}'
-        {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+      <div class="search-result">
+        <h2>No result for '{searchKey}'</h2>
       </div>
     )
   }
 }
 
 const DisplayMovie = ({movie}) => {
-
-  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
+  const genrelist = movie.genres ? movie.genres.split(",") : []
+  const releaseYear = movie.releasedate.split(" ")[3]
+  let imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
   if(movie.posterpath === null){
       imageSource = image
   }
   return(
-      <div class="movie-slot">
-      <div  class='movie-pic'>
-          <Link to={`/movie/${movie.movieid}`}>
-              <img src={imageSource} />
-          </Link>
+    <div class="table-item">
+      <div class="table-item-pic">
+        <Link to={`/movie/${movie.movieid}`}>
+          <img src={imageSource} />
+        </Link>
       </div>
-      <div class="movie-info">
-          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+      <div class="table-item-info">
+        <div class="table-item-title">
+          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link> ({releaseYear})
+        </div>
+        <div>
+          {movie.runtime} min
+        </div>
+        <div class="table-item-rate">
+          Your rate:
+        </div>
+        <div class="genres">
+          {genrelist.map(genre => <div class="genre-badge">{genre}</div>)}
+        </div>
       </div>
+    </div>
+  )
+}
+
+const DisplayBook = ({book}) => {
+  let imageSource = book.img
+  if(imageSource === null){
+      imageSource = image
+  }
+  return(
+    <div class="table-item">
+      <div class="table-item-pic">
+        <Link to={`/book/${book.item_id}`}>
+          <img src={imageSource} />
+        </Link>
       </div>
+      <div class="table-item-info">
+        <div class="table-item-title">
+          <Link to={`/book/${book.item_id}`}>{book.title}</Link>
+        </div>
+        <div>
+          First publish in {book.year}
+        </div>
+        <div class="table-item-rate">
+          Your rate:
+        </div>
+      </div>
+    </div>
   )
 }

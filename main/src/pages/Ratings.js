@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 import image from "../NoImage.jpg";
-import Navibar from "../Navibar";
 import { getCookies, setCookie } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 import { GetBookByID } from "../components/Book";
