@@ -5,12 +5,12 @@
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 13.2|4|luolassa kaikkien kanssa, asiakastapaaminen, retro ja sprint planning|
-|Tiistai 14.1.|||
+|Tiistai 14.1.|1|Algon siistimistä|
 |Keskiviikko 15.2.|6|algoritmin kanssa säätämisyä, koitin saada dataa verkosta apien kautta pythoniin|
-|Torstai 16.2.|||
+|Torstai 16.2.|3|testailin algoritmin tarvitsemien tietojen etsimistä (ei löytynyt ratkaisua)|
 |Perjantai 17.2.|||
 |Viikonloppu 18.-19.2.|1|viikon dailyt|
-|Yhteensä|||
+|Yhteensä|15||
 Viikko 2
 |||
 | Maanantai 20.2.|||
