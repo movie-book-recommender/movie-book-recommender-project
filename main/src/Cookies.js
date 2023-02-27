@@ -71,12 +71,13 @@ function addToWishlist(movieid, exdays) {
 function onWishlist(id) {
   var prevWishlist = getStringOfWishlist()
   var list = prevWishlist.split('&')
-  for (var i = 0; i < list.length; i++) {
+  return list.includes(id)
+  /*for (var i = 0; i < list.length; i++) {
     if (list[i] === id) {
       return true
     }
   }
-  return false
+  return false*/
 }
 
 const getStringOfWishlist = () =>{
