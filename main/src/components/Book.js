@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie } from "../Cookies.js";
+import { updateCookies } from "../pages/Ratings";
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -32,6 +33,7 @@ const Book = () => {
     value: stars,
     onChange: (newValue) => {
       setCookie("B", bookId, newValue, 5);
+      updateCookies();
     },
   };
 

@@ -6,8 +6,8 @@ import "react-multi-carousel/lib/styles.css";
 
 import { Movie } from "./components/Movie";
 import { Book } from "./components/Book";
-import Ratings from "./pages/Ratings";
-import Wishlist from "./pages/WishList";
+import { Ratings } from "./pages/Ratings";
+import { Wishlist } from "./pages/WishList";
 import SearchPage from "./pages/SearchPage";
 import MainPage from "./pages/MainPage";
 import Navibar from "./Navibar";
