@@ -7,7 +7,7 @@ import axios from "axios";
 
 axios.interceptors.response.use(
   (response) => {
-    console.log(response.status);
+    //console.log(response.status);
     return response;
   },
   (error) => {

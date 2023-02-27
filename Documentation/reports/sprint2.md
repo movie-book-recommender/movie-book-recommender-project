@@ -37,9 +37,9 @@ Viikko 2
 |Tiistai 21.2.|4|Algoritmiin perehtymistä ja tietokannan pohtimista, yhdessä tekemistä|
 |Keskiviikko 22.2.|1|SQLAlchemyn ORM dokumentaation lukemista|
 |Torstai 23.2.|5|Backend funktio suosituimmille kirjoille ja troubleshoottausta yhdessä|
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|1|Viikon dailyt|
-|Yhteensä|14||
+|Perjantai 24.2.|0.5|Demon suunnittelu|
+|Viikonloppu 25.-26.2.|2|Viikon dailyt ja algroitmin tutkimista|
+|Yhteensä|15.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -64,22 +64,22 @@ Viikko 2
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
-|Tiistai 14.1.|||
-|Keskiviikko 15.2.|||
-|Torstai 16.2.|||
-|Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+| Maanantai 13.2| 4 | Asiakastapaaminen, sprint planning, retro|
+|Tiistai 14.1.| 2 | Axios interceptoreiden testaamista|
+|Keskiviikko 15.2.| 2 | Interceptoreiden testaamista 404-virheen korjaamiseksi |
+|Torstai 16.2.| 3 | Cookieiden metodien muuttaminen niin että kirjat ja elokuvat voivat käyttää samoja metodeja |
+|Perjantai 17.2.| 3 | Lisää cookieiden korjausta|
+|Viikonloppu 18.-19.2.| 1 | Dailyt|
+|Yhteensä| 15 ||
 Viikko 2
 |||
-| Maanantai 20.2.|||
-|Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+| Maanantai 20.2.| 3 | 404 korjaamista|
+|Tiistai 21.2.| 2 | 404 korjausta, arvostelu-cookieiden erottelu elokuviin ja kirjoihin |
+|Keskiviikko 22.2.| 3 | Erotellut cookiet toimivat |
+|Torstai 23.2.| 3 | Ratings sivun koodausta näyttämään kirjat ja elokuvat erikseen |
+|Perjantai 24.2.| 2 | 404 korjausta, ratings-sivulta voi vaihtaa ratingia |
+|Viikonloppu 25.-26.2.| 4 | Rating päivittyy ilman että sivua täytyy päivittää|
+|Yhteensä| 17 ||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
@@ -94,12 +94,12 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 20.2.|||
-|Tiistai 21.2.|||
+|Tiistai 21.2.|1|Testien fixailua|
 |Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+|Torstai 23.2.|1|Testien fixailua|
+|Perjantai 24.2.|4|Hakusivun tulosten muotoilua, hakusivu toimimaan kirjoille, yhdessä asiakastapaamisen yms. suunnittelua|
+|Viikonloppu 25.-26.2.|11|Cypressiin tutustumista, hakusivun tulosten sorttauksen testit kuntoon, testi wishlistin toiminnalle + pientä hienosäätöä muihin testeihin, hakusivun tulosten muotoilua|
+|Yhteensä|18||
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
@@ -145,3 +145,4 @@ Viikko 2
 
 * CI/CD-putki viimeistelty backendille (koodi refaktoroitu, testikattavuus nostettu n. 85%:iin, koodin laatua parannettu (Lint n. 8), backend deployataan automaattisesti cPoutaan, lisenssointi tarkennettu)
 * Kaikki books-datat lisätty tietokantaan and APeja tehty tiedonhakua varten (esim. uusimmat ja vanhimmat kirjat, kirjojen hakua tietokannasta, yksittäisen kirjan tiedot)
+* Testaus kuntoon pääsivun, hakusivun ja leffojen/kirjojen osalta, wishlist-toiminnon testaus aloitettu
