@@ -94,12 +94,12 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 20.2.|||
-|Tiistai 21.2.|||
+|Tiistai 21.2.|1|Testien fixailua|
 |Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+|Torstai 23.2.|1|Testien fixailua|
+|Perjantai 24.2.|4|Hakusivun tulosten muotoilua, hakusivu toimimaan kirjoille, yhdessä asiakastapaamisen yms. suunnittelua|
+|Viikonloppu 25.-26.2.|11|Cypressiin tutustumista, hakusivun tulosten sorttauksen testit kuntoon, testi wishlistin toiminnalle + pientä hienosäätöä muihin testeihin, hakusivun tulosten muotoilua|
+|Yhteensä|18||
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
