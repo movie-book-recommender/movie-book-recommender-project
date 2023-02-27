@@ -145,3 +145,4 @@ Viikko 2
 
 * CI/CD-putki viimeistelty backendille (koodi refaktoroitu, testikattavuus nostettu n. 85%:iin, koodin laatua parannettu (Lint n. 8), backend deployataan automaattisesti cPoutaan, lisenssointi tarkennettu)
 * Kaikki books-datat lisätty tietokantaan and APeja tehty tiedonhakua varten (esim. uusimmat ja vanhimmat kirjat, kirjojen hakua tietokannasta, yksittäisen kirjan tiedot)
+* Testaus kuntoon pääsivun, hakusivun ja leffojen/kirjojen osalta, wishlist-toiminnon testaus aloitettu
