@@ -11,6 +11,11 @@ import Heart from 'react-heart'
 
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
+
+const updateWishlist = () => {
+  cookies = getStringOfWishlist().split('&')
+  cookies.pop()
+}
 const DisplayMovie = ({id}) => {
   console.log(cookies)
   const movie = GetMovieByID(id)
@@ -34,6 +39,7 @@ const DisplayMovie = ({id}) => {
     onClick: () => {
       addToWishlist(id)
       isWishlisted = onWishlist(id)
+      updateWishlist()
     },
   };
 
@@ -55,11 +61,11 @@ const DisplayMovie = ({id}) => {
   )
 }
 
-const WishList = () => {
+const Wishlist = () => {
   
   return(
   <div class="page-container">
-    <h2>MyRatings</h2>
+    <h2>My wishlist</h2>
     <div>
       {cookies.map(cookie => <ul key={cookie}><DisplayMovie id={cookie} /></ul>)}
     </div>  
@@ -68,4 +74,4 @@ const WishList = () => {
   )
 }
 
-export default WishList
+export { Wishlist, updateWishlist };

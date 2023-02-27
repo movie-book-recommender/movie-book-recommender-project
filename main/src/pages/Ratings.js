@@ -10,6 +10,10 @@ import { GetBookByID } from "../components/Book";
 
 var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
+const updateCookies = () =>{
+  cookiesB = getCookies("B")
+  cookiesM = getCookies("M")
+} 
 
 const DisplayMovie = ({ id, rating }) => {
   const movie = GetMovieByID(id);
@@ -99,4 +103,4 @@ const Ratings = ({ page }) => {
   }
 };
 
-export default Ratings;
+export { Ratings, updateCookies };

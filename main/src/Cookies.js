@@ -59,7 +59,6 @@ function addToWishlist(movieid, exdays) {
       list.splice(i, 1)
       changedList = list.join('&')
       document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
-      window.location.reload()
       return
     }
   }
@@ -67,7 +66,6 @@ function addToWishlist(movieid, exdays) {
   console.log(changedList)
   document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
 
-  window.location.reload()
 }
 
 function onWishlist(id) {
@@ -94,7 +92,7 @@ const getStringOfWishlist = () =>{
   }
   return cookie
 }
-//Searchers saved cookies for a cookie with the name movieid
+//Searches saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
 function getCookie(borm, id) {
   var prevRatings = getStringOfRatings(borm)

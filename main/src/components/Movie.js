@@ -4,6 +4,8 @@ import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
+import { updateCookies } from "../pages/Ratings";
+import { updateWishlist } from "../pages/WishList";
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -34,6 +36,7 @@ const Movie = () => {
     value: stars,
     onChange: (newValue) => {
       setCookie("M", movId, newValue, 5);
+      updateCookies();
     },
   };
   
@@ -45,6 +48,7 @@ const Movie = () => {
     onClick: () => {
       addToWishlist(movId)
       isWishlisted = onWishlist(movId)
+      updateWishlist()
     },
   };
 
