@@ -39,11 +39,11 @@ const App = () => {
 
   return (
     <div className="page">
-      <Navibar page={page} />
+      <Navibar page={page} handleChange={handleChange}/>
       <Routes>
         <Route
           path="/:page"
-          element={<MainPage page={page} handleChange={handleChange} />}
+          element={<MainPage page={page}  />}
         />
         <Route path="/:page/ratings" element={<Ratings page={page} />} />
         <Route path="/:page/wishlist" element={<Wishlist page={page} />} />

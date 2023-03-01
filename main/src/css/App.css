@@ -30,7 +30,8 @@
 
 }
 
-.page-container, .navbar {
+.page-container,
+.navbar {
   padding: 10px;
   display: block;
 }
@@ -86,7 +87,7 @@
 
  .switch-text {
   padding-top: 10px;
-  padding-left: 5px;
+  padding-left: 15px;
  }
 
 .switch-text button {
