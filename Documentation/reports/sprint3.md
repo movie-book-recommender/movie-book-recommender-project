@@ -83,9 +83,9 @@ Viikko 2
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
+| Maanantai 27.2|4|Daily, asiakastapaamiseen valmistautuminen, asiakastapaaminen, retro, planning|
 |Tiistai 28.1.|||
-|Keskiviikko 1.3.|||
+|Keskiviikko 1.3.|1|Daily, metadata-komponentin lisäys, switch-nappi kaikille sivuille, lisenssi lisäys fronttirepoon|
 |Torstai 2.3.|||
 |Perjantai 3.3.|||
 |Viikonloppu 4.-5-3.|||
