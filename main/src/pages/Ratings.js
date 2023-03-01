@@ -9,6 +9,10 @@ import { GetBookByID } from "../components/Book";
 
 var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
+const updateCookies = () =>{
+  cookiesB = getCookies("B")
+  cookiesM = getCookies("M")
+} 
 
 const DisplayMovie = ({ id, rating }) => {
   const movie = GetMovieByID(id);
@@ -19,6 +23,7 @@ const DisplayMovie = ({ id, rating }) => {
     value: rating,
     onChange: (newValue) => {
       setCookie("M", id, newValue, 5);
+      updateCookies()
     }
   };
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
@@ -45,6 +50,7 @@ const DisplayBook = ({ id, rating }) =>{
     value: parseInt(rating),
     onChange: (newValue) => {
       setCookie("B", id, newValue, 5);
+      updateCookies()
     }  
   };
   var imageSource = book.img
@@ -98,4 +104,4 @@ const Ratings = ({ page }) => {
   }
 };
 
-export default Ratings;
+export { Ratings, updateCookies };
