@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Navibar = ({ page }) => {
+const Navibar = ({ page, handleChange }) => {
   return (
+    <>
     <div className="navbar">
       <Link to={`/${page}`} data-link="ItemLens">
         ItemLens
@@ -16,6 +17,11 @@ const Navibar = ({ page }) => {
         Search
       </Link>
     </div>
+    <div className="switch-text">
+      Your are currently on {page} page. <button onClick={handleChange}>Switch to {page === "books" ? "movies" : "books"}
+      </button>
+    </div>
+    </>
   );
 };
 

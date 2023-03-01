@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet"
 
 import "./css/App.css";
 import "react-multi-carousel/lib/styles.css";
@@ -38,22 +39,27 @@ const App = () => {
   };
 
   return (
-    <div className="page">
-      <Navibar page={page} />
-      <Routes>
-        <Route
-          path="/:page"
-          element={<MainPage page={page} handleChange={handleChange} />}
-        />
-        <Route path="/:page/ratings" element={<Ratings page={page} />} />
-        <Route path="/:page/wishlist" element={<Wishlist page={page} />} />
-        <Route path="/:page/search" element={<SearchPage page={page} />} />
-        <Route path="/movie/:id" element={<Movie page={page}/>} />
-        <Route path="/book/:id" element={<Book page={page}/>} />
-        <Route path="/" element={<MainPage page={page} />} />
-      </Routes>
-
-    </div>
+    <>
+      <Helmet>
+        <title>Movie-Book Recommender</title>
+        <meta name="description" content="Get movie and book recommendations based on your ratings!" />
+      </Helmet>
+      <div className="page">
+        <Navibar page={page} handleChange={handleChange}/>
+        <Routes>
+          <Route
+            path="/:page"
+            element={<MainPage page={page}  />}
+          />
+          <Route path="/:page/ratings" element={<Ratings page={page} />} />
+          <Route path="/:page/wishlist" element={<Wishlist page={page} />} />
+          <Route path="/:page/search" element={<SearchPage page={page} />} />
+          <Route path="/movie/:id" element={<Movie page={page}/>} />
+          <Route path="/book/:id" element={<Book page={page}/>} />
+          <Route path="/" element={<MainPage page={page} />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 

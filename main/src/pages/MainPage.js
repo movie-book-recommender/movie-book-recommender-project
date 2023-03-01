@@ -7,7 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import Search from "../Search";
 import Items from "../Carusel";
 
-const MainPage = ({ page, handleChange }) => {
+const MainPage = ({ page }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -21,10 +21,6 @@ const MainPage = ({ page, handleChange }) => {
 
   return (
     <div className="page-container">
-      <div className="switch-text">
-        Your are currently on {page} page. <button onClick={handleChange}>Switch to {page === "books" ? "movies" : "books"}
-        </button>
-      </div>
       <h2>Top 10 newest {page}</h2>
       <Items items={items} page={page} />
       <Search page={page} />
