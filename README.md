@@ -2,6 +2,8 @@
 
 # Movie-book recommender project for software engineering project 2023
 
+[Try our apllication here](http://128.214.253.51:5000/movies)
+
 ## Instructions
 
 Clone this project using 
