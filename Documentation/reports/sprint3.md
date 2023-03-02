@@ -4,12 +4,12 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
+| Maanantai 27.2|4|Asiakastapaamisen suunnittelu, asiakastapaaminen, retro, sprint planning|
 |Tiistai 28.1.|||
-|Keskiviikko 1.3.|||
-|Torstai 2.3.|||
+|Keskiviikko 1.3.|4|Demon diojen tekemistä ja videon aloittamista|
+|Torstai 2.3.|6|Demovideon tekemistä, editointia, suunnittelua ja lataamista|
 |Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
+|Viikonloppu 4.-5-3.|1|viikon dailyt|
 |Yhteensä|||
 Viikko 2
 |||
