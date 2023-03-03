@@ -121,13 +121,13 @@ Viikko 2
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
-|Tiistai 28.1.|||
-|Keskiviikko 1.3.|||
-|Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+| Maanantai 27.2|4|Asiakastapaamisen suunnittelu, asiakastapaaminen, retro, sprint planning|
+|Tiistai 28.1.|0|n/a|
+|Keskiviikko 1.3.|0.17|Daily|
+|Torstai 2.3.|0.25|Daily, demo preppaus|
+|Perjantai 3.3.|5|Kurssin demo, team event|
+|Viikonloppu 4.-5-3.|0||
+|Yhteensä|9|Sovitusti tunteja jätetty sprintin toiselle viikolle|
 Viikko 2
 |||
 | Maanantai 6.3.|||
