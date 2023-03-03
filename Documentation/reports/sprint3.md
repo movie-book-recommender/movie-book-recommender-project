@@ -8,9 +8,9 @@
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|4|Demon diojen tekemistä ja videon aloittamista|
 |Torstai 2.3.|6|Demovideon tekemistä, editointia, suunnittelua ja lataamista|
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|1|viikon dailyt|
-|Yhteensä|||
+|Yhteensä|20||
 Viikko 2
 |||
 | Maanantai 6.3.|||
