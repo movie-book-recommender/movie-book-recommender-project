@@ -42,22 +42,22 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|||
+| Maanantai 30.1.|4|Asiakastapaaminen, sprint planning ja sprint retro ja Dockeria|
 |Tiistai 31.1.|||
-|Keskiviikko 1.2.|||
-|Torstai 2.2.|||
-|Perjantai 3.2.|||
+|Keskiviikko 1.2.|2|Dockerin opettelua|
+|Torstai 2.2.|2|Dockerin opettelua ja imagen luomista|
+|Perjantai 3.2.|3|leffojen hakutoiminnan suunnittelua|
 |Viikonloppu 4.-5.2.|||
-|Yhteensä|||
+|Yhteensä|11||
 Viikko 2
 |||
-| Maanantai 6.2.|||
-|Tiistai 7.2.|||
+| Maanantai 6.2.|2|hakutoimintoon tutustuminen|
+|Tiistai 7.2.|4|cypressiin tutustumita|
 |Keskiviikko 8.2.|||
-|Torstai 9.2.|||
-|Perjantai 10.2.|||
-|Viikonloppu 11.-12.2.|||
-|Yhteensä|||
+|Torstai 9.2.|4|pikahakutoiminnon toteutus ja tulosten näyttäminen|
+|Perjantai 10.2.|1|tiimipalaveri|
+|Viikonloppu 11.-12.2.|1|dailit|
+|Yhteensä|12||
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|

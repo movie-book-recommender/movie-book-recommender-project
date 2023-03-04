@@ -44,22 +44,22 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.2|||
-|Tiistai 14.1.|||
-|Keskiviikko 15.2.|||
-|Torstai 16.2.|||
-|Perjantai 17.2.|||
-|Viikonloppu 18.-19.2.|||
-|Yhteensä|||
+| Maanantai 13.2|4|Yhdessä tekemistä luolassa, asiakastapaaminen, retro ja sprint planning|
+|Tiistai 14.1.|4|main page kirjoille, nappi kirjojen ja leffojen väliseen navigointiin|
+|Keskiviikko 15.2.|7|pikahakutoiminnon toteudus kirjoille, yksittäisen leffan sivu, hakutoimintokiroille|
+|Torstai 16.2.|7|bugien korjaus, testit kaikille toiminnoille|
+|Perjantai 17.2.|2|rating toiminnon kirjoille toteutuksen ideointi|
+|Viikonloppu 18.-19.2.|1|viikon deilit|
+|Yhteensä|25||
 Viikko 2
 |||
-| Maanantai 20.2.|||
-|Tiistai 21.2.|||
-|Keskiviikko 22.2.|||
-|Torstai 23.2.|||
-|Perjantai 24.2.|||
-|Viikonloppu 25.-26.2.|||
-|Yhteensä|||
+| Maanantai 20.2.|3|rikkimennevien kirjatestien korjaaminen|
+|Tiistai 21.2.|4|koodiparannusta, warningien korjausta, eslint virheiden korjausta|
+|Keskiviikko 22.2.|2|aloitin  frontendin siistiminen|
+|Torstai 23.2.|4|kaikkien turhien tiedostojen poisto frontendin puolesta, dokumentaation muokkausta, CI/CD putken muokkaus uuden frontendin arkitehtuurin mukaan|
+|Perjantai 24.2.|0.5|Demon suunnittelu|
+|Viikonloppu 25.-26.2.|1|viikon deilit|
+|Yhteensä|14.5||
 
 ### Aleksi
 | päivä | aika | tehdyt asiat  |

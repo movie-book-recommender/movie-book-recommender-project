@@ -44,13 +44,13 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
+| Maanantai 27.2|2|Asiakaspalaveri, sprint planning ja retro|
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|||
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 2
 |||
 | Maanantai 6.3.|||
