@@ -8,9 +8,9 @@
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|4|Demon diojen tekemistä ja videon aloittamista|
 |Torstai 2.3.|6|Demovideon tekemistä, editointia, suunnittelua ja lataamista|
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|1|viikon dailyt|
-|Yhteensä|||
+|Yhteensä|20||
 Viikko 2
 |||
 | Maanantai 6.3.|||
@@ -27,10 +27,10 @@ Viikko 2
 | Maanantai 27.2|2|Asiakaspalaveri, sprint planning ja retro|
 |Tiistai 28.1.|2|Parhaiten arvosteltujen kirjojen top 10 backend funktion viimeistely|
 |Keskiviikko 1.3.|||
-|Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|4||
+|Torstai 2.3.|0.5|pitch talkin kirjoittaminen|
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
+|Viikonloppu 4.-5-3.|0.5|viikon dailyt|
+|Yhteensä|10||
 Viikko 2
 |||
 | Maanantai 6.3.|||
@@ -44,13 +44,13 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
+| Maanantai 27.2|2|Asiakaspalaveri, sprint planning ja retro|
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|||
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 2
 |||
 | Maanantai 6.3.|||
@@ -121,13 +121,13 @@ Viikko 2
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
-|Tiistai 28.1.|||
-|Keskiviikko 1.3.|||
-|Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+| Maanantai 27.2|4|Asiakastapaamisen suunnittelu, asiakastapaaminen, retro, sprint planning|
+|Tiistai 28.1.|0|n/a|
+|Keskiviikko 1.3.|0.17|Daily|
+|Torstai 2.3.|0.25|Daily, demo preppaus|
+|Perjantai 3.3.|5|Kurssin demo, team event|
+|Viikonloppu 4.-5-3.|0||
+|Yhteensä|9|Sovitusti tunteja jätetty sprintin toiselle viikolle|
 Viikko 2
 |||
 | Maanantai 6.3.|||
@@ -139,3 +139,5 @@ Viikko 2
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+- Demovideo välidemoon
+- Logo sovellukselle
