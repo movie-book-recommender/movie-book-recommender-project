@@ -7,11 +7,11 @@
 * If npm has not been installed it can be installed with [Node version manager(nvm)](https://github.com/nvm-sh/nvm#installing-and-updating) 
 * After installing nvm ```nvm install node``` will install node and npm
 
-3. ```npm install``` in the folder with App.js file to install dependencies 
+3. ```npm install``` in the folder **main** to install dependencies
 
 4. Run the flask-backend on a separate terminal window
 
-5. ```npm start``` to run the react-frontend from the folder with App.js
+5. ```npm start``` to run the react-frontend from the folder **main**
 
 6. Ctrl+C to shut down the local frontend
 
