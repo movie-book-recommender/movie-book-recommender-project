@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 import image from "../NoImage.jpg";
-import { getCookies, setCookie } from "../Cookies.js";
+import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 import { GetBookByID } from "../components/Book";
 
@@ -12,7 +12,17 @@ var cookiesM = getCookies("M");
 const updateCookies = () =>{
   cookiesB = getCookies("B")
   cookiesM = getCookies("M")
+}
+
+const removeRating = (borm, id) =>{
+  setCookie(borm, id, 0, 5)
+  updateCookies()
 } 
+
+const removeAll = (borm) => {
+  removeAllRatings(borm)
+  updateCookies()
+}
 
 const DisplayMovie = ({ id, rating }) => {
   const movie = GetMovieByID(id);
@@ -37,6 +47,9 @@ const DisplayMovie = ({ id, rating }) => {
       </Link>
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
+      <Link onClick={() =>{removeRating("M", id)}}>
+        <p>Remove rating</p>
+      </Link>
     </div>
   );
 };
@@ -64,6 +77,9 @@ const DisplayBook = ({ id, rating }) =>{
       </Link>
       <h3>{book.title}</h3>
       <ReactStars {...ratingStars} />
+      <Link onClick={() =>{removeRating("B", id)}}>
+        <p>Remove rating</p>
+      </Link>
     </div>
   )
 }
@@ -78,6 +94,9 @@ const Ratings = ({ page }) => {
     <div class="page-container">
       <h2>My ratings</h2>
       <h3>You have rated {cookiesB.length} books.</h3>
+      <Link onClick={() =>{removeAll("B")}}>
+        <p>Remove all ratings</p>
+      </Link>
       <div>
         {cookiesB.map((cookie) => (
           <DisplayBook id={cookie[0]} rating={cookie[1]}/>
@@ -94,6 +113,9 @@ const Ratings = ({ page }) => {
       <div class="page-container">
         <h2>MyRatings</h2>
         <h3>You have rated {cookiesM.length} movies.</h3>
+        <Link onClick={() =>{removeAll("M")}}>
+          <p>Remove all ratings</p>
+        </Link>
         <div>
           {cookiesM.map((cookie) => (
             <DisplayMovie id={cookie[0]} rating={cookie[1]} />
