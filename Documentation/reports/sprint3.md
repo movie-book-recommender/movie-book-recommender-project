@@ -33,13 +33,13 @@ Viikko 2
 |Yhteensä|10||
 Viikko 2
 |||
-| Maanantai 6.3.|||
+| Maanantai 6.3.|4|Algoritmin tutkimista ja datan luomista sitä varten|
 |Tiistai 7.3.|||
 |Keskiviikko 8.3.|||
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
 |Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Yhteensä|4||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
