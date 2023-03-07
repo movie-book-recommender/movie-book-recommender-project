@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+  import { Link } from "react-router-dom";
 
 import ReactStars from "react-rating-stars-component";
 import image from "../NoImage.jpg";

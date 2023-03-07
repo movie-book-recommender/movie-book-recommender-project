@@ -45,7 +45,7 @@ const Movie = () => {
   const removeRating = (borm, id) =>{
     setCookie(borm, id, 0, 5)
     updateCookies()
-  } 
+  }
 
 
   var isWishlisted = onWishlist(movId);

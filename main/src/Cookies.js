@@ -8,7 +8,6 @@ function setCookie(borm, movieid, rating, exdays) {
   let expires = "expires="+d.toUTCString();
   var prevRatings = getStringOfRatings(borm)
   if(getCookie(borm, movieid) !== 0){
-    console.log(prevRatings)
     var ratings = prevRatings.split('&')
     var changedRatings = ""
     for(var i = 0; i < ratings.length; i++){

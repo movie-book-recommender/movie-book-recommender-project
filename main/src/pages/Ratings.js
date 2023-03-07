@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import { useState, useEffect } from "react";
 
 import image from "../NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
@@ -118,7 +119,7 @@ const Ratings = ({ page }) => {
         </Link>
         <div>
           {cookiesM.map((cookie) => (
-            <DisplayMovie id={cookie[0]} rating={cookie[1]} />
+            <DisplayMovie id={cookie[0]} rating={cookie[1]} key={cookie[0]}/>
           ))}
         </div>
       </div>
