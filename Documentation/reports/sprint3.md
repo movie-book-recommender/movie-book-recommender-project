@@ -130,8 +130,8 @@ Viikko 2
 |Yhteensä|9|Sovitusti tunteja jätetty sprintin toiselle viikolle|
 Viikko 2
 |||
-| Maanantai 6.3.|||
-|Tiistai 7.3.|||
+| Maanantai 6.3.|6|Daily, tutustuminen algoritmiin, algoritmin scriptin luominen movie-to-movies suosittelulle|
+|Tiistai 7.3.|8|Algoritmin scriptin tarkennus, movie-to-movie datan ajaminen, APIen työstö movie-to-movie suositteluille sekä searchin päivitykselle|
 |Keskiviikko 8.3.|||
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
