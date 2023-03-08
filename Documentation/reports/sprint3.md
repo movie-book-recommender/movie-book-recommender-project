@@ -87,14 +87,14 @@ Viikko 2
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|1|Daily, metadata-komponentin lisäys, switch-nappi kaikille sivuille, lisenssi lisäys fronttirepoon|
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|Välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Yhteensä|10||
 Viikko 2
 |||
 | Maanantai 6.3.|||
 |Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
+|Keskiviikko 8.3.|5|Daily, hakusivun parantelua ja testailua|
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
 |Viikonloppu 11.-12.3.|||
