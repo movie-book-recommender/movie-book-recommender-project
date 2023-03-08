@@ -1,7 +1,7 @@
 describe("Search Page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/movies")
-    cy.contains("Search").click()
+    cy.get(".navbar").contains("Search").click()
   });
 
   it("can be opened", function () {
@@ -71,7 +71,7 @@ describe("Search Page ", function () {
 
   describe("shows items in correct order after", function () {
     beforeEach(function () {
-      cy.get("input").type("harry potter");
+      cy.get("input").type("harry potter")
       cy.get("[data-testid='SearchIcon']").click()
       cy.wait(1000)
       cy.contains("Harry Potter and the Philosopher's Stone")
