@@ -1,11 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+  import { Link } from "react-router-dom";
+
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist} from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
+
+const removeRating = (borm, id) =>{
+  setCookie(borm, id, 0, 5)
+  updateCookies()
+} 
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -73,6 +80,9 @@ const Book = () => {
       <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
       </div>
+      <Link onClick={() =>{removeRating("B", id)}}>
+        <p>Remove rating</p>
+      </Link>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>

@@ -27,19 +27,19 @@ Viikko 2
 | Maanantai 27.2|2|Asiakaspalaveri, sprint planning ja retro|
 |Tiistai 28.1.|2|Parhaiten arvosteltujen kirjojen top 10 backend funktion viimeistely|
 |Keskiviikko 1.3.|||
-|Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|4||
+|Torstai 2.3.|0.5|pitch talkin kirjoittaminen|
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
+|Viikonloppu 4.-5-3.|0.5|viikon dailyt|
+|Yhteensä|10||
 Viikko 2
 |||
-| Maanantai 6.3.|||
+| Maanantai 6.3.|4|Algoritmin tutkimista ja datan luomista sitä varten|
 |Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
+|Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Viikonloppu 11.-12.3.|1|Viikon dailyt|
+|Yhteensä|9||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -130,8 +130,8 @@ Viikko 2
 |Yhteensä|9|Sovitusti tunteja jätetty sprintin toiselle viikolle|
 Viikko 2
 |||
-| Maanantai 6.3.|||
-|Tiistai 7.3.|||
+| Maanantai 6.3.|6|Daily, tutustuminen algoritmiin, algoritmin scriptin luominen movie-to-movies suosittelulle|
+|Tiistai 7.3.|8|Algoritmin scriptin tarkennus, movie-to-movie datan ajaminen, APIen työstö movie-to-movie suositteluille sekä searchin päivitykselle|
 |Keskiviikko 8.3.|||
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
@@ -139,3 +139,7 @@ Viikko 2
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+- Demovideo välidemoon
+- Logo sovellukselle
+- Dataa suosituksia varten tietokantoihin
+- Elokuvasuositukset elokuville
