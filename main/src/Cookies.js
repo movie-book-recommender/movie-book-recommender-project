@@ -8,23 +8,31 @@ function setCookie(borm, movieid, rating, exdays) {
   let expires = "expires="+d.toUTCString();
   var prevRatings = getStringOfRatings(borm)
   if(getCookie(borm, movieid) !== 0){
-    console.log(prevRatings)
     var ratings = prevRatings.split('&')
     var changedRatings = ""
     for(var i = 0; i < ratings.length; i++){
-      var pair = ratings[i].split("=")
+      var pair = ratings[i].split(":")
       if(pair[0] === movieid){
         pair[1] = rating
       }
       if(pair[0] !== ''){
-        changedRatings = changedRatings + "&" + pair[0] + "=" + pair[1]
+        if(pair[0] === movieid && pair[1] === 0){
+        }else{
+          changedRatings = changedRatings + "&" + pair[0] + ":" + pair[1]
+        }
       }
     }
-    console.log(changedRatings)
-    document.cookie = borm + "Ratings:" + changedRatings + ";" + expires + ";path=/"
+    document.cookie = borm + "Ratings=" + changedRatings + ";" + expires + ";path=/"
   }else{
-  document.cookie = borm + "Ratings:" + prevRatings + "&" + movieid + "=" + rating + ";" + expires + ";path=/";
+  document.cookie = borm + "Ratings=" + prevRatings + "&" + movieid + ":" + rating + ";" + expires + ";path=/";
   }  
+}
+
+const removeAllRatings = (borm) =>{
+  const d = new Date();
+  d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = borm + "Ratings=" + ";" + expires + ";path=/";
 }
 
 const getStringOfRatings = (borm) =>{
@@ -33,14 +41,14 @@ const getStringOfRatings = (borm) =>{
     return ""
   }
   var cookie = ""
-  if(cookies[0].substring(0, 9) === borm + "Ratings:"){
+  if(cookies[0].substring(0, 9) === borm + "Ratings="){
     cookie = cookies[0].substring(9)
   }
   for(var i = 1; i < cookies.length; i++){
     cookies[i] = cookies[i].substring(1)
     console.log(cookies[i].substring(0, 9))
-    console.log(borm + "Ratings:")
-    if(cookies[i].substring(0, 9) === borm + "Ratings:"){
+    console.log(borm + "Ratings=")
+    if(cookies[i].substring(0, 9) === borm + "Ratings="){
       cookie = cookies[i].substring(9)
     }  
   }   
@@ -99,7 +107,7 @@ function getCookie(borm, id) {
   var prevRatings = getStringOfRatings(borm)
   let pairs = prevRatings.split('&');
   for(let i = 1; i < pairs.length; i++) {
-    let pair = pairs[i].split('=');
+    let pair = pairs[i].split(':');
     if(pair[0].substring(0, 1) === ' '){
       pair[0] = pair[0].substring(1)
     }
@@ -118,11 +126,11 @@ function getCookies(borm){
   console.log(pairs)
   var cookies = []
   for(var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=")
+    var pair = pairs[i].split(":")
     cookies[i] = pair;
   }
   cookies.shift()
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist };
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings };

@@ -2,6 +2,8 @@
 
 # Movie-book recommender project for software engineering project 2023
 
+[Try our apllication here](http://128.214.253.51:5000/movies)
+
 ## Instructions
 
 Clone this project using 
@@ -37,24 +39,4 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [Sprint 2 backlog](https://github.com/orgs/movie-book-recommender/projects/9/)
 
-## Running the program locally
-First execute these
-
-```
-cd movie-book-recommender
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-```
-For running the program execute the following commands
-```
-cd src/
-flask run
-```
-Open new empty terminal window
-```
-cd src/frontend/
-npm install
-npm start
-```
+- [Sprint 3 backlog](https://github.com/orgs/movie-book-recommender/projects/11/)
