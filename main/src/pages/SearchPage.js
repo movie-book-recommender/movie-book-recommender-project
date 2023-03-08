@@ -75,7 +75,7 @@ const SearchPage = ({ page }) => {
 
   return(
     <div class="page-container">
-      <h2>Search {page}</h2>
+      <h2>Search movies and books</h2>
       <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
       <div class="sort-container">
           <p>
@@ -140,21 +140,22 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
 }
 
 const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
-  if ((searchResultMovies.length !== 0 || searchResultBooks !==0) && searchKey !== ""){
+  console.log(false || false)
+  if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
     console.log("hello")
     console.log(searchResultMovies.length, searchResultBooks.length, searchKey)
     return(
       <div class="search-result">
         <h2>Search result for '{searchKey}'</h2>
         <div class="result-table">
-          <div class="table">
-            <div class="table-item-left">
+          <div class="table-left">
+            <div class="table-item">
               <h3>Movies</h3>
             </div>
             {searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
           </div>
-          <div class="table">
-          <div class="table-item-left">
+          <div class="table-right">
+          <div class="table-item">
               <h3>Books</h3>
             </div>
             {searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)}
@@ -180,20 +181,20 @@ const DisplayMovie = ({movie}) => {
       imageSource = image
   }
   return(
-    <div class="table-item-left">
-      <div class="table-item-left-pic">
+    <div class="table-item">
+      <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
           <img src={imageSource} />
         </Link>
       </div>
-      <div class="table-item-left-info">
-        <div class="table-item-left-title">
+      <div class="table-item-info">
+        <div class="table-item-title">
           <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link> ({releaseYear})
         </div>
         <div>
           {movie.runtime} min
         </div>
-        <div class="table-item-left-rate">
+        <div class="table-item-rate">
           Your rate:
         </div>
         <div class="genres">
@@ -210,20 +211,20 @@ const DisplayBook = ({book}) => {
       imageSource = image
   }
   return(
-    <div class="table-item-left">
-      <div class="table-item-left-pic">
+    <div class="table-item">
+      <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} />
         </Link>
       </div>
-      <div class="table-item-left-info">
-        <div class="table-item-left-title">
+      <div class="table-item-info">
+        <div class="table-item-title">
           <Link to={`/book/${book.item_id}`}>{book.title}</Link>
         </div>
         <div>
           First publish in {book.year}
         </div>
-        <div class="table-item-left-rate">
+        <div class="table-item-rate">
           Your rate:
         </div>
       </div>
