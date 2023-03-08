@@ -35,11 +35,11 @@ Viikko 2
 |||
 | Maanantai 6.3.|4|Algoritmin tutkimista ja datan luomista sitä varten|
 |Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
+|Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|4||
+|Viikonloppu 11.-12.3.|1|Viikon dailyt|
+|Yhteensä|9||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -141,3 +141,5 @@ Viikko 2
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Demovideo välidemoon
 - Logo sovellukselle
+- Dataa suosituksia varten tietokantoihin
+- Elokuvasuositukset elokuville
