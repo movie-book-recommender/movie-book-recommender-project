@@ -1,9 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+  import { Link } from "react-router-dom";
+
 import ReactStars from "react-rating-stars-component";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
+
+const removeRating = (borm, id) =>{
+  setCookie(borm, id, 0, 5)
+  updateCookies()
+} 
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -56,6 +63,9 @@ const Book = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <Link onClick={() =>{removeRating("B", id)}}>
+        <p>Remove rating</p>
+      </Link>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>

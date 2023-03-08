@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
+
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -39,7 +42,12 @@ const Movie = () => {
       updateCookies();
     },
   };
-  
+  const removeRating = (borm, id) =>{
+    setCookie(borm, id, 0, 5)
+    updateCookies()
+  }
+
+
   var isWishlisted = onWishlist(movId);
 
   const heartElement = {
@@ -71,6 +79,9 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <Link onClick={() =>{removeRating("M", id)}}>
+        <p>Remove rating</p>
+      </Link>
       <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
       </div>
