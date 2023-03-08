@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
+import Heart from "react-heart";
 import image from "../NoImage.jpg";
-import { getCookie, setCookie } from "../Cookies.js";
+import { getCookie, setCookie, onWishlist, addToWishlist} from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
+import { updateWishlist } from "../pages/WishList";
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -37,6 +39,18 @@ const Book = () => {
     },
   };
 
+  var isWishlisted = onWishlist("B", bookId);
+
+  const heartElement = {
+    animationTrigger: "hover",
+    isActive: isWishlisted,
+    onClick: () => {
+      addToWishlist("B", bookId)
+      isWishlisted = onWishlist(bookId)
+      updateWishlist()
+    },
+  };
+
   if (book.length === 0) {
     return (
       <div class="page-container">
@@ -56,6 +70,9 @@ const Book = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
+      <div class="heart" style={{ width: "2rem"}}>
+        <Heart {...heartElement}/>
+      </div>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>
