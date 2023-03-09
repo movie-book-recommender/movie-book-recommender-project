@@ -94,8 +94,8 @@ Viikko 2
 |||
 | Maanantai 6.3.|||
 |Tiistai 7.3.|||
-|Keskiviikko 8.3.|5|Daily, hakusivun parantelua ja testailua|
-|Torstai 9.3.|||
+|Keskiviikko 8.3.|6|Daily, hakusivun parantelua ja testailua|
+|Torstai 9.3.|2,5|Reittaustestejä, wishlistin toiminnan tutkimista|
 |Perjantai 10.3.|||
 |Viikonloppu 11.-12.3.|||
 |Yhteensä|||
