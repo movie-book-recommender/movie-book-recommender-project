@@ -27,7 +27,7 @@ describe("Itemlens' movie mainpage ", function () {
   
   it("link to Search works ", function () {
     cy.get(".navbar").contains("Search").click();
-    cy.contains("Search movies");
+    cy.contains("Search movies and books");
   });
 
   // test if you can write in search field

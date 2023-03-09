@@ -26,9 +26,4 @@ describe("Itemlens book mainpage ", function () {
     cy.get("input").clear();
     cy.contains("Eric (Discworld, #9; Rincewind #4)").should("not.exist");
   });
-
-  it("link to Search works", function () {
-    cy.get(".navbar").contains("Search").click();
-    cy.contains("Search books");
-  });
 });
