@@ -1,16 +1,17 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-  import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ReactStars from "react-rating-stars-component";
 import image from "../NoImage.jpg";
 import { getCookie, setCookie } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
+import Items from "../Carusel";
 
-const removeRating = (borm, id) =>{
-  setCookie(borm, id, 0, 5)
-  updateCookies()
-} 
+const removeRating = (borm, id) => {
+  setCookie(borm, id, 0, 5);
+  updateCookies();
+};
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -23,6 +24,19 @@ const GetBookByID = (id) => {
   }, []);
   return book;
 };
+const GetBookRecommendationsByID = (id) => {
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000/dbgetforgivenbookrecommendedbooksalldata?bookid=${id}`
+      )
+      .then((response) => {
+        setBooks(response.data);
+      });
+  }, []);
+  return books;
+};
 
 const Book = () => {
   var urlString = window.location.href;
@@ -30,6 +44,7 @@ const Book = () => {
   var id = parseHelper[1];
 
   const book = GetBookByID(id);
+  const recommendationsBooks = GetBookRecommendationsByID(id);
   var bookId = id;
   var stars = getCookie(bookId);
 
@@ -46,7 +61,7 @@ const Book = () => {
 
   if (book.length === 0) {
     return (
-      <div class="page-container">
+      <div className="page-container">
         <h1>No book found for BookID</h1>
       </div>
     );
@@ -56,14 +71,18 @@ const Book = () => {
     imageSource = image;
   }
   return (
-    <div class="page-container">
+    <div className="page-container">
       <h1>{book.title}</h1>
       <div>
         <img src={imageSource} width={150} height={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
-      <Link onClick={() =>{removeRating("B", id)}}>
+      <Link
+        onClick={() => {
+          removeRating("B", id);
+        }}
+      >
         <p>Remove rating</p>
       </Link>
       <h3>Authors:</h3>
@@ -77,6 +96,14 @@ const Book = () => {
       <a href={`${book.url}`} target="_blank" rel="noreferrer">
         <p>Book</p>
       </a>
+
+      <h3>Similar books</h3>
+
+      {recommendationsBooks.length > 0 ? (
+        <Items items={recommendationsBooks} page={"books"} />
+      ) : (
+        <p>could not find similar books</p>
+      )}
     </div>
   );
 };
