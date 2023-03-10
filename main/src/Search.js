@@ -16,7 +16,6 @@ const Search = ({ page }) => {
       .then((response) => {
         setSearchResult(response.data);
       });
-    console.log(searchResult);
   }, [newSearch]);
 
   useEffect(() => {
