@@ -73,7 +73,7 @@ const DisplayBook = ({ id, rating }) =>{
   }
   return(
     <div>
-      <Link to={`/book/${book.bookId}`}>
+      <Link to={`/book/${book.item_id}`}>
         <img src={imageSource} width={150} height={"auto"} />
       </Link>
       <h3>{book.title}</h3>

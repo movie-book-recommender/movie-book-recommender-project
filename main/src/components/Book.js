@@ -48,7 +48,7 @@ const Book = () => {
   const book = GetBookByID(id);
   const recommendationsBooks = GetBookRecommendationsByID(id);
   var bookId = id;
-  var stars = getCookie(bookId);
+  var stars = getCookie("B", bookId);
 
   const ratingStars = {
     size: 40,
