@@ -9,55 +9,73 @@ import SearchIcon from '@mui/icons-material/Search';
 import image from '../NoImage.jpg'
 
 const SearchPage = ({ page }) => {
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResultMovies, setSearchResultMovies] = useState([]);
+  const [searchResultBooks, setSearchResultBooks] = useState([])
   const [searchKey, setSearchKey] = useState("")
   const [newSearch, setNewSearch] = useState("");
 
   const handleSearch = (event) => {
     event.preventDefault()
+
     axios
-    .get(`http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`)
+    .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
     .then(response => {
-        console.log(newSearch)
-        setSearchResult(response.data)
+        setSearchResultMovies(response.data)
+        console.log(response.data)
+    })
+
+    axios
+    .get(`http://128.214.253.51:3000/dbsearchbooksbyname?input=${newSearch}`)
+    .then(response => {
+        setSearchResultBooks(response.data)
+        console.log(response.data)
         setSearchKey(newSearch)
-        console.log(searchKey)
-        console.log(searchResult.length)
         setNewSearch('')
+
     })
   }
 
   const handleSearchChange = (event) => (setNewSearch(event.target.value))
 
   const handleSortByReleaseOld = () => {
-    // ei toimi kirjoille oikein!
-    const sortedByReleaseNew = [...searchResult].sort(compareRelease);
-    setSearchResult(sortedByReleaseNew);
+    const sortedByReleaseNewMovies = [...searchResultMovies].sort(compareReleaseMovies);
+    setSearchResultMovies(sortedByReleaseNewMovies);
+    const sortedByReleaseNewBooks = [...searchResultBooks].sort(compareReleaseBooks)
+    setSearchResultBooks(sortedByReleaseNewBooks)
   };
 
   const handleSortByReleaseNew = () => {
-    // ei toimi kirjoille oikein!!
-    const sortedByReleaseOld = [...searchResult].sort(compareRelease).reverse();
-    setSearchResult(sortedByReleaseOld);
+    const sortedByReleaseOldMovies = [...searchResultMovies].sort(compareReleaseMovies).reverse();
+    setSearchResultMovies(sortedByReleaseOldMovies);
+    const sortedByReleaseOldBooks = [...searchResultBooks].sort(compareReleaseBooks).reverse();
+    setSearchResultBooks(sortedByReleaseOldBooks);
   };
 
   const handleSortByTitleAsc = () => {
-    const sortedByTitleAsc = [...searchResult].sort((a, b) =>
+    const sortedByTitleAscMovies = [...searchResultMovies].sort((a, b) =>
       a.title.localeCompare(b.title)
     );
-    setSearchResult(sortedByTitleAsc);
+    setSearchResultMovies(sortedByTitleAscMovies);
+    const sortedByTitleAscBooks = [...searchResultBooks].sort((a, b) =>
+    a.title.localeCompare(b.title)
+    );
+    setSearchResultBooks(sortedByTitleAscBooks);
   };
 
   const handleSortByTitleDesc = () => {
-    const sortedByTitleDesc = [...searchResult]
+    const sortedByTitleDescMovies = [...searchResultMovies]
       .sort((a, b) => a.title.localeCompare(b.title))
       .reverse();
-    setSearchResult(sortedByTitleDesc);
+    setSearchResultMovies(sortedByTitleDescMovies);
+    const sortedByTitleDescBooks = [...searchResultBooks]
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .reverse();
+    setSearchResultBooks(sortedByTitleDescBooks);
   };
 
   return(
     <div class="page-container">
-      <h2>Search {page}</h2>
+      <h2>Search movies and books</h2>
       <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
       <div class="sort-container">
           <p>
@@ -68,17 +86,26 @@ const SearchPage = ({ page }) => {
               <button onClick={handleSortByTitleDesc}>title Z-A</button>
           </p>
       </div>
-      <SearchResult searchResult={searchResult} searchKey={searchKey} page={page}/>
+      <SearchResult searchResultMovies={searchResultMovies} searchResultBooks={searchResultBooks} searchKey={searchKey} />
     </div>
   )
 };
 
 export default SearchPage;
 
-function compareRelease(a, b) {
+function compareReleaseMovies(a, b) {
   if (Date.parse(a.releasedate) < Date.parse(b.releasedate)) {
     return -1;
   } else if (Date.parse(a.releasedate) > Date.parse(b.releasedate)) {
+    return 1;
+  }
+  return 0;
+}
+
+function compareReleaseBooks(a, b) {
+  if (a.year < b.year) {
+    return -1;
+  } else if (a.year > b.year) {
     return 1;
   }
   return 0;
@@ -112,28 +139,32 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
   )
 }
 
-const SearchResult = ({searchResult, searchKey, page}) => {
-  if (searchResult.length !== 0 && searchKey !== ""){
-    if (page === "movies"){
-      return(
-        <div class="search-result">
-          <h2>Search result for '{searchKey}'</h2>
-          <div class="table">
-            {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
+  console.log(false || false)
+  if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
+    console.log("hello")
+    console.log(searchResultMovies.length, searchResultBooks.length, searchKey)
+    return(
+      <div class="search-result">
+        <h2>Search result for '{searchKey}'</h2>
+        <div class="result-table">
+          <div class="table-left">
+            <div class="table-item">
+              <h3>Movies</h3>
+            </div>
+            {searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+          </div>
+          <div class="table-right">
+          <div class="table-item">
+              <h3>Books</h3>
+            </div>
+            {searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)}
           </div>
         </div>
-      )
-    } else {
-      return(
-        <div class="search-result">
-          <h2>Search result for '{searchKey}'</h2>
-          <div class="table">
-            {searchResult.map(book => <DisplayBook key={book.id} book={book} />)}
-          </div>
-        </div>
-      )
-    }
+      </div>
+    )
   } else if (searchKey !== ""){
+    console.log("not here")
     return(
       <div class="search-result">
         <h2>No result for '{searchKey}'</h2>

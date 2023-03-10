@@ -61,13 +61,13 @@ const Movie = () => {
     updateCookies();
   };
 
-  var isWishlisted = onWishlist(movId);
+  var isWishlisted = onWishlist("M", movId);
 
   const heartElement = {
     animationTrigger: "hover",
     isActive: isWishlisted,
     onClick: () => {
-      addToWishlist(movId);
+      addToWishlist("M", movId);
       isWishlisted = onWishlist(movId);
       updateWishlist();
     },
