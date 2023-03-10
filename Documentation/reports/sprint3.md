@@ -106,9 +106,9 @@ Viikko 2
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|||
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
+|Viikonloppu 4.-5-3.|4|wishlistin viimeistelyä|
+|Yhteensä|9||
 Viikko 2
 |||
 | Maanantai 6.3.|||
