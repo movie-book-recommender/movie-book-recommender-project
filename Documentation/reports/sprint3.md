@@ -95,10 +95,10 @@ Viikko 2
 | Maanantai 6.3.|||
 |Tiistai 7.3.|||
 |Keskiviikko 8.3.|6|Daily, hakusivun parantelua ja testailua|
-|Torstai 9.3.|2,5|Reittaustestejä, wishlistin toiminnan tutkimista|
-|Perjantai 10.3.|||
+|Torstai 9.3.|3|Arvostelutestejä, wishlistin toiminnan tutkimista|
+|Perjantai 10.3.|1,5|Daily, asiakastapaamisen suunnittelu, testi leffan arvostelun muuttamiselle|
 |Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Yhteensä|7,5||
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
