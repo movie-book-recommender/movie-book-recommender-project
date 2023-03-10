@@ -133,13 +133,14 @@ Viikko 2
 | Maanantai 6.3.|6|Daily, tutustuminen algoritmiin, algoritmin scriptin luominen movie-to-movies suosittelulle|
 |Tiistai 7.3.|8.5|Algoritmin scriptin tarkennus, movie-to-movie datan ajaminen, APIen työstö movie-to-movie suositteluille sekä searchin päivitykselle, datojen lisääminen tietokantaan|
 |Keskiviikko 8.3.|5.25|APIen tarkennus, testien lisäys, book-to-books, movie-to-books ja book-to-movies scriptien työstö, book-to-books datan ajaminen aloitettu, tietokantataulu luotu ja APIen työstö aloitettu, vertaisarvioinnit tehty|
-|Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Torstai 9.3.|1.25|Book-to-books tiedot lisätty tietokantaan. Book-to-books APIt viimeistelty ja testit tehty, laatua parannettu.|
+|Perjantai 10.3.|0.75|Daily. Maanantain demon preppaus ja sprint planningin valmistelu|
+|Viikonloppu 11.-12.3.|0||
+|Yhteensä|22|sprintissä tehty kokonaisuutena 31 tuntia, kumulatiivisesti 1 tunti ekstraa jäljellä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Demovideo välidemoon
 - Logo sovellukselle
 - Dataa suosituksia varten tietokantoihin
 - Elokuvasuositukset elokuville
+- Kirja-suositukset kirjoille
