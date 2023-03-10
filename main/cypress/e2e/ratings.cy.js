@@ -19,6 +19,24 @@ describe("Ratings", function () {
             cy.contains("You have not rated anything yet!").should("not.exist")
         })
 
+        it("can adjust movie rating", function () {
+            cy.get(".react-stars")
+            .within(() => {
+                cy.get("[style='position: relative; overflow: hidden; cursor: pointer; display: block; float: left; color: gray; font-size: 40px;']")
+                .should("have.length", 4)
+            })
+            cy.get(".react-stars")
+            .within(() => {
+                cy.get("[data-index='4']").click()
+            })
+            cy.get(".react-stars")
+            .within(() => {
+                cy.get("[style='position: relative; overflow: hidden; cursor: pointer; display: block; float: left; color: gray; font-size: 40px;']")
+                .should("have.length", 0)
+            })
+        })
+
+
         it("can remove movie rating", function (){
             cy.get(".navbar").contains("Ratings").click()
             cy.contains("You have rated 1 movies.").should("exist")
