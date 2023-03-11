@@ -37,9 +37,9 @@ Viikko 2
 |Tiistai 7.3.|1|Vertaisarviointien tekeminen|
 |Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
-|Perjantai 10.3.|||
+|Perjantai 10.3.|0.5|Maanantain demon preppaus ja sprint planningin valmistelu|
 |Viikonloppu 11.-12.3.|1|Viikon dailyt|
-|Yhteensä|10||
+|Yhteensä|10.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
