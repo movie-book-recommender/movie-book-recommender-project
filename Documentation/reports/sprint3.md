@@ -1,4 +1,4 @@
-# Sprint 2
+# Sprint 3
 ## Työaikakirjanpito
 
 ### Emilia
@@ -34,12 +34,12 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 6.3.|4|Algoritmin tutkimista ja datan luomista sitä varten|
-|Tiistai 7.3.|||
+|Tiistai 7.3.|1|Vertaisarviointien tekeminen|
 |Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
 |Perjantai 10.3.|||
 |Viikonloppu 11.-12.3.|1|Viikon dailyt|
-|Yhteensä|9||
+|Yhteensä|10||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
