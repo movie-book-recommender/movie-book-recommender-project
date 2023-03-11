@@ -38,8 +38,8 @@ Viikko 2
 |Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
 |Perjantai 10.3.|0.5|Maanantain demon preppaus ja sprint planningin valmistelu|
-|Viikonloppu 11.-12.3.|1|Viikon dailyt|
-|Yhteensä|10.5||
+|Viikonloppu 11.-12.3.|7|Viikon dailyt + Frontin rakenteen tutkimista ja yritin korjata bugia, missä linkit suosituksista eivät ohjaa sen itemin sivulle, vaan päivittää vain URL:n.|
+|Yhteensä|16.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
