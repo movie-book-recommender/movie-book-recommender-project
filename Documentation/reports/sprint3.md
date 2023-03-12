@@ -38,8 +38,8 @@ Viikko 2
 |Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
 |Perjantai 10.3.|0.5|Maanantain demon preppaus ja sprint planningin valmistelu|
-|Viikonloppu 11.-12.3.|1|Viikon dailyt|
-|Yhteensä|10.5||
+|Viikonloppu 11.-12.3.|7|Viikon dailyt + Frontin rakenteen tutkimista ja yritin korjata bugia, missä linkit suosituksista eivät ohjaa sen itemin sivulle, vaan päivittää vain URL:n.|
+|Yhteensä|16.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -96,9 +96,9 @@ Viikko 2
 |Tiistai 7.3.|||
 |Keskiviikko 8.3.|6|Daily, hakusivun parantelua ja testailua|
 |Torstai 9.3.|3|Arvostelutestejä, wishlistin toiminnan tutkimista|
-|Perjantai 10.3.|1,5|Daily, asiakastapaamisen suunnittelu, testi leffan arvostelun muuttamiselle|
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|7,5||
+|Perjantai 10.3.|4,5|Daily, asiakastapaamisen suunnittelu, testi arvostelulle ja wishlistille, Cypress Code Coveragen tutkimista|
+|Viikonloppu 11.-12.3.|4|Cypress Code Coveragen tutkimista, hakutoiminnon parantamisen suunnittelua, hakusivun Pagination-komponentin testailua|
+|Yhteensä|17,5||
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
