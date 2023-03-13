@@ -6,19 +6,21 @@ describe("Itemlens' movie main page ", function () {
 
   it("movie page contains movie recommendations", function () {
     cy.get("input").type("harry potte");
-    cy.get(".movie-info").contains("Harry Potter and the Half-Blood Prince").click()
+    cy.get(".movie-info")
+      .contains("Harry Potter and the Half-Blood Prince")
+      .click();
     cy.contains("Similar movies");
-    cy.wait(1000)
+    cy.wait(1000);
     cy.contains("Harry Potter and the Philosopher's Stone");
   });
 
   it("book page contains similar books", function () {
     cy.contains("Switch to books").click();
     cy.contains("Top 10 newest books");
-    cy.wait(1000)
-    cy.get(".movie-info").contains("180 Seconds").click("left");
+    cy.wait(1000);
+    cy.get(".movie-info").contains("180 Seconds").click();
     cy.contains("Similar books");
-    cy.wait(1000)
+    cy.wait(1000);
     cy.contains("Ten Tiny Breaths (Ten Tiny Breaths, #1)");
   });
 });
