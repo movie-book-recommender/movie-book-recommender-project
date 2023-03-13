@@ -1,18 +1,17 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
+import { IconButton, InputBase, Pagination, Paper } from "@mui/material"
 
 import image from '../NoImage.jpg'
 
-const SearchPage = ({ page }) => {
-  const [searchResultMovies, setSearchResultMovies] = useState([]);
+const SearchPage = () => {
+  const [searchResultMovies, setSearchResultMovies] = useState([])
   const [searchResultBooks, setSearchResultBooks] = useState([])
   const [searchKey, setSearchKey] = useState("")
-  const [newSearch, setNewSearch] = useState("");
+  const [newSearch, setNewSearch] = useState("")
+
 
   const handleSearch = (event) => {
     event.preventDefault()
@@ -21,14 +20,12 @@ const SearchPage = ({ page }) => {
     .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
     .then(response => {
         setSearchResultMovies(response.data)
-        console.log(response.data)
     })
 
     axios
     .get(`http://128.214.253.51:3000/dbsearchbooksbyname?input=${newSearch}`)
     .then(response => {
         setSearchResultBooks(response.data)
-        console.log(response.data)
         setSearchKey(newSearch)
         setNewSearch('')
 
@@ -140,10 +137,39 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
 }
 
 const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
-  console.log(false || false)
+  const itemsPerPage = 5
+  const [moviePagination, setMoviePagination] = useState({
+    movies: 0,
+    from: 0,
+    to: itemsPerPage
+  })
+  const [bookPagination, setBookPagination] = useState({
+    books: 0,
+    from: 0,
+    to: itemsPerPage
+  })
+
+  let moviesOnPage = searchResultMovies.slice(moviePagination.from, moviePagination.to)
+  let booksOnPage = searchResultBooks.slice(bookPagination.from, bookPagination.to)
+
+  useEffect(() => {
+    setMoviePagination({...moviePagination, movies: searchResultMovies.length})
+    setBookPagination({...bookPagination, books: searchResultBooks.length})
+  })
+
+  const handleMoviePageChange = (event, page) => {
+    const from = (page - 1) * itemsPerPage
+    const to = (page - 1) * itemsPerPage + itemsPerPage
+    setMoviePagination({...moviePagination, from: from, to: to})
+  }
+
+  const handleBookPageChange = (event, page) => {
+    const from = (page - 1) * itemsPerPage
+    const to = (page - 1) * itemsPerPage + itemsPerPage
+    setBookPagination({...bookPagination, from: from, to: to})
+  }
+
   if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
-    console.log("hello")
-    console.log(searchResultMovies.length, searchResultBooks.length, searchKey)
     return(
       <div class="search-result">
         <h2>Search result for '{searchKey}'</h2>
@@ -152,19 +178,20 @@ const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
             <div class="table-item">
               <h3>Movies</h3>
             </div>
-            {searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+            {moviesOnPage.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+            <Pagination count={Math.ceil(moviePagination.movies / itemsPerPage)} onChange={handleMoviePageChange} />
           </div>
           <div class="table-right">
           <div class="table-item">
               <h3>Books</h3>
             </div>
-            {searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)}
+            {booksOnPage.map(book => <DisplayBook key={book.id} book={book} />)}
+            <Pagination count={Math.ceil(bookPagination.books / itemsPerPage)} onChange={handleBookPageChange} />
           </div>
         </div>
       </div>
     )
   } else if (searchKey !== ""){
-    console.log("not here")
     return(
       <div class="search-result">
         <h2>No result for '{searchKey}'</h2>

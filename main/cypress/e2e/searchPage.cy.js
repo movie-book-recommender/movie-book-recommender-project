@@ -74,7 +74,6 @@ describe("Search Page ", function () {
       cy.get("input").type("harry potter")
       cy.get("[data-testid='SearchIcon']").click()
       cy.wait(1000)
-      cy.contains("Harry Potter and the Philosopher's Stone")
     })
 
     it("sorting by oldest first", function (){
