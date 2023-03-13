@@ -23,7 +23,7 @@ const GetBookByID = (id) => {
       .then((response) => {
         setbook(response.data);
       });
-  }, []);
+  }, [id]);
   return book;
 };
 const GetBookRecommendationsByID = (id) => {
@@ -36,7 +36,7 @@ const GetBookRecommendationsByID = (id) => {
       .then((response) => {
         setBooks(response.data);
       });
-  }, []);
+  }, [id]);
   return books;
 };
 

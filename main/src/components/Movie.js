@@ -18,7 +18,7 @@ const GetMovieByID = (id) => {
       .then((response) => {
         setMovie(response.data);
       });
-  }, []);
+  }, [id]);
   return movie;
 };
 const GetRecommendedMoviesByID = (id) => {
@@ -31,7 +31,7 @@ const GetRecommendedMoviesByID = (id) => {
       .then((response) => {
         setMovies(response.data);
       });
-  }, []);
+  }, [id]);
   return movies;
 };
 
