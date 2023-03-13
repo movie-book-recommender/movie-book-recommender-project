@@ -1,4 +1,4 @@
-# Sprint 2
+# Sprint 3
 ## Työaikakirjanpito
 
 ### Emilia
@@ -34,12 +34,12 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 6.3.|4|Algoritmin tutkimista ja datan luomista sitä varten|
-|Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
+|Tiistai 7.3.|1|Vertaisarviointien tekeminen|
+|Keskiviikko 8.3.|4|Yhdessä algoritmin säätämistä datan luomiseksi kirja- ja elokuvasuosituksia varten|
 |Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|4||
+|Perjantai 10.3.|0.5|Maanantain demon preppaus ja sprint planningin valmistelu|
+|Viikonloppu 11.-12.3.|7|Viikon dailyt + Frontin rakenteen tutkimista ja yritin korjata bugia, missä linkit suosituksista eivät ohjaa sen itemin sivulle, vaan päivittää vain URL:n.|
+|Yhteensä|16.5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -87,18 +87,18 @@ Viikko 2
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|1|Daily, metadata-komponentin lisäys, switch-nappi kaikille sivuille, lisenssi lisäys fronttirepoon|
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
+|Perjantai 3.3.|5|Välidemo ja tiimihengen rakentamisaktiviteetti|
 |Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Yhteensä|10||
 Viikko 2
 |||
 | Maanantai 6.3.|||
 |Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
-|Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Keskiviikko 8.3.|6|Daily, hakusivun parantelua ja testailua|
+|Torstai 9.3.|3|Arvostelutestejä, wishlistin toiminnan tutkimista|
+|Perjantai 10.3.|4,5|Daily, asiakastapaamisen suunnittelu, testit arvostelulle ja wishlistille, Cypress Code Coveragen tutkimista|
+|Viikonloppu 11.-12.3.|6,5|Cypress Code Coveragen tutkimista, hakutoiminnon parantamisen suunnittelua, hakusivulle Pagination-komponentti|
+|Yhteensä|20||
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
@@ -106,9 +106,9 @@ Viikko 2
 |Tiistai 28.1.|||
 |Keskiviikko 1.3.|||
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Perjantai 3.3.|5|välidemo ja tiimihengen rakentamisaktiviteetti|
+|Viikonloppu 4.-5-3.|4|wishlistin viimeistelyä|
+|Yhteensä|9||
 Viikko 2
 |||
 | Maanantai 6.3.|||
@@ -131,13 +131,16 @@ Viikko 2
 Viikko 2
 |||
 | Maanantai 6.3.|6|Daily, tutustuminen algoritmiin, algoritmin scriptin luominen movie-to-movies suosittelulle|
-|Tiistai 7.3.|8|Algoritmin scriptin tarkennus, movie-to-movie datan ajaminen, APIen työstö movie-to-movie suositteluille sekä searchin päivitykselle|
-|Keskiviikko 8.3.|||
-|Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Tiistai 7.3.|8.5|Algoritmin scriptin tarkennus, movie-to-movie datan ajaminen, APIen työstö movie-to-movie suositteluille sekä searchin päivitykselle, datojen lisääminen tietokantaan|
+|Keskiviikko 8.3.|5.25|APIen tarkennus, testien lisäys, book-to-books, movie-to-books ja book-to-movies scriptien työstö, book-to-books datan ajaminen aloitettu, tietokantataulu luotu ja APIen työstö aloitettu, vertaisarvioinnit tehty|
+|Torstai 9.3.|1.25|Book-to-books tiedot lisätty tietokantaan. Book-to-books APIt viimeistelty ja testit tehty, laatua parannettu.|
+|Perjantai 10.3.|0.75|Daily. Maanantain demon preppaus ja sprint planningin valmistelu|
+|Viikonloppu 11.-12.3.|0||
+|Yhteensä|22|sprintissä tehty kokonaisuutena 31 tuntia, kumulatiivisesti 1 tunti ekstraa jäljellä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Demovideo välidemoon
 - Logo sovellukselle
+- Dataa suosituksia varten tietokantoihin
+- Elokuvasuositukset elokuville
+- Kirja-suositukset kirjoille

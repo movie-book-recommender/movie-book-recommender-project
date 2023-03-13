@@ -1,63 +1,78 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import IconButton from "@mui/material/IconButton";
 import SearchIcon from '@mui/icons-material/Search';
+import { IconButton, InputBase, Pagination, Paper } from "@mui/material"
 
 import image from '../NoImage.jpg'
 
-const SearchPage = ({ page }) => {
-  const [searchResult, setSearchResult] = useState([]);
+const SearchPage = () => {
+  const [searchResultMovies, setSearchResultMovies] = useState([])
+  const [searchResultBooks, setSearchResultBooks] = useState([])
   const [searchKey, setSearchKey] = useState("")
-  const [newSearch, setNewSearch] = useState("");
+  const [newSearch, setNewSearch] = useState("")
+
 
   const handleSearch = (event) => {
     event.preventDefault()
+
     axios
-    .get(`http://128.214.253.51:3000/dbsearch${page}byname?input=${newSearch}`)
+    .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
     .then(response => {
-        console.log(newSearch)
-        setSearchResult(response.data)
+        setSearchResultMovies(response.data)
+    })
+
+    axios
+    .get(`http://128.214.253.51:3000/dbsearchbooksbyname?input=${newSearch}`)
+    .then(response => {
+        setSearchResultBooks(response.data)
         setSearchKey(newSearch)
-        console.log(searchKey)
-        console.log(searchResult.length)
         setNewSearch('')
+
     })
   }
 
   const handleSearchChange = (event) => (setNewSearch(event.target.value))
 
   const handleSortByReleaseOld = () => {
-    // ei toimi kirjoille oikein!
-    const sortedByReleaseNew = [...searchResult].sort(compareRelease);
-    setSearchResult(sortedByReleaseNew);
+    const sortedByReleaseNewMovies = [...searchResultMovies].sort(compareReleaseMovies);
+    setSearchResultMovies(sortedByReleaseNewMovies);
+    const sortedByReleaseNewBooks = [...searchResultBooks].sort(compareReleaseBooks)
+    setSearchResultBooks(sortedByReleaseNewBooks)
   };
 
   const handleSortByReleaseNew = () => {
-    // ei toimi kirjoille oikein!!
-    const sortedByReleaseOld = [...searchResult].sort(compareRelease).reverse();
-    setSearchResult(sortedByReleaseOld);
+    const sortedByReleaseOldMovies = [...searchResultMovies].sort(compareReleaseMovies).reverse();
+    setSearchResultMovies(sortedByReleaseOldMovies);
+    const sortedByReleaseOldBooks = [...searchResultBooks].sort(compareReleaseBooks).reverse();
+    setSearchResultBooks(sortedByReleaseOldBooks);
   };
 
   const handleSortByTitleAsc = () => {
-    const sortedByTitleAsc = [...searchResult].sort((a, b) =>
+    const sortedByTitleAscMovies = [...searchResultMovies].sort((a, b) =>
       a.title.localeCompare(b.title)
     );
-    setSearchResult(sortedByTitleAsc);
+    setSearchResultMovies(sortedByTitleAscMovies);
+    const sortedByTitleAscBooks = [...searchResultBooks].sort((a, b) =>
+    a.title.localeCompare(b.title)
+    );
+    setSearchResultBooks(sortedByTitleAscBooks);
   };
 
   const handleSortByTitleDesc = () => {
-    const sortedByTitleDesc = [...searchResult]
+    const sortedByTitleDescMovies = [...searchResultMovies]
       .sort((a, b) => a.title.localeCompare(b.title))
       .reverse();
-    setSearchResult(sortedByTitleDesc);
+    setSearchResultMovies(sortedByTitleDescMovies);
+    const sortedByTitleDescBooks = [...searchResultBooks]
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .reverse();
+    setSearchResultBooks(sortedByTitleDescBooks);
   };
 
   return(
     <div class="page-container">
-      <h2>Search {page}</h2>
+      <h2>Search movies and books</h2>
       <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
       <div class="sort-container">
           <p>
@@ -68,17 +83,26 @@ const SearchPage = ({ page }) => {
               <button onClick={handleSortByTitleDesc}>title Z-A</button>
           </p>
       </div>
-      <SearchResult searchResult={searchResult} searchKey={searchKey} page={page}/>
+      <SearchResult searchResultMovies={searchResultMovies} searchResultBooks={searchResultBooks} searchKey={searchKey} />
     </div>
   )
 };
 
 export default SearchPage;
 
-function compareRelease(a, b) {
+function compareReleaseMovies(a, b) {
   if (Date.parse(a.releasedate) < Date.parse(b.releasedate)) {
     return -1;
   } else if (Date.parse(a.releasedate) > Date.parse(b.releasedate)) {
+    return 1;
+  }
+  return 0;
+}
+
+function compareReleaseBooks(a, b) {
+  if (a.year < b.year) {
+    return -1;
+  } else if (a.year > b.year) {
     return 1;
   }
   return 0;
@@ -112,27 +136,61 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
   )
 }
 
-const SearchResult = ({searchResult, searchKey, page}) => {
-  if (searchResult.length !== 0 && searchKey !== ""){
-    if (page === "movies"){
-      return(
-        <div class="search-result">
-          <h2>Search result for '{searchKey}'</h2>
-          <div class="table">
-            {searchResult.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
+  const itemsPerPage = 5
+  const [moviePagination, setMoviePagination] = useState({
+    movies: 0,
+    from: 0,
+    to: itemsPerPage
+  })
+  const [bookPagination, setBookPagination] = useState({
+    books: 0,
+    from: 0,
+    to: itemsPerPage
+  })
+
+  let moviesOnPage = searchResultMovies.slice(moviePagination.from, moviePagination.to)
+  let booksOnPage = searchResultBooks.slice(bookPagination.from, bookPagination.to)
+
+  useEffect(() => {
+    setMoviePagination({...moviePagination, movies: searchResultMovies.length})
+    setBookPagination({...bookPagination, books: searchResultBooks.length})
+  })
+
+  const handleMoviePageChange = (event, page) => {
+    const from = (page - 1) * itemsPerPage
+    const to = (page - 1) * itemsPerPage + itemsPerPage
+    setMoviePagination({...moviePagination, from: from, to: to})
+  }
+
+  const handleBookPageChange = (event, page) => {
+    const from = (page - 1) * itemsPerPage
+    const to = (page - 1) * itemsPerPage + itemsPerPage
+    setBookPagination({...bookPagination, from: from, to: to})
+  }
+
+  if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
+    return(
+      <div class="search-result">
+        <h2>Search result for '{searchKey}'</h2>
+        <div class="result-table">
+          <div class="table-left">
+            <div class="table-item">
+              <h3>Movies</h3>
+            </div>
+            {moviesOnPage.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
+            <Pagination count={Math.ceil(moviePagination.movies / itemsPerPage)} onChange={handleMoviePageChange} />
+          </div>
+          <div class="table-right">
+          <div class="table-item">
+              <h3>Books</h3>
+            </div>
+            {booksOnPage.map(book => <DisplayBook key={book.id} book={book} />)}
+            <Pagination count={Math.ceil(bookPagination.books / itemsPerPage)} onChange={handleBookPageChange} />
           </div>
         </div>
-      )
-    } else {
-      return(
-        <div class="search-result">
-          <h2>Search result for '{searchKey}'</h2>
-          <div class="table">
-            {searchResult.map(book => <DisplayBook key={book.id} book={book} />)}
-          </div>
-        </div>
-      )
-    }
+      </div>
+    )
   } else if (searchKey !== ""){
     return(
       <div class="search-result">

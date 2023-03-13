@@ -8,7 +8,7 @@ import image from "../NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
-
+import Items from "../Carusel";
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -18,8 +18,21 @@ const GetMovieByID = (id) => {
       .then((response) => {
         setMovie(response.data);
       });
-  }, []);
+  }, [id]);
   return movie;
+};
+const GetRecommendedMoviesByID = (id) => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000/dbgetrecommendationsalldataforgivenmovie?movieid=${id}`
+      )
+      .then((response) => {
+        setMovies(response.data);
+      });
+  }, [id]);
+  return movies;
 };
 
 const Movie = () => {
@@ -29,6 +42,7 @@ const Movie = () => {
   var id = parseHelper[1];
 
   const movie = GetMovieByID(id);
+  const recommendedMovies = GetRecommendedMoviesByID(id);
   var movId = id;
   var stars = getCookie("M", movId);
 
@@ -42,13 +56,12 @@ const Movie = () => {
       updateCookies();
     },
   };
+  const removeRating = (borm, id) => {
+    setCookie(borm, id, 0, 5);
+    updateCookies();
+  };
 
-  const removeRating = (borm, id) =>{
-    setCookie(borm, id, 0, 5)
-    updateCookies()
-  }
-
-  var isWishlisted = onWishlist(movId);
+  var isWishlisted = onWishlist("M", movId);
 
   const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
@@ -116,6 +129,12 @@ const Movie = () => {
       >
         <p>Trailer</p>
       </a>
+      <h3>Similar movies</h3>
+      {recommendedMovies.length > 0 ? (
+        <Items items={recommendedMovies} page={"movies"} />
+      ) : (
+        <p>could not find similar movies</p>
+      )}
     </div>
   );
 };

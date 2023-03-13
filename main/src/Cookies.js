@@ -54,36 +54,30 @@ const getStringOfRatings = (borm) =>{
 }
 
 
-function addToWishlist(movieid, exdays) {
+function addToWishlist(borm, id, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
   var prevWishlist = getStringOfWishlist()
   var list = prevWishlist.split('&')
   for (var i = 0; i < list.length; i++) {
-    if (list[i] === movieid) {
+    if (list[i] === borm + id) {
       list.splice(i, 1)
       changedList = list.join('&')
       document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
       return
     }
   }
-  var changedList = prevWishlist + movieid + "&"
-  console.log(changedList)
+  var changedList = prevWishlist + borm + id + "&"
   document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
 
 }
 
-function onWishlist(id) {
+function onWishlist(borm, id) {
   var prevWishlist = getStringOfWishlist()
   var list = prevWishlist.split('&')
-  return list.includes(id)
-  /*for (var i = 0; i < list.length; i++) {
-    if (list[i] === id) {
-      return true
-    }
-  }
-  return false*/
+  var bormId = borm + id
+  return list.includes(bormId)
 }
 
 const getStringOfWishlist = () =>{
@@ -93,10 +87,12 @@ const getStringOfWishlist = () =>{
   }
   var cookie =""
   for(var i = 0; i < cookies.length; i++) {
-    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){      
-      cookie = cookies[i].substring(10)
+    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){   
+      console.log(cookies[i])   
+      cookie = cookies[i].trim().substring(9)
     }
   }
+  console.log(cookie)
   return cookie
 }
 //Searches saved cookies for a cookie with the name movieid

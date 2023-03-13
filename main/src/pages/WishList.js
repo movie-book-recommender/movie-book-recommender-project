@@ -7,6 +7,7 @@ import image from '../NoImage.jpg'
 import { getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
 import { GetMovieByID } from '../components/Movie'
 import { useState } from "react"
+import { GetBookByID } from "../components/Book"
 
 
 var cookies = getStringOfWishlist().split('&')
@@ -16,14 +17,22 @@ const updateWishlist = () => {
   cookies = getStringOfWishlist().split('&')
   cookies.pop()
 }
-const DisplayMovie = ({id}) => {
-  console.log(cookies)
-  const movie = GetMovieByID(id)
-  if(cookies.length < 1){
-    return(<h3>No movies on Wishlist!</h3>)
+const DisplayItem = ({bormId}) => {
+  var borm = bormId.charAt(0)
+  var id = bormId.substring(1)
+  
+  var item = {}
+  if (borm === "M") {
+    item = GetMovieByID(id)
+  } else if (borm === "B") {
+    item = GetBookByID(id)
   }
 
-  var rating = getCookie("M", id)
+  if(cookies.length < 1){
+    return(<h3>No items on Wishlist!</h3>)
+  }
+
+  var rating = getCookie(borm, id)
   var ratingStars = {
     size: 40,
     count: 5,
@@ -32,29 +41,41 @@ const DisplayMovie = ({id}) => {
     edit: false
   };
 
-  var isWishlisted = onWishlist(id)
+  var isWishlisted = onWishlist(borm, id)
   const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
-      addToWishlist(id)
-      isWishlisted = onWishlist(id)
+      addToWishlist(borm, id)
+      isWishlisted = onWishlist(borm, id)
       updateWishlist()
       setHeart(isWishlisted)
     },
   };
 
-  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
-  if(movie.posterpath === null){
+  var imageSource = ""
+  if (borm === "M") {
+    imageSource = `https://image.tmdb.org/t/p/original${item.posterpath}`
+  } else if (borm === "B") {
+    imageSource = item.img
+  }
+  if(imageSource === null){
     imageSource = image
+  }
+
+  var link = ""
+  if (borm === "M") {
+    link = `/movie/${id}`
+  } else if (borm === "B") {
+    link = `/book/${id}`
   }
   return(
     <div>
-      <Link to={`/movie/${movie.movieid}`}>
+      <Link to={link}>
         <img src={imageSource} width={150} height={"auto"}/>
       </Link>
-      <h3>{movie.title}</h3>
+      <h3>{item.title}</h3>
       <ReactStars {...ratingStars} />
       <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
@@ -69,7 +90,7 @@ const Wishlist = () => {
   <div class="page-container">
     <h2>My wishlist</h2>
     <div>
-      {cookies.map(cookie => <DisplayMovie id={cookie} />)}
+      {cookies.map(cookie => <DisplayItem bormId={cookie} />)}
     </div>  
     
   </div>

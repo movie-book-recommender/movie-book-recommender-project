@@ -8,7 +8,9 @@ book_tags = set(tg_books.tag.unique())
 movie_tags = set(tg_movies.tag.unique())
 common_tags = book_tags.intersection(movie_tags)
 book_ids = set(tg_books.item_id.unique())
+movie_ids = set(tg_movies.item_id.unique())
 #print(len(book_ids))
+#print(len(movie_ids))
 
 def get_vector_length(target_item):
     item_tmp = target_item.copy()
@@ -79,25 +81,35 @@ for i in book_ids:
 #target_book = tg_books[tg_books.item_id == 5445].copy()
 # Here goes the for loop for every movie
 
-    target_book_len = get_vector_length(target_book)
-    #print(target_book_len)
+    target_book_limited_len = get_vector_length(target_book[target_book.tag.isin(common_tags)])
+    #print(target_book_limited_len)
     #print(tg_books.columns.tolist())
-    book_to_books_dot_product = get_dot_product(target_book, tg_books)
+    #print("target movei limited len:")
+    #print(target_movie_limited_len)
+    book_to_movies_dot_product = get_dot_product(target_book[target_book.tag.isin(common_tags)], tg_movies)
 
-    #print(movie_to_movies_dot_product.head(10))
+    #print(book_to_movies_dot_product.head(10))
 
-    full_book_len_df = get_item_length_df(tg_books)
+    movie_len_df = get_item_length_df(tg_movies[tg_movies.tag.isin(common_tags)])
 
-    #print(full_movie_len_df.head(10))
+    #print("book len df:")
+    #print(movie_len_df)
 
-    related_book_sim_df = get_sim_df(book_to_books_dot_product, full_book_len_df, target_book_len)
+    related_movies_sim_df = get_sim_df(book_to_movies_dot_product, movie_len_df, target_book_limited_len)
 
-    result =related_book_sim_df.sort_values("sim", ascending=False, ignore_index=True).head(11).drop(columns=["dot_product", "length", "item_id_x"])
+    #print(related_movies_sim_df)
+
+    top10_movies_related_to_book = related_movies_sim_df.sort_values("sim", ascending=False).head(10)
+
+    #print(top10_movies_related_to_book)
+
+
+    result = related_movies_sim_df.sort_values("sim", ascending=False, ignore_index=True).head(10).drop(columns=["dot_product", "length", "item_id_x"])
     result["i"] = i
-    result["item_type"] = "book"
+    result["item_type"] = "movies"
     #print(result)
     full_dataframe = full_dataframe.append(result)
-    full_dataframe.to_csv("bk_sim.csv", index=False)
+    full_dataframe.to_csv("bk_to_mvs.csv", index=False)
 
 #print(full_dataframe.reset_index(drop=True))
 #full_dataframe.to_csv("bk_sim.csv", index=False)
