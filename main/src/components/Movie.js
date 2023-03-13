@@ -42,21 +42,23 @@ const Movie = () => {
       updateCookies();
     },
   };
+
   const removeRating = (borm, id) =>{
     setCookie(borm, id, 0, 5)
     updateCookies()
   }
 
-
   var isWishlisted = onWishlist(movId);
 
+  const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: isWishlisted,
+    isActive: heart,
     onClick: () => {
       addToWishlist(movId)
       isWishlisted = onWishlist(movId)
       updateWishlist()
+      setHeart(isWishlisted)
     },
   };
 
@@ -71,6 +73,21 @@ const Movie = () => {
   if (movie.posterpath === null) {
     imageSource = image;
   }
+  
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("M", id)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
+
   return (
     <div className="page-container">
       <h1>{movie.title}</h1>
@@ -79,9 +96,7 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
-      <Link onClick={() =>{removeRating("M", id)}}>
-        <p>Remove rating</p>
-      </Link>
+      <div>{isRated()}</div>
       <div class="heart" style={{ width: "2rem"}}>
         <Heart {...heartElement}/>
       </div>
@@ -105,4 +120,4 @@ const Movie = () => {
   );
 };
 
-export { Movie, GetMovieByID };
+export { Movie, GetMovieByID }

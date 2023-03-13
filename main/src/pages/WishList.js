@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 import ReactStars from "react-rating-stars-component"
 import Heart from "react-heart"
 
 import image from '../NoImage.jpg'
 import { getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
 import { GetMovieByID } from '../components/Movie'
+import { useState } from "react"
 
 
 var cookies = getStringOfWishlist().split('&')
@@ -31,13 +33,15 @@ const DisplayMovie = ({id}) => {
   };
 
   var isWishlisted = onWishlist(id)
+  const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: onWishlist(id),
+    isActive: heart,
     onClick: () => {
       addToWishlist(id)
       isWishlisted = onWishlist(id)
       updateWishlist()
+      setHeart(isWishlisted)
     },
   };
 

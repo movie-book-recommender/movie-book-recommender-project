@@ -31,7 +31,7 @@ const Book = () => {
 
   const book = GetBookByID(id);
   var bookId = id;
-  var stars = getCookie(bookId);
+  var stars = getCookie("B", bookId);
 
   const ratingStars = {
     size: 40,
@@ -55,6 +55,21 @@ const Book = () => {
   if (book.img === null) {
     imageSource = image;
   }
+
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("B", id)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
+
   return (
     <div class="page-container">
       <h1>{book.title}</h1>
@@ -62,10 +77,7 @@ const Book = () => {
         <img src={imageSource} width={150} height={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
-      <ReactStars {...ratingStars} />
-      <Link onClick={() =>{removeRating("B", id)}}>
-        <p>Remove rating</p>
-      </Link>
+      <div>{isRated()}</div>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>

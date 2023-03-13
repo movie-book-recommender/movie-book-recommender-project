@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState, useEffect } from "react";
+import Popup from "reactjs-popup";
 
 import image from "../NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
@@ -14,6 +15,11 @@ const updateCookies = () =>{
   cookiesB = getCookies("B")
   cookiesM = getCookies("M")
 }
+
+const undoRemove = () =>{
+
+}
+
 
 const removeRating = (borm, id) =>{
   setCookie(borm, id, 0, 5)
@@ -41,6 +47,20 @@ const DisplayMovie = ({ id, rating }) => {
   if (movie.posterpath === null) {
     imageSource = image;
   }
+
+  const RemovalPopup = (openState, removedName) =>{
+    const [open, setOpen] = useState(openState)
+    const close = () =>{
+      setOpen = false
+    }
+    return (
+      <div>
+        <Popup open={open}>    
+        </Popup>
+      </div>
+    )
+  }
+  
   return (
     <div>
       <Link to={`/movie/${movie.movieid}`}>
@@ -73,7 +93,7 @@ const DisplayBook = ({ id, rating }) =>{
   }
   return(
     <div>
-      <Link to={`/book/${book.bookId}`}>
+      <Link to={`/book/${book.item_id}`}>
         <img src={imageSource} width={150} height={"auto"} />
       </Link>
       <h3>{book.title}</h3>
@@ -100,7 +120,7 @@ const Ratings = ({ page }) => {
       </Link>
       <div>
         {cookiesB.map((cookie) => (
-          <DisplayBook id={cookie[0]} rating={cookie[1]}/>
+          <DisplayBook id={cookie[0]} rating={cookie[1]} key={cookie[0]}/>
         ))}
       </div>
     </div>
