@@ -6,7 +6,6 @@ import Heart from "react-heart"
 import image from '../NoImage.jpg'
 import { getCookie, getStringOfWishlist, onWishlist, addToWishlist } from '../Cookies.js'
 import { GetMovieByID } from '../components/Movie'
-import { useState } from "react"
 import { GetBookByID } from "../components/Book"
 
 
@@ -20,7 +19,9 @@ const updateWishlist = () => {
 const DisplayItem = ({bormId}) => {
   var borm = bormId.charAt(0)
   var id = bormId.substring(1)
-  
+
+  var isWishlisted = onWishlist(borm, id)
+  const[heart, setHeart] = useState(isWishlisted)
   var item = {}
   if (borm === "M") {
     item = GetMovieByID(id)
@@ -40,14 +41,12 @@ const DisplayItem = ({bormId}) => {
     value: rating,
     edit: false
   };
-
-  var isWishlisted = onWishlist(borm, id)
-  const [heart, setHeart] = useState(isWishlisted)
+  
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
-      addToWishlist(borm, id)
+      addToWishlist(borm, id, 5)
       isWishlisted = onWishlist(borm, id)
       updateWishlist()
       setHeart(isWishlisted)

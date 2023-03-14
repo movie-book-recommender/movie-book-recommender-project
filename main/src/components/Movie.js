@@ -44,8 +44,8 @@ const Movie = () => {
   const movie = GetMovieByID(id);
   const recommendedMovies = GetRecommendedMoviesByID(id);
   var movId = id;
-  var stars = getCookie("M", movId);
 
+  const [stars, setStars] = useState(getCookie("M", movId))
   const ratingStars = {
     size: 40,
     count: 5,
@@ -54,11 +54,13 @@ const Movie = () => {
     onChange: (newValue) => {
       setCookie("M", movId, newValue, 5);
       updateCookies();
+      setStars(newValue)
     },
   };
   const removeRating = (borm, id) => {
     setCookie(borm, id, 0, 5);
     updateCookies();
+    setStars(0)
   };
 
   var isWishlisted = onWishlist("M", movId);
@@ -68,8 +70,8 @@ const Movie = () => {
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
-      addToWishlist(movId)
-      isWishlisted = onWishlist(movId)
+      addToWishlist("M", movId)
+      isWishlisted = onWishlist("M", movId)
       updateWishlist()
       setHeart(isWishlisted)
     },

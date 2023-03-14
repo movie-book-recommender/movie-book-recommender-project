@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState, useEffect } from "react";
-import Popup from "reactjs-popup";
+import { Modal, Box } from "@mui/material";
 
 import image from "../NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
@@ -14,21 +14,6 @@ var cookiesM = getCookies("M");
 const updateCookies = () =>{
   cookiesB = getCookies("B")
   cookiesM = getCookies("M")
-}
-
-const undoRemove = () =>{
-
-}
-
-
-const removeRating = (borm, id) =>{
-  setCookie(borm, id, 0, 5)
-  updateCookies()
-} 
-
-const removeAll = (borm) => {
-  removeAllRatings(borm)
-  updateCookies()
 }
 
 const DisplayMovie = ({ id, rating }) => {
@@ -47,20 +32,10 @@ const DisplayMovie = ({ id, rating }) => {
   if (movie.posterpath === null) {
     imageSource = image;
   }
-
-  const RemovalPopup = (openState, removedName) =>{
-    const [open, setOpen] = useState(openState)
-    const close = () =>{
-      setOpen = false
-    }
-    return (
-      <div>
-        <Popup open={open}>    
-        </Popup>
-      </div>
-    )
+  const removeRating = (borm, id) =>{
+    setCookie(borm, id, 0, 5)
+    updateCookies()
   }
-  
   return (
     <div>
       <Link to={`/movie/${movie.movieid}`}>
@@ -69,7 +44,7 @@ const DisplayMovie = ({ id, rating }) => {
       <h3>{movie.title}</h3>
       <ReactStars {...ratingStars} />
       <Link onClick={() =>{removeRating("M", id)}}>
-        <p>Remove rating</p>
+        <p>Remove rating</p>  
       </Link>
     </div>
   );
@@ -91,6 +66,12 @@ const DisplayBook = ({ id, rating }) =>{
   if(book.img === null){
     imageSource = image
   }
+
+  const removeRating = (borm, id) =>{
+    setCookie(borm, id, 0, 5)
+    updateCookies()
+  } 
+
   return(
     <div>
       <Link to={`/book/${book.item_id}`}>
@@ -106,10 +87,59 @@ const DisplayBook = ({ id, rating }) =>{
 }
 
 const Ratings = ({ page }) => {
+  const [open, setOpen] = useState(false)
+  const [removedMovieCookie, setRemMovie] = useState([])
+  const [removedBookCookie, setRemBook] = useState([])
+  const removeAll = (borm) => {
+    setRemMovie(getCookies("M"))
+    setRemBook(getCookies("B"))
+    removeAllRatings(borm)
+    updateCookies()
+    setOpen(true)
+  }
+  const undoRemove = (borm) =>{
+    if(borm === "B"){
+      for(let i = 0;i<removedBookCookie.length; i++){
+        setCookie(borm, removedBookCookie[i][0], removedBookCookie[i][1], 5)
+      }
+      updateCookies()
+      closeModal()
+    }else{
+      for(let i = 0;i<removedMovieCookie.length; i++){
+        setCookie(borm, removedMovieCookie[i][0], removedMovieCookie[i][1], 5)
+      }
+      updateCookies()
+      closeModal()
+    }
+
+  }
+  const closeModal = () => {
+    setOpen(false)
+  }
+
   if(page === "books"){
     if (cookiesB.length === 0) {
       <h2>MyRatings</h2>
-      return <h3>You have not rated anything yet!</h3>;
+      return (
+        <div class="page-container">
+          <h3>You have not rated anything yet!</h3>
+          <Modal open={open} closeOnDocumentClick onClose={closeModal}>        
+            <Box sx={{
+              color: 'black',
+              bgcolor: 'white',
+              width: 500,
+              heigh: 400,
+              border: 2,
+              mx: 'auto',
+              textAlign: 'center',
+              }}
+            >               
+            <p>Removed all ratings for books</p>
+              <Link onClick={() =>{undoRemove("B")}}>Undo</Link>     
+            </Box>      
+          </Modal>
+        </div>
+      );
     }
     return(
     <div class="page-container">
@@ -128,8 +158,28 @@ const Ratings = ({ page }) => {
   }else{
     if (cookiesM.length === 0) {
       <h2>MyRatings</h2>
-      return <h3>You have not rated anything yet!</h3>;
+      return (
+        <div class="page-container">
+          <h3>You have not rated anything yet!</h3>
+          <Modal open={open} closeOnDocumentClick onClose={closeModal}>        
+            <Box sx={{
+              color: 'black',
+              bgcolor: 'white',
+              width: 500,
+              heigh: 400,
+              border: 2,
+              mx: 'auto',
+              textAlign: 'center',
+              }}
+            >               
+            <p>Removed all ratings for movies</p>
+              <Link onClick={() =>{undoRemove("M")}}>Undo</Link>     
+            </Box>      
+          </Modal>
+        </div>
+      );
     }
+
     return (
       <div class="page-container">
         <h2>MyRatings</h2>

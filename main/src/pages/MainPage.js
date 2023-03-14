@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { getCookies } from "../Cookies";
 
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
@@ -31,10 +32,32 @@ const GetMovies = () => {
   return movies;
 };
 
+const GetPersonalRecommendations = () => {
+  const [recBooks, setRecBooks] = useState([]);
+  const [recMovies, setRecMovies] = useState([]);
+
+  var bookRatings = getCookies("B")
+  var movieRatings = getCookies("M")
+  const ratings = {
+    Books: bookRatings,
+    Movies: movieRatings
+  }
+  console.log(ratings)
+  /*useEffect(() => {
+    axios
+      .post("http://128.214.253.51:3000/recommendations", ratings)
+      .then((response) => {
+        setRecBooks(response.recommendedBooks)
+        setRecMovies(response.recommendedMovies)
+      })
+  })
+  */
+}
+
 const MainPage = ({ page }) => {
   const books = GetBooks();
   const movies = GetMovies();
-
+  const recos = GetPersonalRecommendations()
   return (
     <div className="page-container">
       <h2>Top 10 newest {page}</h2>
