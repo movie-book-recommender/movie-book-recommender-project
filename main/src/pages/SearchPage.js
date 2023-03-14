@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, InputBase, Pagination, Paper } from "@mui/material"
+import { IconButton, InputBase, Paper } from "@mui/material"
 
 import image from '../NoImage.jpg'
+import Table from "../Table"
 
 const SearchPage = () => {
   const [searchResultMovies, setSearchResultMovies] = useState([])
@@ -137,58 +138,13 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
 }
 
 const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
-  const itemsPerPage = 5
-  const [moviePagination, setMoviePagination] = useState({
-    movies: 0,
-    from: 0,
-    to: itemsPerPage
-  })
-  const [bookPagination, setBookPagination] = useState({
-    books: 0,
-    from: 0,
-    to: itemsPerPage
-  })
-
-  let moviesOnPage = searchResultMovies.slice(moviePagination.from, moviePagination.to)
-  let booksOnPage = searchResultBooks.slice(bookPagination.from, bookPagination.to)
-
-  useEffect(() => {
-    setMoviePagination({...moviePagination, movies: searchResultMovies.length})
-    setBookPagination({...bookPagination, books: searchResultBooks.length})
-  })
-
-  const handleMoviePageChange = (event, page) => {
-    const from = (page - 1) * itemsPerPage
-    const to = (page - 1) * itemsPerPage + itemsPerPage
-    setMoviePagination({...moviePagination, from: from, to: to})
-  }
-
-  const handleBookPageChange = (event, page) => {
-    const from = (page - 1) * itemsPerPage
-    const to = (page - 1) * itemsPerPage + itemsPerPage
-    setBookPagination({...bookPagination, from: from, to: to})
-  }
-
   if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
+    let movies = searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)
+    let books = searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)
     return(
       <div class="search-result">
         <h2>Search result for '{searchKey}'</h2>
-        <div class="result-table">
-          <div class="table-left">
-            <div class="table-item">
-              <h3>Movies</h3>
-            </div>
-            {moviesOnPage.map(movie => <DisplayMovie key={movie.id} movie={movie} />)}
-            <Pagination count={Math.ceil(moviePagination.movies / itemsPerPage)} onChange={handleMoviePageChange} />
-          </div>
-          <div class="table-right">
-          <div class="table-item">
-              <h3>Books</h3>
-            </div>
-            {booksOnPage.map(book => <DisplayBook key={book.id} book={book} />)}
-            <Pagination count={Math.ceil(bookPagination.books / itemsPerPage)} onChange={handleBookPageChange} />
-          </div>
-        </div>
+        <Table movies={movies} books={books} />
       </div>
     )
   } else if (searchKey !== ""){
