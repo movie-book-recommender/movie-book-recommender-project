@@ -138,38 +138,6 @@ const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
 }
 
 const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
-  const itemsPerPage = 5
-  const [moviePagination, setMoviePagination] = useState({
-    movies: 0,
-    from: 0,
-    to: itemsPerPage
-  })
-  const [bookPagination, setBookPagination] = useState({
-    books: 0,
-    from: 0,
-    to: itemsPerPage
-  })
-
-  let moviesOnPage = searchResultMovies.slice(moviePagination.from, moviePagination.to)
-  let booksOnPage = searchResultBooks.slice(bookPagination.from, bookPagination.to)
-
-  useEffect(() => {
-    setMoviePagination({...moviePagination, movies: searchResultMovies.length})
-    setBookPagination({...bookPagination, books: searchResultBooks.length})
-  })
-
-  const handleMoviePageChange = (event, page) => {
-    const from = (page - 1) * itemsPerPage
-    const to = (page - 1) * itemsPerPage + itemsPerPage
-    setMoviePagination({...moviePagination, from: from, to: to})
-  }
-
-  const handleBookPageChange = (event, page) => {
-    const from = (page - 1) * itemsPerPage
-    const to = (page - 1) * itemsPerPage + itemsPerPage
-    setBookPagination({...bookPagination, from: from, to: to})
-  }
-
   if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
     let movies = searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)
     let books = searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)
