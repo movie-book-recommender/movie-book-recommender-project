@@ -22,8 +22,8 @@ const DisplayMovie = ({bormId}) => {
   const id = bormId.substring(1)
   const movie = GetMovieByID(id)
 
-  var rating = getCookie(borm, id)
-  var ratingStars = {
+  const rating = getCookie(borm, id)
+  const ratingStars = {
     size: 40,
     count: 5,
     isHalf: false,
@@ -118,14 +118,15 @@ const DisplayBook = ({bormId}) => {
 const Wishlist = () => {
   let movieCookies = cookies.filter(cookie => cookie.charAt(0) === "M")
   let movies = movieCookies.map(cookie => <DisplayMovie bormId={cookie} />)
+
   let bookCookies = cookies.filter(cookie => cookie.charAt(0) === "B")
   let books = bookCookies.map(cookie => <DisplayBook bormId={cookie} />)
-  
+
   if (cookies.length > 0){
     return(
         <div class="page-container">
         <h2>My wishlist</h2>
-        <Table movies={movies} books={books} /> 
+        <Table movies={movies} books={books} />
       </div>
       )
   } else {
