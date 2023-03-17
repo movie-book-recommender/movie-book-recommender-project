@@ -28,9 +28,9 @@ Viikko 2
 |Tiistai 14.3.|4|Personal recommendetaions tekemistä yhdessä|
 |Keskiviikko 15.3.|4|Personal recommendetaions tekemistä yhdessä|
 |Torstai 16.3.|3|Personal recommendation APIn cors errorin debugaamista|
-|Perjantai 17.3.|||
+|Perjantai 17.3.|3|Recommendations APIn debugaamista|
 |Viikonloppu 18.-19-3.|1|Viikon dailyt|
-|Yhteensä|14||
+|Yhteensä|17||
 Viikko 2
 |||
 | Maanantai 20.3.|||
@@ -139,3 +139,4 @@ Viikko 2
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+- API: Personal recommendations elokuville
