@@ -121,13 +121,13 @@ Viikko 2
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
-|Torstai 16.3.|||
-|Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
-|Yhteensä|||
+| Maanantai 13.3.|3|Daily, asiaskastapaaminen, retro, sprint planning and datojen ajamisen käynnistys|
+|Tiistai 14.3.|7.4|Algoritmien työstö yhdessä, datojen ajamisen seuranta, scriptin päivitys ja uuden ajon käynnistys|
+|Keskiviikko 15.3.|2.5|Algoritmin työstö yhdessä, aiemman data-ajon tsekkaus, uuden käynnistys, multi-process käsittelyn tsekkaus|
+|Torstai 16.3.|0.25|Ajon tulosten tsekkaus ja päivitys dailyyn|
+|Perjantai 17.3.|7|Daily, data-ajojen tulosten siirto tietokantaan, uusien movie-to-books ja book-to-movies APIt työstetty ja testattu, book-to-250 books sprintin päivitys ja ajon käynnistys, muita yleisiä fiksauksia|
+|Viikonloppu 18.-19-3.|0||
+|Yhteensä|20|Aiemmasta sprintistä n. 1.5 tuntia ekstratyötä tehty|
 Viikko 2
 |||
 | Maanantai 20.3.|||
@@ -140,3 +140,5 @@ Viikko 2
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - API: Personal recommendations elokuville
+- Movie to 250 books datojen ajaminen ja APIt
+- Book to 250 movies datojen ajaminen ja APIt
