@@ -13,13 +13,13 @@
 |Yhteensä|20||
 Viikko 2
 |||
-| Maanantai 6.3.|||
-|Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
+| Maanantai 6.3.|4|Algoritmin tutkimista|
+|Tiistai 7.3.|4|Vertaisarvioinnit, itse algoritmin kanssa säätämistä|
+|Keskiviikko 8.3.|4| yhdessä algoritmin kanssa säätöä|
 |Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Perjantai 10.3.|1|demon preppi ja sprint planningin suunnittelua|
+|Viikonloppu 11.-12.3.|2|viikon dailyt ja itse ensi viikon hommien katselua etukäteen|
+|Yhteensä|15||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
