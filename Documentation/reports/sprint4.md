@@ -4,9 +4,9 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
+| Maanantai 13.3.|3|asiakastapaaminen, retro ja sprint planning|
+|Tiistai 14.3.|4|yhdessä personal recommendationsien tekoa|
+|Keskiviikko 15.3.|4| yhdessä personal recommendationsien tekoa|
 |Torstai 16.3.|||
 |Perjantai 17.3.|||
 |Viikonloppu 18.-19-3.|||
