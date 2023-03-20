@@ -25,5 +25,7 @@ describe("Itemlens' movie main page ", function () {
     cy.contains("Similar books");
     cy.wait(1000);
     cy.contains("Ten Tiny Breaths (Ten Tiny Breaths, #1)");
+    cy.contains("Similar movies");
+    cy.contains("The Notebook");
   });
 });
