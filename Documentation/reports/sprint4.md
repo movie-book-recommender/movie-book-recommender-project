@@ -33,13 +33,13 @@ Viikko 2
 |Yhteensä|17||
 Viikko 2
 |||
-| Maanantai 20.3.|||
+| Maanantai 20.3.|6|Book-to-movies suositusten, Movie-to-books suositusten ja Personal recommendationeiden visualisointi.|
 |Tiistai 21.3.|||
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+|Viikonloppu 25.-26.3.|1|Viikon dailyt|
+|Yhteensä|7||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
