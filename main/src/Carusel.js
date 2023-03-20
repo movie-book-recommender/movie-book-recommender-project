@@ -29,6 +29,8 @@ const DisplayBook = ({ book, recommendation }) => {
   if (book.img === null) {
     imageSource = image;
   }
+  // Recommendation argument is used to detect if we are displaying recommendations or not.
+  // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
   if (recommendation == true) {
     return (
       <div className="movie-slot">
@@ -58,6 +60,7 @@ const DisplayBook = ({ book, recommendation }) => {
 };
 
 const Items = ({ items, page, recommendation }) => (
+  // Argument "recommendation" is not always necessary, only when displaying book recommendations.
   <div className="page-container">
     <Carousel
       additionalTransfrom={0}

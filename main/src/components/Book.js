@@ -117,7 +117,7 @@ const Book = () => {
       <h3>Similar books</h3>
 
       {recommendationsBooks.length > 0 ? (
-        <Items items={recommendationsBooks} page={"books"} />
+        <Items items={recommendationsBooks} page={"books"} recommendation={true} />
       ) : (
         <p>could not find similar books</p>
       )}
