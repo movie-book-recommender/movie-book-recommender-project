@@ -49,7 +49,6 @@ const GetRecommendedBooksByID = (id) => {
   return books;
 };
 
-
 const Movie = () => {
   //Gets the movieid from the url
   var urlString = window.location.href;
