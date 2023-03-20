@@ -89,6 +89,7 @@ describe("Search Page ", function () {
       })
     })
 
+    
     it("sorting by newest first", function (){
       cy.contains("release newest first").click()
       cy.wait(1000)
