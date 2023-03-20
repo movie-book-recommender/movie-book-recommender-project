@@ -46,8 +46,6 @@ const getStringOfRatings = (borm) =>{
   }
   for(var i = 1; i < cookies.length; i++){
     cookies[i] = cookies[i].substring(1)
-    console.log(cookies[i].substring(0, 9))
-    console.log(borm + "Ratings=")
     if(cookies[i].substring(0, 9) === borm + "Ratings="){
       cookie = cookies[i].substring(9)
     }  
@@ -94,7 +92,6 @@ const getStringOfWishlist = () =>{
       cookie = cookies[i].trim().substring(9)
     }
   }
-  console.log(cookie)
   return cookie
 }
 //Searches saved cookies for a cookie with the name movieid
@@ -119,7 +116,6 @@ function getCookie(borm, id) {
 function getCookies(borm){
   var prevRatings = getStringOfRatings(borm)
   var pairs = prevRatings.split("&")
-  console.log(pairs)
   var cookies = []
   for(var i=0; i<pairs.length; i++){
     var pair = pairs[i].split(":")
