@@ -25,6 +25,8 @@ describe("Itemlens book mainpage ", function () {
     cy.get(".divider.default.text").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)");
     cy.get("input").clear();
+    cy.wait(1000);
+
     cy.contains("Eric (Discworld, #9; Rincewind #4)").should("not.exist");
   });
 
