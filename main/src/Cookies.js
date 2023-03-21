@@ -93,7 +93,6 @@ const getStringOfWishlist = () =>{
       cookie = cookies[i].trim().substring(9)
     }
   }
-  console.log(cookie)
   return cookie
 }
 //Searches saved cookies for a cookie with the name movieid

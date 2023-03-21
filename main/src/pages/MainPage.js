@@ -7,6 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 
 import Search from "../Search";
 import Items from "../Carusel";
+import { getCookies } from "../Cookies";
 
 const GetBooks = () => {
   const [books, setBooks] = useState([]);
@@ -32,31 +33,48 @@ const GetMovies = () => {
   return movies;
 };
 
-const GetPersonalRecommendations = () => {
-  const [recBooks, setRecBooks] = useState([]);
-  const [recMovies, setRecMovies] = useState([]);
 
+const GetPersonalRecommendations = () => {
+  // const [recBooks, setRecBooks] = useState([]);
+  const [recMovies, setRecMovies] = useState([]);
   var bookRatings = getCookies("B")
   var movieRatings = getCookies("M")
   const ratings = {
     Books: bookRatings,
     Movies: movieRatings
   }
-  console.log(ratings)
+
   useEffect(() => {
     axios
-      .post("http://128.214.253.51:3000/dbgetpersonalmovierecommendations", ratings)
-      .then((response) => {
-        console.log(response)
-      })
-  })
-  return {recBooks, recMovies}
+    .get(`http://128.214.253.51:3000/dbgetpersonalmovierecommendations?ratings=${JSON.stringify(ratings)}`)
+    .then((response) => {
+      setRecMovies(response.data)
+    })
+  }, [])
+  return recMovies;
 }
 
 const MainPage = ({ page }) => {
   const books = GetBooks();
   const movies = GetMovies();
-  const recos = GetPersonalRecommendations()
+  const recommendations = GetPersonalRecommendations();
+
+  if (recommendations.value === "not available") {
+    return (
+      <div className="page-container">
+        <h2>Top 10 newest {page}</h2>
+        {page === "movies" ? (
+          <Items items={movies} page={page} />
+        ) : (
+          <Items items={books} page={page} />
+        )}
+        <h2>Recommended movies for you</h2>
+          <p>Please rate at least one movie and one book to receive personal recommendations.</p>
+        <Search page={page} />
+      </div>
+    );
+  }
+
   return (
     <div className="page-container">
       <h2>Top 10 newest {page}</h2>
@@ -65,6 +83,8 @@ const MainPage = ({ page }) => {
       ) : (
         <Items items={books} page={page} />
       )}
+      <h2>Recommended movies for you</h2>
+        <Items items={recommendations} page={"movies"} recommendation={true}/>
       <Search page={page} />
     </div>
   );
