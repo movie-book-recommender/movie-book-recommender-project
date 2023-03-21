@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
-import Search from "../Search";
 import Items from "../Carusel";
 
 const GetBooks = () => {
@@ -43,7 +42,6 @@ const MainPage = ({ page }) => {
       ) : (
         <Items items={books} page={page} />
       )}
-      <Search page={page} />
     </div>
   );
 };

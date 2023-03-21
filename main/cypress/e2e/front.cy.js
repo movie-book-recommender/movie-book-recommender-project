@@ -24,7 +24,7 @@ describe("Itemlens' movie mainpage ", function () {
     cy.contains("Ratings").click();
     cy.contains("You have not rated anything yet!");
   });
-  
+
   it("link to Search works ", function () {
     cy.get(".navbar").contains("Search").click();
     cy.contains("Search movies and books");
@@ -32,16 +32,22 @@ describe("Itemlens' movie mainpage ", function () {
 
   // test if you can write in search field
   it("shows results for quick search", function () {
-    cy.get("input").type("pirates");
+    cy.get(".divider.default.text").type("pirates");
     cy.contains("Caesar Against the Pirates");
   });
 
   // test if you can clear search field and previously searched movies are hiden
   it("hides previous search result after clearing search input", function () {
-    cy.get("input").type("pirates");
+    cy.get(".divider.default.text").type("pirates");
     cy.contains("Caesar Against the Pirates");
     cy.get("input").clear();
     cy.contains("Caesar Against the Pirates").should("not.exist");
+  });
+
+  it("link to movie works in search", function () {
+    cy.get(".divider.default.text").type("pirates");
+    cy.contains("Caesar Against the Pirates").click();
+    cy.contains("Caesar Against the Pirates");
   });
 
   // test if movie can be clicked and it opens the page
@@ -51,8 +57,7 @@ describe("Itemlens' movie mainpage ", function () {
   });
 
   it("opens movie page when movie title is clicked", function () {
-    cy.get(".movie-info").eq(0).click('left');
+    cy.get(".movie-info").eq(0).click("left");
     cy.contains("Your rating");
   });
-
 });

@@ -16,14 +16,20 @@ describe("Itemlens book mainpage ", function () {
   });
 
   it("shows correct results when typing in search bar", function () {
-    cy.get("input").type("rincewind");
+    cy.get(".divider.default.text").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)");
   });
 
   it("hides previous search results after clearing search input", function () {
-    cy.get("input").type("rincewind");
+    cy.get(".divider.default.text").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)");
     cy.get("input").clear();
     cy.contains("Eric (Discworld, #9; Rincewind #4)").should("not.exist");
+  });
+
+  it("link to book works", function () {
+    cy.get(".divider.default.text").type("rincewind");
+    cy.contains("Eric (Discworld, #9; Rincewind #4)").click();
+    cy.contains("Eric (Discworld, #9; Rincewind #4)");
   });
 });
