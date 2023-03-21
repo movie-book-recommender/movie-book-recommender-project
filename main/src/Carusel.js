@@ -24,10 +24,26 @@ const DisplayMovie = ({ movie }) => {
   );
 };
 
-const DisplayBook = ({ book }) => {
+const DisplayBook = ({ book, recommendation }) => {
   var imageSource = book.img;
   if (book.img === null) {
     imageSource = image;
+  }
+  // Recommendation argument is used to detect if we are displaying recommendations or not.
+  // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
+  if (recommendation == true) {
+    return (
+      <div className="movie-slot">
+        <div className="movie-pic" key={book.similar_item_id}>
+          <Link to={`/book/${book.similar_item_id}`}>
+            <img src={imageSource} alt="book poster" />
+          </Link>
+        </div>
+        <div className="movie-info">
+          <Link to={`/book/${book.similar_item_id}`}>{book.title}</Link>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="movie-slot">
@@ -43,7 +59,8 @@ const DisplayBook = ({ book }) => {
   );
 };
 
-const Items = ({ items, page }) => (
+const Items = ({ items, page, recommendation }) => (
+  // Argument "recommendation" is not always necessary, only when displaying book recommendations.
   <div className="page-container">
     <Carousel
       additionalTransfrom={0}
@@ -99,7 +116,7 @@ const Items = ({ items, page }) => (
             <DisplayMovie movie={item} page={page} key={item.movieid} />
           ))
         : items.map((item) => (
-            <DisplayBook book={item} page={page} key={item.item_id} />
+            <DisplayBook book={item} page={page} key={item.item_id} recommendation={recommendation} />
           ))}
     </Carousel>
   </div>

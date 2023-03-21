@@ -12,6 +12,9 @@ describe("Itemlens' movie main page ", function () {
     cy.contains("Similar movies");
     cy.wait(1000);
     cy.contains("Harry Potter and the Philosopher's Stone");
+    cy.contains("Similiar books");
+    cy.wait(1000);
+    cy.contains("Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)")
   });
 
   it("book page contains similar books", function () {
