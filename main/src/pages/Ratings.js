@@ -188,7 +188,7 @@ const Ratings = ({ page }) => {
           <h2>My movie ratings</h2>
           <h3>You have rated {cookiesM.length} movies.</h3>
           <Link onClick={() =>{removeAll("M")}}>
-            <p>Remove all ratings</p>
+            <p>Remove all movie ratings</p>
           </Link>
         </Box>
         <Grid container={true} direction={'row'} columns={3}>
@@ -235,7 +235,7 @@ const Ratings = ({ page }) => {
           <h2>My book ratings</h2>
           <h3>You have rated {cookiesB.length} books.</h3>
           <Link onClick={() =>{removeAll("B")}}>
-            <p>Remove all ratings</p>
+            <p>Remove all book ratings</p>
           </Link>
         </Box>
         <Grid container={true} direction={'row'} columns={3}>
