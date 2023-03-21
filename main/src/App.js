@@ -29,7 +29,7 @@ const App = () => {
     }
   )
   const navigate = useNavigate();
-  useEffect(() => {
+  useEffect(() => { 
     navigate(`${page}`);
   }, [page]);
 
