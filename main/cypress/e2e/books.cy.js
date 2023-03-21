@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Itemlens book mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/movies");
@@ -30,6 +31,6 @@ describe("Itemlens book mainpage ", function () {
   it("link to book works", function () {
     cy.get(".divider.default.text").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)").click();
-    cy.contains("Eric (Discworld, #9; Rincewind #4)");
+    cy.contains("Your rating:");
   });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Itemlens' movie mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
@@ -47,7 +48,7 @@ describe("Itemlens' movie mainpage ", function () {
   it("link to movie works in search", function () {
     cy.get(".divider.default.text").type("pirates");
     cy.contains("Caesar Against the Pirates").click();
-    cy.contains("Caesar Against the Pirates");
+    cy.contains("Your rating:");
   });
 
   // test if movie can be clicked and it opens the page

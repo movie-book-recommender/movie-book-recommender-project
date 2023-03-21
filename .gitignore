@@ -10,7 +10,8 @@ output.xml
 report.html
 selenium-screenshot*
 /src/frontend/cypress/screenshots/
-
+/main/cypress/screenshots
+/main/cypress/videos
 # dependencies
 **/node_modules
 /src/frontend/node_modules/*

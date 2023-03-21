@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, InputBase, Paper } from "@mui/material"
@@ -158,7 +158,7 @@ const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
 
 const DisplayMovie = ({movie}) => {
   const genrelist = movie.genres ? movie.genres.split(",") : []
-  const releaseYear = movie.releasedate.split(" ")[3]
+  const releaseYear = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
   let imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
   if(movie.posterpath === null){
       imageSource = image

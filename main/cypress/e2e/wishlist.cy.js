@@ -26,11 +26,15 @@ describe("Wishlist ", function () {
 
         it("can remove movie from wishlist in movie's page", function (){
           cy.contains("Wishlist").click()
-          cy.get(".heart").should("have.length", 1)
-          cy.get("img").first().click()
+          cy.wait(1000)
+          cy.get(".table-left").within(() => {
+            cy.get(".heart").should("have.length", 1)
+            cy.get("img").first().click()
+          })
+          cy.wait(1000)
           cy.get(".heart").click()
           cy.contains("Wishlist").click()
-          cy.get(".heart").should("have.length", 0)
+          cy.contains("No items on Wishlist!")
         })
     })
 
