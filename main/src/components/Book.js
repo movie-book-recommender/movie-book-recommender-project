@@ -40,6 +40,20 @@ const GetBookRecommendationsByID = (id) => {
   return books;
 };
 
+const GetMovieRecommendationsByID = (id) => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000//dbgetrecommendedmoviesalldataforgivenbook?bookid=${id}`
+      )
+      .then((response) => {
+        setMovies(response.data);
+      });
+  }, [id]);
+  return movies;
+};
+
 const Book = () => {
   var urlString = window.location.href;
   var parseHelper = urlString.split("/book/");
@@ -47,6 +61,7 @@ const Book = () => {
 
   const book = GetBookByID(id);
   const recommendationsBooks = GetBookRecommendationsByID(id);
+  const recommendationsMovies = GetMovieRecommendationsByID(id);
   var bookId = id;
   var stars = getCookie("B", bookId);
 
@@ -120,6 +135,12 @@ const Book = () => {
         <Items items={recommendationsBooks} page={"books"} recommendation={true} />
       ) : (
         <p>could not find similar books</p>
+      )}
+      <h3>Similar movies</h3>
+      {recommendationsMovies.length > 0 ? (
+        <Items items={recommendationsMovies} page={"movies"} recommendation={true}/>
+      ) : (
+        <p>could not find similiar movies</p>
       )}
     </div>
   );

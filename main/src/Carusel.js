@@ -5,10 +5,26 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import image from "./NoImage.jpg";
 
-const DisplayMovie = ({ movie }) => {
+const DisplayMovie = ({ movie, recommendation }) => {
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
   if (movie.posterpath === null) {
     imageSource = image;
+  }
+  // Recommendation argument is used to detect if we are displaying recommendations or not.
+  // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
+  if (recommendation === true) {
+    return (
+      <div className="movie-slot">
+        <div className="movie-pic" key={movie.similar_item_id}>
+          <Link to={`/movie/${movie.similar_item_id}`}>
+            <img src={imageSource} alt="movie poster" />
+          </Link>
+        </div>
+        <div className="movie-info">
+          <Link to={`/movie/${movie.similar_item_id}`}>{movie.title}</Link>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="movie-slot">
@@ -31,7 +47,7 @@ const DisplayBook = ({ book, recommendation }) => {
   }
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
-  if (recommendation == true) {
+  if (recommendation === true) {
     return (
       <div className="movie-slot">
         <div className="movie-pic" key={book.similar_item_id}>
@@ -60,7 +76,7 @@ const DisplayBook = ({ book, recommendation }) => {
 };
 
 const Items = ({ items, page, recommendation }) => (
-  // Argument "recommendation" is not always necessary, only when displaying book recommendations.
+  // Argument "recommendation" is not always necessary, only when displaying recommendations.
   <div className="page-container">
     <Carousel
       additionalTransfrom={0}
