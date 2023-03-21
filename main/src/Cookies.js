@@ -2,9 +2,10 @@
 
 //Creates a new cookie with the movieid as the name of the cookie, 
 //rating as the value of the cookie. Exdays is the amount of days until the cookie expires
+//if rating is 0, the movieid is removed 
 function setCookie(borm, movieid, rating, exdays) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  d.setTime(d.getTime() + (1000 * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
   var prevRatings = getStringOfRatings(borm)
   if(getCookie(borm, movieid) !== 0){

@@ -104,7 +104,7 @@ const Book = () => {
     <div className="page-container">
       <h1>{book.title}</h1>
       <div>
-        <img src={imageSource} width={150} height={"auto"} alt="book poster" />
+        <img src={imageSource} height={250} width={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
       <div>{isRated()}</div>

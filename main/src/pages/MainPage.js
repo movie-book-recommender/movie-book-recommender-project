@@ -43,15 +43,14 @@ const GetPersonalRecommendations = () => {
     Movies: movieRatings
   }
   console.log(ratings)
-  /*useEffect(() => {
+  useEffect(() => {
     axios
-      .post("http://128.214.253.51:3000/recommendations", ratings)
+      .post("http://128.214.253.51:3000/dbgetpersonalmovierecommendations", ratings)
       .then((response) => {
-        setRecBooks(response.recommendedBooks)
-        setRecMovies(response.recommendedMovies)
+        console.log(response)
       })
   })
-  */
+  return {recBooks, recMovies}
 }
 
 const MainPage = ({ page }) => {
