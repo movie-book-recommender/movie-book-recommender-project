@@ -17,19 +17,6 @@ const updateWishlist = () => {
   cookies = getStringOfWishlist().split('&')
   cookies.pop()
 }
-const DisplayItem = ({bormId}) => {
-  var borm = bormId.charAt(0)
-  var id = bormId.substring(1)
-
-  var isWishlisted = onWishlist(borm, id)
-  const[heart, setHeart] = useState(isWishlisted)
-  var item = {}
-  if (borm === "M") {
-    item = GetMovieByID(id)
-  } else if (borm === "B") {
-    item = GetBookByID(id)
-  }
-}
 
 const DisplayMovie = ({bormId}) => {
   const borm = bormId.charAt(0)
@@ -46,6 +33,7 @@ const DisplayMovie = ({bormId}) => {
   };
 
   let isWishlisted = onWishlist(borm, id)
+  const[heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
@@ -96,6 +84,7 @@ const DisplayBook = ({bormId}) => {
   };
 
   let isWishlisted = onWishlist(borm, id)
+  const[heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
     isActive: onWishlist(borm, id),
