@@ -12,7 +12,7 @@ describe("Movie ratings", function () {
 
     it("can rate movie", function (){
         cy.get(".navbar").contains("Ratings").click()
-        cy.contains("You have not rated anything yet!").should("not.exist")
+        cy.contains("You have not rated any movies yet!").should("not.exist")
     })
 
     it("can adjust movie rating", function () {

@@ -162,7 +162,7 @@ const Ratings = ({ page }) => {
       </Box>
       return (
         <div>
-          <h3>You have not rated anything yet!</h3>
+          <h3>You have not rated any movies yet!</h3>
           <Modal open={open} closeOnDocumentClick onClose={closeModal}>        
             <Box sx={{
               color: 'black',
@@ -209,7 +209,7 @@ const Ratings = ({ page }) => {
       </Box>
       return (
         <div>
-          <h3>You have not rated anything yet!</h3>
+          <h3>You have not rated any books yet!</h3>
           <Modal open={open} disableAutoFocus={false} closeOnDocumentClick onClose={closeModal}>        
             <Box sx={{
               color: 'black',
