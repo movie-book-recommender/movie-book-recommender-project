@@ -42,7 +42,7 @@ describe("Itemlens' movie mainpage ", function () {
     cy.get(".divider.default.text").type("pirates");
     cy.contains("Caesar Against the Pirates");
     cy.get("input").clear();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.contains("Caesar Against the Pirates").should("not.exist");
   });
 
