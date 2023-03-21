@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { getCookies } from "../Cookies";
 
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
 import Search from "../Search";
 import Items from "../Carusel";
-import { getCookies } from "../Cookies";
 
 const GetBooks = () => {
   const [books, setBooks] = useState([]);

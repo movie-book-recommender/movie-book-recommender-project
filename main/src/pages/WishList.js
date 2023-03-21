@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 import ReactStars from "react-rating-stars-component"
 import Heart from "react-heart"
 
@@ -32,13 +33,15 @@ const DisplayMovie = ({bormId}) => {
   };
 
   let isWishlisted = onWishlist(borm, id)
+  const[heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: onWishlist(borm, id),
+    isActive: heart,
     onClick: () => {
-      addToWishlist(borm, id)
+      addToWishlist(borm, id, 5)
       isWishlisted = onWishlist(borm, id)
       updateWishlist()
+      setHeart(isWishlisted)
     },
   };
 
@@ -81,6 +84,7 @@ const DisplayBook = ({bormId}) => {
   };
 
   let isWishlisted = onWishlist(borm, id)
+  const[heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
     isActive: onWishlist(borm, id),

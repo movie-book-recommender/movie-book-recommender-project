@@ -77,14 +77,15 @@ const Book = () => {
   };
 
   var isWishlisted = onWishlist("B", bookId);
-
+  const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: isWishlisted,
+    isActive: heart,
     onClick: () => {
       addToWishlist("B", bookId);
-      isWishlisted = onWishlist(bookId);
+      isWishlisted = onWishlist("B", bookId);
       updateWishlist();
+      setHeart(isWishlisted)
     },
   };
 
@@ -99,24 +100,33 @@ const Book = () => {
   if (book.img === null) {
     imageSource = image;
   }
+
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("B", id)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
+
   return (
     <div className="page-container">
       <h1>{book.title}</h1>
       <div>
-        <img src={imageSource} width={150} height={"auto"} alt="book poster" />
+        <img src={imageSource} height={250} width={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
+      <div>{isRated()}</div>
       <ReactStars {...ratingStars} />
       <div class="heart" style={{ width: "2rem" }}>
         <Heart {...heartElement} />
       </div>
-      <Link
-        onClick={() => {
-          removeRating("B", id);
-        }}
-      >
-        <p>Remove rating</p>
-      </Link>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>

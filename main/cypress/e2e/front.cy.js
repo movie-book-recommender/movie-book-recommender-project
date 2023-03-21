@@ -22,7 +22,7 @@ describe("Itemlens' movie mainpage ", function () {
   // test if my ratings page can be opened
   it("link to Ratings works ", function () {
     cy.contains("Ratings").click();
-    cy.contains("You have not rated anything yet!");
+    cy.contains("You have not rated any movies yet!");
   });
   
   it("link to Search works ", function () {
