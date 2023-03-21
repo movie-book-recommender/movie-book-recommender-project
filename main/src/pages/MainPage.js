@@ -53,12 +53,32 @@ const GetPersonalRecommendations = () => {
   return recMovies;
 }
 
+const GetPersonalBookRecommendations = () => {
+  const [recBooks, setRecBooks] = useState([]);
+  var bookRatings = getCookies("B")
+  var movieRatings = getCookies("M")
+  const ratings = {
+    Books: bookRatings,
+    Movies: movieRatings
+  }
+
+  useEffect(() =>{
+    axios
+    .get(`http://128.214.253.51:3000/dbgetpersonalbookrecommendations?ratings=${JSON.stringify(ratings)}`)
+    .then((response) =>{
+      setRecBooks(response.data)
+    })
+  }, [])
+  return recBooks;
+}
+
 const MainPage = ({ page }) => {
   const books = GetBooks();
   const movies = GetMovies();
   const recommendations = GetPersonalRecommendations();
+  const bookrecommendations = GetPersonalBookRecommendations();
 
-  if (recommendations.value === "not available") {
+  if (recommendations.value === "not available" || bookrecommendations.value === "not available") {
     return (
       <div className="page-container">
         <h2>Top 10 newest {page}</h2>
@@ -69,6 +89,8 @@ const MainPage = ({ page }) => {
         )}
         <h2>Recommended movies for you</h2>
           <p>Please rate at least one movie and one book to receive personal recommendations.</p>
+        <h2>Recommended books for you</h2>
+          <p>Please rate at least one movie and one book to receive personal recommendations</p>
         <Search page={page} />
       </div>
     );
@@ -84,6 +106,9 @@ const MainPage = ({ page }) => {
       )}
       <h2>Recommended movies for you</h2>
         <Items items={recommendations} page={"movies"} recommendation={true}/>
+      
+      <h2>Recommended books for you</h2>
+        <Items items={bookrecommendations} page={"books"} recommendation={true}/>
       <Search page={page} />
     </div>
   );
