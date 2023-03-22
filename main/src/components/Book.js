@@ -101,6 +101,8 @@ const Book = () => {
     imageSource = image;
   }
 
+  var description = book.description.replace(/\\n/g, ' ')
+
   const isRated = () =>{
     if(ratingStars.value === 0){
       return (
@@ -133,7 +135,7 @@ const Book = () => {
       <p>{book.year}</p>
 
       <h3>Description:</h3>
-      <p>{book.description}</p>
+      <p>{description}</p>
 
       <a href={`${book.url}`} target="_blank" rel="noreferrer">
         <p>Book</p>
