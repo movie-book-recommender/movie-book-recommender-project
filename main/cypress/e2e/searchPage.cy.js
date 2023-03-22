@@ -11,6 +11,7 @@ describe("Search Page ", function () {
   it("shows search result matching the keyword", function () {
     cy.get("input").type("pirate")
     cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
     cy.contains("Search result for 'pirate'")
     cy.contains("Caesar Against the Pirates")
     cy.contains("Pirate Cinema")
@@ -126,6 +127,19 @@ describe("Search Page ", function () {
         cy.get(".table-item-title").eq(0).contains("Harry Potter and the Chamber of Secrets")
         cy.get(".table-item-title").eq(1).contains("Harry Potter and the Cursed Child")
       })
+    })
+  })
+
+  it("actor", function () {
+    cy.get(".MuiNativeSelect-select").click()
+    cy.contains("actor").click()
+    cy.get("input").type("johnny depp")
+    cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
+    cy.contains("title Z-A").click()
+    cy.wait(1000)
+    cy.get(".table-left").within(() => {
+      cy.get(".table-item-title").eq(0).contains("Arizona Dream")
     })
   })
 })
