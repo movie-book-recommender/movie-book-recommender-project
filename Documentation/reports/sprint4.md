@@ -130,9 +130,9 @@ Viikko 2
 |Yhteensä|20|Aiemmasta sprintistä n. 1.5 tuntia ekstratyötä tehty|
 Viikko 2
 |||
-| Maanantai 20.3.|||
-|Tiistai 21.3.|||
-|Keskiviikko 22.3.|||
+| Maanantai 20.3.|0.25|Daily|
+|Tiistai 21.3.|2.75|Personal recommendations / kirjat algoritmia ja APIa työstetty yhdessä|
+|Keskiviikko 22.3.|7|Movie-to-movies (250) ja book-to-books (250) datat päivitetty tietokantaan, APIt ja testit päivitetty. Virtuaalikone päivitetty ja käynnistetty uudelleen. nginx:iä tutkittu. Backendin dokumentaatiota päivitetty.|
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
 |Viikonloppu 25.-26.3.|||
@@ -140,5 +140,9 @@ Viikko 2
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - API: Personal recommendations elokuville
+- API: Personal recommendations kirjoille
 - Movie to 250 books datojen ajaminen ja APIt
 - Book to 250 movies datojen ajaminen ja APIt
+- Movie to 250 movies datat ajettu ja APIt päivitetty
+- Book to 250 books datat ajettu ja APIt päivitetty
+- Virtuaalikone päivitetty ja käynnistetty uudelleen
