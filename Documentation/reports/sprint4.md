@@ -8,17 +8,17 @@
 |Tiistai 14.3.|4|yhdessä personal recommendationsien tekoa|
 |Keskiviikko 15.3.|4| yhdessä personal recommendationsien tekoa|
 |Torstai 16.3.|||
-|Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
-|Yhteensä|||
+|Perjantai 17.3.|3|Tutkin miten cors error korjattu ja tutkin book personal recommendationsien tekoa|
+|Viikonloppu 18.-19-3.|1|viikon dailyt|
+|Yhteensä|15||
 Viikko 2
 |||
 | Maanantai 20.3.|||
-|Tiistai 21.3.|||
-|Keskiviikko 22.3.|||
+|Tiistai 21.3.|5|Koululla yhdessä tekemässä personal book recommendationsin front ja back, tilavaraukset ja pientä aikataulusuunnittelua|
+|Keskiviikko 22.3.|7|personal category recommendationsien toteutus backend puolella ja frontin aloittelua kunnes backend kaatui|
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
+|Viikonloppu 25.-26.3.|1|viikon dailyt|
 |Yhteensä|||
 
 ### Eero
@@ -146,3 +146,5 @@ Viikko 2
 - Movie to 250 movies datat ajettu ja APIt päivitetty
 - Book to 250 books datat ajettu ja APIt päivitetty
 - Virtuaalikone päivitetty ja käynnistetty uudelleen
+- API:t Personal category recommendationsille
+- Fronttitoteutus kaikille recommendationseille
