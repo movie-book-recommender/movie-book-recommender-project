@@ -9,7 +9,6 @@ import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 import { GetBookByID } from "../components/Book";
 
-
 var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
 const updateCookies = () =>{
