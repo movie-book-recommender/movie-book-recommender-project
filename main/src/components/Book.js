@@ -40,6 +40,20 @@ const GetBookRecommendationsByID = (id) => {
   return books;
 };
 
+const GetMovieRecommendationsByID = (id) => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000//dbgetrecommendedmoviesalldataforgivenbook?bookid=${id}`
+      )
+      .then((response) => {
+        setMovies(response.data);
+      });
+  }, [id]);
+  return movies;
+};
+
 const Book = () => {
   var urlString = window.location.href;
   var parseHelper = urlString.split("/book/");
@@ -47,6 +61,7 @@ const Book = () => {
 
   const book = GetBookByID(id);
   const recommendationsBooks = GetBookRecommendationsByID(id);
+  const recommendationsMovies = GetMovieRecommendationsByID(id);
   var bookId = id;
   var stars = getCookie("B", bookId);
 
@@ -62,14 +77,15 @@ const Book = () => {
   };
 
   var isWishlisted = onWishlist("B", bookId);
-
+  const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: isWishlisted,
+    isActive: heart,
     onClick: () => {
       addToWishlist("B", bookId);
-      isWishlisted = onWishlist(bookId);
+      isWishlisted = onWishlist("B", bookId);
       updateWishlist();
+      setHeart(isWishlisted)
     },
   };
 
@@ -84,31 +100,42 @@ const Book = () => {
   if (book.img === null) {
     imageSource = image;
   }
+
+  var description = book.description.replace(/\\n/g, ' ')
+
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("B", id)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
+
   return (
     <div className="page-container">
       <h1>{book.title}</h1>
       <div>
-        <img src={imageSource} width={150} height={"auto"} alt="book poster" />
+        <img src={imageSource} height={250} width={"auto"} alt="book poster" />
       </div>
       <h3>Your rating:</h3>
+      <div>{isRated()}</div>
       <ReactStars {...ratingStars} />
       <div class="heart" style={{ width: "2rem" }}>
         <Heart {...heartElement} />
       </div>
-      <Link
-        onClick={() => {
-          removeRating("B", id);
-        }}
-      >
-        <p>Remove rating</p>
-      </Link>
       <h3>Authors:</h3>
       <p>{book.authors}</p>
       <h3>Year:</h3>
       <p>{book.year}</p>
 
       <h3>Description:</h3>
-      <p>{book.description}</p>
+      <p>{description}</p>
 
       <a href={`${book.url}`} target="_blank" rel="noreferrer">
         <p>Book</p>
@@ -117,9 +144,15 @@ const Book = () => {
       <h3>Similar books</h3>
 
       {recommendationsBooks.length > 0 ? (
-        <Items items={recommendationsBooks} page={"books"} />
+        <Items items={recommendationsBooks} page={"books"} recommendation={true} />
       ) : (
         <p>could not find similar books</p>
+      )}
+      <h3>Similar movies</h3>
+      {recommendationsMovies.length > 0 ? (
+        <Items items={recommendationsMovies} page={"movies"} recommendation={true}/>
+      ) : (
+        <p>could not find similiar movies</p>
       )}
     </div>
   );

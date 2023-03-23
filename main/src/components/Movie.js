@@ -35,6 +35,21 @@ const GetRecommendedMoviesByID = (id) => {
   return movies;
 };
 
+const GetRecommendedBooksByID = (id) => {
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://128.214.253.51:3000/dbgetrecommendedbooksalldataforgivenmovie?movieid=${id}`
+      )
+      .then((response) => {
+        setBooks(response.data);
+      });
+  }, [id]);
+  return books;
+};
+
+
 const Movie = () => {
   //Gets the movieid from the url
   var urlString = window.location.href;
@@ -43,9 +58,10 @@ const Movie = () => {
 
   const movie = GetMovieByID(id);
   const recommendedMovies = GetRecommendedMoviesByID(id);
+  const recommendedBooks = GetRecommendedBooksByID(id);
   var movId = id;
-  var stars = getCookie("M", movId);
 
+  const [stars, setStars] = useState(getCookie("M", movId))
   const ratingStars = {
     size: 40,
     count: 5,
@@ -54,22 +70,26 @@ const Movie = () => {
     onChange: (newValue) => {
       setCookie("M", movId, newValue, 5);
       updateCookies();
+      setStars(newValue)
     },
   };
   const removeRating = (borm, id) => {
     setCookie(borm, id, 0, 5);
     updateCookies();
+    setStars(0)
   };
 
   var isWishlisted = onWishlist("M", movId);
 
+  const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
-    isActive: isWishlisted,
+    isActive: heart,
     onClick: () => {
-      addToWishlist("M", movId);
-      isWishlisted = onWishlist(movId);
-      updateWishlist();
+      addToWishlist("M", movId)
+      isWishlisted = onWishlist("M", movId)
+      updateWishlist()
+      setHeart(isWishlisted)
     },
   };
 
@@ -84,6 +104,21 @@ const Movie = () => {
   if (movie.posterpath === null) {
     imageSource = image;
   }
+  
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("M", id)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
+
   return (
     <div className="page-container">
       <h1>{movie.title}</h1>
@@ -92,16 +127,9 @@ const Movie = () => {
       </div>
       <h3>Your rating:</h3>
       <ReactStars {...ratingStars} />
-      {ReactStars.value > 0}
-      <Link
-        onClick={() => {
-          removeRating("M", id);
-        }}
-      >
-        <p>Remove rating</p>
-      </Link>
-      <div className="heart" style={{ width: "2rem" }}>
-        <Heart {...heartElement} />
+      <div>{isRated()}</div>
+      <div class="heart" style={{ width: "2rem"}}>
+        <Heart {...heartElement}/>
       </div>
       <h3>Directors:</h3>
       <p>{movie.directors}</p>
@@ -125,8 +153,14 @@ const Movie = () => {
       ) : (
         <p>could not find similar movies</p>
       )}
+      <h3>Similiar books</h3>
+      {recommendedBooks.length > 0 ? (
+        <Items items={recommendedBooks} page={"books"} recommendation={true} />
+      ) : (
+        <p>could not find similiar books</p>
+      )}
     </div>
   );
 };
 
-export { Movie, GetMovieByID };
+export { Movie, GetMovieByID }
