@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, InputBase, Paper } from "@mui/material"
+import { Divider, IconButton, InputBase, NativeSelect, Paper } from "@mui/material"
 
 import image from '../NoImage.jpg'
 import Table from "../Table"
@@ -13,27 +13,48 @@ const SearchPage = () => {
   const [searchKey, setSearchKey] = useState("")
   const [newSearch, setNewSearch] = useState("")
 
+  const [searchType, setSearchType] = useState("name")
+
+  const movieSearchTypes = ["name", "actor", "director"]
+  const bookSearchTypes = ["name", "author"]
+
 
   const handleSearch = (event) => {
     event.preventDefault()
 
-    axios
-    .get(`http://128.214.253.51:3000/dbsearchmoviesbyname?input=${newSearch}`)
-    .then(response => {
-        setSearchResultMovies(response.data)
-    })
+    if (movieSearchTypes.includes(searchType)){
+      axios
+      .get(`http://128.214.253.51:3000/dbsearchmoviesby${searchType}?input=${newSearch}`)
+      .then(response => {
+          setSearchResultMovies(response.data)
+      })
+    } else {
+      setSearchResultMovies([])
+    }
 
-    axios
-    .get(`http://128.214.253.51:3000/dbsearchbooksbyname?input=${newSearch}`)
-    .then(response => {
-        setSearchResultBooks(response.data)
-        setSearchKey(newSearch)
-        setNewSearch('')
+    if (bookSearchTypes.includes(searchType)){
+      axios
+      .get(`http://128.214.253.51:3000/dbsearchbooksby${searchType}?input=${newSearch}`)
+      .then(response => {
+          setSearchResultBooks(response.data)
+      })
+    } else {
+      setSearchResultBooks([])
+    }
 
-    })
+    setSearchKey(newSearch)
+    setNewSearch('')
   }
 
-  const handleSearchChange = (event) => (setNewSearch(event.target.value))
+  const handleSearchChange = (event) => {
+    console.log(event.target.value)
+    setNewSearch(event.target.value)
+  }
+
+  const handleSearchTypeChange = (event) => {
+    console.log(event.target.value)
+    setSearchType(event.target.value)
+  }
 
   const handleSortByReleaseOld = () => {
     const sortedByReleaseNewMovies = [...searchResultMovies].sort(compareReleaseMovies);
@@ -74,7 +95,7 @@ const SearchPage = () => {
   return(
     <div class="page-container">
       <h2>Search movies and books</h2>
-      <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} newSearch={newSearch} />
+      <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} handleSearchTypeChange={handleSearchTypeChange} newSearch={newSearch} searchType={searchType} />
       <div class="sort-container">
           <p>
               Sort by: 
@@ -109,28 +130,40 @@ function compareReleaseBooks(a, b) {
   return 0;
 }
 
-const SearchBar = ({ handleSearch, handleSearchChange, newSearch}) => {
+const SearchBar = ({ handleSearch, handleSearchChange, handleSearchTypeChange, newSearch, searchType}) => {
   return (
     <div class="search-bar">
       <form onSubmit={handleSearch}>
         <Paper
-          sx={{display: 'flex', alignItems: 'center', width: 300 }}
+          sx={{display: 'flex', alignItems: 'center', width: 500 }}
         >
-        <InputBase
-          sx={{flex: 1, ml: 1}}
-          size="small"
-          placeholder="Search by title"
-          inputProps={{ 'aria-label': 'search' }}
-          onChange={handleSearchChange}
-          value={newSearch}
-        />
-        <IconButton
-          type="submit"
-          sx={{ p: '5px' }}
-          aria-label="search"
-        >
-          <SearchIcon />
-        </IconButton>
+          <NativeSelect
+            value={searchType}
+            disableUnderline
+            sx={{ml: 1}}
+            onChange={handleSearchTypeChange}
+          >
+            <option value="name">title</option>
+            <option value="author">author</option>
+            <option>actor</option>
+            <option>director</option>
+          </NativeSelect>
+          <Divider orientation="vertical" flexItem />
+          <InputBase
+            sx={{flex: 1, ml: 1}}
+            size="small"
+            placeholder="Search from library"
+            inputProps={{ 'aria-label': 'search' }}
+            onChange={handleSearchChange}
+            value={newSearch}
+          />
+          <IconButton
+            type="submit"
+            sx={{ p: '5px' }}
+            aria-label="search"
+          >
+            <SearchIcon />
+          </IconButton>
         </Paper>
       </form>
     </div>

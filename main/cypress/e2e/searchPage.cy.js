@@ -11,6 +11,7 @@ describe("Search Page ", function () {
   it("shows search result matching the keyword", function () {
     cy.get("input").type("pirate")
     cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
     cy.contains("Search result for 'pirate'")
     cy.contains("Caesar Against the Pirates")
     cy.contains("Pirate Cinema")
@@ -32,7 +33,43 @@ describe("Search Page ", function () {
     cy.get("[data-testid='SearchIcon']").click()
     cy.contains("Caesar Against the Pirates").should("not.exist")
     cy.contains("Pirate Cinema").should("not.exist")
-  });
+  })
+
+  it("show revelvant result for search by actor", function () {
+    cy.get(".MuiNativeSelect-select").select("actor")
+    cy.get("input").type("johnny depp")
+    cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
+    cy.contains("title A-Z").click()
+    cy.wait(1000)
+    cy.get(".table-left").within(() => {
+      cy.get(".table-item-title").eq(0).contains("Arizona Dream")
+    })
+  })
+
+  it("show revelvant result for search by author", function () {
+    cy.get(".MuiNativeSelect-select").select("author")
+    cy.get("input").type("jane austen")
+    cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
+    cy.contains("title A-Z").click()
+    cy.wait(1000)
+    cy.get(".table-right").within(() => {
+      cy.get(".table-item-title").eq(0).contains("Emma")
+    })
+  })
+
+  it("show revelvant result for search by director", function () {
+    cy.get(".MuiNativeSelect-select").select("director")
+    cy.get("input").type("tim burton")
+    cy.get("[data-testid='SearchIcon']").click()
+    cy.wait(1000)
+    cy.contains("title A-Z").click()
+    cy.wait(1000)
+    cy.get(".table-left").within(() => {
+      cy.get(".table-item-title").eq(0).contains("Alice in Wonderland")
+    })
+  })
 
   describe("opens the item page after", function () {
     beforeEach(function () {
