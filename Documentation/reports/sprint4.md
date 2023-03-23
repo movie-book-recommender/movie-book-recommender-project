@@ -36,10 +36,10 @@ Viikko 2
 | Maanantai 20.3.|6|Book-to-movies suositusten, Movie-to-books suositusten ja Personal recommendationeiden visualisointi.|
 |Tiistai 21.3.|||
 |Keskiviikko 22.3.|||
-|Torstai 23.3.|||
+|Torstai 23.3.|7|Backend debugausta.|
 |Perjantai 24.3.|||
 |Viikonloppu 25.-26.3.|1|Viikon dailyt|
-|Yhteensä|7||
+|Yhteensä|14||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -147,4 +147,4 @@ Viikko 2
 - Book to 250 books datat ajettu ja APIt päivitetty
 - Virtuaalikone päivitetty ja käynnistetty uudelleen
 - API:t Personal category recommendationsille
-- Fronttitoteutus kaikille recommendationseille
+- Fronttitoteutus elokuvasuosituksille
