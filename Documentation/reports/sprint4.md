@@ -133,10 +133,10 @@ Viikko 2
 | Maanantai 20.3.|0.25|Daily|
 |Tiistai 21.3.|2.75|Personal recommendations / kirjat algoritmia ja APIa työstetty yhdessä|
 |Keskiviikko 22.3.|7|Movie-to-movies (250) ja book-to-books (250) datat päivitetty tietokantaan, APIt ja testit päivitetty. Virtuaalikone päivitetty ja käynnistetty uudelleen. nginx:iä tutkittu. Backendin dokumentaatiota päivitetty.|
-|Torstai 23.3.|||
-|Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+|Torstai 23.3.|0.3|Backendin debuggausta|
+|Perjantai 24.3.|1|Maanantain demon preppaus|
+|Viikonloppu 25.-26.3.|0||
+|Yhteensä|12|Tällä hetkellä projektissa tehty yhteensä 153 tuntia työtä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - API: Personal recommendations elokuville
