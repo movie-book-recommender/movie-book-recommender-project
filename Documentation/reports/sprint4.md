@@ -37,9 +37,9 @@ Viikko 2
 |Tiistai 21.3.|||
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|7|Backend debugausta.|
-|Perjantai 24.3.|||
+|Perjantai 24.3.|1|Demon preppaus|
 |Viikonloppu 25.-26.3.|1|Viikon dailyt|
-|Yhteensä|14||
+|Yhteensä|15|Projektin aikana yhteensä 143h|
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
