@@ -83,22 +83,23 @@ Viikko 2
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
-|Torstai 16.3.|||
-|Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
-|Yhteensä|||
+| Maanantai 13.3.|3|Asiakastapaaminen, retro, planning, pientä testien fixailua|
+|Tiistai 14.3.|4|Frontin säätämistä: taulukkokomponenti eriyttäminen hakusivulta ja käyttöönotto wishlistissä|
+|Keskiviikko 15.3.|4|Testien fixailua, Cypress Codecoveragen työstämistä|
+|Torstai 16.3.|1|Testien fixailua|
+|Perjantai 17.3.|4|Bäkkiin tutustumista ja APIen teon harjoittelua|
+|Viikonloppu 18.-19-3.|0,5|Viikon dailyt|
+|Yhteensä|16,5||
 Viikko 2
 |||
 | Maanantai 20.3.|||
-|Tiistai 21.3.|||
-|Keskiviikko 22.3.|||
+|Tiistai 21.3.|4|Testien fixailua, hakusivun parantelua|
+|Keskiviikko 22.3.|4|Hakusivun parantelua sekä frontin että bäkin puolella|
 |Torstai 23.3.|||
-|Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+|Perjantai 24.3.|2|Testausta, demo preppaus|
+|Viikonloppu 25.-26.3.|3,5|Hakusivun parantelua, viikon dailyt|
+|Yhteensä|13,5||
+
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
