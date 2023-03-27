@@ -26,7 +26,7 @@ const GetRecommendedMoviesByID = (id) => {
   useEffect(() => {
     axios
       .get(
-        `http://128.214.253.51:3000/dbgetrecommendationsalldataforgivenmovie?movieid=${id}`
+        `http://128.214.253.51:3000/dbgetforgivenmovierecommendedmoviesalldata?movieid=${id}`
       )
       .then((response) => {
         setMovies(response.data);
