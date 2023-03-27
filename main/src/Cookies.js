@@ -151,13 +151,13 @@ const getStringOfWishlist = () =>{
 function getCookie(borm, id) {
   if(localStorage.cookie === "Disallow"){
     if(borm === "B"){
-      for(let i = 0; i < nonCookieBookRatings; i++){
+      for(let i = 0; i < nonCookieBookRatings.length; i++){
         if(nonCookieBookRatings[i][0] === id){
           return nonCookieBookRatings[i][1];
         }
       }
     }else{
-      for(let i = 0; i < nonCookieMovieRatings; i++){
+      for(let i = 0; i < nonCookieMovieRatings.length; i++){
         if(nonCookieMovieRatings[i][0] === id){
           return nonCookieMovieRatings[i][1];
         }

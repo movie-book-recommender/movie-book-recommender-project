@@ -73,7 +73,7 @@ const App = () => {
               Let me reconsider
             </Button>
             <Button onClick={() =>{childCloseDisallow()}}>
-              Don't allow
+              I'm sure
             </Button>
           </Box>
         </Modal>
