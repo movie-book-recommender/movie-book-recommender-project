@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet"
+import { Modal, Box, Button } from "@mui/material";
 
 import "./css/App.css";
 import "react-multi-carousel/lib/styles.css";
@@ -38,6 +39,93 @@ const App = () => {
     else setPage("movies");
   };
 
+  const AllowCookiesPopUp = () =>{
+    const[childOpen, childsetOpen] = useState(false)
+    function AreYouSureModal(){
+      function childClose(){
+        childsetOpen(false)
+      }
+      function childCloseDisallow(){
+        localStorage.cookie = "Disallow"
+        childsetOpen(false)
+        setOpen(false)
+      }
+      return (
+        <Modal open={childOpen}>        
+          <Box sx={{
+            color: 'black',
+            bgcolor: 'white',
+            width: 600,
+            heigh: 500,
+            border: 2,
+            mx: 'auto',
+            mt: 20,
+            textAlign: 'center',
+            }}
+          >     
+          <h2>Are you sure you want to disallow</h2>          
+            <p>
+              If you do not agree to using cookies the web page won't remember your ratings if you refresh the page or close the browser.
+              If you do not wish to use cookies now but want to turn them on at a later date you can delete the cookies on this site and
+              refresh the page.
+            </p>
+            <Button onClick={() =>{childClose()}}>
+              Let me reconsider
+            </Button>
+            <Button onClick={() =>{childCloseDisallow()}}>
+              I'm sure
+            </Button>
+          </Box>
+        </Modal>
+      )
+    }
+    function openChild(){
+      childsetOpen(true)
+    }
+    const setCookieConsent = ( decision ) =>{
+      localStorage.cookie = decision
+      closeModal()
+    } 
+    const[open, setOpen] = useState(!localStorage.cookie)
+    function closeModal(){
+      setOpen(false)
+    }
+    if(typeof(Storage) !== "undefined"){
+      if(!localStorage.cookie){
+        return (
+          <Modal open={open} onClose={closeModal}>        
+            <Box sx={{
+              color: 'black',
+              bgcolor: 'white',
+              width: 800,
+              heigh: 800,
+              border: 2,
+              mx: 'auto',
+              mt: 10,
+              textAlign: 'center',
+              }}
+            >  
+            <h2>This site uses cookies</h2>             
+              <p>
+                This web page uses cookies to save your ratings and wishlisted items. If you 
+                disallow the use of cookies on this site, your decision will be saved in your browsers localStorage.
+                If you've disallowed the use of cookies you can still use all the functionalities of the site, but 
+                if you refresh the page or close the session your ratings and wishlisted items will be gone.
+              </p>
+              <Button onClick={() =>{setCookieConsent("Allow")}}>
+                Allow
+              </Button>
+              <Button onClick={() =>{openChild()}}>
+                Don't allow
+              </Button>
+              <AreYouSureModal/>
+            </Box>
+          </Modal>
+        )
+      }
+    }
+  }
+
   return (
     <>
       <Helmet>
@@ -58,6 +146,7 @@ const App = () => {
           <Route path="/book/:id" element={<Book page={page}/>} />
           <Route path="/" element={<MainPage page={page} />} />
         </Routes>
+        <AllowCookiesPopUp/>
       </div>
     </>
   );

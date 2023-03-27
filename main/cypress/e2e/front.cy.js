@@ -1,6 +1,8 @@
 describe("Itemlens' movie mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
+    cy.contains("Allow").click()
+    cy.wait(1000)
   });
 
   // test if frontend can be opened
