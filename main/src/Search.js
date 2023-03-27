@@ -76,7 +76,7 @@ const Search = ({ page }) => {
 
   return (
     <Dropdown
-      floating
+      fluid
       closeOnChange
       placeholder={`Search for ${page}`}
       icon="search"
