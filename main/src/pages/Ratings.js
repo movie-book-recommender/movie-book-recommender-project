@@ -12,10 +12,17 @@ import Table from "../Table"
 
 var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
+var ratingChangeStatus = false;
+
 const updateCookies = () =>{
   console.log("cookies updated")
   cookiesB = getCookies("B")
   cookiesM = getCookies("M")
+  ratingChangeStatus = true
+}
+
+const getRatingChange = () =>{
+  return ratingChangeStatus
 }
 
 const DisplayMovie = ({ id, rating }) => {
@@ -182,7 +189,7 @@ const Ratings = ({ page }) => {
     return (
       <div>
         <div class="rowC">
-          <h2>You have rated {cookiesM.length} movies</h2>
+          <h2>You have rated {cookiesM.length} movies.</h2>
           <Button onClick={() =>{removeAll("M")}}>
             <p>Remove all movie ratings</p>
           </Button>
@@ -237,4 +244,4 @@ const Ratings = ({ page }) => {
   )
 };
 
-export { Ratings, updateCookies };
+export { Ratings, updateCookies, getRatingChange };
