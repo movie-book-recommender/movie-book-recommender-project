@@ -17,9 +17,9 @@ Viikko 2
 |Tiistai 21.3.|5|Koululla yhdessä tekemässä personal book recommendationsin front ja back, tilavaraukset ja pientä aikataulusuunnittelua|
 |Keskiviikko 22.3.|7|personal category recommendationsien toteutus backend puolella ja frontin aloittelua kunnes backend kaatui|
 |Torstai 23.3.|||
-|Perjantai 24.3.|||
+|Perjantai 24.3.|3|demon preppaus, personal categoryn debuggausta ja optimointia|
 |Viikonloppu 25.-26.3.|1|viikon dailyt|
-|Yhteensä|||
+|Yhteensä|16||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
