@@ -85,12 +85,12 @@ Viikko 2
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 27.3.|3,5|Asiakastapaaminen, retro, planning, API hakutulosten parantamiseen|
-|Tiistai 28.3.|||
+|Tiistai 28.3.|4|Elokuvan sivun ulkoasun hiomista|
 |Keskiviikko 29.3.|||
 |Torstai 30.3.|||
 |Perjantai 31.3.|||
 |Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Yhteensä|7,5||
 Viikko 2
 |||
 | Maanantai 3.4.|||
