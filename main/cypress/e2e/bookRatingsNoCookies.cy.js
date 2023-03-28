@@ -3,8 +3,6 @@ describe("Book ratings no cookies", function () {
         cy.visit("http://localhost:3000/movie")
         cy.contains("Don't allow").click()
         cy.wait(1000)
-        cy.contains("I'm sure").click()
-        cy.wait(1000)
         cy.contains("Switch to books").click()
         cy.wait(1000)
         cy.get(".movie-pic").first().children("a").click()

@@ -4,8 +4,6 @@ describe("Movie ratings", function () {
         cy.wait(1000)
         cy.contains("Don't allow").click()
         cy.wait(1000)
-        cy.contains("I'm sure").click()
-        cy.wait(1000)
         cy.get(".movie-pic").first().click()
         cy.wait(1000)
         cy.get(".react-stars")
