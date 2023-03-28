@@ -1,0 +1,144 @@
+# Sprint 5
+## Työaikakirjanpito
+
+### Emilia
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|||
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+### Eero
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|||
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+### Polina
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|||
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+### Aleksi
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|||
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+### Nana
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|3,5|Asiakastapaaminen, retro, planning, API hakutulosten parantamiseen|
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+### Sebastian
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 13.3.|||
+|Tiistai 14.3.|||
+|Keskiviikko 15.3.|||
+|Torstai 16.3.|||
+|Perjantai 17.3.|||
+|Viikonloppu 18.-19-3.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 20.3.|||
+|Tiistai 21.3.|||
+|Keskiviikko 22.3.|||
+|Torstai 23.3.|||
+|Perjantai 24.3.|||
+|Viikonloppu 25.-26.3.|||
+|Yhteensä|||
+
+### Katri
+| päivä | aika | tehdyt asiat  |
+| :----:|:-----| :-----|
+| Maanantai 27.3.|||
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|||
+|Yhteensä|||
+Viikko 2
+|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|||
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+
+## Mitä tässä sprintissä saatiin aikaiseksi
