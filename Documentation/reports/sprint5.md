@@ -124,9 +124,9 @@ Viikko 2
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
-|Tiistai 28.3.|||
-|Keskiviikko 29.3.|||
+| Maanantai 27.3.|3|Daily, asiakastapaaminen ja sen preppaus, retro, sprint planning|
+|Tiistai 28.3.|0||
+|Keskiviikko 29.3.|4.5|Backendin stabiliteetin parantaminen ja algoritmin nopeuttaminen yhdessä|
 |Torstai 30.3.|||
 |Perjantai 31.3.|||
 |Viikonloppu 1.-2.4.|||
