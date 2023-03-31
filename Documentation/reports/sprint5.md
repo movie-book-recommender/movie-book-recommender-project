@@ -125,12 +125,12 @@ Viikko 2
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 27.3.|3|Daily, asiakastapaaminen ja sen preppaus, retro, sprint planning|
-|Tiistai 28.3.|0||
-|Keskiviikko 29.3.|4.5|Backendin stabiliteetin parantaminen ja algoritmin nopeuttaminen yhdessä|
-|Torstai 30.3.|||
-|Perjantai 31.3.|||
+|Tiistai 28.3.|0|n/a|
+|Keskiviikko 29.3.|4.5|Daily, backendin stabiliteetin parantaminen ja algoritmin nopeuttaminen yhdessä|
+|Torstai 30.3.|0|n/a|
+|Perjantai 31.3.|3.5|Daily, serveri päivitetty, kokeilu nginx:n ja gunicornin asentamiseksi tehty, ongelmanratkaisua algoritmin nopeuttamiseksi|
 |Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Yhteensä|11||
 Viikko 2
 |||
 | Maanantai 3.4.|||
