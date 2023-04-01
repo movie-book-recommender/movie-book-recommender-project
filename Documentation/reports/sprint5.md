@@ -24,13 +24,13 @@ Viikko 2
 ### Eero
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
+| Maanantai 27.3.|3|Asiakastapaaminen ja sen preppaus, retro, sprint planning|
 |Tiistai 28.3.|||
 |Keskiviikko 29.3.|||
-|Torstai 30.3.|||
-|Perjantai 31.3.|||
-|Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Torstai 30.3.|5|Backendin debugaamista ja algoritmin tehostamisen yrittämistä|
+|Perjantai 31.3.|1|Python kirjastoihin tutustumista ensi viikkoa varten|
+|Viikonloppu 1.-2.4.|1|Viikon dailyt|
+|Yhteensä|10||
 Viikko 2
 |||
 | Maanantai 3.4.|||
