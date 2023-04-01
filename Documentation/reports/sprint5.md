@@ -129,8 +129,8 @@ Viikko 2
 |Keskiviikko 29.3.|4.5|Daily, backendin stabiliteetin parantaminen ja algoritmin nopeuttaminen yhdessä|
 |Torstai 30.3.|0|n/a|
 |Perjantai 31.3.|3.5|Daily, serveri päivitetty, kokeilu nginx:n ja gunicornin asentamiseksi tehty, ongelmanratkaisua algoritmin nopeuttamiseksi|
-|Viikonloppu 1.-2.4.|||
-|Yhteensä|11||
+|Viikonloppu 1.-2.4.|2|Backend siirretty toimivaksi nginx:n ja Gunicornin kauatta|
+|Yhteensä|13||
 Viikko 2
 |||
 | Maanantai 3.4.|||
