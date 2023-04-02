@@ -15,10 +15,12 @@ var cookiesM = getCookies("M");
 var ratingChangeStatus = false;
 
 const updateCookies = () =>{
-  console.log("cookies updated")
   cookiesB = getCookies("B")
   cookiesM = getCookies("M")
   ratingChangeStatus = true
+}
+const setRatingChange = (bool) =>{
+  ratingChangeStatus = bool
 }
 
 const getRatingChange = () =>{
@@ -244,4 +246,4 @@ const Ratings = ({ page }) => {
   )
 };
 
-export { Ratings, updateCookies, getRatingChange };
+export { Ratings, updateCookies, getRatingChange, setRatingChange };
