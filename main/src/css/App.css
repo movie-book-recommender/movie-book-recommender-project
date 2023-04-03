@@ -1,3 +1,63 @@
+.medium-item-pic {
+  width: auto;
+  height: 250px;
+ }
+
+.book-page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  grid-template-areas:
+      "title title title"
+      "info info info"
+      "book box box"
+      "samea samea samea"
+      "similarm similarm similarm"
+      "similarb similarb similarb";
+
+  margin: 0px auto;
+  padding: 50px 80px;
+  row-gap: 10px;
+  column-gap: 20px;
+  max-width: 1000px;
+  background-color: white;
+}
+
+.book-page-wrapper > h1 {
+  grid-area: title;
+}
+
+.book-page-wrapper > h5 {
+  grid-area: info;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.book-page-wrapper > .book {
+  grid-area: book;
+}
+
+.book-page-wrapper > .box {
+  grid-area: box;
+}
+
+.book-page-wrapper > .same-author {
+  grid-area: samea;
+}
+
+.book-page-wrapper > .similar-movies {
+  grid-area: similarm;
+}
+
+.book-page-wrapper > .similar-books {
+  grid-area: similarb;
+}
+
+.large-item-pic {
+  height: 300px;
+  width: auto;
+}
+
 .navbar a{
   display: inline-block;
   border-style: solid;
@@ -46,6 +106,49 @@
   margin-right: 5px;
 }
 
+.movie-page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  grid-template-areas:
+      "title title title"
+      "info info info"
+      "movie box box"
+      "similarm similarm similarm"
+      "similarb similarb similarb";
+
+  margin: 0px auto;
+  padding: 50px 80px;
+  row-gap: 10px;
+  column-gap: 20px;
+  max-width: 1000px;
+  background-color: white;
+}
+
+.movie-page-wrapper > h1 {
+  grid-area: title;
+}
+
+.movie-page-wrapper > h5 {
+  grid-area: info;
+}
+
+.movie-page-wrapper > .movie {
+  grid-area: movie;
+}
+
+.movie-page-wrapper > .box {
+  grid-area: box;
+}
+
+.movie-page-wrapper > .similar-movies {
+  grid-area: similarm;
+}
+
+.movie-page-wrapper > .similar-books {
+  grid-area: similarb;
+}
+
 .movie-slot{
   grid-row: 1;
   grid-column: auto;
@@ -78,11 +181,6 @@
  .movie-pic a:hover img,
  .table-item a:hover img {
   opacity: .5;
- }
-
- img {
-  width: auto;
-  max-height: 250px;
  }
 
  .switch-text {
