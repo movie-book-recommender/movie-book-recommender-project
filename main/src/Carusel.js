@@ -17,7 +17,7 @@ const DisplayMovie = ({ movie, recommendation }) => {
       <div className="movie-slot">
         <div className="movie-pic" key={movie.similar_item_id}>
           <Link to={`/movie/${movie.similar_item_id}`}>
-            <img src={imageSource} alt="movie poster" />
+            <img class="medium-item-pic" src={imageSource} alt="movie poster" />
           </Link>
         </div>
         <div className="movie-info">
@@ -30,7 +30,7 @@ const DisplayMovie = ({ movie, recommendation }) => {
     <div className="movie-slot">
       <div className="movie-pic" key={movie.id}>
         <Link to={`/movie/${movie.movieid}`}>
-          <img src={imageSource} alt="movie poster" />
+          <img class="medium-item-pic" src={imageSource} alt="movie poster" />
         </Link>
       </div>
       <div className="movie-info">
@@ -52,7 +52,7 @@ const DisplayBook = ({ book, recommendation }) => {
       <div className="movie-slot">
         <div className="movie-pic" key={book.similar_item_id}>
           <Link to={`/book/${book.similar_item_id}`}>
-            <img src={imageSource} alt="book poster" />
+            <img class="medium-item-pic" src={imageSource} alt="book poster" />
           </Link>
         </div>
         <div className="movie-info">
@@ -65,7 +65,7 @@ const DisplayBook = ({ book, recommendation }) => {
     <div className="movie-slot">
       <div className="movie-pic" key={book.item_id}>
         <Link to={`/book/${book.item_id}`}>
-          <img src={imageSource} alt="book poster" />
+          <img class="medium-item-pic" src={imageSource} alt="book poster" />
         </Link>
       </div>
       <div className="movie-info">
