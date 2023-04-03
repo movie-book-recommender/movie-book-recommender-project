@@ -1,19 +1,28 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useState } from "react";
-import { Modal, Box, Grid } from "@mui/material";
+import { useState, useEffect } from "react";
+import { Modal, Box, Button } from "@mui/material";
 
 import "../css/Ratings.css";
 import image from "../NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 import { GetBookByID } from "../components/Book";
+import Table from "../Table";
 
 var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
+var ratingChangeStatus = false;
+
 const updateCookies = () => {
+  console.log("cookies updated");
   cookiesB = getCookies("B");
   cookiesM = getCookies("M");
+  ratingChangeStatus = true;
+};
+
+const getRatingChange = () => {
+  return ratingChangeStatus;
 };
 
 const DisplayMovie = ({ id, rating }) => {
@@ -37,33 +46,20 @@ const DisplayMovie = ({ id, rating }) => {
     updateCookies();
   };
   return (
-    <div>
-      <Box
-        sx={{
-          bgcolor: "white",
-          height: 400,
-          width: 250,
-          border: 2,
-          borderColor: "text.disabled",
-          mx: "auto",
-          textAlign: "Center",
-        }}
-      >
+    <div class="table-item">
+      <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
-          <img
-            src={imageSource}
-            width={150}
-            height={"auto"}
-            alt="movie poster"
-          />
+          <img src={imageSource} width={150} height={"auto"} />
         </Link>
-        <Box
-          sx={{
-            ml: 4,
-          }}
-        >
+      </div>
+      <div class="table-item-info">
+        <div class="table-item-title">
+          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
+        </div>
+        <div class="table-item-rate">
           <ReactStars {...ratingStars} />
-        </Box>
+        </div>
+
         <Link
           onClick={() => {
             removeRating("M", id);
@@ -71,8 +67,7 @@ const DisplayMovie = ({ id, rating }) => {
         >
           <p>Remove rating</p>
         </Link>
-        <h4>{movie.title}</h4>
-      </Box>
+      </div>
     </div>
   );
 };
@@ -100,44 +95,28 @@ const DisplayBook = ({ id, rating }) => {
   };
 
   return (
-    <div>
-      <Box
-        sx={{
-          height: 400,
-          width: 250,
-          border: 2,
-          mx: "auto",
-          textAlign: "center",
-          borderColor: "text.disabled",
-          textAlign: "Center",
-          bgcolor: "white",
-        }}
-      >
+    <div class="table-item">
+      <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} height={250} width={"auto"} />
         </Link>
-        <Box
-          sx={{
-            ml: 4,
-          }}
-        >
+      </div>
+      <div class="table-item-info">
+        <div class="table-item-title">
+          <Link to={`/movie/${book.item_id}`}>{book.title}</Link>
+        </div>
+        <div class="table-item-rate">
           <ReactStars {...ratingStars} />
-        </Box>
-        <Box
-          sx={{
-            my: "auto",
+        </div>
+
+        <Link
+          onClick={() => {
+            removeRating("B", id);
           }}
         >
-          <Link
-            onClick={() => {
-              removeRating("B", id);
-            }}
-          >
-            <p>Remove rating</p>
-          </Link>
-          <h4>{book.title}</h4>
-        </Box>
-      </Box>
+          <p>Remove rating</p>
+        </Link>
+      </div>
     </div>
   );
 };
@@ -170,6 +149,24 @@ const Ratings = () => {
   };
   const closeModal = () => {
     setOpen(false);
+  };
+
+  const Render = () => {
+    let books = cookiesB.map((cookie) => (
+      <DisplayBook id={cookie[0]} rating={cookie[1]} key={cookie[0]} />
+    ));
+    let movies = cookiesM.map((cookie) => (
+      <DisplayMovie id={cookie[0]} rating={cookie[1]} key={cookie[0]} />
+    ));
+    return (
+      <div>
+        <div class="rowC">
+          <RenderMovies />
+          <RenderBooks />
+        </div>
+        <Table movies={movies} books={books} />
+      </div>
+    );
   };
 
   const RenderMovies = () => {
@@ -212,24 +209,16 @@ const Ratings = () => {
     }
     return (
       <div>
-        <Box sx={{ textAlign: "center" }}>
-          <h2>My movie ratings</h2>
-          <h3>You have rated {cookiesM.length} movies.</h3>
-          <Link
+        <div class="rowC">
+          <h2>You have rated {cookiesM.length} movies.</h2>
+          <Button
             onClick={() => {
               removeAll("M");
             }}
           >
             <p>Remove all movie ratings</p>
-          </Link>
-        </Box>
-        <Grid container={true} direction={"row"} columns={3}>
-          {cookiesM.map((cookie) => (
-            <Grid xs={1} mx="auto" mt={1}>
-              <DisplayMovie id={cookie[0]} rating={cookie[1]} key={cookie[0]} />
-            </Grid>
-          ))}
-        </Grid>
+          </Button>
+        </div>
       </div>
     );
   };
@@ -279,48 +268,25 @@ const Ratings = () => {
     }
     return (
       <div>
-        <Box sx={{ textAlign: "center" }}>
-          <h2>My book ratings</h2>
-          <h3>You have rated {cookiesB.length} books.</h3>
-          <Link
+        <div class="rowC">
+          <h2>You have rated {cookiesB.length} books.</h2>
+          <Button
             onClick={() => {
               removeAll("B");
             }}
           >
-            <p>Remove all book ratings</p>
-          </Link>
-        </Box>
-        <Grid container={true} direction={"row"} columns={3}>
-          {cookiesB.map((cookie) => (
-            <Grid xs={1} mx="auto" mt={1}>
-              <DisplayBook id={cookie[0]} rating={cookie[1]} key={cookie[0]} />
-            </Grid>
-          ))}
-        </Grid>
+            Remove all book ratings
+          </Button>
+        </div>
       </div>
     );
   };
 
   return (
-    <div className="rowC">
-      <Box
-        sx={{
-          mr: 1,
-          bgcolor: "#8de6fc",
-        }}
-      >
-        <RenderMovies />
-      </Box>
-      <Box
-        sx={{
-          ml: 1,
-          bgcolor: "#f8fac3",
-        }}
-      >
-        <RenderBooks />
-      </Box>
+    <div>
+      <Render />
     </div>
   );
 };
 
-export { Ratings, updateCookies };
+export { Ratings, updateCookies, getRatingChange };

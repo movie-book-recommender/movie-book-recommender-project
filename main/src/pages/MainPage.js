@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Box } from "@mui/system";
 import { getCookies } from "../Cookies";
+import loading from "../Loading.webm";
 
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
@@ -31,6 +33,28 @@ const GetMovies = () => {
   return movies;
 };
 
+const LoadingAnimation = ({ recommendations }) => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (
+      recommendations.length === 0 &&
+      recommendations.value !== "not available"
+    ) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  });
+  if (show) {
+    return (
+      <Box sx={{ textAlign: "center" }}>
+        <video loop width="600" height="auto" autoPlay muted>
+          <source src={loading} type="video/webm" />
+        </video>
+      </Box>
+    );
+  }
+};
 const GetPersonalRecommendations = () => {
   // const [recBooks, setRecBooks] = useState([]);
   const [recMovies, setRecMovies] = useState([]);
@@ -55,7 +79,7 @@ const GetPersonalRecommendations = () => {
   return recMovies;
 };
 
-const MainPage = ({}) => {
+const MainPage = () => {
   const books = GetBooks();
   const movies = GetMovies();
   const recommendations = GetPersonalRecommendations();
@@ -84,6 +108,7 @@ const MainPage = ({}) => {
 
       <Items items={books} page={"books"} />
       <h2>Recommended movies for you</h2>
+      <LoadingAnimation recommendations={recommendations} />
       <Items items={recommendations} page={"movies"} recommendation={true} />
     </div>
   );

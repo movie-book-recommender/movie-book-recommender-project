@@ -3,6 +3,8 @@ describe("Movie ratings", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
     cy.wait(1000);
+    cy.contains("Allow").click();
+    cy.wait(1000);
     cy.get(".movie-pic").first().click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {

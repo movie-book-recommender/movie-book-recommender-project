@@ -1,35 +1,86 @@
 
+var nonCookieBookRatings = []
+var nonCookieMovieRatings = []
+var nonCookieBookWishlist = []
+var nonCookieMovieWishlist = [] 
+
 
 //Creates a new cookie with the movieid as the name of the cookie, 
 //rating as the value of the cookie. Exdays is the amount of days until the cookie expires
 //if rating is 0, the movieid is removed 
 function setCookie(borm, movieid, rating, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (1000 * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  var prevRatings = getStringOfRatings(borm)
-  if(getCookie(borm, movieid) !== 0){
-    var ratings = prevRatings.split('&')
-    var changedRatings = ""
-    for(var i = 0; i < ratings.length; i++){
-      var pair = ratings[i].split(":")
-      if(pair[0] === movieid){
-        pair[1] = rating
-      }
-      if(pair[0] !== ''){
-        if(pair[0] === movieid && pair[1] === 0){
-        }else{
-          changedRatings = changedRatings + "&" + pair[0] + ":" + pair[1]
+  if(localStorage.cookie === "Disallow"){
+    if(borm === "B"){
+      var wasAlreadyRated = false
+      for(let i = 0; i < nonCookieBookRatings.length; i++){
+        if(nonCookieBookRatings[i][0] === movieid){
+          if(rating === 0){
+            nonCookieBookRatings.splice(i, 1)
+            wasAlreadyRated = true
+          }else{
+            nonCookieBookRatings[i] = [movieid, rating]  
+            wasAlreadyRated = true
+          }
         }
       }
+      if(!wasAlreadyRated){
+        nonCookieBookRatings.push([movieid, rating])
+      }
+    }else{
+      var wasAlreadyRated = false
+      for(let i = 0; i < nonCookieMovieRatings.length; i++){
+        if(nonCookieMovieRatings[i][0] === movieid){
+          if(rating === 0){
+            nonCookieMovieRatings.splice(i, 1)
+            wasAlreadyRated = true
+          }else{
+            nonCookieMovieRatings[i] = [movieid, rating]  
+            wasAlreadyRated = true
+          }
+        }
+      }
+      if(!wasAlreadyRated){
+        nonCookieMovieRatings.push([movieid, rating])
+      }
     }
-    document.cookie = borm + "Ratings=" + changedRatings + ";" + expires + ";path=/"
   }else{
-  document.cookie = borm + "Ratings=" + prevRatings + "&" + movieid + ":" + rating + ";" + expires + ";path=/";
+    const d = new Date();
+    d.setTime(d.getTime() + (1000 * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    var prevRatings = getStringOfRatings(borm)
+    if(getCookie(borm, movieid) !== 0){
+      var ratings = prevRatings.split('&')
+      var changedRatings = ""
+      for(var i = 0; i < ratings.length; i++){
+        var pair = ratings[i].split(":")
+        if(pair[0] === movieid){
+          pair[1] = rating
+        }
+        if(pair[0] !== ''){
+          if(pair[0] === movieid && pair[1] === 0){
+          }else{
+            changedRatings = changedRatings + "&" + pair[0] + ":" + pair[1]
+          }
+        }
+      }
+      document.cookie = borm + "Ratings=" + changedRatings + ";" + expires + ";path=/"
+    }else{
+    document.cookie = borm + "Ratings=" + prevRatings + "&" + movieid + ":" + rating + ";" + expires + ";path=/";
+    }
   }  
 }
 
+
+
 const removeAllRatings = (borm) =>{
+  if(localStorage.cookie === "Disallow"){
+    if(borm === "B"){
+      nonCookieBookRatings = []
+    }else{
+      nonCookieMovieRatings = []
+    }
+    return;
+  }
   const d = new Date();
   d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
@@ -98,6 +149,22 @@ const getStringOfWishlist = () =>{
 //Searches saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
 function getCookie(borm, id) {
+  if(localStorage.cookie === "Disallow"){
+    if(borm === "B"){
+      for(let i = 0; i < nonCookieBookRatings.length; i++){
+        if(nonCookieBookRatings[i][0] === id){
+          return nonCookieBookRatings[i][1];
+        }
+      }
+    }else{
+      for(let i = 0; i < nonCookieMovieRatings.length; i++){
+        if(nonCookieMovieRatings[i][0] === id){
+          return nonCookieMovieRatings[i][1];
+        }
+      }
+    }
+    return 0;
+  }
   var prevRatings = getStringOfRatings(borm)
   let pairs = prevRatings.split('&');
   for(let i = 1; i < pairs.length; i++) {
@@ -115,6 +182,13 @@ function getCookie(borm, id) {
 //Returns a list of pairs. A pair has a cookies name/movieid in pair[0]
 //and value/rating in pair[1]
 function getCookies(borm){
+  if(localStorage.cookie === "Disallow"){
+    if(borm === "B"){
+      return nonCookieBookRatings;
+    }else{
+      return nonCookieMovieRatings;
+    }
+  }
   var prevRatings = getStringOfRatings(borm)
   var pairs = prevRatings.split("&")
   var cookies = []

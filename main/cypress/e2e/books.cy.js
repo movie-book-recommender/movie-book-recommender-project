@@ -2,6 +2,10 @@
 describe("Itemlens book mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/");
+    cy.wait(1000);
+
+    cy.contains("Allow").click();
+    cy.wait(1000);
   });
 
   it("shows relevant newest books", function () {
