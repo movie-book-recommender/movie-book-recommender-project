@@ -63,22 +63,22 @@ Viikko 2
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.2|||
-|Tiistai 28.1.|||
+| Maanantai 27.2| 4 | Asiakastapaamiseen valmistautuminen, asaikastapaaminen, retro, planning |
+|Tiistai 28.1.| 2 | Frontin koodausta|
 |Keskiviikko 1.3.|||
 |Torstai 2.3.|||
-|Perjantai 3.3.|||
-|Viikonloppu 4.-5-3.|||
-|Yhteensä|||
+|Perjantai 3.3.| 5 |Välidemo + tiimihenki|
+|Viikonloppu 4.-5-3.| 1 ||
+|Yhteensä| 12 ||
 Viikko 2
 |||
-| Maanantai 6.3.|||
-|Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
-|Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+| Maanantai 6.3.| 4 | Frontin koodausta|
+|Tiistai 7.3.| 3 | Frontin koodausta|
+|Keskiviikko 8.3.| 3 | Frontin koodausta|
+|Torstai 9.3.| 1 | Frontin koodausta|
+|Perjantai 10.3.| 3 | Frontin koodausta|
+|Viikonloppu 11.-12.3.| 4 ||
+|Yhteensä| 18 ||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import favicon from "./favicon.ico";
 import Search from "./Search";
 import React from "react";
+import SidebarExampleDimmed from "./pages/sidebar";
 // TODO: Update <Search> usage after its will be implemented
 import {
   Menu,
@@ -16,32 +17,14 @@ import {
 const MenuExampleAttached = ({ page }) => (
   <div>
     <Menu attached="top">
-      <Dropdown item icon="sidebar" simple>
-        <Dropdown.Menu icon="content">
-          <Dropdown.Item>
-            <Link to={`/${page}/wishlist`} data-link="Wishlist">
-              Wishlist
-            </Link>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Link to={`/${page}/ratings`} data-link="Ratings">
-              Ratings
-            </Link>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Link to={`/${page}/search`} data-link="Search">
-              Search
-            </Link>
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <Button circular compact basic>
-        <Image
-          src={favicon}
-          size="mini"
-          href={<Link to={`/${page}`} data-link="Main Page"></Link>}
-        />
-      </Button>
+      <Button
+        circular
+        compact
+        basic
+        content={
+          <Image src={favicon} size="mini" href={<Link to={`/`}></Link>} />
+        }
+      />
 
       <Menu.Menu tiny size="" position="right" fluid>
         <Menu.Item>
@@ -55,7 +38,7 @@ const MenuExampleAttached = ({ page }) => (
 const Navibar = ({ page, handleChange }) => {
   return (
     <>
-      <MenuExampleAttached page={page} />
+      <SidebarExampleDimmed page={page} />
     </>
   );
 };

@@ -1,6 +1,8 @@
 describe("Itemlens' movie main page ", function () {
     beforeEach(function () {
       cy.visit("http://localhost:3000");
+      cy.contains("Allow").click()
+      cy.wait(1000)
     });
   
     it("home page has no recommendations at first", function () {

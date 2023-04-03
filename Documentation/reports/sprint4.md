@@ -37,9 +37,9 @@ Viikko 2
 |Tiistai 21.3.|||
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|7|Backend debugausta.|
-|Perjantai 24.3.|||
+|Perjantai 24.3.|1|Demon preppaus|
 |Viikonloppu 25.-26.3.|1|Viikon dailyt|
-|Yhteensä|14||
+|Yhteensä|15|Projektin aikana yhteensä 143h|
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -63,22 +63,22 @@ Viikko 2
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
+| Maanantai 13.3.| 3 | Asiakastapaaminen, retro, planning|
+|Tiistai 14.3.| 3| Ratingien palauttamisen koodausta|
+|Keskiviikko 15.3.| 4 | Ratingien palauttamisen popupin koodausta|
 |Torstai 16.3.|||
-|Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
-|Yhteensä|||
+|Perjantai 17.3.| 3 | Ratings sivun ulkonäön koodausta|
+|Viikonloppu 18.-19-3.| 3 | Ratings sivun muokkausta |
+|Yhteensä| 16||
 Viikko 2
 |||
-| Maanantai 20.3.|||
-|Tiistai 21.3.|||
-|Keskiviikko 22.3.|||
-|Torstai 23.3.|||
-|Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+| Maanantai 20.3.| 4 | Recommended loading animaation ja frontin koodausta |
+|Tiistai 21.3.| 3 | Evästeiden hyväksymisen koodausta |
+|Keskiviikko 22.3.| 3 | Ratingien toiminnalliuus ilman evästeitä |
+|Torstai 23.3.| 2 | |
+|Perjantai 24.3.| 1 | Asiakastapaamisen suunnittelu|
+|Viikonloppu 25.-26.3.| 2| Testien korjausta ja testit evästeettömille ratingeille|
+|Yhteensä| 15||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
@@ -133,10 +133,10 @@ Viikko 2
 | Maanantai 20.3.|0.25|Daily|
 |Tiistai 21.3.|2.75|Personal recommendations / kirjat algoritmia ja APIa työstetty yhdessä|
 |Keskiviikko 22.3.|7|Movie-to-movies (250) ja book-to-books (250) datat päivitetty tietokantaan, APIt ja testit päivitetty. Virtuaalikone päivitetty ja käynnistetty uudelleen. nginx:iä tutkittu. Backendin dokumentaatiota päivitetty.|
-|Torstai 23.3.|||
-|Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+|Torstai 23.3.|0.3|Backendin debuggausta|
+|Perjantai 24.3.|1|Maanantain demon preppaus|
+|Viikonloppu 25.-26.3.|0||
+|Yhteensä|12|Tällä hetkellä projektissa tehty yhteensä 153 tuntia työtä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - API: Personal recommendations elokuville

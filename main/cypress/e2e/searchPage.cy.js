@@ -1,6 +1,8 @@
 describe("Search Page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/movies")
+    cy.contains("Allow").click()
+    cy.wait(1000)
     cy.get(".navbar").contains("Search").click()
   });
 

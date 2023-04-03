@@ -2,6 +2,8 @@
 describe("Itemlens book mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/movies");
+    cy.contains("Allow").click()
+    cy.wait(1000)
     cy.contains("Switch to books").click();
   });
 

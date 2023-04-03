@@ -1,6 +1,8 @@
 describe("Wishlist ", function () {
     beforeEach(function () {
       cy.visit("http://localhost:3000/movie");
+      cy.contains("Allow").click()
+      cy.wait(1000)
     });
 
     describe("for movies", function () {
