@@ -40,58 +40,6 @@ const App = () => {
   };
 
   const AllowCookiesPopUp = () => {
-    const [childOpen, childsetOpen] = useState(false);
-    function AreYouSureModal() {
-      function childClose() {
-        childsetOpen(false);
-      }
-      function childCloseDisallow() {
-        localStorage.cookie = "Disallow";
-        childsetOpen(false);
-        setOpen(false);
-      }
-      return (
-        <Modal open={childOpen}>
-          <Box
-            sx={{
-              color: "black",
-              bgcolor: "white",
-              width: 600,
-              heigh: 500,
-              border: 2,
-              mx: "auto",
-              mt: 20,
-              textAlign: "center",
-            }}
-          >
-            <h2>Are you sure you want to disallow</h2>
-            <p>
-              If you do not agree to using cookies the web page won't remember
-              your ratings if you refresh the page or close the browser. If you
-              do not wish to use cookies now but want to turn them on at a later
-              date you can delete the cookies on this site and refresh the page.
-            </p>
-            <Button
-              onClick={() => {
-                childClose();
-              }}
-            >
-              Let me reconsider
-            </Button>
-            <Button
-              onClick={() => {
-                childCloseDisallow();
-              }}
-            >
-              I'm sure
-            </Button>
-          </Box>
-        </Modal>
-      );
-    }
-    function openChild() {
-      childsetOpen(true);
-    }
     const setCookieConsent = (decision) => {
       localStorage.cookie = decision;
       closeModal();
@@ -135,12 +83,11 @@ const App = () => {
               </Button>
               <Button
                 onClick={() => {
-                  openChild();
+                  setCookieConsent("Disallow");
                 }}
               >
                 Don't allow
               </Button>
-              <AreYouSureModal />
             </Box>
           </Modal>
         );
