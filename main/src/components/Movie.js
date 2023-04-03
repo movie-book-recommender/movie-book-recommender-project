@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { Chip, Card, CardContent, CardMedia, Stack } from "@mui/material"
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
+
+
 import image from "../NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
@@ -57,6 +59,8 @@ const Movie = () => {
   var id = parseHelper[1];
 
   const movie = GetMovieByID(id);
+  const [showMoreActors, setShowMoreActors] = useState(false)
+  const [showMorePlot, setShowMorePlot] = useState(false)
   const recommendedMovies = GetRecommendedMoviesByID(id);
   const recommendedBooks = GetRecommendedBooksByID(id);
   var movId = id;
@@ -118,47 +122,75 @@ const Movie = () => {
       )
     }
   }
+  const originaltitle = movie.originaltitle ? movie.originaltitle : "-"
+  const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
+  const runtime = movie.runtime ? movie.runtime : "-"
+  const plotsummary = movie.plotsummary ? movie.plotsummary : "-"
+  const actors = movie.actors ? movie.actors : "-"
+  const genres = movie.genres ? movie.genres.split(",") : []
+
 
   return (
-    <div className="page-container">
+    <div className="movie-page-wrapper">
       <h1>{movie.title}</h1>
-      <div>
-        <img src={imageSource} width={150} height={"auto"} alt="movie-poster" />
+      <h5>{originaltitle} • {year} • {runtime} min</h5>
+      <Card class="movie" sx={{ maxWidth: 200 }}>
+        <CardMedia>
+          <img class="large-item-pic" src={imageSource} alt="movie-poster" />
+          <div class="heart" style={{ width: "2rem", position: "relative", top: -300, left: 5 }}>
+            <Heart {...heartElement} style = {{fill: heart ? "red": "grey", stroke: "black"}} />
+          </div>
+        </CardMedia>
+        <CardContent>
+          <h3>Your rating:</h3>
+          <ReactStars {...ratingStars} />
+          <div>{isRated()}</div>
+          <a
+          href={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
+          target="_blank"
+          rel="noreferrer"
+          >
+          <p>Trailer</p>
+          </a>
+        </CardContent>
+      </Card>
+      <div class="box">
+        <Stack direction="row" spacing={1}>
+          {genres.map(genre => <Chip label={genre} variant="outlined" />)}
+        </Stack>
+        <h3>Summary of the plot:</h3>
+        <p>
+          {showMorePlot ? plotsummary : `${plotsummary.substring(0, 250)}`}
+          <button class="btn" onClick={() => setShowMorePlot(!showMorePlot)}>
+            {showMorePlot ? "Show less" : "Show more"}
+          </button>
+        </p>
+        <h3>Actors:</h3>
+        <p>
+          {showMoreActors ? actors : `${actors.substring(0, 100)}`}
+          <button class="btn" onClick={() => setShowMoreActors(!showMoreActors)}>
+            {showMoreActors ? "Show less" : "Show more"}
+          </button>
+        </p>
+        <h3>Directors:</h3>
+        <p>{movie.directors}</p>
       </div>
-      <h3>Your rating:</h3>
-      <ReactStars {...ratingStars} />
-      <div>{isRated()}</div>
-      <div class="heart" style={{ width: "2rem"}}>
-        <Heart {...heartElement}/>
+      <div class="similar-movies">
+        <h3>Similar movies</h3>
+        {recommendedMovies.length > 0 ? (
+          <Items items={recommendedMovies} page={"movies"} />
+        ) : (
+          <p>could not find similar movies</p>
+        )}
       </div>
-      <h3>Directors:</h3>
-      <p>{movie.directors}</p>
-      <h3>Actors:</h3>
-      <p>{movie.actors}</p>
-      <h3>Genres:</h3>
-      <p>{movie.genres}</p>
-      <h3>Summary of the plot:</h3>
-      <p>{movie.plotsummary}</p>
-
-      <a
-        href={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <p>Trailer</p>
-      </a>
-      <h3>Similar movies</h3>
-      {recommendedMovies.length > 0 ? (
-        <Items items={recommendedMovies} page={"movies"} />
-      ) : (
-        <p>could not find similar movies</p>
-      )}
-      <h3>Similiar books</h3>
-      {recommendedBooks.length > 0 ? (
-        <Items items={recommendedBooks} page={"books"} recommendation={true} />
-      ) : (
-        <p>could not find similiar books</p>
-      )}
+      <div class="similar-books">
+        <h3>Similiar books</h3>
+        {recommendedBooks.length > 0 ? (
+          <Items items={recommendedBooks} page={"books"} recommendation={true} />
+        ) : (
+          <p>could not find similiar books</p>
+        )}
+      </div>
     </div>
   );
 };
