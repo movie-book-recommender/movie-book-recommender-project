@@ -1,21 +1,5 @@
 /* eslint-disable no-undef */
 describe("Book ratings", function () {
-<<<<<<< HEAD
-    beforeEach(function () {
-        cy.visit("http://localhost:3000/movie")
-        cy.wait(1000)
-        cy.contains("Allow").click()
-        cy.wait(1000)
-        cy.contains("Switch to books").click()
-        cy.wait(1000)
-        cy.get(".movie-pic").first().children("a").click()
-        cy.wait(1000)
-        cy.get(".react-stars")
-        .within(() => {
-            cy.get("[data-index='0']").click()
-        })
-    })
-=======
   beforeEach(function () {
     cy.visit("http://localhost:3000/");
     cy.wait(1000);
@@ -27,7 +11,6 @@ describe("Book ratings", function () {
       cy.get("[data-index='0']").click();
     });
   });
->>>>>>> a42a7a92b1fab8d0ca7b1e523f6d0504f79877f9
 
   it("can rate book", function () {
     cy.get(".navbar").contains("Ratings").click();
