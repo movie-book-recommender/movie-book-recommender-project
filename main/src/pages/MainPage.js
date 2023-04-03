@@ -9,7 +9,6 @@ import loading from "../Loading.webm";
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
-import Search from "../Search";
 import Items from "../Carusel";
 
 
@@ -45,15 +44,15 @@ const LoadingAnimation = () =>{
     }else{
       setShow(false)
     }
-  })
-  if(show){
-    return(
-      <Box sx={{textAlign:'center'}}>
+  });
+  if (show) {
+    return (
+      <Box sx={{ textAlign: "center" }}>
         <video loop width="600" height="auto" autoPlay muted>
-          <source src={loading} type="video/webm"/>  
+          <source src={loading} type="video/webm" />
         </video>
       </Box>
-    )
+    );
   }
 }
 
@@ -130,29 +129,27 @@ const MainPage = ({ page }) => {
     updateRatings()
     return (
       <div className="page-container">
-        <h2>Top 10 newest {page}</h2>
-        {page === "movies" ? (
-          <Items items={movies} page={page} />
-        ) : (
-          <Items items={books} page={page} />
-        )}
+        <h2>Top 10 newest movies</h2>
+        <Items items={movies} page={"movies"} />
+        <h2>Top 10 newest books</h2>
+        <Items items={books} page={"books"} />
         <h2>Recommended movies for you</h2>
-          <p>Please rate at least one movie and one book to receive personal recommendations.</p>
-        <Search page={page} />
+        <p>
+          Please rate at least one movie and one book to receive personal
+          recommendations.
+        </p>
       </div>
     );
   }
   return (
     <div className="page-container">
-      <h2>Top 10 newest {page}</h2>
-      {page === "movies" ? (
-        <Items items={movies} page={page} />
-      ) : (
-        <Items items={books} page={page} />
-      )}
+      <h2>Top 10 newest movies</h2>
+      <Items items={movies} page={"movies"} />
+      <h2>Top 10 newest books</h2>
+
+      <Items items={books} page={"books"} />
       <h2>Recommended movies for you</h2>
       <UpdateRecommendations/>
-      <Search page={page} />
     </div>
   );
 };
