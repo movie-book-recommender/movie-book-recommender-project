@@ -226,12 +226,32 @@ function getRecommended(borm){
       cookie = cookies[i].substring(17)
     }  
   } 
-  var recommended = {}
+  var recommended = []
   recommended = cookie.split("&")
   recommended.shift()
   var recommendedItems = []
-  for(var j = 0; j<recommended; j++){
-    recommendedItems[j] = GetMovieByID(recommended[j])
+  for(var j = 0; j<recommended.length; j++){
+    if(borm === "M"){
+      var info = recommended[j].split("%")
+      var poster = ""
+      if(info[2] === "null"){
+        poster = null
+      }else{
+        poster = info[2]
+      }
+      const id = {
+        similar_item_id: parseInt(info[0]),
+        movieid: parseInt(info[0]),
+        title: info[1],
+        posterpath: poster
+      }
+      recommendedItems[j] = id
+    }else{
+      const id = {
+        item_id: parseInt(recommended[j])
+      }
+      recommendedItems[j] = id
+    }
   }
   return recommendedItems
 }

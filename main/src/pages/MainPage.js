@@ -40,7 +40,7 @@ const GetMovies = () => {
 const LoadingAnimation = () =>{
   const[show, setShow] = useState(false)
   useEffect(() =>{
-    if(recommendations.length === 0 && recommendations.value !== "not available"){
+    if(showLoading){
       setShow(true)
     }else{
       setShow(false)
@@ -56,61 +56,78 @@ const LoadingAnimation = () =>{
     )
   }
 }
-const GetPersonalRecommendations = () => {
-  // const [recBooks, setRecBooks] = useState([]);
-  const [recMovies, setRecMovies] = useState([]);
-  var bookRatings = getCookies("B")
-  var movieRatings = getCookies("M")
-  const ratings = {
+
+
+var bookRatings = getCookies("B")
+var movieRatings = getCookies("M")
+var ratings = {
+  Books: bookRatings,
+  Movies: movieRatings
+}
+const updateRatings = () =>{
+  bookRatings = getCookies("B")
+  movieRatings = getCookies("M")
+  ratings = {
     Books: bookRatings,
     Movies: movieRatings
   }
-
+}
+var showLoading = false
+const UpdateRecommendations = () =>{
+  const [update, setUpdate] = useState(false)
+  const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
   useEffect(() => {
     axios
     .get(`http://128.214.253.51:3000/dbgetpersonalmovierecommendations?ratings=${JSON.stringify(ratings)}`)
     .then((response) => {
-      setRecMovies(response.data)
-      var ids = []
+      var info = []
       for(var i = 0; i<response.data.length; i++){
-        ids[i] = response.data[i].movieid.toString()
+        var posterpath = ""
+        if(response.data[i].posterpath === null){
+          posterpath = "null"
+        }else{
+          posterpath = response.data[i].posterpath.toString()
+        }
+        info[i] = response.data[i].movieid.toString() + "%" 
+                + response.data[i].title.toString() + "%" 
+                + posterpath
       }
-      setRecommended("M", ids)
+      setRecommended("M", info)
+      showLoading = false
+      setRecievedMovies(getRecommended("M"))
     })
-  }, [])
-  return recMovies;
-}
-var recommendations = {}
-const UpdateRecommendations = () =>{
-  recommendations = {}
-  setRatingChange(false)
-  recommendations = GetPersonalRecommendations();
-}
-const CanUpdateRecommendations = () =>{
-  const [updatestatus, setupdateStatus] = useState(false)
-  useEffect(() =>{
-    if(recommendations.length === 0 && recommendations.value !== "not available"){
-      setupdateStatus(false)
-    }else{
-      setupdateStatus(getRatingChange)
-    }
-  })
-  if(updatestatus){
-    return (
-      <Button onClick={() =>{UpdateRecommendations()}}>Update</Button>
-    )
-  }else{
-    return (
-      <Button disabled={true} onClick={() =>{console.log("beep")}}>Update</Button>
-    )
+  }, [update]);
+
+  const Update = () =>{
+    setRatingChange(false)
+    setButton(true)
+    setRecievedMovies([])
+    showLoading = true
+    updateRatings()
+    setUpdate(!update)
   }
+  const [disableButton, setButton] = useState(true)
+  useEffect(() =>{
+    if(getRatingChange()){
+      setButton(false)
+    }else{
+      setButton(true)
+    }
+  })  
+  return (
+    <div>
+      <Button variant="contained" disabled={disableButton} onClick={() =>{Update()}}>Update</Button>
+      <LoadingAnimation/>
+      <Items items={recievedMovies} page={"movies"} recommendation={true}/>
+    </div>
+  )
 }
 
 const MainPage = ({ page }) => {
   const books = GetBooks();
   const movies = GetMovies();
-
-  if (recommendations.value === "not available") {
+  if (bookRatings.length === 0 && movieRatings.length === 0) {
+    updateRatings()
     return (
       <div className="page-container">
         <h2>Top 10 newest {page}</h2>
@@ -125,8 +142,6 @@ const MainPage = ({ page }) => {
       </div>
     );
   }
-  var recommendedMovies = getRecommended("M")
-  console.log(recommendedMovies)
   return (
     <div className="page-container">
       <h2>Top 10 newest {page}</h2>
@@ -136,9 +151,7 @@ const MainPage = ({ page }) => {
         <Items items={books} page={page} />
       )}
       <h2>Recommended movies for you</h2>
-      <CanUpdateRecommendations/>
-        <LoadingAnimation/>
-        <Items items={recommendedMovies} page={"movies"} recommendation={true}/>
+      <UpdateRecommendations/>
       <Search page={page} />
     </div>
   );

@@ -27,6 +27,8 @@ describe("Itemlens' movie main page ", function () {
       });
       cy.wait(1000);
       cy.get(".navbar").contains("ItemLens").click();
+      cy.wait(1000);
+      cy.contains("Update").click();
       cy.wait(10000);
       cy.contains("Company Man");
 

@@ -101,7 +101,7 @@ const DisplayBook = ({ id, rating }) =>{
       </div>
       <div class="table-item-info">
         <div class="table-item-title">
-          <Link to={`/movie/${book.item_id}`}>{book.title}</Link>
+          <Link to={`/book/${book.item_id}`}>{book.title}</Link>
         </div>
         <div class="table-item-rate">
           <ReactStars {...ratingStars} />

@@ -1,6 +1,7 @@
 describe("Book ratings", function () {
     beforeEach(function () {
         cy.visit("http://localhost:3000/movie")
+        cy.wait(1000)
         cy.contains("Allow").click()
         cy.wait(1000)
         cy.contains("Switch to books").click()
