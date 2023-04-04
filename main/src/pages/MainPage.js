@@ -83,9 +83,9 @@ const MainPage = ({ page }) => {
       <div className="page-container">
         <h2>Top 10 newest {page}</h2>
         {page === "movies" ? (
-          <Items items={movies} page={page} />
+          <Items items={movies} page={page} size={"medium-item-pic"} />
         ) : (
-          <Items items={books} page={page} />
+          <Items items={books} page={page} size={"medium-item-pic"} />
         )}
         <h2>Recommended movies for you</h2>
           <p>Please rate at least one movie and one book to receive personal recommendations.</p>
@@ -98,13 +98,13 @@ const MainPage = ({ page }) => {
     <div className="page-container">
       <h2>Top 10 newest {page}</h2>
       {page === "movies" ? (
-        <Items items={movies} page={page} />
+        <Items items={movies} page={page} size={"medium-item-pic"} />
       ) : (
-        <Items items={books} page={page} />
+        <Items items={books} page={page} size={"medium-item-pic"} />
       )}
       <h2>Recommended movies for you</h2>
         <LoadingAnimation/>
-        <Items items={recommendations} page={"movies"} recommendation={true}/>
+        <Items items={recommendations} page={"movies"} recommendation={true} size={"medium-item-pic"} />
       <Search page={page} />
     </div>
   );
