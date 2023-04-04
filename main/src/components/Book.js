@@ -5,16 +5,11 @@ import { Card, CardContent, CardMedia } from "@mui/material"
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 
-import image from "../NoImage.jpg";
-import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
-import { updateCookies } from "../pages/Ratings";
 import Items from "../Carusel";
+import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
+import image from "../NoImage.jpg";
+import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
-
-const removeRating = (borm, id) => {
-  setCookie(borm, id, 0, 5);
-  updateCookies();
-};
 
 const GetBookByID = (id) => {
   const [book, setbook] = useState([]);
@@ -70,17 +65,19 @@ const GetBooksByAuthor = (author) => {
 }
 
 const Book = () => {
+  //Gets the bookid from the url
+  //The form for url is e.g. .../book/12345
+  //where 12345 refers to book's id.
   var urlString = window.location.href;
   var parseHelper = urlString.split("/book/");
-  var id = parseHelper[1];
+  var bookId = parseHelper[1];
 
-  const book = GetBookByID(id);
-  const recommendationsBooks = GetBookRecommendationsByID(id);
-  const recommendationsMovies = GetMovieRecommendationsByID(id);
-  const sameAuthor = GetBooksByAuthor(book.authors, id).filter(book => book.item_id !== id)
-  var bookId = id;
+  const book = GetBookByID(bookId);
+  const recommendationsBooks = GetBookRecommendationsByID(bookId);
+  const recommendationsMovies = GetMovieRecommendationsByID(bookId);
+  const sameAuthor = GetBooksByAuthor(book.authors).filter(book => book.item_id.toString() !== bookId)
+
   var stars = getCookie("B", bookId);
-
   const ratingStars = {
     size: 40,
     count: 5,
@@ -91,6 +88,25 @@ const Book = () => {
       updateCookies();
     },
   };
+
+  const removeRating = (borm, id) => {
+    setCookie(borm, id, 0, 5);
+    updateCookies();
+  };
+
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("B", bookId)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
 
   var isWishlisted = onWishlist("B", bookId);
   const [heart, setHeart] = useState(isWishlisted)
@@ -112,22 +128,9 @@ const Book = () => {
       </div>
     );
   }
-  var imageSource = book.img ? book.img : image
-  var description = book.description.replace(/\\n/g, ' ')
 
-  const isRated = () =>{
-    if(ratingStars.value === 0){
-      return (
-        <div></div>
-      )
-    }else{
-      return (
-        <Link onClick={() =>{removeRating("B", id)}}>
-          <p>Remove rating</p>
-        </Link>
-      )
-    }
-  }
+  var imageSource = book.img ? book.img : image
+  var description = book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"');
 
   return (
     <div className="book-page-wrapper">
@@ -144,9 +147,6 @@ const Book = () => {
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />
           <div>{isRated()}</div>
-          <a href={`${book.url}`} target="_blank" rel="noreferrer">
-            <p>Book</p>
-          </a>
         </CardContent>
       </Card>
       <div class="box">
@@ -159,8 +159,8 @@ const Book = () => {
       </div>
       <div class="same-author">
         <h3>Other books from author</h3>
-        {sameAuthor.length > 1 ? (
-          <Items items={sameAuthor} page={"books"} recommendation={false} />
+        {sameAuthor.length > 0 ? (
+          <Items items={sameAuthor} page={"books"} recommendation={false} size ={"small-item-pic"} />
         ) : (
           <p>no other books from author</p>
         )}
@@ -168,7 +168,7 @@ const Book = () => {
       <div class="similar-books">
         <h3>Similar books</h3>
         {recommendationsBooks.length > 0 ? (
-          <Items items={recommendationsBooks} page={"books"} recommendation={true} />
+          <Items items={recommendationsBooks} page={"books"} recommendation={true} size={"small-item-pic"} />
         ) : (
           <p>could not find similar books</p>
         )}
@@ -176,7 +176,7 @@ const Book = () => {
       <div class="similar-movies">
         <h3>Similar movies</h3>
         {recommendationsMovies.length > 0 ? (
-          <Items items={recommendationsMovies} page={"movies"} recommendation={true}/>
+          <Items items={recommendationsMovies} page={"movies"} recommendation={true} size={"small-item-pic"} />
         ) : (
           <p>could not find similiar movies</p>
         )}
