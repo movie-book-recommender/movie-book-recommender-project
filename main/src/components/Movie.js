@@ -54,44 +54,58 @@ const GetRecommendedBooksByID = (id) => {
 
 const Movie = () => {
   //Gets the movieid from the url
+  //The form for url is e.g. .../movie/12345
+  //where 12345 refers to movie's id.
   var urlString = window.location.href;
   var parseHelper = urlString.split("/movie/");
-  var id = parseHelper[1];
+  var movieId = parseHelper[1];
 
-  const movie = GetMovieByID(id);
+  const movie = GetMovieByID(movieId);
   const [showMoreActors, setShowMoreActors] = useState(false)
   const [showMorePlot, setShowMorePlot] = useState(false)
-  const recommendedMovies = GetRecommendedMoviesByID(id);
-  const recommendedBooks = GetRecommendedBooksByID(id);
-  var movId = id;
+  const recommendedMovies = GetRecommendedMoviesByID(movieId);
+  const recommendedBooks = GetRecommendedBooksByID(movieId);
 
-  const [stars, setStars] = useState(getCookie("M", movId))
+  const [stars, setStars] = useState(getCookie("M", movieId))
   const ratingStars = {
     size: 40,
     count: 5,
     isHalf: false,
     value: stars,
     onChange: (newValue) => {
-      setCookie("M", movId, newValue, 5);
+      setCookie("M", movieId, newValue, 5);
       updateCookies();
       setStars(newValue)
     },
   };
-  const removeRating = (borm, id) => {
-    setCookie(borm, id, 0, 5);
+  const removeRating = (borm, movieId) => {
+    setCookie(borm, movieId, 0, 5);
     updateCookies();
     setStars(0)
   };
 
-  var isWishlisted = onWishlist("M", movId);
+  const isRated = () =>{
+    if(ratingStars.value === 0){
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Link onClick={() =>{removeRating("M", movieId)}}>
+          <p>Remove rating</p>
+        </Link>
+      )
+    }
+  }
 
+  var isWishlisted = onWishlist("M", movieId);
   const [heart, setHeart] = useState(isWishlisted)
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
-      addToWishlist("M", movId)
-      isWishlisted = onWishlist("M", movId)
+      addToWishlist("M", movieId)
+      isWishlisted = onWishlist("M", movieId)
       updateWishlist()
       setHeart(isWishlisted)
     },
@@ -104,24 +118,10 @@ const Movie = () => {
       </div>
     );
   }
-  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
-  if (movie.posterpath === null) {
-    imageSource = image;
-  }
   
-  const isRated = () =>{
-    if(ratingStars.value === 0){
-      return (
-        <div></div>
-      )
-    }else{
-      return (
-        <Link onClick={() =>{removeRating("M", id)}}>
-          <p>Remove rating</p>
-        </Link>
-      )
-    }
-  }
+
+
+  var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
   const originaltitle = movie.originaltitle ? movie.originaltitle : "-"
   const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
   const runtime = movie.runtime ? movie.runtime : "-"
@@ -145,13 +145,13 @@ const Movie = () => {
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />
           <div>{isRated()}</div>
-          <a
-          href={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
-          target="_blank"
-          rel="noreferrer"
+          <Link
+            to={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
+            target="_blank"
+            rel="noreferrer"
           >
-          <p>Trailer</p>
-          </a>
+            <button class="btn">Watch movie trailer</button>
+          </Link>
         </CardContent>
       </Card>
       <div class="box">
@@ -175,18 +175,20 @@ const Movie = () => {
         <h3>Directors:</h3>
         <p>{movie.directors}</p>
       </div>
+
       <div class="similar-movies">
         <h3>Similar movies</h3>
         {recommendedMovies.length > 0 ? (
-          <Items items={recommendedMovies} page={"movies"} />
+          <Items items={recommendedMovies} page={"movies"} size={"small-item-pic"} />
         ) : (
           <p>could not find similar movies</p>
         )}
       </div>
+
       <div class="similar-books">
         <h3>Similiar books</h3>
         {recommendedBooks.length > 0 ? (
-          <Items items={recommendedBooks} page={"books"} recommendation={true} />
+          <Items items={recommendedBooks} page={"books"} recommendation={true} size={"small-item-pic"} />
         ) : (
           <p>could not find similiar books</p>
         )}
