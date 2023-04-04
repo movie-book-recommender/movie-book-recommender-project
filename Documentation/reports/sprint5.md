@@ -93,13 +93,13 @@ Viikko 2
 |Yhteensä|7,5||
 Viikko 2
 |||
-| Maanantai 3.4.|||
+| Maanantai 3.4.|3,5|Kirjan sivun ulkoasun hiomista|
 |Tiistai 4.4.|||
 |Keskiviikko 5.4.|||
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
-|Yhteensä|||
+|Yhteensä|3,5||
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
