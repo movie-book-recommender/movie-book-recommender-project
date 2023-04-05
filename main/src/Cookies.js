@@ -108,40 +108,67 @@ const getStringOfRatings = (borm) =>{
 
 
 function addToWishlist(borm, id, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  var prevWishlist = getStringOfWishlist()
-  var list = prevWishlist.split('&')
-  for (var i = 0; i < list.length; i++) {
-    if (list[i] === borm + id) {
-      list.splice(i, 1)
-      changedList = list.join('&')
-      document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
-      return
+  if (localStorage.cookie === "Disallow"){
+    var bormId = borm + id
+    if (borm === "M") {
+      if (nonCookieMovieWishlist.includes(bormId)) {
+        var i = nonCookieMovieWishlist.indexOf(bormId)
+        nonCookieMovieWishlist.splice(i, 1)
+      } else {
+        nonCookieMovieWishlist.push(bormId)
+      }
+    } else if (borm === "B") {
+      if (nonCookieBookWishlist.includes(bormId)) {
+        var i = nonCookieBookWishlist.indexOf(bormId)
+        nonCookieBookWishlist.splice(i, 1)
+      } else {
+        nonCookieBookWishlist.push(bormId)
+      }
     }
+  } else {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    var prevWishlist = getStringOfWishlist()
+    var list = prevWishlist.split('&')
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] === borm + id) {
+        list.splice(i, 1)
+        changedList = list.join('&')
+        document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+        return
+      }
+    }
+    var changedList = prevWishlist + borm + id + "&"
+    document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
   }
-  var changedList = prevWishlist + borm + id + "&"
-  document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
-
 }
 
 function onWishlist(borm, id) {
-  var prevWishlist = getStringOfWishlist()
-  var list = prevWishlist.split('&')
   var bormId = borm + id
-  return list.includes(bormId)
+  if (localStorage.cookie === "Disallow") {
+    if (borm === "M") { return nonCookieMovieWishlist.includes(bormId) }
+    if (borm === "B") { return nonCookieBookWishlist.includes(bormId)}
+    } else {
+    var prevWishlist = getStringOfWishlist()
+    var list = prevWishlist.split('&')
+    return list.includes(bormId)
+  }
 }
 
 const getStringOfWishlist = () =>{
+  if (localStorage.cookie === "Disallow") {
+    if (nonCookieBookWishlist.concat(nonCookieMovieWishlist).length === 0) { return "" }
+    var retStr = nonCookieBookWishlist.concat(nonCookieMovieWishlist).join('&')
+    return retStr.concat("&")
+  }
   var cookies = document.cookie.split(';')
   if(cookies[0] === '' || cookies[0] === undefined){
     return ""
   }
   var cookie =""
   for(var i = 0; i < cookies.length; i++) {
-    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){   
-      console.log(cookies[i])   
+    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){
       cookie = cookies[i].trim().substring(9)
     }
   }

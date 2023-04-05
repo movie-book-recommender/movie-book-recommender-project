@@ -12,6 +12,7 @@ import Table from "../Table"
 
 var cookies = getStringOfWishlist().split('&')
 cookies.pop()
+console.log(cookies)
 
 const updateWishlist = () => {
   cookies = getStringOfWishlist().split('&')
