@@ -42,13 +42,13 @@ Viikko 3
 |Yhteensä|10||
 Viikko 2
 |||
-| Maanantai 3.4.|||
+| Maanantai 3.4.|3|Algoritmin optimointia yhdessä|
 |Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
+|Keskiviikko 5.4.|4|Algoritmin nopeutusta pienempien csv tiedostojen avulla|
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
-|Yhteensä|||
+|Viikonloppu 8.-9.4.|viikon dailyt|1|
+|Yhteensä|8||
 Viikko 3
 |||
 | Maanantai 10.4.|||
@@ -205,3 +205,4 @@ Viikko 3
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+- Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
