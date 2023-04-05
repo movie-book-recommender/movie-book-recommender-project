@@ -103,7 +103,7 @@ Viikko 2
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
+| Maanantai 13.3.|4|retro, sprint planning, kuvausten fixi|
 |Tiistai 14.3.|||
 |Keskiviikko 15.3.|||
 |Torstai 16.3.|||
@@ -117,7 +117,7 @@ Viikko 2
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
+|Viikonloppu 25.-26.3.|2|Uusiin muutoksiin tutustumista|
 |Yhteensä|||
 ### Katri
 | päivä | aika | tehdyt asiat  |
