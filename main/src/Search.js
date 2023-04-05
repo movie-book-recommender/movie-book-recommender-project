@@ -32,7 +32,7 @@ const Search = ({ page }) => {
           placeholder={`Search ${page}`}
         />
       </form>
-      {newSearch && searchResult && <Items items={searchResult} page={page} />}
+      {newSearch && searchResult && <Items items={searchResult} page={page} size={"medium-item-pic"} />}
     </div>
   );
 };
