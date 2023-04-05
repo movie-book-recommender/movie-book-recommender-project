@@ -189,11 +189,11 @@ Viikko 2
 |||
 | Maanantai 3.4.|2.75|Daily, user recommendations algoritmin optimointia yhdessä|
 |Tiistai 4.4.|5.25|user recommendations algoritmin datan viilausta algoritmin optimoimiseksi, lähestymistavan dokumentointi|
-|Keskiviikko 5.4.|||
+|Keskiviikko 5.4.|0.5|Daily, muistiinpanot, muutamia tsekkauksia|
 |Torstai 6.4.|0|Pääsiäinen|
 |Perjantai 7.4.|0|Pääsiäinen|
 |Viikonloppu 8.-9.4.|0|Pääsiäinen|
-|Yhteensä|8||
+|Yhteensä|8.5||
 Viikko 3
 |||
 | Maanantai 10.4.|||
