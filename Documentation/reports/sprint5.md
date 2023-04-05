@@ -149,17 +149,17 @@ Viikko 3
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
+| Maanantai 27.3.|1|sprint planning|
 |Tiistai 28.3.|||
 |Keskiviikko 29.3.|||
 |Torstai 30.3.|||
 |Perjantai 31.3.|||
-|Viikonloppu 1.-2.4.|||
+|Viikonloppu 1.-2.4.|2|gdpr consent tutkimista|
 |Yhteensä|||
 Viikko 2
 |||
 | Maanantai 3.4.|||
-|Tiistai 4.4.|||
+|Tiistai 4.4.|3|wishlist toiminnallisuus ilman evästeitä + testit|
 |Keskiviikko 5.4.|||
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
