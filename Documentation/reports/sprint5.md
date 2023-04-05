@@ -129,13 +129,13 @@ Viikko 3
 |Yhteensä|7,5||
 Viikko 2
 |||
-| Maanantai 3.4.|3,5|Kirjan sivun ulkoasun hiomista|
-|Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
+| Maanantai 3.4.|3,5|Daily, kirjan sivun ulkoasun hiomista|
+|Tiistai 4.4.|4|Daily, ulkoasun hiomista|
+|Keskiviikko 5.4.|1|Daily, merget, merge fixit ja testailua|
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
-|Yhteensä|3,5||
+|Yhteensä|8,5||
 Viikko 3
 |||
 | Maanantai 10.4.|||
