@@ -47,7 +47,7 @@ Viikko 2
 |Keskiviikko 5.4.|4|Algoritmin nopeutusta pienempien csv tiedostojen avulla|
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|viikon dailyt|1|
+|Viikonloppu 8.-9.4.|1|Viikon dailyt|
 |Yhteensä|8||
 Viikko 3
 |||
