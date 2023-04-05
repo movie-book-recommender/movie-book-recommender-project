@@ -118,7 +118,7 @@ Viikko 2
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
 |Viikonloppu 25.-26.3.|2|Uusiin muutoksiin tutustumista|
-|Yhteensä|||
+|Yhteensä|6||
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
