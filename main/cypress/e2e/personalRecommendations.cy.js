@@ -2,6 +2,7 @@
 describe("Itemlens' movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
+    cy.wait(1000);
     cy.contains("Allow").click();
     cy.wait(1000);
   });
@@ -28,6 +29,8 @@ describe("Itemlens' movie main page ", function () {
     });
     cy.wait(1000);
     cy.get(".navbar").contains("ItemLens").click();
+    cy.wait(1000);
+    cy.contains("Update").click();
     cy.wait(10000);
     cy.contains("Company Man");
   });
@@ -54,6 +57,8 @@ describe("Itemlens' movie main page ", function () {
     });
     cy.wait(1000);
     cy.get(".navbar").contains("ItemLens").click();
+    cy.wait(1000);
+    cy.contains("Update").click();
     cy.wait(10000);
     cy.contains("Company Man");
   });
