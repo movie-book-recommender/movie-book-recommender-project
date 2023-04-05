@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navibar = ({}) => {
+const Navibar = () => {
   return (
     <div className="navbar">
       <Link to={`/`} data-link="ItemLens">

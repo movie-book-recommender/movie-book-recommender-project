@@ -14,12 +14,14 @@ var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
 var ratingChangeStatus = false;
 
-const updateCookies = () => {
-  console.log("cookies updated");
-  cookiesB = getCookies("B");
-  cookiesM = getCookies("M");
-  ratingChangeStatus = true;
-};
+const updateCookies = () =>{
+  cookiesB = getCookies("B")
+  cookiesM = getCookies("M")
+  ratingChangeStatus = true
+}
+const setRatingChange = (bool) =>{
+  ratingChangeStatus = bool
+}
 
 const getRatingChange = () => {
   return ratingChangeStatus;
@@ -103,7 +105,7 @@ const DisplayBook = ({ id, rating }) => {
       </div>
       <div class="table-item-info">
         <div class="table-item-title">
-          <Link to={`/movie/${book.item_id}`}>{book.title}</Link>
+          <Link to={`/book/${book.item_id}`}>{book.title}</Link>
         </div>
         <div class="table-item-rate">
           <ReactStars {...ratingStars} />
@@ -289,4 +291,4 @@ const Ratings = () => {
   );
 };
 
-export { Ratings, updateCookies, getRatingChange };
+export { Ratings, updateCookies, getRatingChange, setRatingChange };

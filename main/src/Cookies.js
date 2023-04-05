@@ -1,3 +1,4 @@
+import { GetMovieByID } from "./components/Movie"
 
 var nonCookieBookRatings = []
 var nonCookieMovieRatings = []
@@ -45,7 +46,7 @@ function setCookie(borm, movieid, rating, exdays) {
     }
   }else{
     const d = new Date();
-    d.setTime(d.getTime() + (1000 * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
     var prevRatings = getStringOfRatings(borm)
     if(getCookie(borm, movieid) !== 0){
@@ -200,4 +201,61 @@ function getCookies(borm){
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings };
+function setRecommended(borm, listOfIds){
+  const d = new Date();
+  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  var recommendedIDs = ""
+  for(var i = 0;i < listOfIds.length; i++){
+    recommendedIDs =  recommendedIDs + "&" + listOfIds[i] 
+  }
+  document.cookie = borm + "Recommendations" + "=" + recommendedIDs + ";" + expires + ";path=/";
+}
+
+function getRecommended(borm){
+  var cookies = document.cookie.split(";")
+  if(cookies[0] === '' || cookies.length === 0){
+    return []
+  }
+  var cookie = ""
+  for(var i = 0; i < cookies.length; i++){
+    if(i !== 0){
+      cookies[i] = cookies[i].substring(1)
+    } 
+    if(cookies[i].substring(0, 17) === borm + "Recommendations="){
+      cookie = cookies[i].substring(17)
+    }  
+  } 
+  var recommended = []
+  recommended = cookie.split("&")
+  recommended.shift()
+  var recommendedItems = []
+  for(var j = 0; j<recommended.length; j++){
+    if(borm === "M"){
+      var info = recommended[j].split("%")
+      var poster = ""
+      if(info[2] === "null"){
+        poster = null
+      }else{
+        poster = info[2]
+      }
+      const id = {
+        similar_item_id: parseInt(info[0]),
+        movieid: parseInt(info[0]),
+        title: info[1],
+        posterpath: poster
+      }
+      recommendedItems[j] = id
+    }else{
+      const id = {
+        item_id: parseInt(recommended[j])
+      }
+      recommendedItems[j] = id
+    }
+  }
+  return recommendedItems
+}
+
+
+
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings, getRecommended, setRecommended };

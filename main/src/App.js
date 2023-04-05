@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Modal, Box, Button } from "@mui/material";
