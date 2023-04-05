@@ -1,23 +1,23 @@
-import "./css/App.css";
+import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 
-import Carousel from "react-multi-carousel";
+import "./css/App.css";
 import "react-multi-carousel/lib/styles.css";
+
 import image from "./NoImage.jpg";
 
-const DisplayMovie = ({ movie, recommendation }) => {
-  var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
-  if (movie.posterpath === null) {
-    imageSource = image;
-  }
+const DisplayMovie = ({ movie, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
+
+  var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
+
   if (recommendation === true) {
     return (
       <div className="movie-slot">
         <div className="movie-pic" key={movie.similar_item_id}>
           <Link to={`/movie/${movie.similar_item_id}`}>
-            <img src={imageSource} alt="movie poster" />
+            <img class={size} src={imageSource} alt="movie poster" />
           </Link>
         </div>
         <div className="movie-info">
@@ -30,7 +30,7 @@ const DisplayMovie = ({ movie, recommendation }) => {
     <div className="movie-slot">
       <div className="movie-pic" key={movie.id}>
         <Link to={`/movie/${movie.movieid}`}>
-          <img src={imageSource} alt="movie poster" />
+          <img class={size} src={imageSource} alt="movie poster" />
         </Link>
       </div>
       <div className="movie-info">
@@ -40,19 +40,18 @@ const DisplayMovie = ({ movie, recommendation }) => {
   );
 };
 
-const DisplayBook = ({ book, recommendation }) => {
-  var imageSource = book.img;
-  if (book.img === null) {
-    imageSource = image;
-  }
+const DisplayBook = ({ book, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
+
+  var imageSource = book.img ? book.img : image
+
   if (recommendation === true) {
     return (
       <div className="movie-slot">
         <div className="movie-pic" key={book.similar_item_id}>
           <Link to={`/book/${book.similar_item_id}`}>
-            <img src={imageSource} alt="book poster" />
+            <img class={size} src={imageSource} alt="book poster" />
           </Link>
         </div>
         <div className="movie-info">
@@ -65,7 +64,7 @@ const DisplayBook = ({ book, recommendation }) => {
     <div className="movie-slot">
       <div className="movie-pic" key={book.item_id}>
         <Link to={`/book/${book.item_id}`}>
-          <img src={imageSource} alt="book poster" />
+          <img class={size} src={imageSource} alt="book poster" />
         </Link>
       </div>
       <div className="movie-info">
@@ -75,7 +74,7 @@ const DisplayBook = ({ book, recommendation }) => {
   );
 };
 
-const Items = ({ items, page, recommendation }) => (
+const Items = ({ items, page, size, recommendation }) => (
   // Argument "recommendation" is not always necessary, only when displaying recommendations.
   <div className="page-container">
     <Carousel
@@ -102,6 +101,7 @@ const Items = ({ items, page, recommendation }) => (
             min: 1024,
           },
           items: 6,
+          slidesToSlide: 6,
         },
         mobile: {
           breakpoint: {
@@ -116,6 +116,7 @@ const Items = ({ items, page, recommendation }) => (
             min: 464,
           },
           items: 3,
+          slidesToSlide: 3,
         },
       }}
       rewind={false}
@@ -124,15 +125,14 @@ const Items = ({ items, page, recommendation }) => (
       shouldResetAutoplay
       showDots={false}
       sliderClass=""
-      slidesToSlide={4}
       swipeable
     >
       {page === "movies"
         ? items.map((item) => (
-            <DisplayMovie movie={item} page={page} key={item.movieid} />
+            <DisplayMovie key={item.movieid} movie={item} page={page} size={size} />
           ))
         : items.map((item) => (
-            <DisplayBook book={item} page={page} key={item.item_id} recommendation={recommendation} />
+            <DisplayBook key={item.item_id} book={item} page={page} size={size} recommendation={recommendation} />
           ))}
     </Carousel>
   </div>

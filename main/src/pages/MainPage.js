@@ -44,7 +44,7 @@ const LoadingAnimation = () =>{
     }else{
       setShow(false)
     }
-  });
+  },[]);
   if (show) {
     return (
       <Box sx={{ textAlign: "center" }}>
@@ -112,12 +112,12 @@ const UpdateRecommendations = () =>{
     }else{
       setButton(true)
     }
-  })  
+  },[])  
   return (
     <div>
       <Button variant="contained" disabled={disableButton} onClick={() =>{Update()}}>Update</Button>
       <LoadingAnimation/>
-      <Items items={recievedMovies} page={"movies"} recommendation={true}/>
+      <Items items={recievedMovies} page={"movies"} recommendation={true} size={"medium-item-pic"} />
     </div>
   )
 }
@@ -130,9 +130,9 @@ const MainPage = ({ page }) => {
     return (
       <div className="page-container">
         <h2>Top 10 newest movies</h2>
-        <Items items={movies} page={"movies"} />
+        <Items items={movies} page={"movies"} size={"medium-item-pic"} />
         <h2>Top 10 newest books</h2>
-        <Items items={books} page={"books"} />
+        <Items items={books} page={"books"} size={"medium-item-pic"} />
         <h2>Recommended movies for you</h2>
         <p>
           Please rate at least one movie and one book to receive personal
@@ -144,10 +144,10 @@ const MainPage = ({ page }) => {
   return (
     <div className="page-container">
       <h2>Top 10 newest movies</h2>
-      <Items items={movies} page={"movies"} />
+      <Items items={movies} page={"movies"} size={"medium-item-pic"} />
       <h2>Top 10 newest books</h2>
 
-      <Items items={books} page={"books"} />
+      <Items items={books} page={"books"} size={"medium-item-pic"}/>
       <h2>Recommended movies for you</h2>
       <UpdateRecommendations/>
     </div>

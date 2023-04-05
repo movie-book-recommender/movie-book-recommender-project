@@ -1,3 +1,63 @@
+.book-page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  grid-template-areas:
+      "title title title"
+      "info info info"
+      "book box box"
+      "samea samea samea"
+      "similarm similarm similarm"
+      "similarb similarb similarb";
+
+  margin: 0px auto;
+  padding: 50px 80px;
+  row-gap: 10px;
+  column-gap: 20px;
+  max-width: 1000px;
+  background-color: white;
+}
+
+.book-page-wrapper > h1 {
+  grid-area: title;
+}
+
+.book-page-wrapper > h5 {
+  grid-area: info;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.book-page-wrapper > .book {
+  grid-area: book;
+}
+
+.book-page-wrapper > .box {
+  grid-area: box;
+}
+
+.book-page-wrapper > .same-author {
+  grid-area: samea;
+}
+
+.book-page-wrapper > .similar-movies {
+  grid-area: similarm;
+}
+
+.book-page-wrapper > .similar-books {
+  grid-area: similarb;
+}
+
+.large-item-pic {
+  height: 300px;
+  width: auto;
+}
+
+.medium-item-pic {
+  width: auto;
+  height: 250px;
+ }
+
 .navbar a{
   display: inline-block;
   border-style: solid;
@@ -46,6 +106,49 @@
   margin-right: 5px;
 }
 
+.movie-page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  grid-template-areas:
+      "title title title"
+      "info info info"
+      "movie box box"
+      "similarm similarm similarm"
+      "similarb similarb similarb";
+
+  margin: 0px auto;
+  padding: 50px 80px;
+  row-gap: 10px;
+  column-gap: 20px;
+  max-width: 1000px;
+  background-color: white;
+}
+
+.movie-page-wrapper > h1 {
+  grid-area: title;
+}
+
+.movie-page-wrapper > h5 {
+  grid-area: info;
+}
+
+.movie-page-wrapper > .movie {
+  grid-area: movie;
+}
+
+.movie-page-wrapper > .box {
+  grid-area: box;
+}
+
+.movie-page-wrapper > .similar-movies {
+  grid-area: similarm;
+}
+
+.movie-page-wrapper > .similar-books {
+  grid-area: similarb;
+}
+
 .movie-slot{
   grid-row: 1;
   grid-column: auto;
@@ -80,24 +183,25 @@
   opacity: .5;
  }
 
- img {
+.small-item-pic {
   width: auto;
-  max-height: 250px;
- }
+  height: 180px;
+}
 
  .switch-text {
   padding-top: 10px;
   padding-left: 15px;
  }
 
-.switch-text button {
+.switch-text button, .btn {
   background-color: #4b91f7;
   color: #fff;
   border-radius: 6px;
   border: none;
+  margin-left: 5px;
 }
 
-.switch-text button:hover{
+.switch-text button:hover, .btn:hover {
   background-color: #07c;
   transform: translateY(1px);
 }
