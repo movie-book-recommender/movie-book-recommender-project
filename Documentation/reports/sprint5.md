@@ -45,10 +45,10 @@ Viikko 2
 | Maanantai 3.4.|3|Algoritmin optimointia yhdessä|
 |Tiistai 4.4.|||
 |Keskiviikko 5.4.|4|Algoritmin nopeutusta pienempien csv tiedostojen avulla|
-|Torstai 6.4.|||
+|Torstai 6.4.|2|Yhteinen funktio kaikille suosituksille|
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|1|Viikon dailyt|
-|Yhteensä|8||
+|Yhteensä|10||
 Viikko 3
 |||
 | Maanantai 10.4.|||
@@ -206,3 +206,4 @@ Viikko 3
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
+- Kaikki suositukset saa nyt yhdestä osoitteesta
