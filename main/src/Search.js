@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { Dropdown, Header, Image } from "semantic-ui-react";
+import {
+  Dropdown,
+  Header,
+  Image,
+  Icon,
+  Input,
+  Button,
+  Label,
+} from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import image from "./NoImage.jpg";
@@ -75,27 +83,47 @@ const Search = ({ page }) => {
   }, [page]);
 
   return (
-    <Dropdown
-      fluid
-      closeOnChange
-      placeholder={`Search for ${page}`}
-      icon="search"
-      labeled
-      search
-      onSearchChange={({ target }) => setItem(target.value)}
-      className="SearchDropdown"
-      noResultsMessage={null}
-    >
-      <Dropdown.Menu>
-        {options.map((option) =>
-          page === "movies" ? (
-            <DisplayMovie movie={option} />
-          ) : (
-            <DisplayBook book={option} />
-          )
-        )}
-      </Dropdown.Menu>
-    </Dropdown>
+    <div>
+      <Input
+        icon="search"
+        placeholder="Search in ..."
+        fluid
+        iconPosition="left"
+      >
+        <input />
+        <Label>
+          <Button.Group>
+            <Button icon attached="right">
+              <Icon name="book" />
+            </Button>
+            <Button.Or />
+            <Button icon>
+              <Icon name="tv" />
+            </Button>
+          </Button.Group>
+        </Label>
+      </Input>
+      <Dropdown
+        fluid
+        placeholder={`Search `}
+        search
+        icon="search"
+        iconPosition="right"
+        item
+        onSearchChange={({ target }) => setItem(target.value)}
+        noResultsMessage={null}
+      >
+        <Dropdown.Menu>
+          {options.map((option) =>
+            page === "movies" ? (
+              <DisplayMovie movie={option} />
+            ) : (
+              <DisplayBook book={option} />
+            )
+          )}
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
   );
 };
 

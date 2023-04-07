@@ -38,47 +38,49 @@ const MenuBar = ({ page }) => {
           className=""
         >
           <Grid textAlign="center">
-            <Grid.Row>
-              <Grid.Column>
-                <Segment
-                  icon="heart"
-                  content={
-                    <Link to={`/${page}/wishlist`} data-link="Ratings">
-                      WishList
-                    </Link>
-                  }
-                />
-              </Grid.Column>
-              <Grid.Column as="a">
-                <Header
-                  icon="star outline"
-                  content={
-                    <Link to={`/${page}/ratings`} data-link="Ratings">
-                      Ratings
-                    </Link>
-                  }
-                />
-              </Grid.Column>
-              <Grid.Column as="a">
+            <Menu inverted icon="labeled">
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/${page}/wishlist`);
+                }}
+              >
+                <Icon name="heart" />
+                WishList
+              </Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/${page}/ratings`);
+                }}
+              >
+                <Icon name="star outline" />
+                WishList
+              </Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/${page}/search`);
+                }}
+              >
                 <Icon name="search" />
-                <Link to={`/${page}/search`} data-link="Search">
-                  Search
-                </Link>
-              </Grid.Column>
-            </Grid.Row>
+                Search
+              </Menu.Item>
+            </Menu>
           </Grid>
         </Sidebar>
         <Sidebar.Pusher dimmed={visible}>
           <Grid>
             <Grid.Row verticalAlign="middle" stretched>
               <Grid.Column width={3} textAlign="center">
-                <Button circular compact basic animated="fade">
+                <Button
+                  circular
+                  basic
+                  animated="fade"
+                  onClick={() => navigate("/")}
+                >
                   <Button.Content visible>
-                    <Image
-                      src={favicon}
-                      size="tiny"
-                      href={<Link to={`/`}></Link>}
-                    />
+                    <Image src={favicon} size="tiny" centered />
                   </Button.Content>
                   <Button.Content hidden>Main Page</Button.Content>
                 </Button>
