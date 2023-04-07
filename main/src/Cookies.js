@@ -1,3 +1,4 @@
+import { GetMovieByID } from "./components/Movie"
 
 var nonCookieBookRatings = []
 var nonCookieMovieRatings = []
@@ -45,7 +46,7 @@ function setCookie(borm, movieid, rating, exdays) {
     }
   }else{
     const d = new Date();
-    d.setTime(d.getTime() + (1000 * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
     var prevRatings = getStringOfRatings(borm)
     if(getCookie(borm, movieid) !== 0){
@@ -107,40 +108,67 @@ const getStringOfRatings = (borm) =>{
 
 
 function addToWishlist(borm, id, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  var prevWishlist = getStringOfWishlist()
-  var list = prevWishlist.split('&')
-  for (var i = 0; i < list.length; i++) {
-    if (list[i] === borm + id) {
-      list.splice(i, 1)
-      changedList = list.join('&')
-      document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
-      return
+  if (localStorage.cookie === "Disallow"){
+    var bormId = borm + id
+    if (borm === "M") {
+      if (nonCookieMovieWishlist.includes(bormId)) {
+        var i = nonCookieMovieWishlist.indexOf(bormId)
+        nonCookieMovieWishlist.splice(i, 1)
+      } else {
+        nonCookieMovieWishlist.push(bormId)
+      }
+    } else if (borm === "B") {
+      if (nonCookieBookWishlist.includes(bormId)) {
+        var i = nonCookieBookWishlist.indexOf(bormId)
+        nonCookieBookWishlist.splice(i, 1)
+      } else {
+        nonCookieBookWishlist.push(bormId)
+      }
     }
+  } else {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    var prevWishlist = getStringOfWishlist()
+    var list = prevWishlist.split('&')
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] === borm + id) {
+        list.splice(i, 1)
+        changedList = list.join('&')
+        document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
+        return
+      }
+    }
+    var changedList = prevWishlist + borm + id + "&"
+    document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
   }
-  var changedList = prevWishlist + borm + id + "&"
-  document.cookie = "Wishlist:" + changedList + ";" + expires + ";path=/"
-
 }
 
 function onWishlist(borm, id) {
-  var prevWishlist = getStringOfWishlist()
-  var list = prevWishlist.split('&')
   var bormId = borm + id
-  return list.includes(bormId)
+  if (localStorage.cookie === "Disallow") {
+    if (borm === "M") { return nonCookieMovieWishlist.includes(bormId) }
+    if (borm === "B") { return nonCookieBookWishlist.includes(bormId)}
+    } else {
+    var prevWishlist = getStringOfWishlist()
+    var list = prevWishlist.split('&')
+    return list.includes(bormId)
+  }
 }
 
 const getStringOfWishlist = () =>{
+  if (localStorage.cookie === "Disallow") {
+    if (nonCookieBookWishlist.concat(nonCookieMovieWishlist).length === 0) { return "" }
+    var retStr = nonCookieBookWishlist.concat(nonCookieMovieWishlist).join('&')
+    return retStr.concat("&")
+  }
   var cookies = document.cookie.split(';')
   if(cookies[0] === '' || cookies[0] === undefined){
     return ""
   }
   var cookie =""
   for(var i = 0; i < cookies.length; i++) {
-    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){   
-      console.log(cookies[i])   
+    if(cookies[i].trim().substring(0, 9) === "Wishlist:"){
       cookie = cookies[i].trim().substring(9)
     }
   }
@@ -200,4 +228,61 @@ function getCookies(borm){
   return cookies;
 }
 
-  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings };
+function setRecommended(borm, listOfIds){
+  const d = new Date();
+  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  var recommendedIDs = ""
+  for(var i = 0;i < listOfIds.length; i++){
+    recommendedIDs =  recommendedIDs + "&" + listOfIds[i] 
+  }
+  document.cookie = borm + "Recommendations" + "=" + recommendedIDs + ";" + expires + ";path=/";
+}
+
+function getRecommended(borm){
+  var cookies = document.cookie.split(";")
+  if(cookies[0] === '' || cookies.length === 0){
+    return []
+  }
+  var cookie = ""
+  for(var i = 0; i < cookies.length; i++){
+    if(i !== 0){
+      cookies[i] = cookies[i].substring(1)
+    } 
+    if(cookies[i].substring(0, 17) === borm + "Recommendations="){
+      cookie = cookies[i].substring(17)
+    }  
+  } 
+  var recommended = []
+  recommended = cookie.split("&")
+  recommended.shift()
+  var recommendedItems = []
+  for(var j = 0; j<recommended.length; j++){
+    if(borm === "M"){
+      var info = recommended[j].split("%")
+      var poster = ""
+      if(info[2] === "null"){
+        poster = null
+      }else{
+        poster = info[2]
+      }
+      const id = {
+        similar_item_id: parseInt(info[0]),
+        movieid: parseInt(info[0]),
+        title: info[1],
+        posterpath: poster
+      }
+      recommendedItems[j] = id
+    }else{
+      const id = {
+        item_id: parseInt(recommended[j])
+      }
+      recommendedItems[j] = id
+    }
+  }
+  return recommendedItems
+}
+
+
+
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings, getRecommended, setRecommended };

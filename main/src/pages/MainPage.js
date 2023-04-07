@@ -1,13 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Box } from "@mui/system";
-import { getCookies } from "../Cookies";
+import { Button } from "@mui/material";
+import { getRatingChange, setRatingChange } from "./Ratings";
+import { getCookies, getRecommended, setRecommended } from "../Cookies";
 import loading from "../Loading.webm";
 
 import "../css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
 import Items from "../Carusel";
+
 
 const GetBooks = () => {
   const [books, setBooks] = useState([]);
@@ -33,6 +36,7 @@ const GetMovies = () => {
   return movies;
 };
 
+<<<<<<< HEAD
 const LoadingAnimation = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -45,6 +49,17 @@ const LoadingAnimation = () => {
       setShow(false);
     }
   });
+=======
+const LoadingAnimation = () =>{
+  const[show, setShow] = useState(false)
+  useEffect(() =>{
+    if(showLoading){
+      setShow(true)
+    }else{
+      setShow(false)
+    }
+  },[]);
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
   if (show) {
     return (
       <Box sx={{ textAlign: "center" }}>
@@ -54,6 +69,7 @@ const LoadingAnimation = () => {
       </Box>
     );
   }
+<<<<<<< HEAD
 };
 const GetPersonalRecommendations = () => {
   // const [recBooks, setRecBooks] = useState([]);
@@ -79,20 +95,87 @@ const GetPersonalRecommendations = () => {
   return recMovies;
 };
 var recommendations = {};
+=======
+}
+
+
+var bookRatings = getCookies("B")
+var movieRatings = getCookies("M")
+var ratings = {
+  Books: bookRatings,
+  Movies: movieRatings
+}
+const updateRatings = () =>{
+  bookRatings = getCookies("B")
+  movieRatings = getCookies("M")
+  ratings = {
+    Books: bookRatings,
+    Movies: movieRatings
+  }
+}
+var showLoading = false
+const UpdateRecommendations = () =>{
+  const [update, setUpdate] = useState(false)
+  const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
+  useEffect(() => {
+    axios
+    .get(`http://128.214.253.51:3000/dbgetpersonalmovierecommendations?ratings=${JSON.stringify(ratings)}`)
+    .then((response) => {
+      var info = []
+      for(var i = 0; i<response.data.length; i++){
+        var posterpath = ""
+        if(response.data[i].posterpath === null){
+          posterpath = "null"
+        }else{
+          posterpath = response.data[i].posterpath.toString()
+        }
+        info[i] = response.data[i].movieid.toString() + "%" 
+                + response.data[i].title.toString() + "%" 
+                + posterpath
+      }
+      setRecommended("M", info)
+      showLoading = false
+      setRecievedMovies(getRecommended("M"))
+    })
+  }, [update]);
+
+  const Update = () =>{
+    setRatingChange(false)
+    setButton(true)
+    setRecievedMovies([])
+    showLoading = true
+    updateRatings()
+    setUpdate(!update)
+  }
+  const [disableButton, setButton] = useState(true)
+  useEffect(() =>{
+    if(getRatingChange()){
+      setButton(false)
+    }else{
+      setButton(true)
+    }
+  },[])  
+  return (
+    <div>
+      <Button variant="contained" disabled={disableButton} onClick={() =>{Update()}}>Update</Button>
+      <LoadingAnimation/>
+      <Items items={recievedMovies} page={"movies"} recommendation={true} size={"medium-item-pic"} />
+    </div>
+  )
+}
+
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
 const MainPage = ({ page }) => {
   const books = GetBooks();
   const movies = GetMovies();
-  recommendations = GetPersonalRecommendations();
-
-  if (recommendations.value === "not available") {
+  if (bookRatings.length === 0 && movieRatings.length === 0) {
+    updateRatings()
     return (
       <div className="page-container">
-        <h2>Top 10 newest {page}</h2>
-        {page === "movies" ? (
-          <Items items={movies} page={page} />
-        ) : (
-          <Items items={books} page={page} />
-        )}
+        <h2>Top 10 newest movies</h2>
+        <Items items={movies} page={"movies"} size={"medium-item-pic"} />
+        <h2>Top 10 newest books</h2>
+        <Items items={books} page={"books"} size={"medium-item-pic"} />
         <h2>Recommended movies for you</h2>
         <p>
           Please rate at least one movie and one book to receive personal
@@ -101,18 +184,20 @@ const MainPage = ({ page }) => {
       </div>
     );
   }
-
   return (
     <div className="page-container">
-      <h2>Top 10 newest {page}</h2>
-      {page === "movies" ? (
-        <Items items={movies} page={page} />
-      ) : (
-        <Items items={books} page={page} />
-      )}
+      <h2>Top 10 newest movies</h2>
+      <Items items={movies} page={"movies"} size={"medium-item-pic"} />
+      <h2>Top 10 newest books</h2>
+
+      <Items items={books} page={"books"} size={"medium-item-pic"}/>
       <h2>Recommended movies for you</h2>
+<<<<<<< HEAD
       <LoadingAnimation />
       <Items items={recommendations} page={"movies"} recommendation={true} />
+=======
+      <UpdateRecommendations/>
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
     </div>
   );
 };

@@ -35,11 +35,28 @@ const MenuExampleAttached = ({ page }) => (
   </div>
 );
 
-const Navibar = ({ page, handleChange }) => {
+const Navibar = () => {
   return (
+<<<<<<< HEAD
     <>
       <SidebarExampleDimmed page={page} />
     </>
+=======
+    <div className="navbar">
+      <Link to={`/`} data-link="ItemLens">
+        ItemLens
+      </Link>
+      <Link to={`/wishlist`} data-link="Wishlist">
+        Wishlist
+      </Link>
+      <Link to={`/ratings`} data-link="Ratings">
+        Ratings
+      </Link>
+      <Link to={`/search`} data-link="Search">
+        Search
+      </Link>
+    </div>
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
   );
 };
 

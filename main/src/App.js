@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Modal, Box, Button } from "@mui/material";
@@ -16,8 +16,6 @@ import Navibar from "./Navibar";
 import axios from "axios";
 
 const App = () => {
-  const [page, setPage] = useState("movies");
-
   axios.interceptors.response.use(
     (response) => {
       return response;
@@ -30,6 +28,7 @@ const App = () => {
     }
   );
   const navigate = useNavigate();
+<<<<<<< HEAD
   useEffect(() => {
     navigate(`${page}`);
   }, [page]);
@@ -39,6 +38,9 @@ const App = () => {
     else setPage("movies");
   };
 
+=======
+
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
   const AllowCookiesPopUp = () => {
     const setCookieConsent = (decision) => {
       localStorage.cookie = decision;
@@ -105,6 +107,7 @@ const App = () => {
         />
       </Helmet>
       <div className="page">
+<<<<<<< HEAD
         <Navibar page={page} handleChange={handleChange} />
         <Routes>
           <Route path="/:page" element={<MainPage page={page} />} />
@@ -114,6 +117,16 @@ const App = () => {
           <Route path="/movie/:id" element={<Movie page={page} />} />
           <Route path="/book/:id" element={<Book page={page} />} />
           <Route path="/" element={<MainPage page={page} />} />
+=======
+        <Navibar />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/ratings" element={<Ratings />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/book/:id" element={<Book />} />
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
         </Routes>
         <AllowCookiesPopUp />
       </div>

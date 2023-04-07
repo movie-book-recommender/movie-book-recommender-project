@@ -5,22 +5,25 @@ describe("Itemlens' movie main page ", function () {
     cy.contains("Allow").click()
     cy.wait(1000)
   });
-
   it("movie page contains movie recommendations", function () {
-    cy.get("input").type("harry potte");
-    cy.get(".movie-info")
-      .contains("Harry Potter and the Half-Blood Prince")
-      .click();
+    cy.get(".navbar").contains("Search").click();
+    cy.get("input").type("harry potter");
+    cy.get("[data-testid='SearchIcon']").click();
+    cy.wait(1000);
+    cy.get(".table-left").find(".table-item-title").eq(1).click();
     cy.contains("Similar movies");
     cy.wait(2000);
     cy.contains("Harry Potter and the Philosopher's Stone");
     cy.contains("Similiar books");
+<<<<<<< HEAD
     cy.wait(2000);
+=======
+    cy.wait(1000);
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
     cy.contains("Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)");
   });
 
   it("book page contains similar books", function () {
-    cy.contains("Switch to books").click();
     cy.contains("Top 10 newest books");
     cy.wait(1000);
     cy.get(".movie-info").contains("180 Seconds").click();

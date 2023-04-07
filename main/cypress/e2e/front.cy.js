@@ -32,7 +32,14 @@ describe("Itemlens' movie mainpage ", function () {
     cy.get(".navbar").contains("Search").click();
     cy.contains("Search movies and books");
   });
+  // testit searchille toimivat, kun joku hyväksyy uuden searching :)
+  // // test if you can write in search field
+  // it("shows results for quick search", function () {
+  //   cy.get("input").type("pirates");
+  //   cy.contains("Caesar Against the Pirates");
+  // });
 
+<<<<<<< HEAD
   // test if you can write in search field
   it("shows results for quick search", function () {
     cy.get(".divider.default.text").type("pirates");
@@ -47,6 +54,15 @@ describe("Itemlens' movie mainpage ", function () {
     cy.wait(2000);
     cy.contains("Caesar Against the Pirates").should("not.exist");
   });
+=======
+  // // test if you can clear search field and previously searched movies are hiden
+  // it("hides previous search result after clearing search input", function () {
+  //   cy.get("input").type("pirates");
+  //   cy.contains("Caesar Against the Pirates");
+  //   cy.get("input").clear();
+  //   cy.contains("Caesar Against the Pirates").should("not.exist");
+  // });
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
 
   it("link to movie works in search", function () {
     cy.get(".divider.default.text").type("pirates");

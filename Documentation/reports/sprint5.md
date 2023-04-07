@@ -20,6 +20,15 @@ Viikko 2
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
 |Yhteensä|||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
+|Yhteensä|||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
@@ -33,12 +42,21 @@ Viikko 2
 |Yhteensä|10||
 Viikko 2
 |||
-| Maanantai 3.4.|||
+| Maanantai 3.4.|3|Algoritmin optimointia yhdessä|
 |Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
-|Torstai 6.4.|||
+|Keskiviikko 5.4.|4|Algoritmin nopeutusta pienempien csv tiedostojen avulla|
+|Torstai 6.4.|2|Yhteinen funktio kaikille suosituksille|
 |Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
+|Viikonloppu 8.-9.4.|1|Viikon dailyt|
+|Yhteensä|10||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
 |Yhteensä|||
 
 ### Polina
@@ -60,6 +78,15 @@ Viikko 2
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
 |Yhteensä|||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
+|Yhteensä|||
 
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
@@ -80,6 +107,15 @@ Viikko 2
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
 |Yhteensä|||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
+|Yhteensä|||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
@@ -93,32 +129,50 @@ Viikko 2
 |Yhteensä|7,5||
 Viikko 2
 |||
-| Maanantai 3.4.|||
-|Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
+| Maanantai 3.4.|3,5|Daily, kirjan sivun ulkoasun hiomista|
+|Tiistai 4.4.|4|Daily, ulkoasun hiomista|
+|Keskiviikko 5.4.|1|Daily, merget, merge fixit ja testailua|
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|||
+|Yhteensä|8,5||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
 |Yhteensä|||
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
-|Torstai 16.3.|||
-|Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
+| Maanantai 27.3.|1|sprint planning|
+|Tiistai 28.3.|||
+|Keskiviikko 29.3.|||
+|Torstai 30.3.|||
+|Perjantai 31.3.|||
+|Viikonloppu 1.-2.4.|2|gdpr consent tutkimista|
 |Yhteensä|||
 Viikko 2
 |||
-| Maanantai 20.3.|||
-|Tiistai 21.3.|||
-|Keskiviikko 22.3.|||
-|Torstai 23.3.|||
-|Perjantai 24.3.|||
-|Viikonloppu 25.-26.3.|||
+| Maanantai 3.4.|||
+|Tiistai 4.4.|3|wishlist toiminnallisuus ilman evästeitä + testit|
+|Keskiviikko 5.4.|||
+|Torstai 6.4.|||
+|Perjantai 7.4.|||
+|Viikonloppu 8.-9.4.|||
+|Yhteensä|||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
 |Yhteensä|||
 
 ### Katri
@@ -133,12 +187,23 @@ Viikko 2
 |Yhteensä|13||
 Viikko 2
 |||
-| Maanantai 3.4.|||
-|Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
-|Torstai 6.4.|||
-|Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
+| Maanantai 3.4.|2.75|Daily, user recommendations algoritmin optimointia yhdessä|
+|Tiistai 4.4.|5.25|user recommendations algoritmin datan viilausta algoritmin optimoimiseksi, lähestymistavan dokumentointi|
+|Keskiviikko 5.4.|0.5|Daily, muistiinpanot, muutamia tsekkauksia|
+|Torstai 6.4.|0|Pääsiäinen|
+|Perjantai 7.4.|0|Pääsiäinen|
+|Viikonloppu 8.-9.4.|0|Pääsiäinen|
+|Yhteensä|8.5||
+Viikko 3
+|||
+| Maanantai 10.4.|||
+|Tiistai 11.4.|||
+|Keskiviikko 12.4.|||
+|Torstai 13.4.|||
+|Perjantai 14.4.|||
+|Viikonloppu 15.-16.4.|||
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+- Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
+- Kaikki suositukset saa nyt yhdestä osoitteesta

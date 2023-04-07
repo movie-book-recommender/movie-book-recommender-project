@@ -84,6 +84,7 @@ const Search = ({ page }) => {
 
   return (
     <div>
+<<<<<<< HEAD
       <Input
         icon="search"
         placeholder="Search in ..."
@@ -123,6 +124,17 @@ const Search = ({ page }) => {
           )}
         </Dropdown.Menu>
       </Dropdown>
+=======
+      <form>
+        <label>Search {page} </label>
+        <input
+          value={newSearch}
+          onChange={({ target }) => setNewSearch(target.value)}
+          placeholder={`Search ${page}`}
+        />
+      </form>
+      {newSearch && searchResult && <Items items={searchResult} page={page} size={"medium-item-pic"} />}
+>>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
     </div>
   );
 };
