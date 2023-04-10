@@ -196,14 +196,15 @@ Viikko 2
 |Yhteensä|8.5||
 Viikko 3
 |||
-| Maanantai 10.4.|||
+| Maanantai 10.4.|3.5|Databaseen lisätty taulut, joissa leffat on rajoitettu niihin, joille on olemassa suosituksia (eli tageja); testit päivitetty; dokumentaation rakennetta ja päivitystarpeitä mietitty. Kirjojen data on jo lähtökohtaisesti rajoitettu niihin, joille on olemassa suosituksia.|
 |Tiistai 11.4.|||
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
 |Perjantai 14.4.|||
 |Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Yhteensä|3.5|Aiemmissa sprinteissä tehty n. 3 tuntia ylimääräistä työtä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
 - Kaikki suositukset saa nyt yhdestä osoitteesta
+- Leffojen data rajoitettu niihin, joille on olemassa suosituksia (eli tageja)
