@@ -45,10 +45,10 @@ Viikko 2
 | Maanantai 3.4.|3|Algoritmin optimointia yhdessä|
 |Tiistai 4.4.|||
 |Keskiviikko 5.4.|4|Algoritmin nopeutusta pienempien csv tiedostojen avulla|
-|Torstai 6.4.|||
+|Torstai 6.4.|2|Yhteinen funktio kaikille suosituksille|
 |Perjantai 7.4.|||
 |Viikonloppu 8.-9.4.|1|Viikon dailyt|
-|Yhteensä|8||
+|Yhteensä|10||
 Viikko 3
 |||
 | Maanantai 10.4.|||
@@ -149,17 +149,17 @@ Viikko 3
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
+| Maanantai 27.3.|1|sprint planning|
 |Tiistai 28.3.|||
 |Keskiviikko 29.3.|||
 |Torstai 30.3.|||
 |Perjantai 31.3.|||
-|Viikonloppu 1.-2.4.|||
+|Viikonloppu 1.-2.4.|2|gdpr consent tutkimista|
 |Yhteensä|||
 Viikko 2
 |||
 | Maanantai 3.4.|||
-|Tiistai 4.4.|||
+|Tiistai 4.4.|3|wishlist toiminnallisuus ilman evästeitä + testit|
 |Keskiviikko 5.4.|||
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
@@ -196,13 +196,15 @@ Viikko 2
 |Yhteensä|8.5||
 Viikko 3
 |||
-| Maanantai 10.4.|||
+| Maanantai 10.4.|3.5|Databaseen lisätty taulut, joissa leffat on rajoitettu niihin, joille on olemassa suosituksia (eli tageja); testit päivitetty; dokumentaation rakennetta ja päivitystarpeitä mietitty. Kirjojen data on jo lähtökohtaisesti rajoitettu niihin, joille on olemassa suosituksia.|
 |Tiistai 11.4.|||
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
 |Perjantai 14.4.|||
 |Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Yhteensä|3.5|Aiemmissa sprinteissä tehty n. 3 tuntia ylimääräistä työtä|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
+- Kaikki suositukset saa nyt yhdestä osoitteesta
+- Leffojen data rajoitettu niihin, joille on olemassa suosituksia (eli tageja)
