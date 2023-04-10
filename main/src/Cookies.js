@@ -274,8 +274,18 @@ function getRecommended(borm){
       }
       recommendedItems[j] = id
     }else{
+      var info = recommended[j].split("%")
+      var poster = ""
+      if(info[2] === "null"){
+        poster = null
+      }else{
+        poster = info[2]
+      }
       const id = {
-        item_id: parseInt(recommended[j])
+        similar_item_id: parseInt(info[0]),
+        item_id: parseInt(info[0]),
+        title: info[1],
+        img: poster
       }
       recommendedItems[j] = id
     }
