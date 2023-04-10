@@ -13,7 +13,7 @@ describe("Itemlens' movie mainpage ", function () {
 
   // test if movies are relevant
   it("shows relevant movies", function () {
-    cy.contains("What About Love");
+    cy.contains("The Lego Movie");
     cy.contains("Kaguya-sama: Love Is War").should("not.exist");
   });
 

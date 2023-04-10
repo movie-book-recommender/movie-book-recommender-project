@@ -95,35 +95,38 @@ const UpdateRecommendations = () =>{
     axios
     .get(`http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(ratings)}`)
     .then((response) => {
-      var infoMovies = []
-      for(var i = 0; i<response.data.movies.length; i++){
-        var posterpath = ""
-        if(response.data.movies[i].posterpath === null){
-          posterpath = "null"
-        }else{
-          posterpath = response.data.movies[i].posterpath.toString()
+      console.log(response)
+      if(response.data.value   !== 'not available'){
+        var infoMovies = []
+        for(var i = 0; i<response.data.movies.length; i++){
+          var posterpath = ""
+          if(response.data.movies[i].posterpath === null){
+            posterpath = "null"
+          }else{
+            posterpath = response.data.movies[i].posterpath.toString()
+          }
+          infoMovies[i] = response.data.movies[i].movieid.toString() + "%" 
+                  + response.data.movies[i].title.toString() + "%" 
+                  + posterpath
         }
-        infoMovies[i] = response.data.movies[i].movieid.toString() + "%" 
-                + response.data.movies[i].title.toString() + "%" 
-                + posterpath
-      }
-      var infoBooks = []
-      for(var i = 0; i<response.data.books.length; i++){
-        var image = ""
-        if(response.data.books[i].img === null){
-          image = "null"
-        }else{
-          image = response.data.books[i].img.toString()
+        var infoBooks = []
+        for(var i = 0; i<response.data.books.length; i++){
+          var image = ""
+          if(response.data.books[i].img === null){
+            image = "null"
+          }else{
+            image = response.data.books[i].img.toString()
+          }
+          infoBooks[i] = response.data.books[i].item_id.toString() + "%" 
+                  + response.data.books[i].title.toString() + "%" 
+                  + image
         }
-        infoBooks[i] = response.data.books[i].item_id.toString() + "%" 
-                + response.data.books[i].title.toString() + "%" 
-                + image
+        setRecommended("M", infoMovies)
+        setRecommended("B", infoBooks)
+        showLoading = false
+        setRecievedBooks(getRecommended("B"))
+        setRecievedMovies(getRecommended("M"))
       }
-      setRecommended("M", infoMovies)
-      setRecommended("B", infoBooks)
-      showLoading = false
-      setRecievedBooks(getRecommended("B"))
-      setRecievedMovies(getRecommended("M"))
     })
   }, [update]);
 

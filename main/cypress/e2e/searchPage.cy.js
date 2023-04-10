@@ -16,7 +16,7 @@ describe("Search Page ", function () {
     cy.get("[data-testid='SearchIcon']").click();
     cy.wait(1000);
     cy.contains("Search result for 'pirate'");
-    cy.contains("Caesar Against the Pirates");
+    cy.contains("Pirates of Silicon Valley");
     cy.contains("Pirate Cinema");
   });
 
@@ -29,7 +29,7 @@ describe("Search Page ", function () {
   it("hides previous search after new search", function () {
     cy.get("input").type("pirate");
     cy.get("[data-testid='SearchIcon']").click();
-    cy.contains("Caesar Against the Pirates");
+    cy.contains("Pirates of Silicon Valley");
     cy.contains("Pirate Cinema");
     cy.get("input").clear();
     cy.get("input").type("harry potter");
@@ -135,10 +135,10 @@ describe("Search Page ", function () {
       cy.get(".table-left").within(() => {
         cy.get(".table-item-title")
           .eq(0)
-          .contains("Harry Potter 20th Anniversary: Return to Hogwarts");
+          .contains("Harry Potter and the Deathly Hallows: Part 1");
         cy.get(".table-item-title")
           .eq(1)
-          .contains("Harry Potter: A History Of Magic");
+          .contains("Harry Potter and the Half-Blood Prince");
       });
       cy.get(".table-right").within(() => {
         cy.get(".table-item-title")
@@ -156,10 +156,10 @@ describe("Search Page ", function () {
       cy.get(".table-left").within(() => {
         cy.get(".table-item-title")
           .eq(0)
-          .contains("The Greater Good - Harry Potter Fan Film");
+          .contains("Harry Potter and the Prisoner of Azkaban");
         cy.get(".table-item-title")
           .eq(1)
-          .contains("Harry Potter: A History Of Magic");
+          .contains("Harry Potter and the Philosopher's Stone");
       });
       cy.get(".table-right").within(() => {
         cy.get(".table-item-title").eq(0).contains("Harry, a History:");
@@ -173,10 +173,10 @@ describe("Search Page ", function () {
       cy.get(".table-left").within(() => {
         cy.get(".table-item-title")
           .eq(0)
-          .contains("Harry Potter 20th Anniversary: Return to Hogwarts");
+          .contains("Harry Potter and the Chamber of Secrets");
         cy.get(".table-item-title")
           .eq(1)
-          .contains("Harry Potter and the Chamber of Secrets");
+          .contains("Harry Potter and the Deathly Hallows: Part 1");
       });
       cy.get(".table-right").within(() => {
         cy.get(".table-item-title")
