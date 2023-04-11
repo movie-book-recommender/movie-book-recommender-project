@@ -66,8 +66,12 @@ const Movie = () => {
   const recommendedMovies = GetRecommendedMoviesByID(movieId);
   const recommendedBooks = GetRecommendedBooksByID(movieId);
 
-  const [stars, setStars] = useState(getCookie("M", movieId))
+  const [stars, setStars] = useState(0)
+  useEffect(() =>{
+    setStars(getCookie("M", movieId))
+  })
   const ratingStars = {
+    key: stars,
     size: 40,
     count: 5,
     isHalf: false,
@@ -129,7 +133,9 @@ const Movie = () => {
   const actors = movie.actors ? movie.actors : "-"
   const genres = movie.genres ? movie.genres.split(",") : []
 
-
+  console.log(movie.movieid)
+  console.log(stars)
+  console.log(getCookie("M", movieId))
   return (
     <div className="movie-page-wrapper">
       <h1>{movie.title}</h1>
