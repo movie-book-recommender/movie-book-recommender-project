@@ -52,12 +52,12 @@ Viikko 2
 Viikko 3
 |||
 | Maanantai 10.4.|||
-|Tiistai 11.4.|||
+|Tiistai 11.4.|3|Algoritmin toiminta jos ei ole arvostellut joko yhtään leffaa tai yhtään kirjaa|
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
 |Perjantai 14.4.|||
-|Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Viikonloppu 15.-16.4.|1|Viikon dailyt|
+|Yhteensä|4||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -208,3 +208,4 @@ Viikko 3
 - Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
 - Kaikki suositukset saa nyt yhdestä osoitteesta
 - Leffojen data rajoitettu niihin, joille on olemassa suosituksia (eli tageja)
+- Suositukset, jos ei ole arvostellut yhtään leffaa tai yhtään kirjaa.
