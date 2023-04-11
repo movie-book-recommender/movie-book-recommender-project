@@ -95,7 +95,7 @@ const UpdateRecommendations = () =>{
     axios
     .get(`http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(ratings)}`)
     .then((response) => {
-      if(response.data.value   !== 'not available'){
+      if(response.data.value !== 'not available'){
         var infoMovies = []
         for(var i = 0; i<response.data.movies.length; i++){
           var posterpath = ""
