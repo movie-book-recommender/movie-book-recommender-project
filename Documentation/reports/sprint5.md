@@ -197,8 +197,8 @@ Viikko 2
 Viikko 3
 |||
 | Maanantai 10.4.|3.5|Databaseen lisätty taulut, joissa leffat on rajoitettu niihin, joille on olemassa suosituksia (eli tageja); testit päivitetty; dokumentaation rakennetta ja päivitystarpeitä mietitty. Kirjojen data on jo lähtökohtaisesti rajoitettu niihin, joille on olemassa suosituksia.|
-|Tiistai 11.4.|||
-|Keskiviikko 12.4.|||
+|Tiistai 11.4.|0.5|Daily ja backlogin tsekkaus ja priorisointi|
+|Keskiviikko 12.4.|0.25|Daily, tiimipalaverien varaus|
 |Torstai 13.4.|||
 |Perjantai 14.4.|||
 |Viikonloppu 15.-16.4.|||
