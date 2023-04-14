@@ -103,8 +103,12 @@ const Movie = () => {
   }
 
   var isWishlisted = onWishlist("M", movieId);
-  const [heart, setHeart] = useState(isWishlisted)
+  const [heart, setHeart] = useState(false)
+  useEffect(() =>{
+    setHeart(onWishlist("M", movieId))
+  })
   const heartElement = {
+    key: heart,
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
@@ -133,9 +137,6 @@ const Movie = () => {
   const actors = movie.actors ? movie.actors : "-"
   const genres = movie.genres ? movie.genres.split(",") : []
 
-  console.log(movie.movieid)
-  console.log(stars)
-  console.log(getCookie("M", movieId))
   return (
     <div className="movie-page-wrapper">
       <h1>{movie.title}</h1>
