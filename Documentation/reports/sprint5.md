@@ -4,31 +4,31 @@
 ### Emilia
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
-|Tiistai 28.3.|||
-|Keskiviikko 29.3.|||
+| Maanantai 27.3.|4|Asiakastapaaminen, prep, retro, sprint planning|
+|Tiistai 28.3.|2|tutkin github actions muuttujien asettamista ja koitin optimoida algoritmia|
+|Keskiviikko 29.3.|5|Lisää muuttujien lukemista, backendin stabiliteetin parantaminen ja algoritmin nopeuttaminen yhdessä|
 |Torstai 30.3.|||
-|Perjantai 31.3.|||
-|Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Perjantai 31.3.|2|Algoritmien tahostamisesta lukemista|
+|Viikonloppu 1.-2.4.|1|viikon dailyt|
+|Yhteensä|14||
 Viikko 2
 |||
-| Maanantai 3.4.|||
+| Maanantai 3.4.|3|Algoritmin optimointia yhdessä|
 |Tiistai 4.4.|||
 |Keskiviikko 5.4.|||
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
-|Yhteensä|||
+|Viikonloppu 8.-9.4.|,5|viikon dailyt|
+|Yhteensä|3,5||
 Viikko 3
 |||
 | Maanantai 10.4.|||
 |Tiistai 11.4.|||
-|Keskiviikko 12.4.|||
-|Torstai 13.4.|||
-|Perjantai 14.4.|||
-|Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Keskiviikko 12.4.|4|saavutettavuuksiin ja verkkosivujen ulkonäköihin perehtymistä, värikarttojen kehittelyä|
+|Torstai 13.4.|2|Logon kanssa säätämistä|
+|Perjantai 14.4.|4|logon säätämistä ja asiakastapaamisen suunnittelua|
+|Viikonloppu 15.-16.4.|,5|viikon dailyt|
+|Yhteensä|10,5||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
@@ -197,8 +197,8 @@ Viikko 2
 Viikko 3
 |||
 | Maanantai 10.4.|3.5|Databaseen lisätty taulut, joissa leffat on rajoitettu niihin, joille on olemassa suosituksia (eli tageja); testit päivitetty; dokumentaation rakennetta ja päivitystarpeitä mietitty. Kirjojen data on jo lähtökohtaisesti rajoitettu niihin, joille on olemassa suosituksia.|
-|Tiistai 11.4.|||
-|Keskiviikko 12.4.|||
+|Tiistai 11.4.|0.5|Daily ja backlogin tsekkaus ja priorisointi|
+|Keskiviikko 12.4.|0.25|Daily, tiimipalaverien varaus|
 |Torstai 13.4.|||
 |Perjantai 14.4.|||
 |Viikonloppu 15.-16.4.|||
