@@ -115,7 +115,10 @@ const Book = () => {
   }
 
   var isWishlisted = onWishlist("B", bookId);
-  const [heart, setHeart] = useState(isWishlisted)
+  const [heart, setHeart] = useState(false)
+  useEffect(() =>{
+    setHeart(onWishlist("B", bookId))
+  })
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
