@@ -91,31 +91,31 @@ Viikko 3
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
-|Tiistai 28.3.|||
+| Maanantai 27.3.|3|Asikastapaaminen, retro, planning|
+|Tiistai 28.3.|3||
 |Keskiviikko 29.3.|||
 |Torstai 30.3.|||
 |Perjantai 31.3.|||
-|Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Viikonloppu 1.-2.4.|4||
+|Yhteensä|10||
 Viikko 2
 |||
 | Maanantai 3.4.|||
 |Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
-|Torstai 6.4.|||
-|Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
-|Yhteensä|||
+|Keskiviikko 5.4.|3||
+|Torstai 6.4.|3||
+|Perjantai 7.4.|3||
+|Viikonloppu 8.-9.4.|4|Tähtien korjausta|
+|Yhteensä|13||
 Viikko 3
 |||
-| Maanantai 10.4.|||
+| Maanantai 10.4.|3|Tähtien korjausta|
 |Tiistai 11.4.|||
 |Keskiviikko 12.4.|||
-|Torstai 13.4.|||
-|Perjantai 14.4.|||
+|Torstai 13.4.|1|Sydämmen korjaus|
+|Perjantai 14.4.|2|Asiakastapaamisen suunnittelu|
 |Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
