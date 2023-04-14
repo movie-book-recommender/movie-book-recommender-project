@@ -199,10 +199,10 @@ Viikko 3
 | Maanantai 10.4.|3.5|Databaseen lisätty taulut, joissa leffat on rajoitettu niihin, joille on olemassa suosituksia (eli tageja); testit päivitetty; dokumentaation rakennetta ja päivitystarpeitä mietitty. Kirjojen data on jo lähtökohtaisesti rajoitettu niihin, joille on olemassa suosituksia.|
 |Tiistai 11.4.|0.5|Daily ja backlogin tsekkaus ja priorisointi|
 |Keskiviikko 12.4.|0.25|Daily, tiimipalaverien varaus|
-|Torstai 13.4.|||
-|Perjantai 14.4.|||
-|Viikonloppu 15.-16.4.|||
-|Yhteensä|3.5|Aiemmissa sprinteissä tehty n. 3 tuntia ylimääräistä työtä|
+|Torstai 13.4.|0.17|Daily|
+|Perjantai 14.4.|1|Daily, demon ja sprintin preppaus|
+|Viikonloppu 15.-16.4.|0|n/a|
+|Yhteensä|5|Sprintti yhteensä: 27 tuntia, aiemmissa sprinteissä tehty n. 3 tuntia ylimääräistä työtä.|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 - Algoritmi on tehokkaampi rajoitettujen csv tiedostojen ansiosta
