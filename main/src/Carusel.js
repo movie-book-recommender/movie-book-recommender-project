@@ -18,9 +18,9 @@ const DisplayMovie = ({ movie, recommendation, size }) => {
   return (
     <div className="movie-slot" key={movie.id}>
       <Card sx={{maxWidth: 166}} >
-        <CardMedia className="movie-pic" sx={{height: 180, width: '100%' }}>
+        <CardMedia class="movie-pic" >
           <Link to={`/movie/${movieId}`}>
-            <img className={size} src={imageSource} alt="movie poster" />
+            <img class={size} src={imageSource} alt="movie poster" />
           </Link>
         </CardMedia>
         <CardContent class="movie-info" >
@@ -35,14 +35,13 @@ const DisplayMovie = ({ movie, recommendation, size }) => {
 const DisplayBook = ({ book, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
-
   var imageSource = book.img ? book.img : image
   let bookId = recommendation ? book.similar_item_id : book.item_id
 
   return (
     <div className="movie-slot" key={bookId}>
       <Card sx={{maxWidth: 166}} >
-        <CardMedia class="movie-pic" sx={{ objectFit: 'cover' }}>
+        <CardMedia class="movie-pic" >
           <Link to={`/book/${bookId}`}>
             <img class={size} src={imageSource} alt="book cover" />
           </Link>

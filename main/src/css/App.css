@@ -158,7 +158,7 @@
  }
 
 .movie-info {
-  padding: 2px 5px;
+  padding: 3px 5px 5px;
 }
 
  .movie-info,
@@ -201,14 +201,10 @@
 .css-xqhexu-MuiPaper-root-MuiAppBar-root {
   background-color: #003249 !important; 
   display: block !important;
-  position: sticky !important;
+  /*position: sticky !important;
   top: 0 !important;
-  z-index: 2000 !important;
+  z-index: 2000 !important;*/
 }
-
-/*.MuiAppBar-colorDefault{
-  background-color: rgb(255, 255, 255);
-}*/
 
  .react-multiple-carousel__arrow {
   background: #058ED9 !important;
@@ -216,10 +212,15 @@
   top: calc(35% + 5px)
  }
 
- .react-multiple-carousel__arrow:hover {
+.react-multiple-carousel__arrow--right:hover {
   background: #025DA3 !important;
   transform: translateX(3px);
- }
+}
+
+.react-multiple-carousel__arrow--left:hover {
+  background: #025DA3 !important;
+  transform: translateX(-3px);
+}
 
 .small-item-pic {
   width: fit-content ;

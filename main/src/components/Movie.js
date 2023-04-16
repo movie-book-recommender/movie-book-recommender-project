@@ -70,7 +70,8 @@ const Movie = () => {
   const [stars, setStars] = useState(0)
   useEffect(() =>{
     setStars(getCookie("M", movieId))
-  })
+  },[movieId])
+
   const ratingStars = {
     key: stars,
     size: 40,
@@ -110,7 +111,7 @@ const Movie = () => {
   const [heart, setHeart] = useState(false)
   useEffect(() =>{
     setHeart(onWishlist("M", movieId))
-  })
+  },[movieId])
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
@@ -131,8 +132,6 @@ const Movie = () => {
     );
   }
   
-
-
   var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
   const originaltitle = movie.originaltitle ? movie.originaltitle : "-"
   const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"

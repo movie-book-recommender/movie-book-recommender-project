@@ -81,7 +81,7 @@ const Book = () => {
   const [stars, setStars] = useState(0)
   useEffect(() =>{
     setStars(getCookie("B", bookId))
-  })
+  },[bookId])
   const ratingStars = {
     key: stars,
     size: 40,
@@ -121,7 +121,7 @@ const Book = () => {
   const [heart, setHeart] = useState(false)
   useEffect(() =>{
     setHeart(onWishlist("B", bookId))
-  })
+  },[bookId])
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,

@@ -5,7 +5,7 @@ const Navibar = () => {
   return (
     <AppBar className="navbar" position="static" color="default">
       <Link to={`/`} data-link="BookCine">
-        ItemLens
+        BookCine
       </Link>
       <Link to={`/wishlist`} data-link="Wishlist">
         Wishlist
@@ -21,4 +21,3 @@ const Navibar = () => {
 };
 
 export default Navibar;
-
