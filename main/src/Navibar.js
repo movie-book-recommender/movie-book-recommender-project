@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import AppBar from '@mui/material/AppBar';
 
 const Navibar = () => {
   return (
-    <div className="navbar">
-      <Link to={`/`} data-link="ItemLens">
+    <AppBar className="navbar" position="static" color="default">
+      <Link to={`/`} data-link="BookCine">
         ItemLens
       </Link>
       <Link to={`/wishlist`} data-link="Wishlist">
@@ -15,8 +16,9 @@ const Navibar = () => {
       <Link to={`/search`} data-link="Search">
         Search
       </Link>
-    </div>
+    </AppBar>
   );
 };
 
 export default Navibar;
+

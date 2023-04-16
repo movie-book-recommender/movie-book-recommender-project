@@ -76,6 +76,7 @@ const Book = () => {
   const recommendationsBooks = GetBookRecommendationsByID(bookId);
   const recommendationsMovies = GetMovieRecommendationsByID(bookId);
   const sameAuthor = GetBooksByAuthor(book.authors).filter(book => book.item_id.toString() !== bookId)
+  var [showMorePlot, setShowMorePlot] = useState(false)
 
   var stars = getCookie("B", bookId);
   const ratingStars = {
@@ -101,8 +102,10 @@ const Book = () => {
       )
     }else{
       return (
-        <Link onClick={() =>{removeRating("B", bookId)}}>
-          <p>Remove rating</p>
+        <Link onClick={() =>{removeRating("M", bookId)}}>
+          <button class="btn warning">
+            Remove rating
+          </button>
         </Link>
       )
     }
@@ -129,8 +132,8 @@ const Book = () => {
     );
   }
 
-  var imageSource = book.img ? book.img : image
-  var description = book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"');
+  const imageSource = book.img ? book.img : image
+  const description = book.description ? book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"') : "-"
 
   return (
     <div className="book-page-wrapper">
@@ -151,7 +154,12 @@ const Book = () => {
       </Card>
       <div class="box">
         <h3>Summary of the plot:</h3>
-        <p>{description}</p>
+        <p>
+          {showMorePlot ? description : `${description.substring(0, 250)}`}
+          <Link class="show-more-less" onClick={() => setShowMorePlot(!showMorePlot)}>
+            {showMorePlot ? "Show less" : "Show more"}
+          </Link>
+        </p>
         <h3>Authors:</h3>
         <p>
           {book.authors}
@@ -182,7 +190,7 @@ const Book = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export { Book, GetBookByID };
