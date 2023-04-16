@@ -44,7 +44,7 @@ const LoadingAnimation = () =>{
     }else{
       setShow(false)
     }
-  },[]);
+  },[showLoading]);
   if (show) {
     return (
       <Box sx={{ textAlign: "center" }}>
@@ -71,29 +71,61 @@ const updateRatings = () =>{
     Movies: movieRatings
   }
 }
+const DisplayTitle = ({text}) =>{
+  const[show, setShow] = useState(true)
+  useEffect(() =>{
+    if(showLoading){
+      setShow(false)
+    }else{
+      setShow(true)
+    }
+  },[showLoading]);
+  if (show){
+    return (
+      <h2>{text}</h2>
+    );
+  }
+}
 var showLoading = false
 const UpdateRecommendations = () =>{
   const [update, setUpdate] = useState(false)
   const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
+  const [recievedBooks, setRecievedBooks] = useState(getRecommended("B"))
   useEffect(() => {
     axios
-    .get(`http://128.214.253.51:3000/dbgetpersonalmovierecommendations?ratings=${JSON.stringify(ratings)}`)
+    .get(`http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(ratings)}`)
     .then((response) => {
-      var info = []
-      for(var i = 0; i<response.data.length; i++){
-        var posterpath = ""
-        if(response.data[i].posterpath === null){
-          posterpath = "null"
-        }else{
-          posterpath = response.data[i].posterpath.toString()
+      if(response.data.value !== 'not available'){
+        var infoMovies = []
+        for(var i = 0; i<response.data.movies.length; i++){
+          var posterpath = ""
+          if(response.data.movies[i].posterpath === null){
+            posterpath = "null"
+          }else{
+            posterpath = response.data.movies[i].posterpath.toString()
+          }
+          infoMovies[i] = response.data.movies[i].movieid.toString() + "%" 
+                  + response.data.movies[i].title.toString() + "%" 
+                  + posterpath
         }
-        info[i] = response.data[i].movieid.toString() + "%" 
-                + response.data[i].title.toString() + "%" 
-                + posterpath
+        var infoBooks = []
+        for(var i = 0; i<response.data.books.length; i++){
+          var image = ""
+          if(response.data.books[i].img === null){
+            image = "null"
+          }else{
+            image = response.data.books[i].img.toString()
+          }
+          infoBooks[i] = response.data.books[i].item_id.toString() + "%" 
+                  + response.data.books[i].title.toString() + "%" 
+                  + image
+        }
+        setRecommended("M", infoMovies)
+        setRecommended("B", infoBooks)
+        showLoading = false
+        setRecievedBooks(getRecommended("B"))
+        setRecievedMovies(getRecommended("M"))
       }
-      setRecommended("M", info)
-      showLoading = false
-      setRecievedMovies(getRecommended("M"))
     })
   }, [update]);
 
@@ -101,6 +133,7 @@ const UpdateRecommendations = () =>{
     setRatingChange(false)
     setButton(true)
     setRecievedMovies([])
+    setRecievedBooks([])
     showLoading = true
     updateRatings()
     setUpdate(!update)
@@ -116,8 +149,11 @@ const UpdateRecommendations = () =>{
   return (
     <div>
       <Button variant="contained" disabled={disableButton} onClick={() =>{Update()}}>Update</Button>
+      <DisplayTitle text={"Recommended movies for you"}/>
       <LoadingAnimation/>
       <Items items={recievedMovies} page={"movies"} recommendation={true} size={"medium-item-pic"} />
+      <DisplayTitle text={"Recommended books for you"}/>
+      <Items items={recievedBooks} page={"books"} recommendation={true} size={"medium-item-pic"} />
     </div>
   )
 }
@@ -133,7 +169,6 @@ const MainPage = ({ page }) => {
         <Items items={movies} page={"movies"} size={"medium-item-pic"} />
         <h2>Top 10 newest books</h2>
         <Items items={books} page={"books"} size={"medium-item-pic"} />
-        <h2>Recommended movies for you</h2>
         <p>
           Please rate at least one movie and one book to receive personal
           recommendations.
@@ -148,7 +183,6 @@ const MainPage = ({ page }) => {
       <h2>Top 10 newest books</h2>
 
       <Items items={books} page={"books"} size={"medium-item-pic"}/>
-      <h2>Recommended movies for you</h2>
       <UpdateRecommendations/>
     </div>
   );

@@ -8,14 +8,13 @@ describe("Itemlens' movie main page ", function () {
   });
 
   it("home page has no recommendations at first", function () {
-    cy.contains("Recommended movies for you");
     cy.contains(
       "Please rate at least one movie and one book to receive personal recommendations."
     );
   });
 
   it("home page shows relevant recommendations after rating", function () {
-    cy.contains("What About Love").click();
+    cy.contains("The Lego Movie").click();
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='0']").click();
     });
@@ -32,18 +31,17 @@ describe("Itemlens' movie main page ", function () {
     cy.wait(1000);
     cy.contains("Update").click();
     cy.wait(10000);
-    cy.contains("Company Man");
+    cy.contains("Down from the Mountain");
   });
 
   it("home page has no recommendations at first", function () {
-    cy.contains("Recommended movies for you");
     cy.contains(
       "Please rate at least one movie and one book to receive personal recommendations."
     );
   });
 
   it("home page shows relevant recommendations after rating", function () {
-    cy.contains("What About Love").click();
+    cy.contains("The Lego Movie").click();
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='0']").click();
     });
@@ -60,6 +58,6 @@ describe("Itemlens' movie main page ", function () {
     cy.wait(1000);
     cy.contains("Update").click();
     cy.wait(10000);
-    cy.contains("Company Man");
+    cy.contains("Down from the Mountain");
   });
 });
