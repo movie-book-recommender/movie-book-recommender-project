@@ -55,9 +55,9 @@ Viikko 3
 |Tiistai 11.4.|3|Algoritmin toiminta jos ei ole arvostellut joko yhtään leffaa tai yhtään kirjaa|
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
-|Perjantai 14.4.|||
+|Perjantai 14.4.|2|Asiakastapaamisen suunnittelu|
 |Viikonloppu 15.-16.4.|1|Viikon dailyt|
-|Yhteensä|4||
+|Yhteensä|6|Yhteensä koko projektin aikana 169h|
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
