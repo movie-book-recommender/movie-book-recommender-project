@@ -18,7 +18,7 @@ describe("Itemlens book mainpage ", function () {
     cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
     cy.wait(1000);
 
-    cy.contains("WishList");
+    cy.contains("Wishlist");
     cy.contains("Ratings");
     cy.contains("Search");
   });
@@ -26,7 +26,7 @@ describe("Itemlens book mainpage ", function () {
     cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
     cy.wait(1000);
 
-    cy.contains("WishList").click();
+    cy.contains("Wishlist").click();
     cy.wait(1000);
 
     cy.contains("No items on Wishlist!");

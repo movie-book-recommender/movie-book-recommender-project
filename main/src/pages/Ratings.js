@@ -189,6 +189,7 @@ const Ratings = () => {
                 border: 2,
                 mx: "auto",
                 textAlign: "center",
+                zIndex: '3000 !import',
               }}
             >
               <p>Removed all ratings for movies</p>

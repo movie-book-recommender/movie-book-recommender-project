@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-describe("Itemlens' movie mainpage ", function () {
+describe("BookCine's movie mainpage ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/");
     cy.wait(1000);
@@ -31,7 +31,7 @@ describe("Itemlens' movie mainpage ", function () {
   });
 
   it("opens movie page when movie title is clicked", function () {
-    cy.get(".movie-info").eq(0).click("left");
+    cy.get(".movie-info").eq(0).click();
     cy.contains("Your rating");
   });
 });

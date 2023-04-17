@@ -10,6 +10,7 @@ import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
 import Items from "../Carusel";
+import "../css/App.css";
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -67,7 +68,8 @@ const Movie = () => {
   const [stars, setStars] = useState(0);
   useEffect(() => {
     setStars(getCookie("M", movieId));
-  });
+  }, [movieId]);
+
   const ratingStars = {
     key: stars,
     size: 40,
@@ -80,6 +82,7 @@ const Movie = () => {
       setStars(newValue);
     },
   };
+
   const removeRating = (borm, movieId) => {
     setCookie(borm, movieId, 0, 5);
     updateCookies();
@@ -96,7 +99,7 @@ const Movie = () => {
             removeRating("M", movieId);
           }}
         >
-          <p>Remove rating</p>
+          <button class="btn warning">Remove rating</button>
         </Link>
       );
     }
@@ -107,7 +110,8 @@ const Movie = () => {
   useEffect(() => {
     setHeart(onWishlist("M", movieId));
     console.log("Beep");
-  });
+  }, [movieId]);
+
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
@@ -173,25 +177,32 @@ const Movie = () => {
       <div class="box">
         <Stack direction="row" spacing={1}>
           {genres.map((genre) => (
-            <Chip label={genre} variant="outlined" />
+            <Chip
+              label={genre}
+              variant="outlined"
+              style={{ color: "#003249", borderColor: "#003249" }}
+            />
           ))}
         </Stack>
         <h3>Summary of the plot:</h3>
         <p>
           {showMorePlot ? plotsummary : `${plotsummary.substring(0, 250)}`}
-          <button class="btn" onClick={() => setShowMorePlot(!showMorePlot)}>
+          <Link
+            class="show-more-less"
+            onClick={() => setShowMorePlot(!showMorePlot)}
+          >
             {showMorePlot ? "Show less" : "Show more"}
-          </button>
+          </Link>
         </p>
         <h3>Actors:</h3>
         <p>
           {showMoreActors ? actors : `${actors.substring(0, 100)}`}
-          <button
-            class="btn"
+          <Link
+            class="show-more-less"
             onClick={() => setShowMoreActors(!showMoreActors)}
           >
             {showMoreActors ? "Show less" : "Show more"}
-          </button>
+          </Link>
         </p>
         <h3>Directors:</h3>
         <p>{movie.directors}</p>

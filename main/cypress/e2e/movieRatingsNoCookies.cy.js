@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Movie ratings", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/");

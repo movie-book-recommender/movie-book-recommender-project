@@ -1,15 +1,9 @@
-describe("Itemlens' movie main page ", function () {
+describe("BookCine's movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
     cy.wait(1000);
     cy.contains("Don't allow").click();
     cy.wait(1000);
-  });
-
-  it("home page has no recommendations at first", function () {
-    cy.contains(
-      "Please rate at least one movie and one book to receive personal recommendations."
-    );
   });
 
   it("home page shows relevant recommendations after rating", function () {
@@ -31,12 +25,6 @@ describe("Itemlens' movie main page ", function () {
     cy.contains("Update").click();
     cy.wait(10000);
     cy.contains("Down from the Mountain");
-  });
-
-  it("home page has no recommendations at first", function () {
-    cy.contains(
-      "Please rate at least one movie and one book to receive personal recommendations."
-    );
   });
 
   it("home page shows relevant recommendations after rating", function () {

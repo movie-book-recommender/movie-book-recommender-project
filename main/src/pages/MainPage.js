@@ -61,6 +61,7 @@ var ratings = {
   Books: bookRatings,
   Movies: movieRatings,
 };
+
 const updateRatings = () => {
   bookRatings = getCookies("B");
   movieRatings = getCookies("M");
@@ -69,6 +70,7 @@ const updateRatings = () => {
     Movies: movieRatings,
   };
 };
+
 const DisplayTitle = ({ text }) => {
   const [show, setShow] = useState(true);
   useEffect(() => {
@@ -87,6 +89,7 @@ const UpdateRecommendations = () => {
   const [update, setUpdate] = useState(false);
   const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
   const [recievedBooks, setRecievedBooks] = useState(getRecommended("B"));
+
   useEffect(() => {
     axios
       .get(
@@ -132,6 +135,11 @@ const UpdateRecommendations = () => {
           setRecievedBooks(getRecommended("B"));
           setRecievedMovies(getRecommended("M"));
         }
+        setRecommended("M", infoMovies);
+        setRecommended("B", infoBooks);
+        showLoading = false;
+        setRecievedBooks(getRecommended("B"));
+        setRecievedMovies(getRecommended("M"));
       });
   }, [update]);
 
@@ -144,6 +152,7 @@ const UpdateRecommendations = () => {
     updateRatings();
     setUpdate(!update);
   };
+
   const [disableButton, setButton] = useState(true);
   useEffect(() => {
     if (getRatingChange()) {
@@ -152,6 +161,7 @@ const UpdateRecommendations = () => {
       setButton(true);
     }
   }, []);
+
   return (
     <div>
       <Button
@@ -202,10 +212,9 @@ const MainPage = ({ page }) => {
   }
   return (
     <div className="page-container">
-      <h2>Top 10 newest movies</h2>
+      <h2>Highest rated movies</h2>
       <Items items={movies} page={"movies"} size={"medium-item-pic"} />
-      <h2>Top 10 newest books</h2>
-
+      <h2>Highest rated books</h2>
       <Items items={books} page={"books"} size={"medium-item-pic"} />
       <UpdateRecommendations />
     </div>

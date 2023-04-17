@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-describe("Itemlens' movie main page ", function () {
+describe("BookCine's movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
     cy.wait(1000);

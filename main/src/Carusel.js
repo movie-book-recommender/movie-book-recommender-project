@@ -1,43 +1,35 @@
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 
-import "./css/App.css";
 import "react-multi-carousel/lib/styles.css";
+import "./css/App.css";
 
 import image from "./assets/NoImage.jpg";
+import { Card, CardContent, CardMedia } from "@mui/material";
+import LocalMoviesRoundedIcon from "@mui/icons-material/LocalMoviesRounded";
+import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 
 const DisplayMovie = ({ movie, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
-
   var imageSource = movie.posterpath
     ? `https://image.tmdb.org/t/p/original${movie.posterpath}`
     : image;
+  let movieId = recommendation ? movie.similar_item_id : movie.movieid;
 
-  if (recommendation === true) {
-    return (
-      <div className="movie-slot">
-        <div className="movie-pic" key={movie.similar_item_id}>
-          <Link to={`/movie/${movie.similar_item_id}`}>
+  return (
+    <div className="movie-slot" key={movie.id}>
+      <Card sx={{ maxWidth: 166 }}>
+        <CardMedia class="movie-pic">
+          <Link to={`/movie/${movieId}`}>
             <img class={size} src={imageSource} alt="movie poster" />
           </Link>
-        </div>
-        <div className="movie-info">
-          <Link to={`/movie/${movie.similar_item_id}`}>{movie.title}</Link>
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div className="movie-slot">
-      <div className="movie-pic" key={movie.id}>
-        <Link to={`/movie/${movie.movieid}`}>
-          <img class={size} src={imageSource} alt="movie poster" />
-        </Link>
-      </div>
-      <div className="movie-info">
-        <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>
-      </div>
+        </CardMedia>
+        <CardContent class="movie-info">
+          <LocalMoviesRoundedIcon />
+          <Link to={`/movie/${movieId}`}>{movie.title}</Link>
+        </CardContent>
+      </Card>
     </div>
   );
 };
@@ -45,38 +37,27 @@ const DisplayMovie = ({ movie, recommendation, size }) => {
 const DisplayBook = ({ book, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
-
   var imageSource = book.img ? book.img : image;
+  let bookId = recommendation ? book.similar_item_id : book.item_id;
 
-  if (recommendation === true) {
-    return (
-      <div className="movie-slot">
-        <div className="movie-pic" key={book.similar_item_id}>
-          <Link to={`/book/${book.similar_item_id}`}>
-            <img class={size} src={imageSource} alt="book poster" />
-          </Link>
-        </div>
-        <div className="movie-info">
-          <Link to={`/book/${book.similar_item_id}`}>{book.title}</Link>
-        </div>
-      </div>
-    );
-  }
   return (
-    <div className="movie-slot">
-      <div className="movie-pic" key={book.item_id}>
-        <Link to={`/book/${book.item_id}`}>
-          <img class={size} src={imageSource} alt="book poster" />
-        </Link>
-      </div>
-      <div className="movie-info">
-        <Link to={`/book/${book.item_id}`}>{book.title}</Link>
-      </div>
+    <div className="movie-slot" key={bookId}>
+      <Card sx={{ maxWidth: 166 }}>
+        <CardMedia class="movie-pic">
+          <Link to={`/book/${bookId}`}>
+            <img class={size} src={imageSource} alt="book cover" />
+          </Link>
+        </CardMedia>
+        <CardContent class="movie-info">
+          <MenuBookRoundedIcon />
+          <Link to={`/book/${bookId}`}>{book.title}</Link>
+        </CardContent>
+      </Card>
     </div>
   );
 };
 
-const Items = ({ items, page, size, recommendation }) => (
+const Items = ({ items, page, size, recommendation = false }) => (
   // Argument "recommendation" is not always necessary, only when displaying recommendations.
   <div className="page-container">
     <Carousel
@@ -100,7 +81,7 @@ const Items = ({ items, page, size, recommendation }) => (
         desktop: {
           breakpoint: {
             max: 3000,
-            min: 1024,
+            min: 1280,
           },
           items: 6,
           slidesToSlide: 6,
@@ -111,6 +92,14 @@ const Items = ({ items, page, size, recommendation }) => (
             min: 0,
           },
           items: 1,
+        },
+        small_desktop: {
+          breakpoint: {
+            max: 1280,
+            min: 1024,
+          },
+          items: 5,
+          slidesToSlide: 5,
         },
         tablet: {
           breakpoint: {
@@ -136,6 +125,7 @@ const Items = ({ items, page, size, recommendation }) => (
               movie={item}
               page={page}
               size={size}
+              recommendation={recommendation}
             />
           ))
         : items.map((item) => (
