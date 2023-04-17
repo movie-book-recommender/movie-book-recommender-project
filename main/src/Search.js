@@ -1,75 +1,74 @@
-import { Link } from "react-router-dom";
-import {
-  Dropdown,
-  Header,
-  Image,
-  Icon,
-  Input,
-  Button,
-  Label,
-} from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
+
+import { Dropdown, Header, Image, Button } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import image from "./NoImage.jpg";
+import image from "./assets/NoImage.jpg";
 
 const DisplayMovie = ({ movie }) => {
+  const navigate = useNavigate();
+
   var imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
   if (movie.posterpath === null) imageSource = image;
   return (
     <Dropdown.Item
-      key={movie.id}
+      value={movie.movieid}
+      onClick={() => {
+        navigate(`/movie/${movie.movieid}`);
+      }}
+      key={movie.movieid}
       content={
         <Header
           image={
-            <Image
-              src={imageSource}
-              href={<Link to={`/movie/${movie.movieid}`}></Link>}
-              size="massive"
-              verticalAlign="middle"
-            />
+            <Image src={imageSource} size="massive" verticalAlign="middle" />
           }
-          content={<Link to={`/movie/${movie.movieid}`}>{movie.title}</Link>}
-          value={movie.id}
-          subheader={movie.releasedate.split(" ")[3]}
+          content={movie.title}
+          subheader={movie.releasedate && movie.releasedate.split(" ")[3]}
         />
       }
     ></Dropdown.Item>
   );
 };
 const DisplayBook = ({ book }) => {
+  const navigate = useNavigate();
+
   var imageSource = book.img;
   if (book.img === null) imageSource = image;
   return (
     <Dropdown.Item
       key={book.item_id}
+      value={book.item_id}
+      onClick={() => {
+        navigate(`/book/${book.item_id}`);
+      }}
       content={
         <Header
           size="medium"
           image={
-            <Image
-              src={imageSource}
-              href={<Link to={`/book/${book.item_id}`}></Link>}
-              size="massive"
-              verticalAlign="middle"
-            />
+            <Image src={imageSource} size="massive" verticalAlign="middle" />
           }
-          value={book.item_id}
-          content={<Link to={`/book/${book.item_id}`}>{book.title}</Link>}
+          content={book.title}
           subheader={book.year}
         />
       }
     ></Dropdown.Item>
   );
 };
-const Search = ({ page }) => {
+const Search = () => {
   const [item, setItem] = useState("");
+  const [placeholder, setPlaceHolder] = useState("Search ...");
+  const [bookB, setBookB] = useState(false);
+  const [movieB, setMovieB] = useState(true);
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
     setOptions([]);
+    const category = movieB ? "movies" : "books";
     if (item.length > 0) {
       axios
-        .get(`http://128.214.253.51:3000/dbsearch${page}byname?input=${item}`)
+        .get(
+          `http://128.214.253.51:3000/dbsearch${category}byname?input=${item}`
+        )
         .then((response) => {
           setOptions(response.data);
         });
@@ -80,43 +79,51 @@ const Search = ({ page }) => {
 
   useEffect(() => {
     setOptions([]);
-  }, [page]);
+  }, [bookB]);
 
   return (
     <div>
-<<<<<<< HEAD
-      <Input
-        icon="search"
-        placeholder="Search in ..."
-        fluid
-        iconPosition="left"
-      >
-        <input />
-        <Label>
-          <Button.Group>
-            <Button icon attached="right">
-              <Icon name="book" />
-            </Button>
-            <Button.Or />
-            <Button icon>
-              <Icon name="tv" />
-            </Button>
-          </Button.Group>
-        </Label>
-      </Input>
       <Dropdown
+        onClose={() => setOptions([])}
+        floating
         fluid
-        placeholder={`Search `}
         search
+        selection
+        placeholder={`${placeholder}`}
         icon="search"
-        iconPosition="right"
-        item
-        onSearchChange={({ target }) => setItem(target.value)}
-        noResultsMessage={null}
+        onSearchChange={({ target }) => {
+          setItem(target.value);
+        }}
       >
         <Dropdown.Menu>
+          <Dropdown.Header>
+            <Button.Group fluid>
+              <Button
+                toggle
+                active={bookB}
+                onClick={() => {
+                  setBookB(true);
+                  setMovieB(false);
+                  setPlaceHolder("Search in books");
+                }}
+                content="Search in books"
+              />
+
+              <Button.Or />
+              <Button
+                toggle
+                active={movieB}
+                onClick={() => {
+                  setBookB(false);
+                  setMovieB(true);
+                  setPlaceHolder("Search in movies");
+                }}
+                content="Search in movies"
+              />
+            </Button.Group>
+          </Dropdown.Header>
           {options.map((option) =>
-            page === "movies" ? (
+            movieB ? (
               <DisplayMovie movie={option} />
             ) : (
               <DisplayBook book={option} />
@@ -124,17 +131,6 @@ const Search = ({ page }) => {
           )}
         </Dropdown.Menu>
       </Dropdown>
-=======
-      <form>
-        <label>Search {page} </label>
-        <input
-          value={newSearch}
-          onChange={({ target }) => setNewSearch(target.value)}
-          placeholder={`Search ${page}`}
-        />
-      </form>
-      {newSearch && searchResult && <Items items={searchResult} page={page} size={"medium-item-pic"} />}
->>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
     </div>
   );
 };

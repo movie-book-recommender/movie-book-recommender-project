@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import "./css/App.css";
 import "react-multi-carousel/lib/styles.css";
 
-import image from "./NoImage.jpg";
+import image from "./assets/NoImage.jpg";
 
 const DisplayMovie = ({ movie, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
 
-  var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
+  var imageSource = movie.posterpath
+    ? `https://image.tmdb.org/t/p/original${movie.posterpath}`
+    : image;
 
   if (recommendation === true) {
     return (
@@ -44,7 +46,7 @@ const DisplayBook = ({ book, recommendation, size }) => {
   // Recommendation argument is used to detect if we are displaying recommendations or not.
   // Difference between recommended books and "normal" ones is the field in JSON "item_id" and "similar_item_id".
 
-  var imageSource = book.img ? book.img : image
+  var imageSource = book.img ? book.img : image;
 
   if (recommendation === true) {
     return (
@@ -129,10 +131,21 @@ const Items = ({ items, page, size, recommendation }) => (
     >
       {page === "movies"
         ? items.map((item) => (
-            <DisplayMovie key={item.movieid} movie={item} page={page} size={size} />
+            <DisplayMovie
+              key={item.movieid}
+              movie={item}
+              page={page}
+              size={size}
+            />
           ))
         : items.map((item) => (
-            <DisplayBook key={item.item_id} book={item} page={page} size={size} recommendation={recommendation} />
+            <DisplayBook
+              key={item.item_id}
+              book={item}
+              page={page}
+              size={size}
+              recommendation={recommendation}
+            />
           ))}
     </Carousel>
   </div>

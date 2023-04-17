@@ -28,19 +28,6 @@ const App = () => {
     }
   );
   const navigate = useNavigate();
-<<<<<<< HEAD
-  useEffect(() => {
-    navigate(`${page}`);
-  }, [page]);
-
-  const handleChange = () => {
-    if (page === "movies") setPage("books");
-    else setPage("movies");
-  };
-
-=======
-
->>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
   const AllowCookiesPopUp = () => {
     const setCookieConsent = (decision) => {
       localStorage.cookie = decision;
@@ -107,26 +94,13 @@ const App = () => {
         />
       </Helmet>
       <div className="page">
-<<<<<<< HEAD
-        <Navibar page={page} handleChange={handleChange} />
         <Routes>
-          <Route path="/:page" element={<MainPage page={page} />} />
-          <Route path="/:page/ratings" element={<Ratings page={page} />} />
-          <Route path="/:page/wishlist" element={<Wishlist page={page} />} />
-          <Route path="/:page/search" element={<SearchPage page={page} />} />
-          <Route path="/movie/:id" element={<Movie page={page} />} />
-          <Route path="/book/:id" element={<Book page={page} />} />
-          <Route path="/" element={<MainPage page={page} />} />
-=======
-        <Navibar />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/ratings" element={<Ratings />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/book/:id" element={<Book />} />
->>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
+          <Route path="/" element={<Navibar page={<MainPage />} />} />
+          <Route path="/ratings" element={<Navibar page={<Ratings />} />} />
+          <Route path="/wishlist" element={<Navibar page={<Wishlist />} />} />
+          <Route path="/search" element={<Navibar page={<SearchPage />} />} />
+          <Route path="/movie/:id" element={<Navibar page={<Movie />} />} />
+          <Route path="/book/:id" element={<Navibar page={<Book />} />} />
         </Routes>
         <AllowCookiesPopUp />
       </div>

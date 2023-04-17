@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Chip, Card, CardContent, CardMedia, Stack } from "@mui/material"
+import { Chip, Card, CardContent, CardMedia, Stack } from "@mui/material";
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 
-
-import image from "../NoImage.jpg";
+import image from "../assets/NoImage.jpg";
 import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
@@ -51,7 +50,6 @@ const GetRecommendedBooksByID = (id) => {
   return books;
 };
 
-
 const Movie = () => {
   //Gets the movieid from the url
   //The form for url is e.g. .../movie/12345
@@ -61,12 +59,12 @@ const Movie = () => {
   var movieId = parseHelper[1];
 
   const movie = GetMovieByID(movieId);
-  const [showMoreActors, setShowMoreActors] = useState(false)
-  const [showMorePlot, setShowMorePlot] = useState(false)
+  const [showMoreActors, setShowMoreActors] = useState(false);
+  const [showMorePlot, setShowMorePlot] = useState(false);
   const recommendedMovies = GetRecommendedMoviesByID(movieId);
   const recommendedBooks = GetRecommendedBooksByID(movieId);
 
-  const [stars, setStars] = useState(getCookie("M", movieId))
+  const [stars, setStars] = useState(getCookie("M", movieId));
   const ratingStars = {
     size: 40,
     count: 5,
@@ -75,39 +73,41 @@ const Movie = () => {
     onChange: (newValue) => {
       setCookie("M", movieId, newValue, 5);
       updateCookies();
-      setStars(newValue)
+      setStars(newValue);
     },
   };
   const removeRating = (borm, movieId) => {
     setCookie(borm, movieId, 0, 5);
     updateCookies();
-    setStars(0)
+    setStars(0);
   };
 
-  const isRated = () =>{
-    if(ratingStars.value === 0){
+  const isRated = () => {
+    if (ratingStars.value === 0) {
+      return <div></div>;
+    } else {
       return (
-        <div></div>
-      )
-    }else{
-      return (
-        <Link onClick={() =>{removeRating("M", movieId)}}>
+        <Link
+          onClick={() => {
+            removeRating("M", movieId);
+          }}
+        >
           <p>Remove rating</p>
         </Link>
-      )
+      );
     }
-  }
+  };
 
   var isWishlisted = onWishlist("M", movieId);
-  const [heart, setHeart] = useState(isWishlisted)
+  const [heart, setHeart] = useState(isWishlisted);
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
-      addToWishlist("M", movieId)
-      isWishlisted = onWishlist("M", movieId)
-      updateWishlist()
-      setHeart(isWishlisted)
+      addToWishlist("M", movieId);
+      isWishlisted = onWishlist("M", movieId);
+      updateWishlist();
+      setHeart(isWishlisted);
     },
   };
 
@@ -118,27 +118,34 @@ const Movie = () => {
       </div>
     );
   }
-  
 
-
-  var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
-  const originaltitle = movie.originaltitle ? movie.originaltitle : "-"
-  const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
-  const runtime = movie.runtime ? movie.runtime : "-"
-  const plotsummary = movie.plotsummary ? movie.plotsummary : "-"
-  const actors = movie.actors ? movie.actors : "-"
-  const genres = movie.genres ? movie.genres.split(",") : []
-
+  var imageSource = movie.posterpath
+    ? `https://image.tmdb.org/t/p/original${movie.posterpath}`
+    : image;
+  const originaltitle = movie.originaltitle ? movie.originaltitle : "-";
+  const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-";
+  const runtime = movie.runtime ? movie.runtime : "-";
+  const plotsummary = movie.plotsummary ? movie.plotsummary : "-";
+  const actors = movie.actors ? movie.actors : "-";
+  const genres = movie.genres ? movie.genres.split(",") : [];
 
   return (
     <div className="movie-page-wrapper">
       <h1>{movie.title}</h1>
-      <h5>{originaltitle} • {year} • {runtime} min</h5>
+      <h5>
+        {originaltitle} • {year} • {runtime} min
+      </h5>
       <Card class="movie" sx={{ maxWidth: 200 }}>
         <CardMedia>
           <img class="large-item-pic" src={imageSource} alt="movie-poster" />
-          <div class="heart" style={{ width: "2rem", position: "relative", top: -300, left: 5 }}>
-            <Heart {...heartElement} style = {{fill: heart ? "red": "grey", stroke: "black"}} />
+          <div
+            class="heart"
+            style={{ width: "2rem", position: "relative", top: -300, left: 5 }}
+          >
+            <Heart
+              {...heartElement}
+              style={{ fill: heart ? "red" : "grey", stroke: "black" }}
+            />
           </div>
         </CardMedia>
         <CardContent>
@@ -156,7 +163,9 @@ const Movie = () => {
       </Card>
       <div class="box">
         <Stack direction="row" spacing={1}>
-          {genres.map(genre => <Chip label={genre} variant="outlined" />)}
+          {genres.map((genre) => (
+            <Chip label={genre} variant="outlined" />
+          ))}
         </Stack>
         <h3>Summary of the plot:</h3>
         <p>
@@ -168,7 +177,10 @@ const Movie = () => {
         <h3>Actors:</h3>
         <p>
           {showMoreActors ? actors : `${actors.substring(0, 100)}`}
-          <button class="btn" onClick={() => setShowMoreActors(!showMoreActors)}>
+          <button
+            class="btn"
+            onClick={() => setShowMoreActors(!showMoreActors)}
+          >
             {showMoreActors ? "Show less" : "Show more"}
           </button>
         </p>
@@ -179,7 +191,11 @@ const Movie = () => {
       <div class="similar-movies">
         <h3>Similar movies</h3>
         {recommendedMovies.length > 0 ? (
-          <Items items={recommendedMovies} page={"movies"} size={"small-item-pic"} />
+          <Items
+            items={recommendedMovies}
+            page={"movies"}
+            size={"small-item-pic"}
+          />
         ) : (
           <p>could not find similar movies</p>
         )}
@@ -188,7 +204,12 @@ const Movie = () => {
       <div class="similar-books">
         <h3>Similiar books</h3>
         {recommendedBooks.length > 0 ? (
-          <Items items={recommendedBooks} page={"books"} recommendation={true} size={"small-item-pic"} />
+          <Items
+            items={recommendedBooks}
+            page={"books"}
+            recommendation={true}
+            size={"small-item-pic"}
+          />
         ) : (
           <p>could not find similiar books</p>
         )}
@@ -197,4 +218,4 @@ const Movie = () => {
   );
 };
 
-export { Movie, GetMovieByID }
+export { Movie, GetMovieByID };

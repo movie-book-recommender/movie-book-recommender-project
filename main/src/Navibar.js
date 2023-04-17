@@ -1,63 +1,113 @@
-import { Link } from "react-router-dom";
-import favicon from "./favicon.ico";
-import Search from "./Search";
 import React from "react";
-import SidebarExampleDimmed from "./pages/sidebar";
-// TODO: Update <Search> usage after its will be implemented
+import { useNavigate } from "react-router-dom";
+
+import "./css/App.css";
+import favicon from "./assets/logo.png";
+import Search from "./Search";
 import {
-  Menu,
-  Dropdown,
   Grid,
-  Header,
-  Segment,
-  Button,
+  Icon,
   Image,
+  Menu,
+  Segment,
+  Sidebar,
+  Button,
 } from "semantic-ui-react";
 
-const MenuExampleAttached = ({ page }) => (
-  <div>
-    <Menu attached="top">
-      <Button
-        circular
-        compact
-        basic
-        content={
-          <Image src={favicon} size="mini" href={<Link to={`/`}></Link>} />
-        }
-      />
+const Navbar = ({ page }) => {
+  const navigate = useNavigate();
+  const [visible, setVisible] = React.useState(false);
 
-      <Menu.Menu tiny size="" position="right" fluid>
-        <Menu.Item>
-          <Search page={page} />
-        </Menu.Item>
-      </Menu.Menu>
-    </Menu>
-  </div>
-);
-
-const Navibar = () => {
   return (
-<<<<<<< HEAD
-    <>
-      <SidebarExampleDimmed page={page} />
-    </>
-=======
-    <div className="navbar">
-      <Link to={`/`} data-link="ItemLens">
-        ItemLens
-      </Link>
-      <Link to={`/wishlist`} data-link="Wishlist">
-        Wishlist
-      </Link>
-      <Link to={`/ratings`} data-link="Ratings">
-        Ratings
-      </Link>
-      <Link to={`/search`} data-link="Search">
-        Search
-      </Link>
+    <div className="menu">
+      <Sidebar.Pushable as={Segment}>
+        <Sidebar
+          as={Segment}
+          animation="push"
+          direction="top"
+          icon="labeled"
+          inverted
+          onHide={() => setVisible(false)}
+          visible={visible}
+          width="wide"
+          className=""
+        >
+          <Grid textAlign="center">
+            <Menu inverted icon="labeled">
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/wishlist`);
+                }}
+              >
+                <Icon name="heart" />
+                WishList
+              </Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/ratings`);
+                }}
+              >
+                <Icon name="star outline" />
+                Ratings
+              </Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/search`);
+                }}
+              >
+                <Icon name="search" />
+                Search
+              </Menu.Item>
+            </Menu>
+          </Grid>
+        </Sidebar>
+        <Sidebar.Pusher dimmed={visible}>
+          <Grid>
+            <Grid.Row verticalAlign="middle" stretched>
+              <Grid.Column width={3} textAlign="center">
+                <Button
+                  circular
+                  basic
+                  animated="fade"
+                  onClick={() => navigate("/")}
+                >
+                  <Button.Content visible>
+                    <Image src={favicon} size="tiny" centered />
+                  </Button.Content>
+                  <Button.Content hidden>Main Page</Button.Content>
+                </Button>
+              </Grid.Column>
+
+              <Grid.Column width={10}>
+                <Search page={page} />
+              </Grid.Column>
+
+              <Grid.Column width={3} floated="right">
+                <Button
+                  onClick={() => setVisible(true)}
+                  animated="fade"
+                  circular
+                  compact
+                  basic
+                  size="massive"
+                  textAlign="center"
+                >
+                  <Button.Content visible>
+                    <Icon name="sidebar" />
+                  </Button.Content>
+                  <Button.Content hidden>Menu</Button.Content>
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          {page}
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
     </div>
->>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
   );
 };
 
-export default Navibar;
+export default Navbar;
