@@ -48,7 +48,7 @@ describe("Book ratings no cookies", function () {
   it("can remove book rating", function () {
     cy.get(".navbar").contains("Ratings").click();
     cy.contains("You have rated 1 books.").should("exist");
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.get(".movie-pic").eq(12).children("a").click();
     cy.wait(1000);
@@ -64,7 +64,7 @@ describe("Book ratings no cookies", function () {
   it("can remove all book rating", function () {
     cy.get(".navbar").contains("Ratings").click();
     cy.contains("You have rated 1 books.").should("exist");
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.get(".movie-pic").eq(12).children("a").click();
     cy.wait(1000);
