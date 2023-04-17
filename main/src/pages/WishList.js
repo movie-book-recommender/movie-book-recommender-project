@@ -99,6 +99,7 @@ const DisplayBook = ({ bormId }) => {
       addToWishlist(borm, id);
       isWishlisted = onWishlist(borm, id);
       updateWishlist();
+      setHeart(isWishlisted);
     },
   };
 

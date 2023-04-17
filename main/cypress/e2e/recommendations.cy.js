@@ -2,25 +2,18 @@
 describe("Itemlens' movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
-    cy.contains("Allow").click()
-    cy.wait(1000)
+    cy.contains("Allow").click();
+    cy.wait(1000);
   });
   it("movie page contains movie recommendations", function () {
-    cy.get(".navbar").contains("Search").click();
-    cy.get("input").type("harry potter");
-    cy.get("[data-testid='SearchIcon']").click();
-    cy.wait(1000);
-    cy.get(".table-left").find(".table-item-title").eq(1).click();
+    cy.get(".movie-pic").eq(0).click();
+
     cy.contains("Similar movies");
-    cy.wait(2000);
-    cy.contains("Harry Potter and the Philosopher's Stone");
-    cy.contains("Similiar books");
-<<<<<<< HEAD
-    cy.wait(2000);
-=======
     cy.wait(1000);
->>>>>>> 4b31e714c95647ccbfb67731651aa5252936544d
-    cy.contains("Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)");
+    cy.contains("The Incredibles");
+    cy.contains("Similiar books");
+    cy.wait(1000);
+    cy.contains("Battle Bunny");
   });
 
   it("book page contains similar books", function () {

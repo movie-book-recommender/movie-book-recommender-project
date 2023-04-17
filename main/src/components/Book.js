@@ -77,8 +77,12 @@ const Book = () => {
     (book) => book.item_id.toString() !== bookId
   );
 
-  var stars = getCookie("B", bookId);
+  const [stars, setStars] = useState(0);
+  useEffect(() => {
+    setStars(getCookie("B", bookId));
+  });
   const ratingStars = {
+    key: stars,
     size: 40,
     count: 5,
     isHalf: false,
@@ -86,12 +90,14 @@ const Book = () => {
     onChange: (newValue) => {
       setCookie("B", bookId, newValue, 5);
       updateCookies();
+      setStars(newValue);
     },
   };
 
   const removeRating = (borm, id) => {
     setCookie(borm, id, 0, 5);
     updateCookies();
+    setStars(0);
   };
 
   const isRated = () => {
@@ -111,7 +117,10 @@ const Book = () => {
   };
 
   var isWishlisted = onWishlist("B", bookId);
-  const [heart, setHeart] = useState(isWishlisted);
+  const [heart, setHeart] = useState(false);
+  useEffect(() => {
+    setHeart(onWishlist("B", bookId));
+  });
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
@@ -130,7 +139,6 @@ const Book = () => {
       </div>
     );
   }
-
   var imageSource = book.img ? book.img : image;
   var description = book.description.replace(/\\n/g, " ").replace(/\\"/g, '"');
 

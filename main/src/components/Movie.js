@@ -64,8 +64,12 @@ const Movie = () => {
   const recommendedMovies = GetRecommendedMoviesByID(movieId);
   const recommendedBooks = GetRecommendedBooksByID(movieId);
 
-  const [stars, setStars] = useState(getCookie("M", movieId));
+  const [stars, setStars] = useState(0);
+  useEffect(() => {
+    setStars(getCookie("M", movieId));
+  });
   const ratingStars = {
+    key: stars,
     size: 40,
     count: 5,
     isHalf: false,
@@ -99,8 +103,13 @@ const Movie = () => {
   };
 
   var isWishlisted = onWishlist("M", movieId);
-  const [heart, setHeart] = useState(isWishlisted);
+  const [heart, setHeart] = useState(false);
+  useEffect(() => {
+    setHeart(onWishlist("M", movieId));
+    console.log("Beep");
+  });
   const heartElement = {
+    key: heart,
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {

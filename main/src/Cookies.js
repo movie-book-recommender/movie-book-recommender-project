@@ -4,6 +4,8 @@ var nonCookieBookRatings = []
 var nonCookieMovieRatings = []
 var nonCookieBookWishlist = []
 var nonCookieMovieWishlist = [] 
+var nonCookieBookRecommendations = []
+var nonCookieMovieRecommendations = []
 
 
 //Creates a new cookie with the movieid as the name of the cookie, 
@@ -229,33 +231,52 @@ function getCookies(borm){
 }
 
 function setRecommended(borm, listOfIds){
-  const d = new Date();
-  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  var recommendedIDs = ""
-  for(var i = 0;i < listOfIds.length; i++){
-    recommendedIDs =  recommendedIDs + "&" + listOfIds[i] 
+  if(localStorage.cookie === "Disallow"){
+    for(var i = 0;i < listOfIds.length; i++){
+      if(borm === "B"){
+        nonCookieBookRecommendations[i] = listOfIds[i]
+      }else{
+        nonCookieMovieRecommendations[i] = listOfIds[i]
+      }
+    }
+  }else{
+    const d = new Date();
+    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    var recommendedIDs = ""
+    for(var i = 0;i < listOfIds.length; i++){
+      recommendedIDs =  recommendedIDs + "&" + listOfIds[i] 
+    }
+    document.cookie = borm + "Recommendations" + "=" + recommendedIDs + ";" + expires + ";path=/";
   }
-  document.cookie = borm + "Recommendations" + "=" + recommendedIDs + ";" + expires + ";path=/";
 }
 
 function getRecommended(borm){
-  var cookies = document.cookie.split(";")
-  if(cookies[0] === '' || cookies.length === 0){
-    return []
-  }
-  var cookie = ""
-  for(var i = 0; i < cookies.length; i++){
-    if(i !== 0){
-      cookies[i] = cookies[i].substring(1)
-    } 
-    if(cookies[i].substring(0, 17) === borm + "Recommendations="){
-      cookie = cookies[i].substring(17)
-    }  
-  } 
   var recommended = []
-  recommended = cookie.split("&")
-  recommended.shift()
+  if(localStorage.cookie === "Disallow"){
+    if(borm === "B"){
+      recommended = nonCookieBookRecommendations
+    }else{
+      recommended = nonCookieMovieRecommendations
+    }
+  }else{
+    var cookies = document.cookie.split(";")
+    if(cookies[0] === '' || cookies.length === 0){
+      return []
+    }
+    var cookie = ""
+    for(var i = 0; i < cookies.length; i++){
+      if(i !== 0){
+        cookies[i] = cookies[i].substring(1)
+      } 
+      if(cookies[i].substring(0, 17) === borm + "Recommendations="){
+        cookie = cookies[i].substring(17)
+      }  
+    } 
+    var recommended = []
+    recommended = cookie.split("&")
+    recommended.shift()
+  }
   var recommendedItems = []
   for(var j = 0; j<recommended.length; j++){
     if(borm === "M"){
@@ -274,8 +295,18 @@ function getRecommended(borm){
       }
       recommendedItems[j] = id
     }else{
+      var info = recommended[j].split("%")
+      var poster = ""
+      if(info[2] === "null"){
+        poster = null
+      }else{
+        poster = info[2]
+      }
       const id = {
-        item_id: parseInt(recommended[j])
+        similar_item_id: parseInt(info[0]),
+        item_id: parseInt(info[0]),
+        title: info[1],
+        img: poster
       }
       recommendedItems[j] = id
     }

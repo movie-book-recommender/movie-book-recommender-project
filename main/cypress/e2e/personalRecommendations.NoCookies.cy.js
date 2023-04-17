@@ -1,9 +1,8 @@
-/* eslint-disable no-undef */
 describe("Itemlens' movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
     cy.wait(1000);
-    cy.contains("Allow").click();
+    cy.contains("Don't allow").click();
     cy.wait(1000);
   });
 

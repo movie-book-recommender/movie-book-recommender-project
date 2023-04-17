@@ -41,7 +41,7 @@ const Navbar = ({ page }) => {
                 }}
               >
                 <Icon name="heart" />
-                WishList
+                Wishlist
               </Menu.Item>
               <Menu.Item
                 onClick={() => {
