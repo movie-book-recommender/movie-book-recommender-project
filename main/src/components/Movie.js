@@ -111,7 +111,9 @@ const Movie = () => {
   const [heart, setHeart] = useState(false)
   useEffect(() =>{
     setHeart(onWishlist("M", movieId))
+    console.log("Beep")
   },[movieId])
+    
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
