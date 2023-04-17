@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-describe("Itemlens' movie main page ", function () {
+describe("BookCine's movie main page ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000");
     cy.wait(1000);
@@ -27,7 +27,7 @@ describe("Itemlens' movie main page ", function () {
       cy.get("[data-index='0']").click();
     });
     cy.wait(1000);
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.contains("Update").click();
     cy.wait(10000);
@@ -46,7 +46,7 @@ describe("Itemlens' movie main page ", function () {
       cy.get("[data-index='0']").click();
     });
     cy.wait(1000);
-    cy.contains("ItemLens").click();
+    cy.contains("BookCine").click();
     cy.wait(1000);
     cy.contains("180 Seconds").click();
     cy.wait(1000);
@@ -54,7 +54,7 @@ describe("Itemlens' movie main page ", function () {
       cy.get("[data-index='0']").click();
     });
     cy.wait(1000);
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.contains("Update").click();
     cy.wait(10000);

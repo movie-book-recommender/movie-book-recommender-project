@@ -11,6 +11,7 @@ import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
 import { updateCookies } from "../pages/Ratings";
 import { updateWishlist } from "../pages/WishList";
 import Items from "../Carusel";
+import "../css/App.css"
 
 const GetMovieByID = (id) => {
   const [movie, setMovie] = useState([]);
@@ -69,7 +70,8 @@ const Movie = () => {
   const [stars, setStars] = useState(0)
   useEffect(() =>{
     setStars(getCookie("M", movieId))
-  })
+  },[movieId])
+
   const ratingStars = {
     key: stars,
     size: 40,
@@ -81,12 +83,13 @@ const Movie = () => {
       updateCookies();
       setStars(newValue)
     },
-  };
+  }
+
   const removeRating = (borm, movieId) => {
     setCookie(borm, movieId, 0, 5);
     updateCookies();
     setStars(0)
-  };
+  }
 
   const isRated = () =>{
     if(ratingStars.value === 0){
@@ -96,7 +99,9 @@ const Movie = () => {
     }else{
       return (
         <Link onClick={() =>{removeRating("M", movieId)}}>
-          <p>Remove rating</p>
+          <button class="btn warning">
+            Remove rating
+          </button>
         </Link>
       )
     }
@@ -107,7 +112,8 @@ const Movie = () => {
   useEffect(() =>{
     setHeart(onWishlist("M", movieId))
     console.log("Beep")
-  })
+  },[movieId])
+    
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
@@ -128,8 +134,6 @@ const Movie = () => {
     );
   }
   
-
-
   var imageSource = movie.posterpath ? `https://image.tmdb.org/t/p/original${movie.posterpath}`  : image
   const originaltitle = movie.originaltitle ? movie.originaltitle : "-"
   const year = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
@@ -153,32 +157,34 @@ const Movie = () => {
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />
           <div>{isRated()}</div>
-          <Link
-            to={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button class="btn">Watch movie trailer</button>
-          </Link>
+            <Link
+              to={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button class="btn">
+                Watch movie trailer
+              </button>
+            </Link>
         </CardContent>
       </Card>
       <div class="box">
         <Stack direction="row" spacing={1}>
-          {genres.map(genre => <Chip label={genre} variant="outlined" />)}
+          {genres.map(genre => <Chip label={genre} variant="outlined" style={{color: '#003249', borderColor: '#003249'}} />)}
         </Stack>
         <h3>Summary of the plot:</h3>
         <p>
           {showMorePlot ? plotsummary : `${plotsummary.substring(0, 250)}`}
-          <button class="btn" onClick={() => setShowMorePlot(!showMorePlot)}>
+          <Link class="show-more-less" onClick={() => setShowMorePlot(!showMorePlot)}>
             {showMorePlot ? "Show less" : "Show more"}
-          </button>
+          </Link>
         </p>
         <h3>Actors:</h3>
         <p>
           {showMoreActors ? actors : `${actors.substring(0, 100)}`}
-          <button class="btn" onClick={() => setShowMoreActors(!showMoreActors)}>
+          <Link class="show-more-less" onClick={() => setShowMoreActors(!showMoreActors)}>
             {showMoreActors ? "Show less" : "Show more"}
-          </button>
+          </Link>
         </p>
         <h3>Directors:</h3>
         <p>{movie.directors}</p>

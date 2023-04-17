@@ -19,10 +19,10 @@ const GetBooks = () => {
       .get("http://128.214.253.51:3000/dbgettop10newestbooks")
       .then((response) => {
         setBooks(response.data);
-      });
-  }, []);
-  return books;
-};
+      })
+  }, [])
+  return books
+}
 
 const GetMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -31,10 +31,10 @@ const GetMovies = () => {
       .get("http://128.214.253.51:3000/dbgettop10newestpublishedmovies")
       .then((response) => {
         setMovies(response.data);
-      });
-  }, []);
-  return movies;
-};
+      })
+  }, [])
+  return movies
+}
 
 const LoadingAnimation = () =>{
   const[show, setShow] = useState(false)
@@ -52,10 +52,9 @@ const LoadingAnimation = () =>{
           <source src={loading} type="video/webm" />
         </video>
       </Box>
-    );
+    )
   }
 }
-
 
 var bookRatings = getCookies("B")
 var movieRatings = getCookies("M")
@@ -63,6 +62,7 @@ var ratings = {
   Books: bookRatings,
   Movies: movieRatings
 }
+
 const updateRatings = () =>{
   bookRatings = getCookies("B")
   movieRatings = getCookies("M")
@@ -71,6 +71,7 @@ const updateRatings = () =>{
     Movies: movieRatings
   }
 }
+
 const DisplayTitle = ({text}) =>{
   const[show, setShow] = useState(true)
   useEffect(() =>{
@@ -83,14 +84,15 @@ const DisplayTitle = ({text}) =>{
   if (show){
     return (
       <h2>{text}</h2>
-    );
+    )
   }
 }
 var showLoading = false
 const UpdateRecommendations = () =>{
   const [update, setUpdate] = useState(false)
-  const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
+  const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"))
   const [recievedBooks, setRecievedBooks] = useState(getRecommended("B"))
+
   useEffect(() => {
     axios
     .get(`http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(ratings)}`)
@@ -127,7 +129,7 @@ const UpdateRecommendations = () =>{
         setRecievedMovies(getRecommended("M"))
       }
     })
-  }, [update]);
+  }, [update])
 
   const Update = () =>{
     setRatingChange(false)
@@ -138,6 +140,7 @@ const UpdateRecommendations = () =>{
     updateRatings()
     setUpdate(!update)
   }
+
   const [disableButton, setButton] = useState(true)
   useEffect(() =>{
     if(getRatingChange()){
@@ -145,7 +148,8 @@ const UpdateRecommendations = () =>{
     }else{
       setButton(true)
     }
-  },[])  
+  },[])
+
   return (
     <div>
       <Button variant="contained" disabled={disableButton} onClick={() =>{Update()}}>Update</Button>
@@ -159,8 +163,8 @@ const UpdateRecommendations = () =>{
 }
 
 const MainPage = ({ page }) => {
-  const books = GetBooks();
-  const movies = GetMovies();
+  const books = GetBooks()
+  const movies = GetMovies()
   if (bookRatings.length === 0 && movieRatings.length === 0) {
     updateRatings()
     return (
@@ -174,18 +178,17 @@ const MainPage = ({ page }) => {
           recommendations.
         </p>
       </div>
-    );
+    )
   }
   return (
     <div className="page-container">
-      <h2>Top 10 newest movies</h2>
+      <h2>Highest rated movies</h2>
       <Items items={movies} page={"movies"} size={"medium-item-pic"} />
-      <h2>Top 10 newest books</h2>
-
+      <h2>Highest rated books</h2>
       <Items items={books} page={"books"} size={"medium-item-pic"}/>
       <UpdateRecommendations/>
     </div>
-  );
-};
+  )
+}
 
 export default MainPage;

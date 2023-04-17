@@ -76,11 +76,12 @@ const Book = () => {
   const recommendationsBooks = GetBookRecommendationsByID(bookId);
   const recommendationsMovies = GetMovieRecommendationsByID(bookId);
   const sameAuthor = GetBooksByAuthor(book.authors).filter(book => book.item_id.toString() !== bookId)
+  var [showMorePlot, setShowMorePlot] = useState(false)
 
   const [stars, setStars] = useState(0)
   useEffect(() =>{
     setStars(getCookie("B", bookId))
-  })
+  },[bookId])
   const ratingStars = {
     key: stars,
     size: 40,
@@ -107,8 +108,10 @@ const Book = () => {
       )
     }else{
       return (
-        <Link onClick={() =>{removeRating("B", bookId)}}>
-          <p>Remove rating</p>
+        <Link onClick={() =>{removeRating("M", bookId)}}>
+          <button class="btn warning">
+            Remove rating
+          </button>
         </Link>
       )
     }
@@ -118,7 +121,7 @@ const Book = () => {
   const [heart, setHeart] = useState(false)
   useEffect(() =>{
     setHeart(onWishlist("B", bookId))
-  })
+  },[bookId])
   const heartElement = {
     animationTrigger: "hover",
     isActive: heart,
@@ -137,8 +140,9 @@ const Book = () => {
       </div>
     );
   }
-  var imageSource = book.img ? book.img : image
-  var description = book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"');
+
+  const imageSource = book.img ? book.img : image
+  const description = book.description ? book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"') : "-"
 
   return (
     <div className="book-page-wrapper">
@@ -159,7 +163,12 @@ const Book = () => {
       </Card>
       <div class="box">
         <h3>Summary of the plot:</h3>
-        <p>{description}</p>
+        <p>
+          {showMorePlot ? description : `${description.substring(0, 250)}`}
+          <Link class="show-more-less" onClick={() => setShowMorePlot(!showMorePlot)}>
+            {showMorePlot ? "Show less" : "Show more"}
+          </Link>
+        </p>
         <h3>Authors:</h3>
         <p>
           {book.authors}
@@ -190,7 +199,7 @@ const Book = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export { Book, GetBookByID };

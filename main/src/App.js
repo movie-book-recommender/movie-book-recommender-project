@@ -94,8 +94,8 @@ const App = () => {
           content="Get movie and book recommendations based on your ratings!"
         />
       </Helmet>
+      <Navibar />
       <div className="page">
-        <Navibar />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/ratings" element={<Ratings />} />

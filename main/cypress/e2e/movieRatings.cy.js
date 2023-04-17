@@ -50,7 +50,7 @@ describe("Movie ratings", function () {
   it("can remove movie rating", function () {
     cy.get(".navbar").contains("Ratings").click();
     cy.contains("You have rated 1 movies.").should("exist");
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.get(".movie-pic").eq(1).click();
     cy.wait(1000);
@@ -66,7 +66,7 @@ describe("Movie ratings", function () {
   it("can remove all movie ratings", function () {
     cy.get(".navbar").contains("Ratings").click();
     cy.contains("You have rated 1 movies.").should("exist");
-    cy.get(".navbar").contains("ItemLens").click();
+    cy.get(".navbar").contains("BookCine").click();
     cy.wait(1000);
     cy.get(".movie-pic").eq(1).click();
     cy.wait(1000);
