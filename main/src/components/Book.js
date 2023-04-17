@@ -137,7 +137,6 @@ const Book = () => {
       </div>
     );
   }
-
   var imageSource = book.img ? book.img : image
   var description = book.description.replace(/\\n/g, ' ').replace(/\\"/g, '"');
 
