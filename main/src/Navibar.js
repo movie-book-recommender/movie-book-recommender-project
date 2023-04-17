@@ -16,6 +16,9 @@ const Navibar = () => {
       <Link to={`/search`} data-link="Search">
         Search
       </Link>
+      <Link to={`/about`} data-link="About">
+        About
+      </Link>
     </AppBar>
   );
 };

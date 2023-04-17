@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 
 import { Movie } from "./components/Movie";
 import { Book } from "./components/Book";
+import { About } from "./pages/About"
 import { Ratings } from "./pages/Ratings";
 import { Wishlist } from "./pages/WishList";
 import SearchPage from "./pages/SearchPage";
@@ -103,6 +104,7 @@ const App = () => {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/movie/:id" element={<Movie />} />
           <Route path="/book/:id" element={<Book />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <AllowCookiesPopUp />
       </div>
