@@ -171,7 +171,7 @@ Viikko 3
 |Tiistai 11.4.|||
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
-|Perjantai 14.4.|||
+|Perjantai 14.4.|3|asiakastapaamisen suunnittelu, logon tsekkailua|
 |Viikonloppu 15.-16.4.|||
 |Yhteensä|||
 
