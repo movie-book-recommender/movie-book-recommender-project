@@ -96,6 +96,7 @@
 .page-container {
   padding: 10px;
   display: block;
+  background-color:  rgb(218, 227, 243);
 }
 
 .movie-list{
