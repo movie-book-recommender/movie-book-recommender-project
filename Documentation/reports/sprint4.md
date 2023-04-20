@@ -44,17 +44,17 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 13.3.|||
-|Tiistai 14.3.|||
-|Keskiviikko 15.3.|||
-|Torstai 16.3.|||
-|Perjantai 17.3.|||
+| Maanantai 13.3.|2|asiakastapaaminen, retro, planning|
+|Tiistai 14.3.|2|dropdown searchiing tutustiminen|
+|Keskiviikko 15.3.|3|dropdown osaa käyttää ulkoista dataa|
+|Torstai 16.3.|3|dropdowning ulkoasun toteutus|
+|Perjantai 17.3.|3|dropdown toimii kirjoille ja leffoille|
 |Viikonloppu 18.-19-3.|||
-|Yhteensä|||
+|Yhteensä|13||
 Viikko 2
 |||
 | Maanantai 20.3.|||
-|Tiistai 21.3.|||
+|Tiistai 21.3.|2|testit search dropdownille|
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|||
 |Perjantai 24.3.|||

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Modal, Box, Button } from "@mui/material";
 
 import "../css/Ratings.css";
-import image from "../NoImage.jpg";
+import image from "../assets/NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
 import { GetMovieByID } from "../components/Movie";
 import { GetBookByID } from "../components/Book";
@@ -14,14 +14,14 @@ var cookiesB = getCookies("B");
 var cookiesM = getCookies("M");
 var ratingChangeStatus = false;
 
-const updateCookies = () =>{
-  cookiesB = getCookies("B")
-  cookiesM = getCookies("M")
-  ratingChangeStatus = true
-}
-const setRatingChange = (bool) =>{
-  ratingChangeStatus = bool
-}
+const updateCookies = () => {
+  cookiesB = getCookies("B");
+  cookiesM = getCookies("M");
+  ratingChangeStatus = true;
+};
+const setRatingChange = (bool) => {
+  ratingChangeStatus = bool;
+};
 
 const getRatingChange = () => {
   return ratingChangeStatus;

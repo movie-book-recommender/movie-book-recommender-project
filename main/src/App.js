@@ -8,7 +8,6 @@ import "react-multi-carousel/lib/styles.css";
 
 import { Movie } from "./components/Movie";
 import { Book } from "./components/Book";
-import { About } from "./pages/About"
 import { Ratings } from "./pages/Ratings";
 import { Wishlist } from "./pages/WishList";
 import SearchPage from "./pages/SearchPage";
@@ -29,7 +28,6 @@ const App = () => {
     }
   );
   const navigate = useNavigate();
-
   const AllowCookiesPopUp = () => {
     const setCookieConsent = (decision) => {
       localStorage.cookie = decision;
@@ -95,16 +93,14 @@ const App = () => {
           content="Get movie and book recommendations based on your ratings!"
         />
       </Helmet>
-      <Navibar />
       <div className="page">
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/ratings" element={<Ratings />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/book/:id" element={<Book />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Navibar page={<MainPage />} />} />
+          <Route path="/ratings" element={<Navibar page={<Ratings />} />} />
+          <Route path="/wishlist" element={<Navibar page={<Wishlist />} />} />
+          <Route path="/search" element={<Navibar page={<SearchPage />} />} />
+          <Route path="/movie/:id" element={<Navibar page={<Movie />} />} />
+          <Route path="/book/:id" element={<Navibar page={<Book />} />} />
         </Routes>
         <AllowCookiesPopUp />
       </div>

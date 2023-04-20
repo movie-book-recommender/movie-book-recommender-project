@@ -4,7 +4,8 @@ describe("Search Page ", function () {
     cy.visit("http://localhost:3000");
     cy.contains("Allow").click();
     cy.wait(1000);
-    cy.get(".navbar").contains("Search").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.contains("Search").click();
   });
 
   it("can be opened", function () {
@@ -12,7 +13,7 @@ describe("Search Page ", function () {
   });
 
   it("shows search result matching the keyword", function () {
-    cy.get("input").type("pirate");
+    cy.get("input").eq(1).type("pirate");
     cy.get("[data-testid='SearchIcon']").click();
     cy.wait(1000);
     cy.contains("Search result for 'pirate'");
@@ -21,18 +22,18 @@ describe("Search Page ", function () {
   });
 
   it("shows no result for mismatching keyword", function () {
-    cy.get("input").type("asdasd");
+    cy.get("input").eq(1).type("asdasd");
     cy.get("[data-testid='SearchIcon']").click();
     cy.contains("No result for 'asdasd'");
   });
 
   it("hides previous search after new search", function () {
-    cy.get("input").type("pirate");
+    cy.get("input").eq(1).type("pirate");
     cy.get("[data-testid='SearchIcon']").click();
     cy.contains("Pirates of Silicon Valley");
     cy.contains("Pirate Cinema");
-    cy.get("input").clear();
-    cy.get("input").type("harry potter");
+    cy.get("input").eq(1).clear();
+    cy.get("input").eq(1).type("harry potter");
     cy.get("[data-testid='SearchIcon']").click();
     cy.contains("Caesar Against the Pirates").should("not.exist");
     cy.contains("Pirate Cinema").should("not.exist");
@@ -40,7 +41,7 @@ describe("Search Page ", function () {
 
   it("show revelvant result for search by actor", function () {
     cy.get(".MuiNativeSelect-select").select("actor");
-    cy.get("input").type("johnny depp");
+    cy.get("input").eq(1).type("johnny depp");
     cy.get("[data-testid='SearchIcon']").click();
     cy.wait(1000);
     cy.contains("title A-Z").click();
@@ -52,7 +53,7 @@ describe("Search Page ", function () {
 
   it("show revelvant result for search by author", function () {
     cy.get(".MuiNativeSelect-select").select("author");
-    cy.get("input").type("jane austen");
+    cy.get("input").eq(1).type("jane austen");
     cy.get("[data-testid='SearchIcon']").click();
     cy.wait(1000);
     cy.contains("title A-Z").click();
@@ -64,7 +65,7 @@ describe("Search Page ", function () {
 
   it("show revelvant result for search by director", function () {
     cy.get(".MuiNativeSelect-select").select("director");
-    cy.get("input").type("tim burton");
+    cy.get("input").eq(1).type("tim burton");
     cy.get("[data-testid='SearchIcon']").click();
     cy.wait(1000);
     cy.contains("title A-Z").click();
@@ -76,7 +77,7 @@ describe("Search Page ", function () {
 
   describe("opens the item page after", function () {
     beforeEach(function () {
-      cy.get("input").type("harry potter");
+      cy.get("input").eq(1).type("harry potter");
       cy.get("[data-testid='SearchIcon']").click();
     });
 
@@ -103,7 +104,7 @@ describe("Search Page ", function () {
 
   describe("shows items in correct order after", function () {
     beforeEach(function () {
-      cy.get("input").type("harry potter");
+      cy.get("input").eq(1).type("harry potter");
       cy.get("[data-testid='SearchIcon']").click();
       cy.wait(1000);
     });
