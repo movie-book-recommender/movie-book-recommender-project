@@ -18,7 +18,6 @@ const SearchPage = () => {
   const movieSearchTypes = ["name", "actor", "director"]
   const bookSearchTypes = ["name", "author"]
 
-
   const handleSearch = (event) => {
     event.preventDefault()
 
@@ -91,7 +90,6 @@ const SearchPage = () => {
       .reverse();
     setSearchResultBooks(sortedByTitleDescBooks);
   };
-
   return(
     <div class="page-container">
       <h2>Search movies and books</h2>
