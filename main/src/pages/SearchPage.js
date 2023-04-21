@@ -1,71 +1,89 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from '@mui/icons-material/Search';
-import { Divider, IconButton, InputBase, NativeSelect, Paper } from "@mui/material"
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  Divider,
+  IconButton,
+  InputBase,
+  NativeSelect,
+  Paper,
+} from "@mui/material";
 
-import image from '../NoImage.jpg'
-import Table from "../Table"
+import image from "../assets/NoImage.jpg";
+import Table from "../Table";
 
 const SearchPage = () => {
-  const [searchResultMovies, setSearchResultMovies] = useState([])
-  const [searchResultBooks, setSearchResultBooks] = useState([])
-  const [searchKey, setSearchKey] = useState("")
-  const [newSearch, setNewSearch] = useState("")
+  const [searchResultMovies, setSearchResultMovies] = useState([]);
+  const [searchResultBooks, setSearchResultBooks] = useState([]);
+  const [searchKey, setSearchKey] = useState("");
+  const [newSearch, setNewSearch] = useState("");
 
-  const [searchType, setSearchType] = useState("name")
+  const [searchType, setSearchType] = useState("name");
 
-  const movieSearchTypes = ["name", "actor", "director"]
-  const bookSearchTypes = ["name", "author"]
+  const movieSearchTypes = ["name", "actor", "director"];
+  const bookSearchTypes = ["name", "author"];
 
   const handleSearch = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    if (movieSearchTypes.includes(searchType)){
+    if (movieSearchTypes.includes(searchType)) {
       axios
-      .get(`http://128.214.253.51:3000/dbsearchmoviesby${searchType}?input=${newSearch}`)
-      .then(response => {
-          setSearchResultMovies(response.data)
-      })
+        .get(
+          `http://128.214.253.51:3000/dbsearchmoviesby${searchType}?input=${newSearch}`
+        )
+        .then((response) => {
+          setSearchResultMovies(response.data);
+        });
     } else {
-      setSearchResultMovies([])
+      setSearchResultMovies([]);
     }
 
-    if (bookSearchTypes.includes(searchType)){
+    if (bookSearchTypes.includes(searchType)) {
       axios
-      .get(`http://128.214.253.51:3000/dbsearchbooksby${searchType}?input=${newSearch}`)
-      .then(response => {
-          setSearchResultBooks(response.data)
-      })
+        .get(
+          `http://128.214.253.51:3000/dbsearchbooksby${searchType}?input=${newSearch}`
+        )
+        .then((response) => {
+          setSearchResultBooks(response.data);
+        });
     } else {
-      setSearchResultBooks([])
+      setSearchResultBooks([]);
     }
 
-    setSearchKey(newSearch)
-    setNewSearch('')
-  }
+    setSearchKey(newSearch);
+    setNewSearch("");
+  };
 
   const handleSearchChange = (event) => {
-    console.log(event.target.value)
-    setNewSearch(event.target.value)
-  }
+    console.log(event.target.value);
+    setNewSearch(event.target.value);
+  };
 
   const handleSearchTypeChange = (event) => {
-    console.log(event.target.value)
-    setSearchType(event.target.value)
-  }
+    console.log(event.target.value);
+    setSearchType(event.target.value);
+  };
 
   const handleSortByReleaseOld = () => {
-    const sortedByReleaseNewMovies = [...searchResultMovies].sort(compareReleaseMovies);
+    const sortedByReleaseNewMovies = [...searchResultMovies].sort(
+      compareReleaseMovies
+    );
     setSearchResultMovies(sortedByReleaseNewMovies);
-    const sortedByReleaseNewBooks = [...searchResultBooks].sort(compareReleaseBooks)
-    setSearchResultBooks(sortedByReleaseNewBooks)
+    const sortedByReleaseNewBooks = [...searchResultBooks].sort(
+      compareReleaseBooks
+    );
+    setSearchResultBooks(sortedByReleaseNewBooks);
   };
 
   const handleSortByReleaseNew = () => {
-    const sortedByReleaseOldMovies = [...searchResultMovies].sort(compareReleaseMovies).reverse();
+    const sortedByReleaseOldMovies = [...searchResultMovies]
+      .sort(compareReleaseMovies)
+      .reverse();
     setSearchResultMovies(sortedByReleaseOldMovies);
-    const sortedByReleaseOldBooks = [...searchResultBooks].sort(compareReleaseBooks).reverse();
+    const sortedByReleaseOldBooks = [...searchResultBooks]
+      .sort(compareReleaseBooks)
+      .reverse();
     setSearchResultBooks(sortedByReleaseOldBooks);
   };
 
@@ -75,7 +93,7 @@ const SearchPage = () => {
     );
     setSearchResultMovies(sortedByTitleAscMovies);
     const sortedByTitleAscBooks = [...searchResultBooks].sort((a, b) =>
-    a.title.localeCompare(b.title)
+      a.title.localeCompare(b.title)
     );
     setSearchResultBooks(sortedByTitleAscBooks);
   };
@@ -90,22 +108,33 @@ const SearchPage = () => {
       .reverse();
     setSearchResultBooks(sortedByTitleDescBooks);
   };
-  return(
+
+  return (
     <div class="page-container">
       <h2>Search movies and books</h2>
-      <SearchBar handleSearch={handleSearch} handleSearchChange={handleSearchChange} handleSearchTypeChange={handleSearchTypeChange} newSearch={newSearch} searchType={searchType} />
+      <SearchBar
+        handleSearch={handleSearch}
+        handleSearchChange={handleSearchChange}
+        handleSearchTypeChange={handleSearchTypeChange}
+        newSearch={newSearch}
+        searchType={searchType}
+      />
       <div class="sort-container">
-          <p>
-              Sort by: 
-              <button onClick={handleSortByReleaseNew}>release newest first</button>
-              <button onClick={handleSortByReleaseOld}>release oldest first</button>
-              <button onClick={handleSortByTitleAsc}>title A-Z</button>
-              <button onClick={handleSortByTitleDesc}>title Z-A</button>
-          </p>
+        <p>
+          Sort by:
+          <button onClick={handleSortByReleaseNew}>release newest first</button>
+          <button onClick={handleSortByReleaseOld}>release oldest first</button>
+          <button onClick={handleSortByTitleAsc}>title A-Z</button>
+          <button onClick={handleSortByTitleDesc}>title Z-A</button>
+        </p>
       </div>
-      <SearchResult searchResultMovies={searchResultMovies} searchResultBooks={searchResultBooks} searchKey={searchKey} />
+      <SearchResult
+        searchResultMovies={searchResultMovies}
+        searchResultBooks={searchResultBooks}
+        searchKey={searchKey}
+      />
     </div>
-  )
+  );
 };
 
 export default SearchPage;
@@ -128,17 +157,21 @@ function compareReleaseBooks(a, b) {
   return 0;
 }
 
-const SearchBar = ({ handleSearch, handleSearchChange, handleSearchTypeChange, newSearch, searchType}) => {
+const SearchBar = ({
+  handleSearch,
+  handleSearchChange,
+  handleSearchTypeChange,
+  newSearch,
+  searchType,
+}) => {
   return (
     <div class="search-bar">
       <form onSubmit={handleSearch}>
-        <Paper
-          sx={{display: 'flex', alignItems: 'center', width: 500 }}
-        >
+        <Paper sx={{ display: "flex", alignItems: "center", width: 500 }}>
           <NativeSelect
             value={searchType}
             disableUnderline
-            sx={{ml: 1}}
+            sx={{ ml: 1 }}
             onChange={handleSearchTypeChange}
           >
             <option value="name">title</option>
@@ -148,53 +181,56 @@ const SearchBar = ({ handleSearch, handleSearchChange, handleSearchTypeChange, n
           </NativeSelect>
           <Divider orientation="vertical" flexItem />
           <InputBase
-            sx={{flex: 1, ml: 1}}
+            sx={{ flex: 1, ml: 1 }}
             size="small"
             placeholder="Search from library"
-            inputProps={{ 'aria-label': 'search' }}
+            inputProps={{ "aria-label": "search" }}
             onChange={handleSearchChange}
             value={newSearch}
           />
-          <IconButton
-            type="submit"
-            sx={{ p: '5px' }}
-            aria-label="search"
-          >
+          <IconButton type="submit" sx={{ p: "5px" }} aria-label="search">
             <SearchIcon />
           </IconButton>
         </Paper>
       </form>
     </div>
-  )
-}
+  );
+};
 
-const SearchResult = ({searchResultMovies, searchResultBooks, searchKey}) => {
-  if ((searchResultMovies.length !== 0 || searchResultBooks.length !==0) && searchKey !== ""){
-    let movies = searchResultMovies.map(movie => <DisplayMovie key={movie.id} movie={movie} />)
-    let books = searchResultBooks.map(book => <DisplayBook key={book.id} book={book} />)
-    return(
+const SearchResult = ({ searchResultMovies, searchResultBooks, searchKey }) => {
+  if (
+    (searchResultMovies.length !== 0 || searchResultBooks.length !== 0) &&
+    searchKey !== ""
+  ) {
+    let movies = searchResultMovies.map((movie) => (
+      <DisplayMovie key={movie.id} movie={movie} />
+    ));
+    let books = searchResultBooks.map((book) => (
+      <DisplayBook key={book.id} book={book} />
+    ));
+    return (
       <div class="search-result">
         <h2>Search result for '{searchKey}'</h2>
         <Table movies={movies} books={books} />
       </div>
-    )
-  } else if (searchKey !== ""){
-    return(
+    );
+  } else if (searchKey !== "") {
+    return (
       <div class="search-result">
         <h2>No result for '{searchKey}'</h2>
       </div>
-    )
+    );
   }
-}
+};
 
-const DisplayMovie = ({movie}) => {
-  const genrelist = movie.genres ? movie.genres.split(",") : []
-  const releaseYear = movie.releasedate ? movie.releasedate.split(" ")[3] : "-"
-  let imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`
-  if(movie.posterpath === null){
-      imageSource = image
+const DisplayMovie = ({ movie }) => {
+  const genrelist = movie.genres ? movie.genres.split(",") : [];
+  const releaseYear = movie.releasedate ? movie.releasedate.split(" ")[3] : "-";
+  let imageSource = `https://image.tmdb.org/t/p/original${movie.posterpath}`;
+  if (movie.posterpath === null) {
+    imageSource = image;
   }
-  return(
+  return (
     <div class="table-item">
       <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
@@ -203,28 +239,27 @@ const DisplayMovie = ({movie}) => {
       </div>
       <div class="table-item-info">
         <div class="table-item-title">
-          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link> ({releaseYear})
+          <Link to={`/movie/${movie.movieid}`}>{movie.title}</Link> (
+          {releaseYear})
         </div>
-        <div>
-          {movie.runtime} min
-        </div>
-        <div class="table-item-rate">
-          Your rate:
-        </div>
+        <div>{movie.runtime} min</div>
+        <div class="table-item-rate">Your rate:</div>
         <div class="genres">
-          {genrelist.map(genre => <div class="genre-badge">{genre}</div>)}
+          {genrelist.map((genre) => (
+            <div class="genre-badge">{genre}</div>
+          ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-const DisplayBook = ({book}) => {
-  let imageSource = book.img
-  if(imageSource === null){
-      imageSource = image
+const DisplayBook = ({ book }) => {
+  let imageSource = book.img;
+  if (imageSource === null) {
+    imageSource = image;
   }
-  return(
+  return (
     <div class="table-item">
       <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
@@ -235,13 +270,9 @@ const DisplayBook = ({book}) => {
         <div class="table-item-title">
           <Link to={`/book/${book.item_id}`}>{book.title}</Link>
         </div>
-        <div>
-          First publish in {book.year}
-        </div>
-        <div class="table-item-rate">
-          Your rate:
-        </div>
+        <div>First publish in {book.year}</div>
+        <div class="table-item-rate">Your rate:</div>
       </div>
     </div>
-  )
-}
+  );
+};

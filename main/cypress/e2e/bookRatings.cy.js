@@ -13,7 +13,9 @@ describe("Book ratings", function () {
   });
 
   it("can rate book", function () {
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.wait(1000);
+    cy.contains("Ratings").click();
     cy.contains("You have rated 1 books.").should("exist");
   });
 
@@ -30,7 +32,9 @@ describe("Book ratings", function () {
   });
 
   it("adjusted rating in Ratings page updates on the book's page", function () {
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.wait(1000);
+    cy.contains("Ratings").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get(
@@ -38,7 +42,7 @@ describe("Book ratings", function () {
       ).should("have.length", 4);
       cy.get("[data-index='4']").click();
     });
-    cy.get("img").click();
+    cy.get("img").eq(1).click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get(
@@ -48,32 +52,36 @@ describe("Book ratings", function () {
   });
 
   it("can remove book rating", function () {
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.contains("Ratings").click();
     cy.contains("You have rated 1 books.").should("exist");
-    cy.get(".navbar").contains("BookCine").click();
+    cy.get(".ui.basic.circular.fade.animated.button").eq(0).click();
     cy.wait(1000);
     cy.contains("A List of Cages").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='2']").click();
     });
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.contains("Ratings").click();
     cy.contains("You have rated 2 books.").should("exist");
     cy.contains("Remove rating").first().click();
     cy.contains("You have rated 1 books.").should("exist");
   });
 
   it("can remove all book rating", function () {
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.contains("Ratings").click();
     cy.contains("You have rated 1 books.").should("exist");
-    cy.get(".navbar").contains("BookCine").click();
+    cy.get(".ui.basic.circular.fade.animated.button").eq(0).click();
     cy.wait(1000);
     cy.contains("A List of Cages").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='2']").click();
     });
-    cy.get(".navbar").contains("Ratings").click();
+    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    cy.contains("Ratings").click();
     cy.contains("You have rated 2 books.").should("exist");
     cy.contains("Remove all book ratings").click();
     cy.contains("You have not rated any books yet!").should("exist");

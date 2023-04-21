@@ -28,7 +28,6 @@ const App = () => {
     }
   );
   const navigate = useNavigate();
-
   const AllowCookiesPopUp = () => {
     const setCookieConsent = (decision) => {
       localStorage.cookie = decision;
@@ -94,15 +93,14 @@ const App = () => {
           content="Get movie and book recommendations based on your ratings!"
         />
       </Helmet>
-      <Navibar />
       <div className="page">
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/ratings" element={<Ratings />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/book/:id" element={<Book />} />
+          <Route path="/" element={<Navibar page={<MainPage />} />} />
+          <Route path="/ratings" element={<Navibar page={<Ratings />} />} />
+          <Route path="/wishlist" element={<Navibar page={<Wishlist />} />} />
+          <Route path="/search" element={<Navibar page={<SearchPage />} />} />
+          <Route path="/movie/:id" element={<Navibar page={<Movie />} />} />
+          <Route path="/book/:id" element={<Navibar page={<Book />} />} />
         </Routes>
         <AllowCookiesPopUp />
       </div>

@@ -53,13 +53,13 @@ Viikko 2
 |Yhteensä|7||
 Viikko 2
 |||
-| Maanantai 6.3.|||
-|Tiistai 7.3.|||
-|Keskiviikko 8.3.|||
-|Torstai 9.3.|||
-|Perjantai 10.3.|||
+| Maanantai 6.3.|2|rating parannus|
+|Tiistai 7.3.|2|logo to the app, readme ja ohjeiden parannus|
+|Keskiviikko 8.3.|2|recommendation movie-movie, |
+|Torstai 9.3.|2|recommendation book-book|
+|Perjantai 10.3.|2|recommendations movie-movie, book-book testit|
 |Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Yhteensä|10||
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
