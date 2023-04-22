@@ -201,13 +201,13 @@ Viikko 3
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
-|Tiistai 18.4.|||
-|Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
-|Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+| Maanantai 17.4.|4.3|Daily, asiakastapaaminen, retro, sprint planning, backendin koodin linttaus aloitettu|
+|Tiistai 18.4.|3.2|Backendin koodin linttausta jatkettu, dokumentaation päivitys aloitettu|
+|Keskiviikko 19.4.|0.2|Daily|
+|Torstai 20.4.|0|n/a|
+|Perjantai 21.4.|0.75|Daily, final demon sisältöä työstetty|
+|Viikonloppu 22.-23.4.|7|Viimeiset tietokantaoperaatiot tehty, backendin dokumentaatio päivitetty|
+|Yhteensä|15.4|Kumulatiivisesti kurssissa tehty 196/200 tuntia|
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
@@ -232,3 +232,6 @@ Viikko 3
 |Yhteensä|||
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
+* Backendin koodin laatua parannettu
+* Tietokanta siistitty (turhat taulut poistettu, viimeinen puuttuva tiedosto lisätty tietokantaan)
+* Backendin ohjeistus päivitetty
