@@ -206,8 +206,8 @@ Viikko 3
 |Keskiviikko 19.4.|0.2|Daily|
 |Torstai 20.4.|0|n/a|
 |Perjantai 21.4.|0.75|Daily, final demon sisältöä työstetty|
-|Viikonloppu 22.-23.4.|7|Viimeiset tietokantaoperaatiot tehty, backendin dokumentaatio päivitetty|
-|Yhteensä|15.4|Kumulatiivisesti kurssissa tehty 196/200 tuntia|
+|Viikonloppu 22.-23.4.|6|Viimeiset tietokantaoperaatiot tehty, backendin dokumentaatio päivitetty|
+|Yhteensä|14.4|Kumulatiivisesti kurssissa tehty 195/200 tuntia|
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
