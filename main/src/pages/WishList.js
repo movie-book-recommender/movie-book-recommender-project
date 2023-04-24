@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
-import ReactStars from "react-rating-stars-component"
-import Heart from "react-heart"
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import ReactStars from "react-rating-stars-component";
+import Heart from "react-heart";
 
 import image from "../assets/NoImage.jpg";
 import {
@@ -10,8 +10,8 @@ import {
   onWishlist,
   addToWishlist,
 } from "../Cookies.js";
-import { GetMovieByID } from "../components/Movie";
-import { GetBookByID } from "../components/Book";
+import { getMovieById } from "../components/Movie";
+import { getBookById } from "../components/Book";
 import Table from "../Table";
 
 var cookies = getStringOfWishlist().split("&");
@@ -26,7 +26,7 @@ const updateWishlist = () => {
 const DisplayMovie = ({ bormId }) => {
   const borm = bormId.charAt(0);
   const id = bormId.substring(1);
-  const movie = GetMovieByID(id);
+  const movie = getMovieById(id);
 
   const rating = getCookie(borm, id);
   const ratingStars = {
@@ -79,7 +79,7 @@ const DisplayMovie = ({ bormId }) => {
 const DisplayBook = ({ bormId }) => {
   const borm = bormId.charAt(0);
   const id = bormId.substring(1);
-  const book = GetBookByID(id);
+  const book = getBookById(id);
 
   var rating = getCookie(borm, id);
   var ratingStars = {
@@ -128,11 +128,15 @@ const DisplayBook = ({ bormId }) => {
 };
 
 const Wishlist = () => {
-  let movieCookies = cookies.filter(cookie => cookie.charAt(0) === "M")
-  let movies = movieCookies.map(cookie => <DisplayMovie bormId={cookie} key={cookie}/>)
+  let movieCookies = cookies.filter((cookie) => cookie.charAt(0) === "M");
+  let movies = movieCookies.map((cookie) => (
+    <DisplayMovie bormId={cookie} key={cookie} />
+  ));
 
-  let bookCookies = cookies.filter(cookie => cookie.charAt(0) === "B")
-  let books = bookCookies.map(cookie => <DisplayBook bormId={cookie} key={cookie}/>)
+  let bookCookies = cookies.filter((cookie) => cookie.charAt(0) === "B");
+  let books = bookCookies.map((cookie) => (
+    <DisplayBook bormId={cookie} key={cookie} />
+  ));
 
   if (cookies.length > 0) {
     return (

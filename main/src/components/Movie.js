@@ -1,19 +1,26 @@
+// Import required modules and components
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Chip, Card, CardContent, CardMedia, Stack } from "@mui/material";
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
-
-import image from "../assets/NoImage.jpg";
-import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
-import { updateCookies } from "../pages/Ratings";
-import { updateWishlist } from "../pages/WishList";
 import Items from "../Carusel";
 import "../css/App.css";
 
-const GetMovieByID = (id) => {
+// Import default image and cookie functions
+import image from "../assets/NoImage.jpg";
+import { getCookie, setCookie, onWishlist, addToWishlist } from "../Cookies.js";
+
+// Import update functions
+import { updateCookies } from "../pages/Ratings";
+import { updateWishlist } from "../pages/WishList";
+
+// Fetch single movie data by ID
+const getMovieById = (id) => {
   const [movie, setMovie] = useState([]);
+
+  // Sends a GET request to the server to get the movie data
   useEffect(() => {
     axios
       .get(`http://128.214.253.51:3000/dbgetgivenmoviedata?movieid=${id}`)
@@ -21,10 +28,15 @@ const GetMovieByID = (id) => {
         setMovie(response.data);
       });
   }, [id]);
+
   return movie;
 };
-const GetRecommendedMoviesByID = (id) => {
+
+// Fetch movie recommendations for a single movie by ID
+const getRecommendedMoviesById = (id) => {
   const [movies, setMovies] = useState([]);
+
+  // Sends a GET request to the server to get the movie recommendations data
   useEffect(() => {
     axios
       .get(
@@ -34,11 +46,14 @@ const GetRecommendedMoviesByID = (id) => {
         setMovies(response.data);
       });
   }, [id]);
+
   return movies;
 };
-
-const GetRecommendedBooksByID = (id) => {
+// Fetches book recommendations for a single movie by ID
+const getRecommendedBooksById = (id) => {
   const [books, setBooks] = useState([]);
+
+  // Sends a GET request to the server to get the book recommendations data
   useEffect(() => {
     axios
       .get(
@@ -52,24 +67,29 @@ const GetRecommendedBooksByID = (id) => {
 };
 
 const Movie = () => {
-  //Gets the movieid from the url
-  //The form for url is e.g. .../movie/12345
-  //where 12345 refers to movie's id.
-  var urlString = window.location.href;
-  var parseHelper = urlString.split("/movie/");
-  var movieId = parseHelper[1];
+  // Get the current URL and split it to extract the movie ID
+  const urlString = window.location.href;
+  const parseHelper = urlString.split("/movie/");
+  const movieId = parseHelper[1];
 
-  const movie = GetMovieByID(movieId);
+  // Get the movie details by ID and set states for showing more actors and plot details
+  const movie = getMovieById(movieId);
   const [showMoreActors, setShowMoreActors] = useState(false);
   const [showMorePlot, setShowMorePlot] = useState(false);
-  const recommendedMovies = GetRecommendedMoviesByID(movieId);
-  const recommendedBooks = GetRecommendedBooksByID(movieId);
 
+  // Get recommended movies and books by the movie ID
+  const recommendedMovies = getRecommendedMoviesById(movieId);
+  const recommendedBooks = getRecommendedBooksById(movieId);
+
+  // Set up state for star ratings using a cookie and handle rating changes
   const [stars, setStars] = useState(0);
+  const [heart, setHeart] = useState(false);
   useEffect(() => {
+    setHeart(onWishlist("M", movieId));
     setStars(getCookie("M", movieId));
   }, [movieId]);
 
+  // Set up star rating component
   const ratingStars = {
     key: stars,
     size: 40,
@@ -83,12 +103,14 @@ const Movie = () => {
     },
   };
 
+  // Handle removing a rating
   const removeRating = (borm, movieId) => {
     setCookie(borm, movieId, 0, 5);
     updateCookies();
     setStars(0);
   };
 
+  // Check if a movie has been rated and return a component to remove the rating
   const isRated = () => {
     if (ratingStars.value === 0) {
       return <div></div>;
@@ -99,30 +121,26 @@ const Movie = () => {
             removeRating("M", movieId);
           }}
         >
-          <button class="btn warning">Remove rating</button>
+          <button className="btn warning">Remove rating</button>
         </Link>
       );
     }
   };
 
-  var isWishlisted = onWishlist("M", movieId);
-  const [heart, setHeart] = useState(false)
-  useEffect(() =>{
-    setHeart(onWishlist("M", movieId))
-  },[movieId])
-    
+  // Set up heart icon component for adding/removing the movie from the wishlist
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
     isActive: heart,
     onClick: () => {
       addToWishlist("M", movieId);
-      isWishlisted = onWishlist("M", movieId);
+      const isWishlisted = onWishlist("M", movieId);
       updateWishlist();
       setHeart(isWishlisted);
     },
   };
 
+  // If no movie details were returned, display a message
   if (movie.length === 0) {
     return (
       <div className="page-container">
@@ -131,6 +149,7 @@ const Movie = () => {
     );
   }
 
+  // Get movie details and set default values if they are available
   var imageSource = movie.posterpath
     ? `https://image.tmdb.org/t/p/original${movie.posterpath}`
     : image;
@@ -142,11 +161,20 @@ const Movie = () => {
   const genres = movie.genres ? movie.genres.split(",") : [];
 
   return (
+    // The following code displays a page for a movie, showing its details and recommended movies and books.
+    // Inside this div, there is a section for the movie details, including title, original title, year, runtime, poster image, user rating, summary of the plot, actors, and directors.
+    // Below the movie details, there are sections for similar movies and similar books, each displayed using the 'Items' component.
+
     <div className="movie-page-wrapper">
+      {/* Display the movie title */}
       <h1>{movie.title}</h1>
+
+      {/* Display the original title, year, and runtime */}
       <h5>
         {originaltitle} • {year} • {runtime} min
       </h5>
+
+      {/* Display the movie poster image with a heart icon for favoriting */}
       <Card class="movie" sx={{ maxWidth: 200 }}>
         <CardMedia>
           <img class="large-item-pic" src={imageSource} alt="movie-poster" />
@@ -154,6 +182,7 @@ const Movie = () => {
             class="heart"
             style={{ width: "2rem", position: "relative", top: -300, left: 5 }}
           >
+            {/* Display the heart icon for favoriting */}
             <Heart
               {...heartElement}
               style={{ fill: heart ? "red" : "grey", stroke: "black" }}
@@ -161,9 +190,12 @@ const Movie = () => {
           </div>
         </CardMedia>
         <CardContent>
+          {/* Display a star rating component */}
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />
+          {/* Display the user's rating */}
           <div>{isRated()}</div>
+          {/* Link to the movie trailer on YouTube */}
           <Link
             to={`https://youtube.com/watch?v=${movie.youtubetrailerids}`}
             target="_blank"
@@ -173,6 +205,8 @@ const Movie = () => {
           </Link>
         </CardContent>
       </Card>
+
+      {/* Display the movie genres */}
       <div class="box">
         <Stack direction="row" spacing={1}>
           {genres.map((genre) => (
@@ -183,8 +217,10 @@ const Movie = () => {
             />
           ))}
         </Stack>
+        {/* Display the summary of the plot */}
         <h3>Summary of the plot:</h3>
         <p>
+          {/* Display only the first 250 characters of the plot summary by default, with an option to show more */}
           {showMorePlot ? plotsummary : `${plotsummary.substring(0, 250)}`}
           <Link
             class="show-more-less"
@@ -193,8 +229,10 @@ const Movie = () => {
             {showMorePlot ? "Show less" : "Show more"}
           </Link>
         </p>
+        {/* Display the actors */}
         <h3>Actors:</h3>
         <p>
+          {/* Display only the first 100 characters of the actor names by default, with an option to show more */}
           {showMoreActors ? actors : `${actors.substring(0, 100)}`}
           <Link
             class="show-more-less"
@@ -203,38 +241,41 @@ const Movie = () => {
             {showMoreActors ? "Show less" : "Show more"}
           </Link>
         </p>
+        {/* Display the directors */}
         <h3>Directors:</h3>
         <p>{movie.directors}</p>
       </div>
 
+      {/* Display similar movies */}
       <div class="similar-movies">
         <h3>Similar movies</h3>
         {recommendedMovies.length > 0 ? (
           <Items
             items={recommendedMovies}
-            page={"movies"}
-            size={"small-item-pic"}
+            page="movies"
+            size="small-item-pic"
           />
         ) : (
           <p>could not find similar movies</p>
         )}
       </div>
 
+      {/* Display similar books */}
       <div class="similar-books">
-        <h3>Similiar books</h3>
+        <h3>Similar books</h3>
         {recommendedBooks.length > 0 ? (
           <Items
             items={recommendedBooks}
-            page={"books"}
+            page="books"
             recommendation={true}
-            size={"small-item-pic"}
+            size="small-item-pic"
           />
         ) : (
-          <p>could not find similiar books</p>
+          <p>could not find similar books</p>
         )}
       </div>
     </div>
   );
 };
 
-export { Movie, GetMovieByID };
+export { Movie, getMovieById };
