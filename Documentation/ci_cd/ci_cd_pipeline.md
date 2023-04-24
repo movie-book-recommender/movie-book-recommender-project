@@ -16,7 +16,7 @@ In cPouta:
 
 Watchtower runs in cPouta with this command:
 ```
-sudo docker run -d --name watchtower6 -e WATCHTOWER_POLL_INTERVAL=60 -e WATCHTOWER_DEBUG=TRUE -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
+sudo docker run -d --name watchtower6 -e WATCHTOWER_POLL_INTERVAL=60 -e WATCHTOWER_DEBUG=TRUE -e WATCHTOWER_CLEANUP=TRUE -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
 ```
 ## To deploy new image to production
 
