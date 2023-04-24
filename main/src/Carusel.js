@@ -78,36 +78,44 @@ const Items = ({ items, page, size, recommendation = false }) => (
       renderArrowsWhenDisabled={false}
       renderButtonGroupOutside={true}
       responsive={{
-        desktop: {
+        large: {
           breakpoint: {
             max: 3000,
-            min: 1280,
+            min: 1201,
           },
           items: 6,
           slidesToSlide: 6,
         },
-        mobile: {
+        desktop: {
           breakpoint: {
-            max: 464,
-            min: 0,
-          },
-          items: 1,
-        },
-        small_desktop: {
-          breakpoint: {
-            max: 1280,
-            min: 1024,
+            max: 1200,
+            min: 1025,
           },
           items: 5,
           slidesToSlide: 5,
         },
-        tablet: {
+        laptop: {
           breakpoint: {
             max: 1024,
-            min: 464,
+            min: 769,
+          },
+          items: 4,
+          slidesToSlide: 4,
+        },
+        tablet: {
+          breakpoint: {
+            max: 768,
+            min: 481,
           },
           items: 3,
           slidesToSlide: 3,
+        },
+        mobile: {
+          breakpoint: {
+            max: 480,
+            min: 0,
+          },
+          items: 1,
         },
       }}
       rewind={false}

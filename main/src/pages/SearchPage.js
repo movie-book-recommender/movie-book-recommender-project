@@ -56,12 +56,10 @@ const SearchPage = () => {
   };
 
   const handleSearchChange = (event) => {
-    console.log(event.target.value);
     setNewSearch(event.target.value);
   };
 
   const handleSearchTypeChange = (event) => {
-    console.log(event.target.value);
     setSearchType(event.target.value);
   };
 
