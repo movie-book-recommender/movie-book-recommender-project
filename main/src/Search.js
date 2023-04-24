@@ -99,6 +99,7 @@ const Search = () => {
           <Dropdown.Header>
             <Button.Group fluid>
               <Button
+                id={bookB ? "toggle" : null}
                 toggle
                 active={bookB}
                 onClick={() => {
@@ -111,6 +112,7 @@ const Search = () => {
 
               <Button.Or />
               <Button
+                id={movieB ? "toggle" : null}
                 toggle
                 active={movieB}
                 onClick={() => {

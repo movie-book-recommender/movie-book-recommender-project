@@ -10,7 +10,7 @@
       "similarm similarm similarm"
       "similarb similarb similarb";
 
-  margin: 0px auto;
+  margin: 15px auto;
   padding: 50px 80px;
   row-gap: 10px;
   column-gap: 20px;
@@ -59,44 +59,16 @@
   max-width: 166px;
  }
 
-.navbar a{
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  margin-right: 10px;
-  padding: 8px;
-  color: #F6F6F6;
-}
-
-.navbar a:hover{
-  font-weight: bold;
-  text-decoration-line: underline;
-  text-underline-offset: 10px;
-  text-decoration-color: #EE6055;
-  text-decoration-thickness: 3px;
-}
-
-.navbar a::before {
-  display: block;
-  content: attr(data-link);
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
 .page {
-  padding: 0px 20px 20px;
   display: block;
   overflow-y: auto;
 
 }
 
 .page-container {
-  padding: 10px;
+  padding: 15px 20px;
   display: block;
-  background-color:  rgb(218, 227, 243);
+  background-color:  #F6F6F6;
 }
 
 .movie-list{
@@ -120,7 +92,7 @@
       "similarm similarm similarm"
       "similarb similarb similarb";
 
-  margin: 0px auto;
+  margin: 15px auto;
   padding: 50px 80px;
   row-gap: 10px;
   column-gap: 20px;
@@ -194,18 +166,6 @@
  .table-item a:hover img {
   opacity: .5;
  }
-
- .navbar {
-  padding: 20px;
-}
-
-.css-xqhexu-MuiPaper-root-MuiAppBar-root {
-  background-color: #003249 !important; 
-  display: block !important;
-  /*position: sticky !important;
-  top: 0 !important;
-  z-index: 2000 !important;*/
-}
 
  .react-multiple-carousel__arrow {
   background: #058ED9 !important;
@@ -335,4 +295,21 @@ svg[data-testid="MenuBookRoundedIcon"] {
 
 .warning:hover {
   background-color: #F2513C;
+}
+
+.ui.grid {
+  background-color: #003249;
+}
+
+.ui[class*="center align"].grid{
+  background-color: #1B1C1D;
+}
+
+#navbutton {
+  background-color: white !important;
+  margin: 10px;
+}
+
+#toggle {
+  background-color: #058ED9 !important;
 }
