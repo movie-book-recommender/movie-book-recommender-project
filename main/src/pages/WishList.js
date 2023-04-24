@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import ReactStars from "react-rating-stars-component";
-import Heart from "react-heart";
+import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import ReactStars from "react-rating-stars-component"
+import Heart from "react-heart"
 
 import image from "../assets/NoImage.jpg";
 import {
@@ -94,7 +94,7 @@ const DisplayBook = ({ bormId }) => {
   const [heart, setHeart] = useState(isWishlisted);
   const heartElement = {
     animationTrigger: "hover",
-    isActive: onWishlist(borm, id),
+    isActive: heart,
     onClick: () => {
       addToWishlist(borm, id);
       isWishlisted = onWishlist(borm, id);
@@ -128,11 +128,11 @@ const DisplayBook = ({ bormId }) => {
 };
 
 const Wishlist = () => {
-  let movieCookies = cookies.filter((cookie) => cookie.charAt(0) === "M");
-  let movies = movieCookies.map((cookie) => <DisplayMovie bormId={cookie} />);
+  let movieCookies = cookies.filter(cookie => cookie.charAt(0) === "M")
+  let movies = movieCookies.map(cookie => <DisplayMovie bormId={cookie} key={cookie}/>)
 
-  let bookCookies = cookies.filter((cookie) => cookie.charAt(0) === "B");
-  let books = bookCookies.map((cookie) => <DisplayBook bormId={cookie} />);
+  let bookCookies = cookies.filter(cookie => cookie.charAt(0) === "B")
+  let books = bookCookies.map(cookie => <DisplayBook bormId={cookie} key={cookie}/>)
 
   if (cookies.length > 0) {
     return (

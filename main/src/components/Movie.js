@@ -106,12 +106,11 @@ const Movie = () => {
   };
 
   var isWishlisted = onWishlist("M", movieId);
-  const [heart, setHeart] = useState(false);
-  useEffect(() => {
-    setHeart(onWishlist("M", movieId));
-    console.log("Beep");
-  }, [movieId]);
-
+  const [heart, setHeart] = useState(false)
+  useEffect(() =>{
+    setHeart(onWishlist("M", movieId))
+  },[movieId])
+    
   const heartElement = {
     key: heart,
     animationTrigger: "hover",
