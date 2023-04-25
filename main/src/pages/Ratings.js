@@ -50,7 +50,7 @@ const DisplayMovie = ({ id, rating }) => {
     updateCookies();
   };
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
           <img src={imageSource} width={150} height={"auto"} />
@@ -69,7 +69,7 @@ const DisplayMovie = ({ id, rating }) => {
             removeRating("M", id);
           }}
         >
-          <p>Remove rating</p>
+          <button className="btn warning">Remove rating</button>
         </Link>
       </div>
     </div>
@@ -101,7 +101,7 @@ const DisplayBook = ({ id, rating }) => {
   };
 
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} height={250} width={"auto"} />
@@ -120,7 +120,7 @@ const DisplayBook = ({ id, rating }) => {
             removeRating("B", id);
           }}
         >
-          <p>Remove rating</p>
+          <button className="btn warning">Remove rating</button>
         </Link>
       </div>
     </div>

@@ -193,6 +193,11 @@
   height: 180px;
 }
 
+.sort-container {
+  margin: 10px 10px 50px;
+  line-height: 2.5em;
+}
+
 svg[data-testid="LocalMoviesRoundedIcon"] {
   display: block;
 }
@@ -234,6 +239,13 @@ svg[data-testid="MenuBookRoundedIcon"] {
   padding-left: 3px;
 }
 
+.show-more-less::before {
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 .show-more-less:hover {
   font-weight: bold;
   text-decoration: underline;
@@ -241,6 +253,11 @@ svg[data-testid="MenuBookRoundedIcon"] {
   text-decoration-color: #EE6055;
   text-decoration-thickness: 3px;
   cursor: pointer;
+}
+
+.sort {
+  display: inline-block;
+  padding: 0px 10px;
 }
 
 .table-left,
@@ -275,8 +292,10 @@ svg[data-testid="MenuBookRoundedIcon"] {
 }
 
 .table-item-info{
-  display: inline-block;
+  display: inline-flex;
   vertical-align: top;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .table-item-pic img {
