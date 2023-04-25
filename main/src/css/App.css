@@ -49,14 +49,13 @@
 }
 
 .large-item-pic {
-  height: 300px;
   width: auto;
+  height: 300px;
 }
 
 .medium-item-pic {
   width: auto;
   height: 250px;
-  max-width: 166px;
  }
 
 .page {
@@ -68,7 +67,11 @@
 .page-container {
   padding: 15px 20px;
   display: block;
-  background-color:  #F6F6F6;
+  background-color: #F6F6F6;
+}
+
+.carousel {
+  display: block;
 }
 
 .movie-list{
@@ -127,7 +130,9 @@
 .movie-slot{
   grid-row: 1;
   grid-column: auto;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
  }
 
 .movie-info {
@@ -184,9 +189,8 @@
 }
 
 .small-item-pic {
-  width: fit-content ;
+  width: auto ;
   height: 180px;
-  object-fit: fill;
 }
 
 svg[data-testid="LocalMoviesRoundedIcon"] {
