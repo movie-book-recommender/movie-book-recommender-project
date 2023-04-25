@@ -11,7 +11,7 @@ describe("BookCine's movie main page ", function () {
     cy.contains("Similar movies");
     cy.wait(1000);
     cy.contains("The Incredibles");
-    cy.contains("Similiar books");
+    cy.contains("Similar books");
     cy.wait(1000);
     cy.contains("Battle Bunny");
   });
