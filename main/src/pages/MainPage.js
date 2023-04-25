@@ -11,138 +11,146 @@ import "react-multi-carousel/lib/styles.css";
 
 import Items from "../Carusel";
 
+// Component to fetch the newest books from the database
 const GetBooks = () => {
   const [books, setBooks] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://128.214.253.51:3000/dbgettop10newestbooks")
       .then((response) => {
         setBooks(response.data);
+      })
+      .catch((error) => {
+        console.error(`Error while fetching books: ${error}`);
       });
   }, []);
+
   return books;
 };
 
+// Component to fetch the newest published movies from the database
 const GetMovies = () => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://128.214.253.51:3000/dbgettop10newestpublishedmovies")
       .then((response) => {
         setMovies(response.data);
+      })
+      .catch((error) => {
+        console.error(`Error while fetching movies: ${error}`);
       });
   }, []);
+
   return movies;
 };
 
-const LoadingAnimation = () => {
+// Component to display the loading animation when showLoading is true
+const LoadingAnimation = ({ showLoading }) => {
   const [show, setShow] = useState(false);
+
   useEffect(() => {
-    if (showLoading) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
+    setShow(showLoading);
   }, [showLoading]);
-  if (show) {
-    return (
-      <Box sx={{ textAlign: "center" }}>
-        <video loop width="600" height="auto" autoPlay muted>
-          <source src={loading} type="video/webm" />
-        </video>
-      </Box>
-    );
-  }
+
+  return show ? (
+    <Box sx={{ textAlign: "center" }}>
+      <video loop width="600" height="auto" autoPlay muted>
+        <source src={loading} type="video/webm" />
+      </video>
+    </Box>
+  ) : null;
 };
 
-var bookRatings = getCookies("B");
-var movieRatings = getCookies("M");
-var ratings = {
-  Books: bookRatings,
-  Movies: movieRatings,
-};
+// Get the cookies for book and movie ratings
+let bookRatings = getCookies("B");
+let movieRatings = getCookies("M");
+let ratings = { Books: bookRatings, Movies: movieRatings };
 
+// Update the ratings object with the current cookies
 const updateRatings = () => {
   bookRatings = getCookies("B");
   movieRatings = getCookies("M");
-  ratings = {
-    Books: bookRatings,
-    Movies: movieRatings,
-  };
+  ratings = { Books: bookRatings, Movies: movieRatings };
 };
 
+// DisplayTitle component
 const DisplayTitle = ({ text }) => {
   const [show, setShow] = useState(true);
+
+  // Hide or show component based on showLoading prop
   useEffect(() => {
-    if (showLoading) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!showLoading);
   }, [showLoading]);
+
+  // Render component if show is true
   if (show) {
     return <h2>{text}</h2>;
   }
 };
-var showLoading = false;
+
+// Initialize showLoading variable
+let showLoading = false;
+
+// UpdateRecommendations component
 const UpdateRecommendations = () => {
   const [update, setUpdate] = useState(false);
-  const [recievedMovies, setRecievedMovies] = useState(getRecommended("M"));
-  const [recievedBooks, setRecievedBooks] = useState(getRecommended("B"));
+  const [recievedMovies, setRecievedMovies] = useState([]);
+  const [recievedBooks, setRecievedBooks] = useState([]);
 
+  // Fetch recommended movies and books from server
   useEffect(() => {
-    axios
-      .get(
-        `http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(
-          ratings
-        )}`
-      )
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        // Set showLoading to true
+        showLoading = true;
+
+        // Make API request
+        const response = await axios.get(
+          `http://128.214.253.51:3000/dbgetpersonalrecommendations?ratings=${JSON.stringify(
+            ratings
+          )}`
+        );
+
+        // If response contains data
         if (response.data.value !== "not available") {
-          var infoMovies = [];
-          for (var i = 0; i < response.data.movies.length; i++) {
-            var posterpath = "";
-            if (response.data.movies[i].posterpath === null) {
-              posterpath = "null";
-            } else {
-              posterpath = response.data.movies[i].posterpath.toString();
-            }
-            infoMovies[i] =
-              response.data.movies[i].movieid.toString() +
-              "%" +
-              response.data.movies[i].title.toString() +
-              "%" +
-              posterpath;
-          }
-          var infoBooks = [];
-          for (var i = 0; i < response.data.books.length; i++) {
-            var image = "";
-            if (response.data.books[i].img === null) {
-              image = "null";
-            } else {
-              image = response.data.books[i].img.toString();
-            }
-            infoBooks[i] =
-              response.data.books[i].item_id.toString() +
-              "%" +
-              response.data.books[i].title.toString() +
-              "%" +
-              image;
-          }
+          // Extract movie and book data from response
+          const infoMovies = response.data.movies.map(
+            (movie) =>
+              `${movie.movieid.toString()}%${movie.title.toString()}%${
+                movie.posterpath === null ? "null" : movie.posterpath.toString()
+              }`
+          );
+          const infoBooks = response.data.books.map(
+            (book) =>
+              `${book.item_id.toString()}%${book.title.toString()}%${
+                book.img === null ? "null" : book.img.toString()
+              }`
+          );
+
+          // Set recommended movies and books in localStorage
           setRecommended("M", infoMovies);
           setRecommended("B", infoBooks);
+
+          // Set showLoading to false
           showLoading = false;
-          setRecievedBooks(getRecommended("B"));
+
+          // Update state with received movie and book data
           setRecievedMovies(getRecommended("M"));
+          setRecievedBooks(getRecommended("B"));
         }
-        setRecommended("M", infoMovies);
-        setRecommended("B", infoBooks);
-        showLoading = false;
-        setRecievedBooks(getRecommended("B"));
-        setRecievedMovies(getRecommended("M"));
-      });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    // Fetch data when update state changes
+    fetchData();
   }, [update]);
 
+  // Update state when Update button is clicked
   const Update = () => {
     setRatingChange(false);
     setButton(true);
@@ -154,27 +162,20 @@ const UpdateRecommendations = () => {
   };
 
   const [disableButton, setButton] = useState(true);
+
+  // Enable or disable Update button based on rating change state
   useEffect(() => {
-    if (getRatingChange()) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
+    setButton(!getRatingChange());
   }, []);
 
+  // Render component
   return (
     <div>
-      <Button
-        variant="contained"
-        disabled={disableButton}
-        onClick={() => {
-          Update();
-        }}
-      >
+      <Button variant="contained" disabled={disableButton} onClick={Update}>
         Update
       </Button>
       <DisplayTitle text={"Recommended movies for you"} />
-      <LoadingAnimation />
+      {showLoading && <LoadingAnimation />}
       <Items
         items={recievedMovies}
         page={"movies"}
@@ -192,11 +193,14 @@ const UpdateRecommendations = () => {
   );
 };
 
-const MainPage = ({ page }) => {
+const MainPage = () => {
+  // Get the list of books and movies
   const books = GetBooks();
   const movies = GetMovies();
+
+  // If the user has not rated any books or movies yet, display the newest items and a message asking them to rate items
   if (bookRatings.length === 0 && movieRatings.length === 0) {
-    updateRatings();
+    updateRatings(); // Update ratings to get personal recommendations
     return (
       <div className="page-container">
         <h2>Top 10 newest movies</h2>
@@ -210,6 +214,8 @@ const MainPage = ({ page }) => {
       </div>
     );
   }
+
+  // If the user has rated at least one book or movie, display the highest rated items and an option to update recommendations
   return (
     <div className="page-container">
       <h2>Highest rated movies</h2>
