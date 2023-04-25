@@ -215,6 +215,7 @@ svg[data-testid="MenuBookRoundedIcon"] {
   margin-left: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .switch-text button:hover, .btn:hover {
@@ -293,8 +294,6 @@ svg[data-testid="MenuBookRoundedIcon"] {
 .warning {
   background-color: #EE6055;
   color: #001A23;
-  margin-left: 0px;
-  margin-bottom: 15px;
 }
 
 .warning:hover {
@@ -316,4 +315,8 @@ svg[data-testid="MenuBookRoundedIcon"] {
 
 #toggle {
   background-color: #058ED9 !important;
+}
+
+#visible * {
+  overflow: visible !important;
 }
