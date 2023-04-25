@@ -6,8 +6,8 @@ import { Modal, Box, Button } from "@mui/material";
 import "../css/Ratings.css";
 import image from "../assets/NoImage.jpg";
 import { getCookies, setCookie, removeAllRatings } from "../Cookies.js";
-import { GetMovieByID } from "../components/Movie";
-import { GetBookByID } from "../components/Book";
+import { getMovieById } from "../components/Movie";
+import { getBookById } from "../components/Book";
 import Table from "../Table";
 
 var cookiesB = getCookies("B");
@@ -30,7 +30,7 @@ const getRatingChange = () => {
 };
 
 const DisplayMovie = ({ id, rating }) => {
-  const movie = GetMovieByID(id);
+  const movie = getMovieById(id);
   var ratingStars = {
     size: 40,
     count: 5,
@@ -77,8 +77,8 @@ const DisplayMovie = ({ id, rating }) => {
 };
 
 const DisplayBook = ({ id, rating }) => {
-  const book = GetBookByID(id);
-  const [stars, setStars] = useState(parseInt(rating))
+  const book = getBookById(id);
+  const [stars, setStars] = useState(parseInt(rating));
   var ratingStars = {
     size: 40,
     count: 5,
@@ -86,7 +86,7 @@ const DisplayBook = ({ id, rating }) => {
     value: stars,
     onChange: (newValue) => {
       setCookie("B", id, newValue, 5);
-      setStars(newValue)
+      setStars(newValue);
       updateCookies();
     },
   };
@@ -159,9 +159,9 @@ const Ratings = () => {
   };
   //Render renders the rated books and movies in the table component
   //on the ratings change
-  const Render = () => {  
+  const Render = () => {
     //books and movies are used to map the movies and books to be displayed.
-    //cookie[0] contains the movieid or the item_id for books, cookie[1] 
+    //cookie[0] contains the movieid or the item_id for books, cookie[1]
     //contains a number from 1 to 5. The ids are used as keys to update the
     //table correctly when items are removed.
     let books = cookiesB.map((cookie) => (
@@ -169,22 +169,22 @@ const Ratings = () => {
     ));
     let movies = cookiesM.map((cookie) => (
       <DisplayMovie id={cookie[0]} rating={cookie[1]} key={cookie[0]} />
-    ));    
+    ));
     //The following useEffect and useStates are used to update the ratings
     //correctly if a rating is changed on the ratings page.
-    const [bookDisplay, setBooks] = useState([])
-    const [movieDisplay, setMovies] = useState([])
-    useEffect(()=>{
-      setMovies(movies)
-      setBooks(books)
-    })  
+    const [bookDisplay, setBooks] = useState([]);
+    const [movieDisplay, setMovies] = useState([]);
+    useEffect(() => {
+      setMovies(movies);
+      setBooks(books);
+    });
     return (
       <div>
         <div class="rowC">
           <RenderMovies />
           <RenderBooks />
         </div>
-        <Table movies={movieDisplay} books={bookDisplay}/>
+        <Table movies={movieDisplay} books={bookDisplay} />
       </div>
     );
   };
@@ -205,7 +205,7 @@ const Ratings = () => {
             disableAutoFocus={false}
             closeOnDocumentClick
             onClose={closeModal}
-          > 
+          >
             <Box
               sx={{
                 color: "black",
@@ -214,7 +214,7 @@ const Ratings = () => {
                 heigh: 400,
                 border: 2,
                 mx: "auto",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               <p>Removed all ratings for movies</p>
