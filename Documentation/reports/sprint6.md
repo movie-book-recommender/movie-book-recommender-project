@@ -48,13 +48,13 @@ Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
+| Maanantai 24.4.|2|Demovideon ideointia ja kalvojen tekemistä|
 |Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
+|Keskiviikko 26.4.|2|Dokumentaation tekemistä|
+|Torstai 27.4.|1|Asiakastapaamisen preppaus|
 |Perjantai 28.4.|||
-|Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Viikonloppu 29.-30.4.|1|Viikon dailyt|
+|Yhteensä|6||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
