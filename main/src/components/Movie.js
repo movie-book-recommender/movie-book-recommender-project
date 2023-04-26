@@ -189,7 +189,7 @@ const Movie = () => {
             />
           </div>
         </CardMedia>
-        <CardContent>
+        <CardContent id="visible" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {/* Display a star rating component */}
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />

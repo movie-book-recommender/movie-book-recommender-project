@@ -165,7 +165,7 @@ const Book = () => {
   // Get image source and book description
   const imageSource = book.img ? book.img : image;
   const description = book.description
-    ? book.description.replace(/\n/g, " ").replace(/\"/g, '"')
+    ? book.description.replace(/\\n/g, " ").replace(/\\"/g, '"')
     : "-";
 
   return (
@@ -194,7 +194,7 @@ const Book = () => {
             />
           </div>
         </CardMedia>
-        <CardContent>
+        <CardContent id="visible" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {/* Display a star rating component */}
           <h3>Your rating:</h3>
           <ReactStars {...ratingStars} />

@@ -59,7 +59,7 @@ const DisplayBook = ({ book, recommendation, size }) => {
 
 const Items = ({ items, page, size, recommendation = false }) => (
   // Argument "recommendation" is not always necessary, only when displaying recommendations.
-  <div className="page-container">
+  <div className="carousel">
     <Carousel
       additionalTransfrom={0}
       arrows

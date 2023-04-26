@@ -55,7 +55,7 @@ const DisplayMovie = ({ bormId }) => {
     : image;
 
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
           <img src={imageSource} />
@@ -106,7 +106,7 @@ const DisplayBook = ({ bormId }) => {
   var imageSource = book.img;
 
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} />
