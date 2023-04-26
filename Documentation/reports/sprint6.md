@@ -10,14 +10,14 @@
 |Torstai 20.4.|||
 |Perjantai 21.4.|||
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|0|kipeänä en tehnyt mitään|
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
+| Maanantai 24.4.|6|demovideon ideointia ja kalvojen tekoa yhdessä ja yksin|
+|Tiistai 25.4.|6|kalvot loppuun ja ääninauhojen suunnittelua|
+|Keskiviikko 26.4.|9|videon screencap, ääninauhojen tekoa ja editointia, videon editointia ja bookcine biisin teko tekoälyn avulla|
 |Torstai 27.4.|||
 |Perjantai 28.4.|||
 |Viikonloppu 29.-30.4.|||
