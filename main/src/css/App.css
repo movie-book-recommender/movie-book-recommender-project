@@ -21,7 +21,7 @@
       "similarm similarm similarm"
       "similarb similarb similarb";
 
-  margin: 0px auto;
+  margin: 15px auto;
   padding: 50px 80px;
   row-gap: 10px;
   column-gap: 20px;
@@ -60,54 +60,29 @@
 }
 
 .large-item-pic {
-  height: 300px;
   width: auto;
+  height: 300px;
 }
 
 .medium-item-pic {
   width: auto;
   height: 250px;
-  max-width: 166px;
  }
 
-.navbar a{
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  margin-right: 10px;
-  padding: 8px;
-  color: #F6F6F6;
-}
-
-.navbar a:hover{
-  font-weight: bold;
-  text-decoration-line: underline;
-  text-underline-offset: 10px;
-  text-decoration-color: #EE6055;
-  text-decoration-thickness: 3px;
-}
-
-.navbar a::before {
-  display: block;
-  content: attr(data-link);
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
 .page {
-  padding: 0px 20px 20px;
   display: block;
   overflow-y: auto;
 
 }
 
 .page-container {
-  padding: 10px;
+  padding: 15px 20px;
   display: block;
-  background-color:  rgb(218, 227, 243);
+  background-color: #F6F6F6;
+}
+
+.carousel {
+  display: block;
 }
 
 .movie-list{
@@ -131,7 +106,7 @@
       "similarm similarm similarm"
       "similarb similarb similarb";
 
-  margin: 0px auto;
+  margin: 15px auto;
   padding: 50px 80px;
   row-gap: 10px;
   column-gap: 20px;
@@ -166,7 +141,9 @@
 .movie-slot{
   grid-row: 1;
   grid-column: auto;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
  }
 
 .movie-info {
@@ -206,18 +183,6 @@
   opacity: .5;
  }
 
- .navbar {
-  padding: 20px;
-}
-
-.css-xqhexu-MuiPaper-root-MuiAppBar-root {
-  background-color: #003249 !important; 
-  display: block !important;
-  /*position: sticky !important;
-  top: 0 !important;
-  z-index: 2000 !important;*/
-}
-
  .react-multiple-carousel__arrow {
   background: #058ED9 !important;
   border-radius: 10px !important;
@@ -235,9 +200,13 @@
 }
 
 .small-item-pic {
-  width: fit-content ;
+  width: auto ;
   height: 180px;
-  object-fit: fill;
+}
+
+.sort-container {
+  margin: 10px 10px 50px;
+  line-height: 2.5em;
 }
 
 svg[data-testid="LocalMoviesRoundedIcon"] {
@@ -262,6 +231,7 @@ svg[data-testid="MenuBookRoundedIcon"] {
   margin-left: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .switch-text button:hover, .btn:hover {
@@ -280,6 +250,13 @@ svg[data-testid="MenuBookRoundedIcon"] {
   padding-left: 3px;
 }
 
+.show-more-less::before {
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 .show-more-less:hover {
   font-weight: bold;
   text-decoration: underline;
@@ -287,6 +264,11 @@ svg[data-testid="MenuBookRoundedIcon"] {
   text-decoration-color: #EE6055;
   text-decoration-thickness: 3px;
   cursor: pointer;
+}
+
+.sort {
+  display: inline-block;
+  padding: 0px 10px;
 }
 
 .table-left,
@@ -321,8 +303,10 @@ svg[data-testid="MenuBookRoundedIcon"] {
 }
 
 .table-item-info{
-  display: inline-block;
+  display: inline-flex;
   vertical-align: top;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .table-item-pic img {
@@ -340,10 +324,29 @@ svg[data-testid="MenuBookRoundedIcon"] {
 .warning {
   background-color: #EE6055;
   color: #001A23;
-  margin-left: 0px;
-  margin-bottom: 15px;
 }
 
 .warning:hover {
   background-color: #F2513C;
+}
+
+.ui.grid {
+  background-color: #003249;
+}
+
+.ui[class*="center align"].grid{
+  background-color: #1B1C1D;
+}
+
+#navbutton {
+  background-color: white !important;
+  margin: 10px;
+}
+
+#toggle {
+  background-color: #058ED9 !important;
+}
+
+#visible * {
+  overflow: visible !important;
 }

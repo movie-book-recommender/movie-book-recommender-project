@@ -1,5 +1,7 @@
 import { GetMovieByID } from "./components/Movie"
 
+//Used if user has opted to not allow cookies.
+//These reset if user refreshes the page or closes the session.
 var nonCookieBookRatings = []
 var nonCookieMovieRatings = []
 var nonCookieBookWishlist = []
@@ -73,7 +75,27 @@ function setCookie(borm, movieid, rating, exdays) {
   }  
 }
 
-
+//fetchCookie is used to get the desired cookie from the browser
+const fetchCookie = (borm, cookieName, cookieNameLength) =>{
+  //splits the recieved cookie string into different cookies
+  var cookies = document.cookie.split(';')
+  if(cookies[0] === '' || cookies.length === 0){
+    return ""
+  }
+  var cookie = ""
+  //If only one cookie is saved and it is the desired cookie, return it
+  if(cookies[0].substring(0, cookieNameLength) === borm + cookieName){
+    cookie = cookies[0].substring(cookieNameLength)
+  }
+  //For loop goes through all cookies and returns cookie with matching name
+  for(var i = 1; i < cookies.length; i++){
+    cookies[i] = cookies[i].substring(1)
+    if(cookies[i].substring(0, cookieNameLength) === borm + cookieName){
+      cookie = cookies[i].substring(cookieNameLength)
+    }  
+  }
+  return cookie
+}
 
 const removeAllRatings = (borm) =>{
   if(localStorage.cookie === "Disallow"){
@@ -90,21 +112,8 @@ const removeAllRatings = (borm) =>{
   document.cookie = borm + "Ratings=" + ";" + expires + ";path=/";
 }
 
-const getStringOfRatings = (borm) =>{
-  var cookies = document.cookie.split(';')
-  if(cookies[0] === '' || cookies.length === 0){
-    return ""
-  }
-  var cookie = ""
-  if(cookies[0].substring(0, 9) === borm + "Ratings="){
-    cookie = cookies[0].substring(9)
-  }
-  for(var i = 1; i < cookies.length; i++){
-    cookies[i] = cookies[i].substring(1)
-    if(cookies[i].substring(0, 9) === borm + "Ratings="){
-      cookie = cookies[i].substring(9)
-    }  
-  }   
+const getStringOfRatings = (borm) =>{   
+  var cookie = fetchCookie(borm, "Ratings=", 9)
   return cookie
 }
 
@@ -260,19 +269,7 @@ function getRecommended(borm){
       recommended = nonCookieMovieRecommendations
     }
   }else{
-    var cookies = document.cookie.split(";")
-    if(cookies[0] === '' || cookies.length === 0){
-      return []
-    }
-    var cookie = ""
-    for(var i = 0; i < cookies.length; i++){
-      if(i !== 0){
-        cookies[i] = cookies[i].substring(1)
-      } 
-      if(cookies[i].substring(0, 17) === borm + "Recommendations="){
-        cookie = cookies[i].substring(17)
-      }  
-    } 
+    var cookie = fetchCookie(borm, "Recommendations=", 17)
     var recommended = []
     recommended = cookie.split("&")
     recommended.shift()

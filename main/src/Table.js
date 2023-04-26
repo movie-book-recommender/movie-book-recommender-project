@@ -13,7 +13,7 @@ const Table = ({ movies, books }) => {
       from: 0,
       to: itemsPerPage
     })
-  
+    
     let moviesOnPage = movies.slice(moviePagination.from, moviePagination.to)
     let booksOnPage = books.slice(bookPagination.from, bookPagination.to)
   

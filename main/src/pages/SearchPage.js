@@ -56,12 +56,10 @@ const SearchPage = () => {
   };
 
   const handleSearchChange = (event) => {
-    console.log(event.target.value);
     setNewSearch(event.target.value);
   };
 
   const handleSearchTypeChange = (event) => {
-    console.log(event.target.value);
     setSearchType(event.target.value);
   };
 
@@ -122,10 +120,30 @@ const SearchPage = () => {
       <div class="sort-container">
         <p>
           Sort by:
-          <button onClick={handleSortByReleaseNew}>release newest first</button>
-          <button onClick={handleSortByReleaseOld}>release oldest first</button>
-          <button onClick={handleSortByTitleAsc}>title A-Z</button>
-          <button onClick={handleSortByTitleDesc}>title Z-A</button>
+          <Link
+            class="sort show-more-less"
+            onClick={handleSortByReleaseNew}
+          >
+            release newest first
+          </Link>
+          <Link
+            class="sort show-more-less"
+            onClick={handleSortByReleaseOld}
+          >
+            release oldest first
+          </Link>
+          <Link
+            class="sort show-more-less"
+            onClick={handleSortByTitleAsc}
+          >
+            title A-Z
+          </Link>
+          <Link
+            class="sort show-more-less"
+            onClick={handleSortByTitleDesc}
+          >
+            title Z-A
+          </Link>
         </p>
       </div>
       <SearchResult
@@ -243,7 +261,6 @@ const DisplayMovie = ({ movie }) => {
           {releaseYear})
         </div>
         <div>{movie.runtime} min</div>
-        <div class="table-item-rate">Your rate:</div>
         <div class="genres">
           {genrelist.map((genre) => (
             <div class="genre-badge">{genre}</div>
@@ -270,7 +287,7 @@ const DisplayBook = ({ book }) => {
         <div class="table-item-title">
           <Link to={`/book/${book.item_id}`}>{book.title}</Link>
         </div>
-        <div>First publish in {book.year}</div>
+        <div>Published in {book.year}</div>
         <div class="table-item-rate">Your rate:</div>
       </div>
     </div>

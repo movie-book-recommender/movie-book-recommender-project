@@ -1,9 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
-import "./css/App.css";
-import favicon from "./assets/logo.png";
-import Search from "./Search";
 import {
   Grid,
   Icon,
@@ -13,6 +9,11 @@ import {
   Sidebar,
   Button,
 } from "semantic-ui-react";
+
+import "./css/App.css";
+import navilogo from "./assets/header.png"
+import Search from "./Search";
+
 
 const Navbar = ({ page }) => {
   const navigate = useNavigate();
@@ -69,13 +70,16 @@ const Navbar = ({ page }) => {
             <Grid.Row verticalAlign="middle" stretched>
               <Grid.Column width={3} textAlign="center">
                 <Button
+                  id="navbutton"
                   circular
                   basic
+                  compact
                   animated="fade"
+                  size="big"
                   onClick={() => navigate("/")}
                 >
                   <Button.Content visible>
-                    <Image src={favicon} size="tiny" centered />
+                    <Image src={navilogo} size="small" centered />
                   </Button.Content>
                   <Button.Content hidden>Main Page</Button.Content>
                 </Button>
@@ -87,13 +91,14 @@ const Navbar = ({ page }) => {
 
               <Grid.Column width={3} floated="right">
                 <Button
-                  onClick={() => setVisible(true)}
-                  animated="fade"
+                  id="navbutton"
                   circular
-                  compact
                   basic
+                  compact
+                  animated="fade"
                   size="massive"
                   textAlign="center"
+                  onClick={() => setVisible(true)}
                 >
                   <Button.Content visible>
                     <Icon name="sidebar" />

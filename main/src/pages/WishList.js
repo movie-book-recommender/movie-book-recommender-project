@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import Heart from "react-heart";
 
@@ -10,8 +10,8 @@ import {
   onWishlist,
   addToWishlist,
 } from "../Cookies.js";
-import { GetMovieByID } from "../components/Movie";
-import { GetBookByID } from "../components/Book";
+import { getMovieById } from "../components/Movie";
+import { getBookById } from "../components/Book";
 import Table from "../Table";
 
 var cookies = getStringOfWishlist().split("&");
@@ -26,7 +26,7 @@ const updateWishlist = () => {
 const DisplayMovie = ({ bormId }) => {
   const borm = bormId.charAt(0);
   const id = bormId.substring(1);
-  const movie = GetMovieByID(id);
+  const movie = getMovieById(id);
 
   const rating = getCookie(borm, id);
   const ratingStars = {
@@ -55,7 +55,7 @@ const DisplayMovie = ({ bormId }) => {
     : image;
 
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/movie/${movie.movieid}`}>
           <img src={imageSource} />
@@ -79,7 +79,7 @@ const DisplayMovie = ({ bormId }) => {
 const DisplayBook = ({ bormId }) => {
   const borm = bormId.charAt(0);
   const id = bormId.substring(1);
-  const book = GetBookByID(id);
+  const book = getBookById(id);
 
   var rating = getCookie(borm, id);
   var ratingStars = {
@@ -94,7 +94,7 @@ const DisplayBook = ({ bormId }) => {
   const [heart, setHeart] = useState(isWishlisted);
   const heartElement = {
     animationTrigger: "hover",
-    isActive: onWishlist(borm, id),
+    isActive: heart,
     onClick: () => {
       addToWishlist(borm, id);
       isWishlisted = onWishlist(borm, id);
@@ -106,7 +106,7 @@ const DisplayBook = ({ bormId }) => {
   var imageSource = book.img;
 
   return (
-    <div class="table-item">
+    <div id="visible" class="table-item">
       <div class="table-item-pic">
         <Link to={`/book/${book.item_id}`}>
           <img src={imageSource} />
@@ -129,10 +129,14 @@ const DisplayBook = ({ bormId }) => {
 
 const Wishlist = () => {
   let movieCookies = cookies.filter((cookie) => cookie.charAt(0) === "M");
-  let movies = movieCookies.map((cookie) => <DisplayMovie bormId={cookie} />);
+  let movies = movieCookies.map((cookie) => (
+    <DisplayMovie bormId={cookie} key={cookie} />
+  ));
 
   let bookCookies = cookies.filter((cookie) => cookie.charAt(0) === "B");
-  let books = bookCookies.map((cookie) => <DisplayBook bormId={cookie} />);
+  let books = bookCookies.map((cookie) => (
+    <DisplayBook bormId={cookie} key={cookie} />
+  ));
 
   if (cookies.length > 0) {
     return (

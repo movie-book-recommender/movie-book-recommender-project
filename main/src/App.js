@@ -87,7 +87,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Movie-Book Recommender</title>
+        <title>BookCine</title>
         <meta
           name="description"
           content="Get movie and book recommendations based on your ratings!"
