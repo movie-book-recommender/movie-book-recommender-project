@@ -2,7 +2,6 @@ describe("Wishlist ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/");
     cy.contains("Allow").click();
-    cy.wait(1000);
   });
 
   describe("for movies", function () {
@@ -11,17 +10,15 @@ describe("Wishlist ", function () {
       cy.get(".movie-pic").first().click();
       cy.wait(1000);
       cy.get(".heart").eq(1).click();
+      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+      cy.contains("Wishlist").click();
     });
 
     it("can add movie to wishlist", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
       cy.get(".heart").eq(1).should("have.length", 1);
     });
 
     it("can remove movie from wishlist in Wishlist page", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
       cy.get(".heart").eq(1).should("have.length", 1);
       cy.get(".heart").eq(1).click();
       cy.reload();
@@ -29,9 +26,6 @@ describe("Wishlist ", function () {
     });
 
     it("can remove movie from wishlist in movie's page", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
-      cy.wait(1000);
       cy.get(".table-left").within(() => {
         cy.get(".heart").should("have.length", 1);
         cy.get("img").first().click();
@@ -50,17 +44,15 @@ describe("Wishlist ", function () {
       cy.get(".movie-pic").eq(11).children("a").click();
       cy.wait(1000);
       cy.get(".heart").eq(1).click();
+      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+      cy.contains("Wishlist").click();
     });
 
     it("can add book to wishlist", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
       cy.get(".heart").eq(1).should("have.length", 1);
     });
 
     it("can remove book from wishlist in Wishlist page", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
       cy.get(".heart").eq(1).should("have.length", 1);
       cy.get(".heart").eq(1).click();
       cy.reload();
@@ -68,8 +60,6 @@ describe("Wishlist ", function () {
     });
 
     it("can remove book from wishlist in book's page", function () {
-      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-      cy.contains("Wishlist").click();
       cy.get(".heart").eq(1).should("have.length", 1);
       cy.get("img").eq(1).click();
       cy.get(".heart").eq(1).click();
