@@ -1,6 +1,8 @@
 # Hours based on sprints
 ## Emilia
-|Sprint| Date | Hours|
+
+| Sprint | Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | 31,5 |
 |Sprint 1| 31.1.-12.2. | 32 |
 |Sprint 2| 13.2.-26.2. | 15 |
@@ -11,8 +13,10 @@
 |Sprint 7| 1.5.-5.5. | |
 |Yhteensä| 16.1.-5.5. | 193,5?? |
 
+
 ## Eero
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
@@ -25,6 +29,7 @@
 
 ## Nana
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
@@ -37,6 +42,7 @@
 
 ## Polina
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
@@ -49,6 +55,7 @@
 
 ## Aleksi
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
@@ -61,6 +68,7 @@
 
 ## Sebastian
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
@@ -73,6 +81,7 @@
 
 ## Katri
 |Sprint| Date | Hours|
+| :----:|:-----| :-----|
 |Sprint 0| 16.1.-29.1. | |
 |Sprint 1| 31.1.-12.2. | |
 |Sprint 2| 13.2.-26.2. | |
