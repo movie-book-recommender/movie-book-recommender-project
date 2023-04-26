@@ -10,6 +10,7 @@ import { Movie } from "./components/Movie";
 import { Book } from "./components/Book";
 import { Ratings } from "./pages/Ratings";
 import { Wishlist } from "./pages/WishList";
+import { About } from "./pages/About";
 import SearchPage from "./pages/SearchPage";
 import MainPage from "./pages/MainPage";
 import Navibar from "./Navibar";
@@ -101,6 +102,7 @@ const App = () => {
           <Route path="/search" element={<Navibar page={<SearchPage />} />} />
           <Route path="/movie/:id" element={<Navibar page={<Movie />} />} />
           <Route path="/book/:id" element={<Navibar page={<Book />} />} />
+          <Route path="/about" element={<Navibar page={<About />} />} />
         </Routes>
         <AllowCookiesPopUp />
       </div>

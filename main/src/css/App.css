@@ -1,12 +1,12 @@
 .about-page-wrapper {
-  margin: 0px auto;
+  margin: 15px auto;
   padding: 50px 80px;
   max-width: 1000px;
   background-color: white;
 }
 
 .publication {
-  padding: 5px;
+  padding: 5px 15px;
 }
 
 .book-page-wrapper {
@@ -349,4 +349,8 @@ svg[data-testid="MenuBookRoundedIcon"] {
 
 #visible * {
   overflow: visible !important;
+}
+
+.pushable > .pusher {
+  background-color: #F6F6F6 !important;
 }
