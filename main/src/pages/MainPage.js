@@ -17,7 +17,7 @@ const GetBooks = () => {
 
   useEffect(() => {
     axios
-      .get("http://128.214.253.51:3000/dbgettop10newestbooks")
+      .get("http://128.214.253.51:3000/dbgettop10highestratedbooks")
       .then((response) => {
         setBooks(response.data);
       })
@@ -35,7 +35,7 @@ const GetMovies = () => {
 
   useEffect(() => {
     axios
-      .get("http://128.214.253.51:3000/dbgettop10newestpublishedmovies")
+      .get("http://128.214.253.51:3000/dbgettop10highestratedmovies")
       .then((response) => {
         setMovies(response.data);
       })
@@ -203,9 +203,9 @@ const MainPage = () => {
     updateRatings(); // Update ratings to get personal recommendations
     return (
       <div className="page-container">
-        <h2>Top 10 newest movies</h2>
+        <h2>Highest rated movies</h2>
         <Items items={movies} page={"movies"} size={"medium-item-pic"} />
-        <h2>Top 10 newest books</h2>
+        <h2>Highest rated books</h2>
         <Items items={books} page={"books"} size={"medium-item-pic"} />
         <p>
           Please rate at least one movie and one book to receive personal
