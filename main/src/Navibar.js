@@ -62,6 +62,15 @@ const Navbar = ({ page }) => {
                 <Icon name="search" />
                 Search
               </Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  setVisible(false);
+                  navigate(`/about`);
+                }}
+              >
+                <Icon name="comment alternate outline" />
+                About
+              </Menu.Item>
             </Menu>
           </Grid>
         </Sidebar>

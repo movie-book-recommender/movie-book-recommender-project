@@ -5,7 +5,7 @@ describe("Book ratings", function () {
     cy.wait(1000);
     cy.contains("Allow").click();
     cy.wait(1000);
-    cy.contains("180 Seconds").click();
+    cy.get(".movie-pic").eq(11).children("a").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='0']").click();
@@ -57,7 +57,7 @@ describe("Book ratings", function () {
     cy.contains("You have rated 1 books.").should("exist");
     cy.get(".ui.basic.circular.fade.animated.button").eq(0).click();
     cy.wait(1000);
-    cy.contains("A List of Cages").click();
+    cy.get(".movie-pic").eq(12).children("a").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='2']").click();
@@ -75,7 +75,7 @@ describe("Book ratings", function () {
     cy.contains("You have rated 1 books.").should("exist");
     cy.get(".ui.basic.circular.fade.animated.button").eq(0).click();
     cy.wait(1000);
-    cy.contains("A List of Cages").click();
+    cy.get(".movie-pic").eq(12).children("a").click();
     cy.wait(1000);
     cy.get(".react-stars").within(() => {
       cy.get("[data-index='2']").click();
