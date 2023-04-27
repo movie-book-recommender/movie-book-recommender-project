@@ -54,3 +54,11 @@ to match the production version.
 ### Continuous integration
 
 Description of the CI/CD pipeline is covered in detail [here](https://github.com/movie-book-recommender/movie-book-recommender-project/blob/main/Documentation/ci_cd/ci_cd_pipeline.md). In short, everytime some change is pushed to the main branch, a new container image is built, pushed to [Dockerhub](https://hub.docker.com/), pulled to the server, started and the old container image is deleted.
+
+## Ideas for future development
+
+- Test coverage for end to end tests
+
+- Embedded trailers for movies
+
+- Updating library of movies and books

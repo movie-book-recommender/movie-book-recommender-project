@@ -49,6 +49,8 @@ To start developing, read [this](https://github.com/movie-book-recommender/movie
 
 - [Architecture](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/architecture.md)
 
+- [Testing Document](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/testing.md)
+
 ## Backlogs
 
 - [Product backlog](https://github.com/orgs/movie-book-recommender/projects/7/views/1)
