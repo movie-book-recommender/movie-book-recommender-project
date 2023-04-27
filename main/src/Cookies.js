@@ -75,6 +75,22 @@ function setCookie(borm, movieid, rating, exdays) {
   }  
 }
 
+const clearAll = () =>{
+  nonCookieBookRatings = []
+  nonCookieMovieRatings = []
+  nonCookieBookWishlist = []
+  nonCookieMovieWishlist = [] 
+  nonCookieBookRecommendations = []
+  nonCookieMovieRecommendations = []
+
+  const cookies = document.cookie.split(";")
+  for(let i = 0; i < cookies.length; i++){
+    const cookie = cookies[i]
+    const name = cookie.split("=")[0]
+    document.cookie = name + "=;expires=Thu, 20 Apr 2023 00:00:00 GMT";
+  }
+}
+
 //fetchCookie is used to get the desired cookie from the browser
 const fetchCookie = (borm, cookieName, cookieNameLength) =>{
   //splits the recieved cookie string into different cookies
@@ -313,4 +329,4 @@ function getRecommended(borm){
 
 
 
-  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings, getRecommended, setRecommended };
+  export { setCookie, getCookie, getCookies, addToWishlist, getStringOfWishlist, onWishlist, removeAllRatings, getRecommended, setRecommended, clearAll };
