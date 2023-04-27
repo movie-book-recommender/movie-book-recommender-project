@@ -212,10 +212,10 @@ Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
+| Maanantai 24.4.|0.25|Daily|
+|Tiistai 25.4.|0|n/a|
+|Keskiviikko 26.4.|1|Daily, datan varmuuskopiointi, kommentteja videoon|
+|Torstai 27.4.|0.75|Demon preppaus|
 |Perjantai 28.4.|||
 |Viikonloppu 29.-30.4.|||
 |Yhteensä|||
