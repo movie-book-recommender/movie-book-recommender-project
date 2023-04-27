@@ -14,10 +14,14 @@ import { getMovieById } from "../components/Movie";
 import { getBookById } from "../components/Book";
 import Table from "../Table";
 
+//Fetch the wishlist from cookies and remove the last element.
+//The split function will leave an empty element as the last
+//member of the list, which is then popped.
 var cookies = getStringOfWishlist().split("&");
 cookies.pop();
 console.log(cookies);
 
+//Updates the wishlist by fetching it again from the cookies
 const updateWishlist = () => {
   cookies = getStringOfWishlist().split("&");
   cookies.pop();

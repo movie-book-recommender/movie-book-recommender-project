@@ -113,6 +113,7 @@ const fetchCookie = (borm, cookieName, cookieNameLength) =>{
   return cookie
 }
 
+//Removes all ratings from cookies
 const removeAllRatings = (borm) =>{
   if(localStorage.cookie === "Disallow"){
     if(borm === "B"){
@@ -133,8 +134,11 @@ const getStringOfRatings = (borm) =>{
   return cookie
 }
 
-
+//Adds the given id to the wishlist
+//If the id is already on the wishlist, the id is removed
 function addToWishlist(borm, id, exdays) {
+  //If the user has not allowed cookies, check the list for the id
+  //Remove the id if the list includes it, otherwise add it to the list
   if (localStorage.cookie === "Disallow"){
     var bormId = borm + id
     if (borm === "M") {
@@ -153,6 +157,8 @@ function addToWishlist(borm, id, exdays) {
       }
     }
   } else {
+    //If cookies are allowed, fetch previous wishlist and iterate through it
+    //Remove the id if it is found, otherwise append it to the wishlist and update it
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
@@ -171,6 +177,7 @@ function addToWishlist(borm, id, exdays) {
   }
 }
 
+//Checks if the given id is on the wishlist
 function onWishlist(borm, id) {
   var bormId = borm + id
   if (localStorage.cookie === "Disallow") {
@@ -183,6 +190,7 @@ function onWishlist(borm, id) {
   }
 }
 
+//Returns the entire wishlist as a string
 const getStringOfWishlist = () =>{
   if (localStorage.cookie === "Disallow") {
     if (nonCookieBookWishlist.concat(nonCookieMovieWishlist).length === 0) { return "" }
@@ -201,6 +209,7 @@ const getStringOfWishlist = () =>{
   }
   return cookie
 }
+
 //Searches saved cookies for a cookie with the name movieid
 //Returns rating associated with that cookie or 0 if no cookie is found
 function getCookie(borm, id) {
