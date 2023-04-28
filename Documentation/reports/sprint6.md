@@ -216,14 +216,14 @@ Viikko 2
 |Tiistai 25.4.|0|n/a|
 |Keskiviikko 26.4.|1|Daily, datan varmuuskopiointi, kommentteja videoon|
 |Torstai 27.4.|0.75|Demon preppaus|
-|Perjantai 28.4.|||
-|Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Perjantai 28.4.|3|Daily, asiakastapaaminen, handoveria|
+|Viikonloppu 29.-30.4.|0|n/a|
+|Yhteensä|5|Kumulatiivisesti kurssissa tehty 200/200 tuntia|
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 1.5.|||
+| Maanantai 1.5.|0|n/a|
 |Tiistai 2.5.|||
 |Keskiviikko 3.5.|||
 |Torstai 4.5.|||
@@ -235,3 +235,4 @@ Viikko 3
 * Backendin koodin laatua parannettu
 * Tietokanta siistitty (turhat taulut poistettu, viimeinen puuttuva tiedosto lisätty tietokantaan)
 * Backendin ohjeistus päivitetty
+* Handover aloitettu
