@@ -1,4 +1,61 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { clearAll } from "../Cookies";
+import { Modal, Box, Button } from "@mui/material";
+
+const CookiePreferences = () => {
+    const [open, setOpen] = useState(false)
+    function closeModal(){
+        setOpen(false)
+    }
+    function resetCookiePreferences(){
+        localStorage.clear()
+        clearAll()
+        closeModal()
+        window.location.reload(false)
+    }
+    const Popup = () => {
+        return (
+            <Modal open={open} onClose={closeModal}>
+                <Box
+                sx={{
+                    color: "black",
+                    bgcolor: "white",
+                    width: 800,
+                    heigh: 800,
+                    border: 2,
+                    mx: "auto",
+                    mt: 10,
+                    textAlign: "center",
+                }}
+                >
+                    <h3>Do you want to reset your cookie preferences.</h3>
+                    <p>Resetting your cookie preferences will also reset your ratings and wishlist.</p>    
+                    <Button onClick={()=>{
+                        resetCookiePreferences()
+                    }}>
+                        Change my preferences
+                    </Button>
+                    <Button onClick={()=>{
+                        closeModal()
+                    }}>
+                        Never mind
+                    </Button>
+                </Box>
+            </Modal>
+        )
+    }
+    return(
+        <div>
+        <Popup />
+        <Button onClick={() =>{
+            setOpen(true)
+        }}>
+            Change preferences
+        </Button>
+        </div>
+    )
+}
 
 const About = () => {
     return(
@@ -23,6 +80,9 @@ const About = () => {
             <p>
                 The source code of project can be found in <Link to="https://github.com/movie-book-recommender/movie-book-recommender-project" target="_blank" rel="noopener noreferrer">Github</Link>.
             </p>
+            <p></p>
+            <h2>Cookie preferences</h2>
+            <CookiePreferences />
         </div>
     )
 }
