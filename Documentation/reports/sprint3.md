@@ -115,9 +115,9 @@ Viikko 2
 |Tiistai 7.3.|||
 |Keskiviikko 8.3.|||
 |Torstai 9.3.|||
-|Perjantai 10.3.|||
-|Viikonloppu 11.-12.3.|||
-|Yhteensä|||
+|Perjantai 10.3.|4|Frontin koodausta|
+|Viikonloppu 11.-12.3.|4|Frontin koodausta|
+|Yhteensä|8||
 ### Katri
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
