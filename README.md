@@ -2,7 +2,7 @@
 
 # Movie-book recommender project for software engineering project 2023
 
-[Try our apllication here](http://128.214.253.51:5000/movies)
+[Try our apllication here](http://128.214.253.51:5000)
 
 ## Instructions
 
@@ -23,7 +23,7 @@ git clone git@github.com:movie-book-recommender/movie-book-recommender-project.g
 
 - [Record of worked hours](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/reports)
 
-- [Wofkflow tips for developers](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/workflow)
+- [Workflow tips for developers](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/workflow)
 
 - [Problems and Solutions](https://github.com/movie-book-recommender/movie-book-recommender-project/tree/main/Documentation/problems%20and%20solutions)
 
