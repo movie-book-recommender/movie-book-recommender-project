@@ -173,19 +173,19 @@ Viikko 3
 |Keskiviikko 19.4.|||
 |Torstai 20.4.|||
 |Perjantai 21.4.|||
-|Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Viikonloppu 22.-23.4.|4|user guiden tekemistä, tähtien fixailua tuloksetta|
+|Yhteensä|4||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
+| Maanantai 24.4.|2|user guiden tekemistä|
+|Tiistai 25.4.|2|user guiden viimeistelyä ja frontin kommentointia|
 |Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Torstai 27.4.|0.5|demo suunnittelua|
+|Perjantai 28.4.|2.5|asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
