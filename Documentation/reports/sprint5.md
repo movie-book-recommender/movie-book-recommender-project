@@ -172,7 +172,7 @@ Viikko 3
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
 |Perjantai 14.4.|3|asiakastapaamisen suunnittelu, logon tsekkailua|
-|Viikonloppu 15.-16.4.|||
+|Viikonloppu 15.-16.4.|2|logon kanssa säätämistä tuloksetta|
 |Yhteensä|||
 
 ### Katri
