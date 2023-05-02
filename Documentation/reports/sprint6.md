@@ -52,9 +52,9 @@ Viikko 2
 |Tiistai 25.4.|||
 |Keskiviikko 26.4.|2|Dokumentaation tekemistä|
 |Torstai 27.4.|5|Asiakastapaamisen preppaus ja dokumentaatiota|
-|Perjantai 28.4.|||
+|Perjantai 28.4.|3|Asiakastapaaminen ja handoverin aloittelua|
 |Viikonloppu 29.-30.4.|1|Viikon dailyt|
-|Yhteensä|10||
+|Yhteensä|13||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
