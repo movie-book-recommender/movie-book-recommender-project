@@ -16,7 +16,8 @@ The application is made during University of Helsinki's course [Software enginee
 
 The application is split between two repositories: Frontend (this one) and [Backend](https://github.com/movie-book-recommender/movie-book-backend). The frontend is made using Javascript with React framework and backend is done with Python.
 
-[Try our application here](http://128.214.253.51:5000/movies)
+[Try our apllication here](http://128.214.253.51:5000)
+
 
 ## Instructions
 

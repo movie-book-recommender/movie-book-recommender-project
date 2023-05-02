@@ -51,10 +51,10 @@ Viikko 2
 | Maanantai 24.4.|2|Demovideon ideointia ja kalvojen tekemistä|
 |Tiistai 25.4.|||
 |Keskiviikko 26.4.|2|Dokumentaation tekemistä|
-|Torstai 27.4.|1|Asiakastapaamisen preppaus|
-|Perjantai 28.4.|||
+|Torstai 27.4.|5|Asiakastapaamisen preppaus ja dokumentaatiota|
+|Perjantai 28.4.|3|Asiakastapaaminen ja handoverin aloittelua|
 |Viikonloppu 29.-30.4.|1|Viikon dailyt|
-|Yhteensä|6||
+|Yhteensä|13||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
@@ -173,19 +173,19 @@ Viikko 3
 |Keskiviikko 19.4.|||
 |Torstai 20.4.|||
 |Perjantai 21.4.|||
-|Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Viikonloppu 22.-23.4.|4|user guiden tekemistä, tähtien fixailua tuloksetta|
+|Yhteensä|4||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
+| Maanantai 24.4.|2|user guiden tekemistä|
+|Tiistai 25.4.|2|user guiden viimeistelyä ja frontin kommentointia|
 |Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Torstai 27.4.|0.5|demo suunnittelua|
+|Perjantai 28.4.|2.5|asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
@@ -212,18 +212,18 @@ Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
-|Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+| Maanantai 24.4.|0.25|Daily|
+|Tiistai 25.4.|0|n/a|
+|Keskiviikko 26.4.|1|Daily, datan varmuuskopiointi, kommentteja videoon|
+|Torstai 27.4.|0.75|Demon preppaus|
+|Perjantai 28.4.|3|Daily, asiakastapaaminen, handoveria|
+|Viikonloppu 29.-30.4.|0|n/a|
+|Yhteensä|5|Kumulatiivisesti kurssissa tehty 200/200 tuntia|
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 1.5.|||
+| Maanantai 1.5.|0|n/a|
 |Tiistai 2.5.|||
 |Keskiviikko 3.5.|||
 |Torstai 4.5.|||
@@ -235,3 +235,4 @@ Viikko 3
 * Backendin koodin laatua parannettu
 * Tietokanta siistitty (turhat taulut poistettu, viimeinen puuttuva tiedosto lisätty tietokantaan)
 * Backendin ohjeistus päivitetty
+* Handover aloitettu
