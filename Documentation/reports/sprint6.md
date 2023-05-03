@@ -19,20 +19,20 @@ Viikko 2
 |Tiistai 25.4.|6|kalvot loppuun ja ääninauhojen suunnittelua|
 |Keskiviikko 26.4.|9|videon screencap, ääninauhojen tekoa ja editointia, videon editointia ja bookcine biisin teko tekoälyn avulla|
 |Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Perjantai 28.4.|3|asiakastapaaminen ja handoverin aloittelua|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|24||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
+|Keskiviikko 3.5.|,75|handoverin prep|
 |Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Perjantai 5.5.|5|demotilaisuus ja handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|5,75||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
