@@ -24,8 +24,8 @@
 |Sprint 4| 13.3.-26.3. | 32 |
 |Sprint 5| 27.3.-16.4. | 26 |
 |Sprint 6| 17.4.-30.4. | 24 |
-|Sprint 7| 1.5.-5.5. | 5 |
-|Yhteensä| 16.1.-5.5. | 198 |
+|Sprint 7| 1.5.-5.5. | 6|
+|Yhteensä| 16.1.-5.5. | 199 |
 
 ## Nana
 |Sprint| Date | Hours|
