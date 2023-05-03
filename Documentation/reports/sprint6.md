@@ -63,9 +63,9 @@ Viikko 3
 |Tiistai 2.5.|||
 |Keskiviikko 3.5.|||
 |Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Perjantai 5.5.|5|Demotilaisuus ja handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|5||
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
