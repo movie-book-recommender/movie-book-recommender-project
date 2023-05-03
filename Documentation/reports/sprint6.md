@@ -19,20 +19,20 @@ Viikko 2
 |Tiistai 25.4.|6|kalvot loppuun ja ääninauhojen suunnittelua|
 |Keskiviikko 26.4.|9|videon screencap, ääninauhojen tekoa ja editointia, videon editointia ja bookcine biisin teko tekoälyn avulla|
 |Torstai 27.4.|||
-|Perjantai 28.4.|3|asiakastapaaminen ja handoverin aloittelua|
+|Perjantai 28.4.|||
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|24||
+|Yhteensä|||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|,75|handoverin prep|
+|Keskiviikko 3.5.|||
 |Torstai 4.5.|||
-|Perjantai 5.5.|5|demotilaisuus ja handover|
+|Perjantai 5.5.|||
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|5,75||
+|Yhteensä|||
 
 ### Eero
 | päivä | aika | tehdyt asiat  |
@@ -224,12 +224,12 @@ Viikko 3
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|0|n/a|
-|Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
-|Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Tiistai 2.5.|0|n/a|
+|Keskiviikko 3.5.|1|Daily, handoverin preppaus, tuntien raportointi|
+|Torstai 4.5.|0|n/a|
+|Perjantai 5.5.|5|Alustava arvio: Demo ja asiakashandover|
+|Viikonloppu 6.-7.5.|0|n/a|
+|Yhteensä|8|Kumulatiivisesti kurssissa tehty 206/200 tuntia|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 * Backendin koodin laatua parannettu
