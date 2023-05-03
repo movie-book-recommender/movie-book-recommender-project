@@ -61,11 +61,11 @@ Viikko 3
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
+|Keskiviikko 3.5.|1|Handoverin suunnittelu|
 |Torstai 4.5.|||
 |Perjantai 5.5.|5|Demotilaisuus ja handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|5||
+|Yhteensä|6|Yhteensä projektin aikana 199/200|
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
