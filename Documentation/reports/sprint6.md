@@ -70,35 +70,35 @@ Viikko 3
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
+| Maanantai 17.4.|5|asiakastapaaminen, retro, planning ja yhdessä koodausta|
 |Tiistai 18.4.|||
-|Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
+|Keskiviikko 19.4.|3|koodin kommentointia|
+|Torstai 20.4.|3|koodin kommentointia|
+|Perjantai 21.4.|2||
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|10||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 24.4.|||
 |Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Keskiviikko 26.4.|3|koodin refactorointia, kommentit|
+|Torstai 27.4.|0.75|asiakastapaamiseen valmistautuminen|
+|Perjantai 28.4.|3|asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
-|Tiistai 2.5.|||
+|Tiistai 2.5.|2|koodin kommentointia|
 |Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Torstai 4.5.|0.75|handoverin suunnittelu|
+|Perjantai 5.5.|5|asiakastapaaminen|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|8||
 
 ### Aleksi
 | päivä | aika | tehdyt asiat  |

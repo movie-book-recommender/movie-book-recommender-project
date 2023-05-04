@@ -42,13 +42,13 @@ Viikko 2
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 30.1.|4|Asiakastapaaminen, sprint planning ja sprint retro ja Dockeria|
+| Maanantai 30.1.|5|Asiakastapaaminen, sprint planning ja sprint retro ja Dockeria|
 |Tiistai 31.1.|||
 |Keskiviikko 1.2.|2|Dockerin opettelua|
-|Torstai 2.2.|2|Dockerin opettelua ja imagen luomista|
+|Torstai 2.2.|3|Dockerin opettelua ja imagen luomista|
 |Perjantai 3.2.|3|leffojen hakutoiminnan suunnittelua|
 |Viikonloppu 4.-5.2.|||
-|Yhteensä|11||
+|Yhteensä|13||
 Viikko 2
 |||
 | Maanantai 6.2.|2|hakutoimintoon tutustuminen|
