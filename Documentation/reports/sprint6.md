@@ -1,4 +1,4 @@
-# Sprint 5
+# Sprint 6
 ## Työaikakirjanpito
 
 ### Emilia
@@ -136,35 +136,36 @@ Viikko 3
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
-|Tiistai 18.4.|||
+| Maanantai 17.4.|6|Asiakastapaaminen, retro, sprint planning, yhdessä tekemistä, design+testien fiksailua|
+|Tiistai 18.4.|4|Design, riippuvuuksien kanssa tappelua|
 |Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
+|Torstai 20.4.|2|Design|
+|Perjantai 21.4.|3|Softskills-workshop|
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|13||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+| Maanantai 24.4.|3,25|Design|
+|Tiistai 25.4.|3|Design|
+|Keskiviikko 26.4.|1,5|Design|
+|Torstai 27.4.|0,75|Asiakastapaamiseen valmistautuminen|
+|Perjantai 28.4.|3|Asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|11,5||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
+|Keskiviikko 3.5.|1|Handoverin suunnittelua|
 |Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Perjantai 5.5.|5|Alustava arvio: Demo ja asiakashandover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|6|Tunnit yhteensä kurssilta 202|
+
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
