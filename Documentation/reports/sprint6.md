@@ -185,19 +185,19 @@ Viikko 2
 |Keskiviikko 26.4.|||
 |Torstai 27.4.|0.5|demo suunnittelua|
 |Perjantai 28.4.|2.5|asiakastapaaminen|
-|Viikonloppu 29.-30.4.|||
+|Viikonloppu 29.-30.4.|2|requirement specificationin tutkimista|
 |Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 1.5.|||
+| Maanantai 1.5.|3|requirement specificationin tutkimista|
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Keskiviikko 3.5.|2|requirement specification tutkimista ja tekemistä|
+|Torstai 4.5.|4|requirement specificationin tekemsitä|
+|Perjantai 5.5.|2|handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|23||
 
 ### Katri
 | päivä | aika | tehdyt asiat  |
