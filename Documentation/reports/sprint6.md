@@ -103,35 +103,35 @@ Viikko 3
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
-|Tiistai 18.4.|||
+| Maanantai 17.4.|5|Asiakastapaaminen, retro, sprint planning, ja yhdessä koodausta|
+|Tiistai 18.4.|3|Yhdessä koodausta kirjastolla|
 |Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
+|Torstai 20.4.|2|Koodin kommentoitnia|
+|Perjantai 21.4.|3|Tähti ja sydän korjausten viimeistely ja pushaus + testien selvittäminen|
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|13||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
+| Maanantai 24.4.|2|CPU:n käytön ongelman selvitystä|
 |Tiistai 25.4.|||
 |Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Torstai 27.4.|3|Asiakastapaamiseen valmistautuminen ja evästenapin koodaus|
+|Perjantai 28.4.|2|Viimeinen asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Keskiviikko 3.5.|1,5|Handoverin suunnittelu, koodin kommennoinnin tarkastus|
+|Torstai 4.5.|0,5|Tuntien päivitys|
+|Perjantai 5.5.|2|Alustava arvio: handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|4|Tunnit kurssilta yhteensä: 200,25|
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
