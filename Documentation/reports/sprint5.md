@@ -135,17 +135,17 @@ Viikko 2
 |Keskiviikko 5.4.|1|Daily, merget, merge fixit ja testailua|
 |Torstai 6.4.|||
 |Perjantai 7.4.|||
-|Viikonloppu 8.-9.4.|||
-|Yhteensä|8,5||
+|Viikonloppu 8.-9.4.|4|Design, kirjojen genrejen tutkimista|
+|Yhteensä|12,5||
 Viikko 3
 |||
 | Maanantai 10.4.|||
 |Tiistai 11.4.|||
-|Keskiviikko 12.4.|||
+|Keskiviikko 12.4.|2,5|Design|
 |Torstai 13.4.|||
-|Perjantai 14.4.|||
-|Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Perjantai 14.4.|1|Asiakastapaamisen suunnittelu|
+|Viikonloppu 15.-16.4.|3|Design|
+|Yhteensä|6,5||
 
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
@@ -173,7 +173,7 @@ Viikko 3
 |Keskiviikko 12.4.|||
 |Torstai 13.4.|||
 |Perjantai 14.4.|3|asiakastapaamisen suunnittelu, logon tsekkailua|
-|Viikonloppu 15.-16.4.|||
+|Viikonloppu 15.-16.4.|2|logon kanssa säätämistä tuloksetta|
 |Yhteensä|||
 
 ### Katri

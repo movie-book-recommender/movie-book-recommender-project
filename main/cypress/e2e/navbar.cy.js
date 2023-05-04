@@ -1,56 +1,40 @@
 /* eslint-disable no-undef */
-describe("Itemlens book mainpage ", function () {
+describe("BookCine navbar ", function () {
   beforeEach(function () {
     cy.visit("http://localhost:3000/");
     cy.wait(1000);
-
     cy.contains("Allow").click();
-    cy.wait(1000);
-  });
-  it("mainpage can be clicked", function () {
-    cy.get(".ui.basic.circular.fade.animated.button").click({ multiple: true });
-    cy.wait(1000);
-
-    cy.contains("Top 10 newest movies");
   });
 
-  it("menu can be clicked", function () {
-    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-    cy.wait(1000);
+  describe("hidden menu", function () {
+    beforeEach(function() {
+      cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
+    })
 
-    cy.contains("Wishlist");
-    cy.contains("Ratings");
-    cy.contains("Search");
-  });
-  it("wishlist can be opened", function () {
-    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-    cy.wait(1000);
+    it("wishlist can be opened", function() {
+      cy.contains("Wishlist").click();
+      cy.contains("No items on Wishlist!");
+    })
 
-    cy.contains("Wishlist").click();
-    cy.wait(1000);
+    it("raitings can be opened", function() {
+      cy.contains("Ratings").click();
+      cy.contains("You have not rated any books yet!");
+    })
 
-    cy.contains("No items on Wishlist!");
-  });
-  it("ratings can be opened", function () {
-    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-    cy.wait(1000);
+    it("search can be opened", function () {  
+      cy.contains("Search").click();
+      cy.contains("Search movies and books");
+    })
 
-    cy.contains("Ratings").click();
-    cy.wait(1000);
-    cy.contains("You have not rated any books yet!");
-  });
-  it("search can be opened", function () {
-    cy.get(".ui.massive.basic.circular.compact.fade.animated.button").click();
-    cy.wait(1000);
-
-    cy.contains("Search").click();
-    cy.contains("Search movies and books");
-  });
+    it("about can be opened", function () {
+      cy.contains("About").click();
+      cy.contains("About BookCine");
+    });
+  })
 
   it("shows correct results when typing in search bar for books", function () {
     cy.get("input").click();
     cy.get(".ui.toggle.button").eq(0).click();
-
     cy.get("input").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)");
   });
@@ -80,15 +64,26 @@ describe("Itemlens book mainpage ", function () {
   it("link to movie works in search", function () {
     cy.get("input").type("pirates");
     cy.contains("Pirates of Silicon Valley").click();
+    cy.wait(1000)
     cy.contains("Your rating:");
+    cy.contains("Similar movies");
+    cy.contains("The Hoax");
+    cy.contains("Similar books");
+    cy.contains("The Innovators");
   });
 
   it("link to book works in search", function () {
     cy.get("input").click();
     cy.get(".ui.toggle.button").eq(0).click();
-
     cy.get("input").type("rincewind");
     cy.contains("Eric (Discworld, #9; Rincewind #4)").click();
+    cy.wait(1000)
     cy.contains("Your rating:");
+    cy.contains("Other books from author")
+    cy.contains("Dodger")
+    cy.contains("Similar movies");
+    cy.contains("The Princess Bride");
+    cy.contains("Similar books");
+    cy.contains("The Light Fantastic");
   });
 });

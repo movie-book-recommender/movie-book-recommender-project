@@ -8,10 +8,6 @@ describe("Search Page ", function () {
     cy.contains("Search").click();
   });
 
-  it("can be opened", function () {
-    cy.contains("Search movies and books");
-  });
-
   it("shows search result matching the keyword", function () {
     cy.get("input").eq(1).type("pirate");
     cy.get("[data-testid='SearchIcon']").click();
@@ -39,7 +35,7 @@ describe("Search Page ", function () {
     cy.contains("Pirate Cinema").should("not.exist");
   });
 
-  it("show revelvant result for search by actor", function () {
+  it("show relevant result for search by actor", function () {
     cy.get(".MuiNativeSelect-select").select("actor");
     cy.get("input").eq(1).type("johnny depp");
     cy.get("[data-testid='SearchIcon']").click();
@@ -51,7 +47,7 @@ describe("Search Page ", function () {
     });
   });
 
-  it("show revelvant result for search by author", function () {
+  it("show relevant result for search by author", function () {
     cy.get(".MuiNativeSelect-select").select("author");
     cy.get("input").eq(1).type("jane austen");
     cy.get("[data-testid='SearchIcon']").click();
@@ -63,7 +59,7 @@ describe("Search Page ", function () {
     });
   });
 
-  it("show revelvant result for search by director", function () {
+  it("show relevant result for search by director", function () {
     cy.get(".MuiNativeSelect-select").select("director");
     cy.get("input").eq(1).type("tim burton");
     cy.get("[data-testid='SearchIcon']").click();

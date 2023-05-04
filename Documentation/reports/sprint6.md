@@ -1,4 +1,4 @@
-# Sprint 5
+# Sprint 6
 ## Työaikakirjanpito
 
 ### Emilia
@@ -10,14 +10,14 @@
 |Torstai 20.4.|||
 |Perjantai 21.4.|||
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|0|kipeänä en tehnyt mitään|
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
+| Maanantai 24.4.|6|demovideon ideointia ja kalvojen tekoa yhdessä ja yksin|
+|Tiistai 25.4.|6|kalvot loppuun ja ääninauhojen suunnittelua|
+|Keskiviikko 26.4.|9|videon screencap, ääninauhojen tekoa ja editointia, videon editointia ja bookcine biisin teko tekoälyn avulla|
 |Torstai 27.4.|||
 |Perjantai 28.4.|||
 |Viikonloppu 29.-30.4.|||
@@ -48,24 +48,24 @@ Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
+| Maanantai 24.4.|2|Demovideon ideointia ja kalvojen tekemistä|
 |Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
-|Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Keskiviikko 26.4.|2|Dokumentaation tekemistä|
+|Torstai 27.4.|5|Asiakastapaamisen preppaus ja dokumentaatiota|
+|Perjantai 28.4.|3|Asiakastapaaminen ja handoverin aloittelua|
+|Viikonloppu 29.-30.4.|1|Viikon dailyt|
+|Yhteensä|13||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
+|Keskiviikko 3.5.|1|Handoverin suunnittelu|
 |Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Perjantai 5.5.|5|Demotilaisuus ja handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|6|Yhteensä projektin aikana 199/200|
 
 ### Polina
 | päivä | aika | tehdyt asiat  |
@@ -103,68 +103,69 @@ Viikko 3
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
-|Tiistai 18.4.|||
+| Maanantai 17.4.|5|Asiakastapaaminen, retro, sprint planning, ja yhdessä koodausta|
+|Tiistai 18.4.|3|Yhdessä koodausta kirjastolla|
 |Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
+|Torstai 20.4.|2|Koodin kommentoitnia|
+|Perjantai 21.4.|3|Tähti ja sydän korjausten viimeistely ja pushaus + testien selvittäminen|
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|13||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
+| Maanantai 24.4.|2|CPU:n käytön ongelman selvitystä|
 |Tiistai 25.4.|||
 |Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Torstai 27.4.|3|Asiakastapaamiseen valmistautuminen ja evästenapin koodaus|
+|Perjantai 28.4.|2|Viimeinen asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Keskiviikko 3.5.|1,5|Handoverin suunnittelu, koodin kommennoinnin tarkastus|
+|Torstai 4.5.|0,5|Tuntien päivitys|
+|Perjantai 5.5.|2|Alustava arvio: handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|4|Tunnit kurssilta yhteensä: 200,25|
 
 ### Nana
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 17.4.|||
-|Tiistai 18.4.|||
+| Maanantai 17.4.|6|Asiakastapaaminen, retro, sprint planning, yhdessä tekemistä, design+testien fiksailua|
+|Tiistai 18.4.|4|Design, riippuvuuksien kanssa tappelua|
 |Keskiviikko 19.4.|||
-|Torstai 20.4.|||
-|Perjantai 21.4.|||
+|Torstai 20.4.|2|Design|
+|Perjantai 21.4.|3|Softskills-workshop|
 |Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Yhteensä|13||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+| Maanantai 24.4.|3,25|Design|
+|Tiistai 25.4.|3|Design|
+|Keskiviikko 26.4.|1,5|Design|
+|Torstai 27.4.|0,75|Asiakastapaamiseen valmistautuminen|
+|Perjantai 28.4.|3|Asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|11,5||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 1.5.|||
 |Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
+|Keskiviikko 3.5.|1|Handoverin suunnittelua|
 |Torstai 4.5.|||
-|Perjantai 5.5.|||
+|Perjantai 5.5.|5|Alustava arvio: Demo ja asiakashandover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+|Yhteensä|6|Tunnit yhteensä kurssilta 202|
+
 ### Sebastian
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
@@ -173,19 +174,19 @@ Viikko 3
 |Keskiviikko 19.4.|||
 |Torstai 20.4.|||
 |Perjantai 21.4.|||
-|Viikonloppu 22.-23.4.|||
-|Yhteensä|||
+|Viikonloppu 22.-23.4.|4|user guiden tekemistä, tähtien fixailua tuloksetta|
+|Yhteensä|4||
 Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
+| Maanantai 24.4.|2|user guiden tekemistä|
+|Tiistai 25.4.|2|user guiden viimeistelyä ja frontin kommentointia|
 |Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
+|Torstai 27.4.|0.5|demo suunnittelua|
+|Perjantai 28.4.|2.5|asiakastapaaminen|
 |Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+|Yhteensä|7||
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
@@ -212,26 +213,27 @@ Viikko 2
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 24.4.|||
-|Tiistai 25.4.|||
-|Keskiviikko 26.4.|||
-|Torstai 27.4.|||
-|Perjantai 28.4.|||
-|Viikonloppu 29.-30.4.|||
-|Yhteensä|||
+| Maanantai 24.4.|0.25|Daily|
+|Tiistai 25.4.|0|n/a|
+|Keskiviikko 26.4.|1|Daily, datan varmuuskopiointi, kommentteja videoon|
+|Torstai 27.4.|0.75|Demon preppaus|
+|Perjantai 28.4.|3|Daily, asiakastapaaminen, handoveria|
+|Viikonloppu 29.-30.4.|0|n/a|
+|Yhteensä|5|Kumulatiivisesti kurssissa tehty 200/200 tuntia|
 Viikko 3
 |||
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 1.5.|||
-|Tiistai 2.5.|||
-|Keskiviikko 3.5.|||
-|Torstai 4.5.|||
-|Perjantai 5.5.|||
-|Viikonloppu 6.-7.5.|||
-|Yhteensä|||
+| Maanantai 1.5.|0|n/a|
+|Tiistai 2.5.|0|n/a|
+|Keskiviikko 3.5.|1|Daily, handoverin preppaus, tuntien raportointi|
+|Torstai 4.5.|0|n/a|
+|Perjantai 5.5.|5|Alustava arvio: Demo ja asiakashandover|
+|Viikonloppu 6.-7.5.|0|n/a|
+|Yhteensä|8|Kumulatiivisesti kurssissa tehty 206/200 tuntia|
 
 ## Mitä tässä sprintissä saatiin aikaiseksi
 * Backendin koodin laatua parannettu
 * Tietokanta siistitty (turhat taulut poistettu, viimeinen puuttuva tiedosto lisätty tietokantaan)
 * Backendin ohjeistus päivitetty
+* Handover aloitettu
