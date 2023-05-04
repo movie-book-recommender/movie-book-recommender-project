@@ -62,31 +62,32 @@ Viikko 3
 ### Polina
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
-| Maanantai 27.3.|||
-|Tiistai 28.3.|||
-|Keskiviikko 29.3.|||
+| Maanantai 27.3.|3|Asiakastapaaminen, preppaus, retro, sprint planning|
+|Tiistai 28.3.|| |
+|Keskiviikko 29.3.|3|menu main ja menu nappien toiminta, animaatiot|
 |Torstai 30.3.|||
-|Perjantai 31.3.|||
+|Perjantai 31.3.|4|menun animaatio ja routerien refactorointi|
 |Viikonloppu 1.-2.4.|||
-|Yhteensä|||
+|Yhteensä|10||
+
 Viikko 2
 |||
-| Maanantai 3.4.|||
+| Maanantai 3.4.|4|navbarin kaikkien osien aligment |
 |Tiistai 4.4.|||
-|Keskiviikko 5.4.|||
+|Keskiviikko 5.4.|3|navbarin testit|
 |Torstai 6.4.|||
-|Perjantai 7.4.|||
+|Perjantai 7.4.|2|uudet logot|
 |Viikonloppu 8.-9.4.|||
-|Yhteensä|||
+|Yhteensä|9||
 Viikko 3
 |||
-| Maanantai 10.4.|||
+| Maanantai 10.4.|3|muiden testien fixausta|
 |Tiistai 11.4.|||
-|Keskiviikko 12.4.|||
+|Keskiviikko 12.4.|3|refactorointia ja koodin optimointia|
 |Torstai 13.4.|||
-|Perjantai 14.4.|||
+|Perjantai 14.4.|2|asiakastapaamisen suunnittelu|
 |Viikonloppu 15.-16.4.|||
-|Yhteensä|||
+|Yhteensä|8||
 
 ### Aleksi
 | päivä | aika | tehdyt asiat  |

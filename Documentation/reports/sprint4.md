@@ -45,21 +45,21 @@ Viikko 2
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
 | Maanantai 13.3.|2|asiakastapaaminen, retro, planning|
-|Tiistai 14.3.|2|dropdown searchiing tutustiminen|
+|Tiistai 14.3.|3|dropdown searchiing tutustiminen|
 |Keskiviikko 15.3.|3|dropdown osaa käyttää ulkoista dataa|
 |Torstai 16.3.|3|dropdowning ulkoasun toteutus|
 |Perjantai 17.3.|3|dropdown toimii kirjoille ja leffoille|
 |Viikonloppu 18.-19-3.|||
-|Yhteensä|13||
+|Yhteensä|14||
 Viikko 2
 |||
-| Maanantai 20.3.|||
+| Maanantai 20.3.|4|hakutoiminto dropdawnille, menun suunnittelu|
 |Tiistai 21.3.|2|testit search dropdownille|
-|Keskiviikko 22.3.|||
+|Keskiviikko 22.3.|5|dropdowning toiminnan vaihto kirjoille ja leffoille|
 |Torstai 23.3.|||
-|Perjantai 24.3.|||
+|Perjantai 24.3.|1|Asiakastapaamisen suunnittelu|
 |Viikonloppu 25.-26.3.|||
-|Yhteensä|||
+|Yhteensä|12||
 ### Aleksi
 | päivä | aika | tehdyt asiat  |
 | :----:|:-----| :-----|
