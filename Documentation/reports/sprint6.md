@@ -197,7 +197,7 @@ Viikko 3
 |Torstai 4.5.|4|requirement specificationin tekemsitä|
 |Perjantai 5.5.|2|handover|
 |Viikonloppu 6.-7.5.|||
-|Yhteensä|23||
+|Yhteensä|24||
 
 ### Katri
 | päivä | aika | tehdyt asiat  |
