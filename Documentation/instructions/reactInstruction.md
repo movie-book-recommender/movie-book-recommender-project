@@ -1,19 +1,36 @@
 # Instructions to running the react frontend
 
-1. Navigate to the folder with App.js file (at the time of writing: \movie-book-recommender-project\src\frontend\src)
+1. Navigate to the folder with App.js file (at the time of writing: main/src/App.js)
 
 2. ```npm -v``` to verify npm
 
 * If npm has not been installed it can be installed with [Node version manager(nvm)](https://github.com/nvm-sh/nvm#installing-and-updating) 
 * After installing nvm ```nvm install node``` will install node and npm
 
-3. ```npm install``` in the folder **main** to install dependencies
+3. ```npm install``` in the folder **main** to install dependencies. (``` npm install --legacy-peer-deps ``` if errors from some dependencies are preventing the install.)
 
-4. Run the flask-backend on a separate terminal window
+4. ```npm start``` to run the react-frontend from the folder **main**
 
-5. ```npm start``` to run the react-frontend from the folder **main**
+5. Ctrl+C to shut down the local frontend
 
-6. Ctrl+C to shut down the local frontend
+### Developing with local backend
+
+
+Sometimes you might want to test the whole app locally. This is especially useful when dealing with an issue that crashes the backend.
+
+1. Follow [this guide](https://github.com/movie-book-recommender/movie-book-backend/blob/main/documentation/backend_developer_start.md) to start the backend flask app on your local network.
+
+2. Change all the API endpoints (or the one you want to troubleshoot locally) to match localhost address. For example from this 
+
+``` axios.get("http://128.214.253.51:3000/dbgettop10highestratedmovies")```
+
+to this 
+
+``` axios.get("http://localhost:5000/dbgettop10highestratedmovies")```
+
+3. Now you can see how the flask app is responding to your requests.
+
+4. Change the addresses back to original before commiting.
 
 ### Possible problems you might run into
 
