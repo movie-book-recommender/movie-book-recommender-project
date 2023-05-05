@@ -106,14 +106,14 @@ Viikko 2
 | Maanantai 13.3.|4|retro, sprint planning, kuvausten fixi|
 |Tiistai 14.3.|||
 |Keskiviikko 15.3.|||
-|Torstai 16.3.|||
+|Torstai 16.3.|4|Frontin koodausta|
 |Perjantai 17.3.|||
-|Viikonloppu 18.-19-3.|||
+|Viikonloppu 18.-19-3.|4|Frontin koodausta|
 |Yhteensä|||
 Viikko 2
 |||
 | Maanantai 20.3.|||
-|Tiistai 21.3.|||
+|Tiistai 21.3.|4|Frontin koodausta|
 |Keskiviikko 22.3.|||
 |Torstai 23.3.|||
 |Perjantai 24.3.|||
